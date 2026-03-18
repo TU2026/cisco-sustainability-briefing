@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisco 可持续发展情报简报 — 2026年3月23日</title>
+  <style>
+    :root {
+      --cisco-blue: #049fd9;
+      --cisco-dark: #0d274d;
+      --cisco-mid: #1b3a5e;
+      --accent: #00bceb;
+      --green: #00c853;
+      --amber: #ffc107;
+      --red: #ef5350;
+      --text: #e8edf2;
+      --muted: #8ba4bc;
+      --surface: #0f2240;
+      --card: #132d4e;
+      --border: #1e3f63;
+      --highlight: rgba(0, 188, 235, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      background: var(--cisco-dark);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    .masthead {
+      background: linear-gradient(135deg, #071524 0%, #0d274d 60%, #0a3060 100%);
+      border-bottom: 2px solid var(--cisco-blue);
+      padding: 0;
+    }
+    .masthead-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 20px;
+    }
+    .journal-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      margin-bottom: 8px;
+    }
+    h1.title {
+      font-size: clamp(20px, 4vw, 34px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    h1.title span { color: var(--accent); }
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .meta-bar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 28px;
+    }
+    @media (max-width: 720px) {
+      .container { grid-template-columns: 1fr; }
+    }
+    main { min-width: 0; }
+    aside { min-width: 0; }
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      border-left: 3px solid var(--cisco-blue);
+      padding-left: 8px;
+      margin-bottom: 10px;
+    }
+    h2 { font-size: 17px; color: #fff; margin-bottom: 10px; }
+    h3 { font-size: 14px; color: var(--accent); margin-bottom: 6px; }
+    .exec-summary {
+      background: var(--highlight);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cisco-blue);
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c5d8ea;
+    }
+    .exec-summary strong { color: #fff; }
+    .top3-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .intel-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .intel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(4,159,217,0.15);
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-badge {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .rank-1 { background: #ffd600; color: #000; }
+    .rank-2 { background: #b0bec5; color: #000; }
+    .rank-3 { background: #bf8c46; color: #fff; }
+    .card-category {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      margin-bottom: 3px;
+    }
+    .card-header h3 { color: #fff; font-size: 15px; margin: 0; }
+    .card-body { padding: 14px 18px 16px; }
+    .card-body p { font-size: 13px; color: #b8cfe0; margin-bottom: 10px; }
+    .impact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .impact-label {
+      font-size: 10px;
+      color: var(--muted);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+    .impact-bar-bg {
+      flex: 1;
+      height: 6px;
+      background: #1a3352;
+      border-radius: 3px;
+    }
+    .impact-bar-fill { height: 6px; border-radius: 3px; }
+    .fill-high { background: linear-gradient(90deg, #00bceb, #00e676); }
+    .fill-med  { background: linear-gradient(90deg, #ffc107, #ff9800); }
+    .fill-score {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .cisco-justification {
+      background: rgba(0,188,235,0.07);
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 0 4px 4px 0;
+      font-size: 12px;
+      color: #9fbbd0;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+    .cisco-justification strong { color: var(--accent); }
+    .data-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .chip {
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .chip-green { border-color: var(--green); color: var(--green); background: rgba(0,200,83,0.08); }
+    .chip-blue  { border-color: var(--accent); color: var(--accent); background: rgba(0,188,235,0.08); }
+    .chip-amber { border-color: var(--amber); color: var(--amber); background: rgba(255,193,7,0.08); }
+    .data-section { margin-bottom: 32px; }
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 560px) { .data-grid { grid-template-columns: 1fr 1fr; } }
+    .data-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .data-stat .big {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .data-stat .unit { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .data-stat .desc { font-size: 10px; color: #7a96b0; margin-top: 5px; }
+    .method-section { margin-bottom: 32px; }
+    .method-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .method-item:last-child { border-bottom: none; }
+    .method-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .method-text strong { color: #d0e8f5; display: block; margin-bottom: 3px; font-size: 13px; }
+    .method-text span { color: #8baabb; }
+    .strat-section { margin-bottom: 32px; }
+    .strat-box {
+      background: linear-gradient(135deg, #0e2d50 0%, #0a3060 100%);
+      border: 1px solid #2a5080;
+      border-radius: 8px;
+      padding: 20px 22px;
+      margin-top: 12px;
+    }
+    .strat-box h3 { color: var(--accent); font-size: 13px; margin-bottom: 8px; }
+    .strat-box p { font-size: 13px; color: #b0cce0; margin-bottom: 10px; }
+    .strat-box p:last-child { margin-bottom: 0; }
+    .strat-cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 18px;
+      background: var(--cisco-blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+    .sidebar-card h4 {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .signal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #0f1e30;
+      font-size: 12px;
+      color: #9fbbd0;
+    }
+    .signal-item:last-child { border-bottom: none; }
+    .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+    .sd-green { background: var(--green); }
+    .sd-amber { background: var(--amber); }
+    .sd-red { background: var(--red); }
+    .risk-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid #0f1e30;
+      font-size: 11px;
+    }
+    .risk-row:last-child { border-bottom: none; }
+    .risk-name { color: #9fbbd0; }
+    .risk-badge {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      letter-spacing: 0.05em;
+    }
+    .rb-low  { background: rgba(0,200,83,0.15);  color: var(--green); }
+    .rb-med  { background: rgba(255,193,7,0.15);  color: var(--amber); }
+    .rb-high { background: rgba(239,83,80,0.15);  color: var(--red); }
+    .rb-act  { background: rgba(0,188,235,0.15);  color: var(--accent); }
+    .rb-dev  { background: rgba(255,193,7,0.12);  color: var(--amber); }
+    .rb-blk  { background: rgba(239,83,80,0.15);  color: var(--red); }
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 24px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 10px;
+      color: #4a6888;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="journal-label">Cisco 可持续发展情报代理 &nbsp;|&nbsp; 每周简报</div>
+    <h1 class="title">供应链<span>可持续发展</span>情报简报</h1>
+    <div class="subtitle">水资源管理 · 可再生能源购电协议 · 东南亚绿色政策 · 污染控制</div>
+    <div class="meta-bar">
+      <span><span class="dot"></span> 实时简报</span>
+      <span>发布日期：2026年3月23日（周一）</span>
+      <span>覆盖周期：2026年3月16日 – 3月23日</span>
+      <span>重点区域：越南及东南亚</span>
+      <span>目标读者：Cisco 可持续发展经理</span>
+    </div>
+  </div>
+</header>
+
+<div style="max-width:960px;margin:10px auto 0;padding:0 24px;display:flex;justify-content:flex-end;gap:8px;">
+  <a href="./cisco_sustainability_briefing.html" class="btn" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:0.04em;background:#049fd9;color:#fff;">English</a>
+  <a href="./cisco_sustainability_briefing_zh.html" class="btn" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:0.04em;background:#0d274d;color:#00bceb;border:2px solid #00bceb;">中文</a>
+</div>
+
+<div class="container">
+<main>
+
+  <!-- 执行摘要 -->
+  <div class="section-label">执行摘要</div>
+  <div class="exec-summary">
+    本周情报扫描发现了三个位于越南可再生能源推进与东南亚更广泛可持续趋势交汇点的重要进展。<strong>越南 DPPA 框架</strong>（2025年3月正式运行）正面临<strong>"监管风暴"</strong>，追溯性上网电价削减威胁约12GW现有太阳能和风能项目，造成投资者不确定性，可能溢出至企业 PPA 执行。同时，<strong>2026年越南太阳能周</strong>峰会在胡志明市召开，召集行业领袖推进政策改革和储能集成，尽管存在监管逆风仍显示出持续势头。在水资源方面，<strong>工业水回用</strong>正成为亚太地区高耗水行业的关键韧性战略，特别是半导体和数据中心 — 与 Cisco 供应链和基础设施运营直接相关。
+  </div>
+
+  <!-- TOP 3 -->
+  <div class="section-label">Top 3 可操作情报项</div>
+  <div class="top3-grid">
+
+    <!-- 第1项 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-1">1</div>
+        <div>
+          <div class="card-category">可再生能源 · 购电协议 · 越南</div>
+          <h3 style="color:#fff;font-size:15px;margin:0;">越南 DPPA 遭遇"监管风暴" — 追溯性 FiT 削减威胁 12GW 项目</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-blue">约12GW太阳能/风能项目受影响</span>
+          <span class="chip chip-amber">约50%电价削减提议</span>
+          <span class="chip chip-green">DPPA 2025年3月运行</span>
+        </div>
+        <p>越南能源转型正处于矛盾时刻：期待已久的 DPPA 框架终于在 2025年3月启动，向市场开放企业可再生能源采购，但<strong>监管反弹</strong>正在形成。约12GW太阳能和风能项目面临追溯性上网电价争议，行政修订提议将这些项目的收入削减近50%。这些追溯性调整使项目开发商面临融资违约风险，严重动摇投资者对新 DPPA 机制乃至整个越南可再生能源市场的信心。</p>
+        <div class="impact-row">
+          <span class="impact-label">影响力评分</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:78%"></div></div>
+          <span class="fill-score">7.8 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">供应商风险上升</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:82%"></div></div>
+          <span class="fill-score">高</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">PPA 交付不确定性</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:75%"></div></div>
+          <span class="fill-score">中–高</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>对 Cisco 的意义：</strong>越南的追溯性监管混乱破坏了可靠企业 PPA 执行的基础。即使 Cisco 的越南合同制造商可以在新框架下技术上执行 DPPA，更广泛的市场不稳定 — 电网限电、投资者退出和政策不可预测 — 威胁交付保证和长期价格稳定。Cisco 应将基于越南的 PPA 视为<strong>高风险交易</strong>，在近期优先考虑政策轨迹更稳定司法管辖区（如泰国、马来西亚）的供应商场所进行近期可再生能源承诺。
+        </div>
+      </div>
+    </div>
+
+    <!-- 第2项 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-2">2</div>
+        <div>
+          <div class="card-category">工业水资源 · 回用 · 亚太</div>
+          <h3 style="color:#fff;font-size:15px;margin:0;">水回用成为半导体和数据中心的关键韧性战略</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-blue">高回收率处理系统</span>
+          <span class="chip chip-green">AI 驱动水控制</span>
+          <span class="chip chip-amber">APAC 水资源约束加剧</span>
+        </div>
+        <p>随着亚太地区水资源约束加剧，<strong>工业水回用</strong>对半导体和数据中心等高耗水行业变得至关重要。水务技术公司如 Gradiant 提供高回收率处理方案、AI 驱动控制系统和分布式处理模式，使这些行业能够获得替代水源、提升应对缺水风险的韧性，并保障业务连续性。从"一次性用水"向闭环回用的转变正在制造业和基础设施部门加速。</p>
+        <div class="impact-row">
+          <span class="impact-label">影响力评分</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:85%"></div></div>
+          <span class="fill-score">8.5 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">供应商运营风险</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:78%"></div></div>
+          <span class="fill-score">中–高</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">CAPEX 投资需求</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:70%"></div></div>
+          <span class="fill-score">中等</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>对 Cisco 的意义：</strong>Cisco 在亚洲的 PCB 和元件供应商是半导体密集型和水密集型。新兴的工业水回用趋势既代表<strong>风险缓解机遇</strong>（缺水是亚太地区电子制造业的头号运营威胁），也代表<strong>成本优化杠杆</strong>（高回收率回用系统在中期内降低市政水采购成本）。Cisco 应更新其供应商评分卡，纳入水回用指标（工艺水回收率、闭环系统采用），并与一级供应商启动与 Gradiant 等水务技术公司的试点回用合作伙伴关系。
+        </div>
+      </div>
+    </div>
+
+    <!-- 第3项 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-3">3</div>
+        <div>
+          <div class="card-category">水创新 · 监测 · 合规</div>
+          <h3 style="color:#fff;font-size:15px;margin:0;">在线折射仪在恶劣条件下实现连续废水监测</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-green">无试剂连续监测</span>
+          <span class="chip chip-blue">抗颗粒物/浊度干扰</span>
+          <span class="chip chip-amber">实时工艺控制</span>
+        </div>
+        <p>新型<strong>在线折射仪</strong>使废水流中溶解化合物的连续、无试剂监测成为可能。这些仪器专门设计以抵抗颗粒物和浊度干扰，适用于恶劣条件（如食品饮料制造业废水），支持实时工艺控制、异常早期预警和法规合规，通过提供准确的溶解固体浓度数据而无需人工取样或化学试剂。</p>
+        <div class="impact-row">
+          <span class="impact-label">影响力评分</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:80%"></div></div>
+          <span class="fill-score">8.0 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">合规风险降低</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:88%"></div></div>
+          <span class="fill-score">高</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">运营成本节省</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:65%"></div></div>
+          <span class="fill-score">中等</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>对 Cisco 的意义：</strong>实时、无试剂废水监测直接解决了电子制造业废水管理中一个长期存在的<strong>合规盲点</strong>。通过倡导供应商采用在线折射仪，Cisco 可以降低监管不合规事件风险（此类事件可停产生产线并损害品牌声誉），同时降低废水测试的运营成本（试剂和人工实验室分析）。该技术与 Cisco 现有的 AWS（水资源管理联盟）情景水目标方法论相一致，通过启用流域特定、连续数据收集而非定期快照。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 关键数据 -->
+  <div class="data-section">
+    <div class="section-label">本周关键数据点</div>
+    <div class="data-grid">
+      <div class="data-stat">
+        <div class="big">12GW</div>
+        <div class="unit">太阳能/风能项目面临风险</div>
+        <div class="desc">越南追溯性 FiT 削减威胁现有产能</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">~50%</div>
+        <div class="unit">提议电价削减</div>
+        <div class="desc">可再生能源项目的追溯性收入削减</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">2026年3月</div>
+        <div class="unit">越南太阳能周峰会</div>
+        <div class="desc">胡志明市 — 聚焦 DPPA &amp; 储能</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">100%</div>
+        <div class="unit">循环设计，Cisco FY25</div>
+        <div class="desc">所有新产品及包装符合循环原则</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">91%</div>
+        <div class="unit">大型 ESG 披露企业</div>
+        <div class="desc">现于 ISSB/ESRS 融合框架下报告</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">高</div>
+        <div class="unit">APAC 水资源约束</div>
+        <div class="desc">推动半导体/数据中心工业回用采用</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方法论 -->
+  <div class="method-section">
+    <div class="section-label">方法论说明 — 新型 PPA 结构与 PCF 标准</div>
+    <div class="method-item">
+      <div class="method-icon">⚡</div>
+      <div class="method-text">
+        <strong>越南 DPPA 追溯性风险分析</strong>
+        <span>当前越南的"监管风暴"核心在于 DPPA 框架生效前开发的早期可再生能源项目的追溯性上网电价削减。这创造了<strong>过渡风险</strong>，早期可再生能源项目投资者面临收入追回，可能触发贷款违约并破坏新 DPPA 机制本身的可信度。对于像 Cisco 这样的企业买家，这转化为<strong>交付风险</strong> — PPA 协议可能与面临破产或政策驱动财务不稳定的开发商签署。风险通过选择 DPPA 后开发的项目或在 SEA 内多个监管管辖区多元化得到缓解。</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">💧</div>
+      <div class="method-text">
+        <strong>工业水回用 — 高回收率系统</strong>
+        <span>工业水回用正从基础过滤转向<strong>高回收率处理系统</strong>，可回收 85–95% 的工艺水。技术包括膜生物反应器、反渗透梯级和 AI 驱动的工艺控制，这些技术基于实时水质数据动态调整处理参数。回用采用的经济门槛因行业和水成本而异，但对于水资源紧张的 APAC 地区的水密集型电子制造业，资本投资回报期通常为 18–36 个月。Cisco 的供应商参与应针对水回用 ROI 计算，并优先考虑高水压力流域（如越南北部、印度南部、长江三角洲）的设施。</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">🔬</div>
+      <div class="method-text">
+        <strong>在线折射仪 — 无试剂合规</strong>
+        <span>在线折射仪测量废水流的折射率以检测溶解固体、有机负荷和工艺污染物。该技术对制造合规的关键优势包括：(1) <strong>连续数据</strong>而非定期样本，减少盲点风险；(2) <strong>无试剂操作</strong>，消除化学采购和处置成本；(3) <strong>浊度抗性</strong>，允许在高固体废水流中部署（常见于 PCB 蚀刻、电镀和涂层工艺）。与 AWS 情景水目标集成可实现流域特定合规演示，而非遵循通用排放限值。</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">🌱</div>
+      <div class="method-text">
+        <strong>Cisco 2026 可持续发展趋势 — 循环设计整合</strong>
+        <span>Cisco 2026 年可持续战略强调<strong>所有新产品和包装 100% 循环设计整合</strong>。这意味着循环性原则 — 可重复使用材料选择、可拆卸设计、生命周期末端规划 — 在产品设计阶段嵌入而非生产后改造。对于 Cisco 供应链，这意味着将供应商评分卡从"回收率"指标转向"循环设计合规"指标，确保进入 Cisco 产品生命周期的材料从一开始就为多次使用路径设计。运营影响包括降低原始材料采购成本以及为 Cisco 及其供应商降低生命周期末端处置责任。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 战略建议 -->
+  <div class="strat-section">
+    <div class="section-label">面向 Cisco 可持续发展经理的战略建议</div>
+    <div class="strat-box">
+      <h3>立即行动项（未来30天）</h3>
+      <p><strong>1. 重新评估越南 PPA 投资组合风险：</strong>鉴于追溯性 FiT 削减和监管不确定性，对所有基于越南的 PPA 参与进行风险评估。优先考虑泰国和马来西亚的 PPA 进行近期承诺，并为任何越南 PPA 执行谈判<strong>交付保证和不可抗力条款</strong>，特别针对监管追溯性。在政策稳定前，对新的越南 PPA 承诺保持 12–18 个月缓冲期。</p>
+      <p><strong>2. 启动水回用试点项目：</strong>在水紧张的 APAC 流域（越南北部、长江三角洲、印度南部）识别 2–3 家一级 PCB 供应商，并与 Gradiant 等水务技术公司合作设计<strong>高回收率回用试点</strong>。使用 Cisco 可持续发展投资预算资助试点资本支出，目标 18–24 个月 ROI 演示。成功指标：工艺水回收率、市政水采购成本降低、合规审计结果。</p>
+      <p><strong>3. 将连续废水监测整合到评分卡：</strong>更新供应商环境评分卡以纳入<strong>在线监测采用</strong>（是/否）和<strong>连续合规率</strong>（基于实时数据在排放限值内的百分比时间）。为早期采用无试剂监测技术（如在线折射仪）的供应商提供激励（如优先采购条款）。这将 Cisco 定位为 ISSB/ESRS 强制报告截止日期前的<strong>合规领导者</strong>。</p>
+      <a class="strat-cta" href="#">安排供应商参与评审 →</a>
+    </div>
+  </div>
+
+</main>
+
+<aside>
+  <div class="sidebar-card">
+    <h4>快速信号追踪</h4>
+    <div class="signal-item"><div class="signal-dot sd-amber"></div><span>越南 DPPA 监管风暴 — 追溯性 FiT 削减威胁 12GW 项目</span></div>
+    <div class="signal-item"><div class="signal-dot sd-green"></div><span>2026年越南太阳能周峰会闭幕 — DPPA &amp; 储能政策改革</span></div>
+    <div class="signal-item"><div class="signal-dot sd-green"></div><span>工业水回用成为 APAC 关键韧性战略</span></div>
+    <div class="signal-item"><div class="signal-dot sd-green"></div><span>在线折射仪实现连续、无试剂废水监测</span></div>
+    <div class="signal-item"><div class="signal-dot sd-green"></div><span>Cisco FY25 100% 循环设计里程碑已确认</span></div>
+    <div class="signal-item"><div class="signal-dot sd-amber"></div><span>91%大型企业现于 ISSB/ESRS 框架下报告</span></div>
+  </div>
+
+  <div class="sidebar-card">
+    <h4>水风险雷达 — PCB 供应区域</h4>
+    <div class="risk-row"><span class="risk-name">越南（河内流域）</span><span class="risk-badge rb-low">低</span></div>
+    <div class="risk-row"><span class="risk-name">泰国（湄南河）</span><span class="risk-badge rb-med">中</span></div>
+    <div class="risk-row"><span class="risk-name">台湾（北部）</span><span class="risk-badge rb-low">低</span></div>
+    <div class="risk-row"><span class="risk-name">上海 / 长江三角洲</span><span class="risk-badge rb-med">中</span></div>
+    <div class="risk-row"><span class="risk-name">印度南部</span><span class="risk-badge rb-high">高</span></div>
+    <div class="risk-row"><span class="risk-name">马来西亚（雪兰莪）</span><span class="risk-badge rb-low">低</span></div>
+  </div>
+
+  <div class="sidebar-card">
+    <h4>东南亚企业 PPA 就绪度</h4>
+    <div class="risk-row"><span class="risk-name">越南</span><span class="risk-badge rb-act">已生效</span></div>
+    <div class="risk-row"><span class="risk-name">泰国</span><span class="risk-badge rb-act">已生效</span></div>
+    <div class="risk-row"><span class="risk-name">马来西亚</span><span class="risk-badge rb-med">试点中</span></div>
+    <div class="risk-row"><span class="risk-name">印度尼西亚</span><span class="risk-badge rb-med">发展中</span></div>
+    <div class="risk-row"><span class="risk-name">菲律宾</span><span class="risk-badge rb-med">有限开放</span></div>
+    <div class="risk-row"><span class="risk-name">缅甸</span><span class="risk-badge rb-high">受阻</span></div>
+  </div>
+
+  <div class="sidebar-card">
+    <h4>信息来源</h4>
+    <div style="font-size:10px; color:#6a8aaa; line-height:1.9;">
+      <div>📄 RECCESSARY — 越南 DPPA 监管风暴，2026年3月13日</div>
+      <div>📄 Solar Quarter — 2026年越南太阳能周，2026年3月16日</div>
+      <div>📄 Water &amp; Wastewater Asia — 工业水回用，2026年3月5日</div>
+      <div>📄 Water &amp; Wastewater Asia — 在线折射仪，2026年3月</div>
+      <div>📄 EDF 供应链 — Cisco 可持续发展2026年趋势，2026年1月9日</div>
+      <div style="margin-top:8px; color:#3a5a78;">覆盖周期：2026年3月16日–23日</div>
+    </div>
+  </div>
+
+</aside>
+</div>
+
+<footer>
+  <span>© 2026 Cisco 可持续发展情报 — 仅供内部使用</span>
+  <span>Cisco 可持续发展情报代理 · 自动化每周简报</span>
+  <span>下期：2026年3月30日（周一）</span>
+</footer>
+
+</body>
+</html>
