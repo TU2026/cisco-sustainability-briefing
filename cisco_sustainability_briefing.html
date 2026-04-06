@@ -464,6 +464,27 @@
         .footer a { color: #049fd9; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
 
+        /* Nav bar */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 20px;
+            background: rgba(4,159,217,0.06);
+            border-bottom: 1px solid rgba(4,159,217,0.15);
+            font-size: 13px;
+        }
+        .nav-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 4px 12px;
+            border-radius: 6px;
+            transition: all 0.15s;
+        }
+        .nav-bar a:hover { color: #00bceb; background: rgba(0,188,235,0.1); }
+        .nav-sep { color: #334155; }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .layout { grid-template-columns: 1fr; }
@@ -491,6 +512,14 @@
         Week of March 31 – April 6, 2026 &nbsp;|&nbsp; Issue #52
     </div>
 </div>
+
+<!-- Nav bar -->
+<nav class="nav-bar">
+    <a href="index.html">🏠 Home</a>
+    <a href="archive/">📁 Archive</a>
+    <span class="nav-sep">·</span>
+    <a href="archive/2026-03-30_en.html">← Previous Issue (Mar 30)</a>
+</nav>
 
 <div class="layout">
 <div class="main-content">
