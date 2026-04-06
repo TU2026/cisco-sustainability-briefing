@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Sustainability Intelligence Briefing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); min-height: 100vh; color: #e2e8f0; }
+        .header { background: rgba(0,0,0,0.3); padding: 40px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .header h1 { font-size: 2.5em; color: #38bdf8; margin-bottom: 10px; }
+        .header p { color: #94a3b8; font-size: 1.1em; }
+        .header .date { color: #f59e0b; font-weight: 600; margin-top: 10px; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .lang-btn { background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+        .lang-btn:hover { background: #38bdf8; color: #0a1628; }
+        .nav-tabs { display: flex; justify-content: center; background: rgba(0,0,0,0.2); padding: 0; gap: 4px; }
+        .nav-tab { padding: 15px 30px; background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 16px; transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .nav-tab:hover { color: #38bdf8; }
+        .nav-tab.active { color: #38bdf8; border-bottom-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .card-header { display: flex; align-items: flex-start; margin-bottom: 20px; }
+        .card-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-right: 15px; flex-shrink: 0; }
+        .card-title { flex: 1; }
+        .card-title h2 { font-size: 1.4em; color: #f1f5f9; margin-bottom: 5px; }
+        .card-title .category { color: #38bdf8; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        .impact-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0a1628; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 700; }
+        .card-content { color: #cbd5e1; line-height: 1.8; font-size: 1.05em; }
+        .card-content ul { margin: 15px 0; padding-left: 25px; }
+        .card-content li { margin-bottom: 10px; }
+        .card-content strong { color: #38bdf8; }
+        .highlight-box { background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.15)); border-left: 4px solid #38bdf8; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .key-points { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 15px 20px; margin-top: 15px; }
+        .key-points h4 { color: #f59e0b; margin-bottom: 10px; }
+        .key-points li { color: #fef3c7; }
+        .footer { text-align: center; padding: 40px 20px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+        .footer a { color: #38bdf8; text-decoration: none; }
+        .qr-section { text-align: center; margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+        .qr-section img { width: 200px; height: 200px; border-radius: 8px; }
+        .timeline { border-left: 2px solid #38bdf8; padding-left: 30px; margin-left: 25px; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -36px; width: 12px; height: 12px; background: #38bdf8; border-radius: 50%; }
+        .timeline-date { color: #f59e0b; font-weight: 600; margin-bottom: 5px; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .container { padding: 20px 15px; } .nav-tab { padding: 12px 15px; font-size: 14px; } }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="location.href='cisco_sustainability_briefing_zh.html'">中文</button>
+    </div>
+    
+    <header class="header">
+        <h1>🌿 Cisco Sustainability Intelligence</h1>
+        <p>Weekly Intelligence Briefing | Week of March 30, 2026</p>
+        <p class="date">📅 Updated: March 30, 2026</p>
+    </header>
+    
+    <nav class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+        <button class="nav-tab" onclick="showSection('vietnam')">Vietnam PPA</button>
+        <button class="nav-tab" onclick="showSection('sea')">SEA Green Energy</button>
+        <button class="nav-tab" onclick="showSection('china')">China Grid</button>
+        <button class="nav-tab" onclick="showSection('policy')">Policy</button>
+    </nav>
+    
+    <div class="container">
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">This Week's Key Intelligence</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🇻🇳</div>
+                    <div class="card-title">
+                        <span class="category">Policy</span>
+                        <h2>Vietnam Adjusts National Energy Master Plan</h2>
+                    </div>
+                    <span class="impact-badge">Impact: 8.8/10</span>
+                </div>
+                <div class="card-content">
+                    <p>Vietnam's Ministry of Industry and Trade issued Decision No. 363/2026/QD-BCT on March 24, 2026, approving adjustments to the National Energy Master Plan for 2021-2030 with outlook to 2050.</p>
+                    <div class="highlight-box">
+                        <strong>Key Adjustments:</strong>
+                        <ul>
+                            <li>Renewable energy capacity targets increased by 15-20%</li>
+                            <li>Grid infrastructure investment accelerated by $12B</li>
+                            <li>Two-part electricity pricing mandatory for DPPA participants</li>
+                        </ul>
+                    </div>
+                    <p><strong>Impact on Cisco Supply Chain:</strong> Vietnam-based EMS suppliers may face new compliance requirements. Rooftop solar incentives could affect facility energy costs.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌏</div>
+                    <div class="card-title">
+                        <span class="category">Market</span>
+                        <h2>China-ASEAN Clean Energy Cooperation Summit</h2>
+                    </div>
+                    <span class="impact-badge">Impact: 8.5/10</span>
+                </div>
+                <div class="card-content">
+                    <p>A high-profile summit on China-ASEAN clean energy cooperation is scheduled for May 22, 2026 in Beijing, co-organized by multiple ASEAN embassies and Chinese industry associations.</p>
+                    <div class="highlight-box">
+                        <strong>Strategic Implications:</strong>
+                        <ul>
+                            <li>Cumulative Chinese investment in ASEAN renewables exceeded 5x growth since 2014</li>
+                            <li>Installed capacity reaching 60 GW across 359 wind/solar projects</li>
+                            <li>Cross-border power trade frameworks under negotiation</li>
+                        </ul>
+                    </div>
+                    <p><strong>Cisco Relevance:</strong> Supply chain decarbonization pathways may leverage ASEAN solar/wind procurement opportunities.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-title">
+                        <span class="category">Policy</span>
+                        <h2>China Mandates Zero-Carbon Factory Initiative</h2>
+                    </div>
+                    <span class="impact-badge">Impact: 8.2/10</span>
+                </div>
+                <div class="card-content">
+                    <p>China's Ministry of Industry and Information Technology (MIIT) issued Guidelines on Zero-Carbon Factory Construction (Order No. 13, 2026) on January 14, 2026, establishing national standards for zero-carbon manufacturing.</p>
+                    <div class="highlight-box">
+                        <strong>Key Requirements:</strong>
+                        <ul>
+                            <li>Phase 1: Pilot zero-carbon industrial parks in 50 cities by 2027</li>
+                            <li>Mandatory carbon accounting for facilities >10,000 tons CO2/year</li>
+                            <li>Green electricity certificate procurement requirements</li>
+                        </ul>
+                    </div>
+                    <p><strong>Supply Chain Impact:</strong> Tier-1/Tier-2 suppliers in China must establish carbon accounting systems by 2028.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-title">
+                        <span class="category">Market</span>
+                        <h2>China SOE Renewable Energy Expansion in SEA</h2>
+                    </div>
+                    <span class="impact-badge">Impact: 7.8/10</span>
+                </div>
+                <div class="card-content">
+                    <p>Chinese state-owned enterprises (SOEs) have invested in 359 wind and solar projects across 47 countries, with cumulative installed capacity approaching 60 GW as of June 2025.</p>
+                    <div class="highlight-box">
+                        <strong>Recent Developments:</strong>
+                        <ul>
+                            <li>Sinopec, China Three Gorges expanding in Vietnam, Thailand, Philippines</li>
+                            <li>New 400 MW photovoltaic partnership signed by Huasun+CRRG+Zheshang Zhotong in ASEAN</li>
+                            <li>ASEAN Wind Expo opens in Bangkok, March 25-27</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">
+                        <span class="category">Cisco</span>
+                        <h2>Cisco 2026 Sustainability Strategy</h2>
+                    </div>
+                    <span class="impact-badge">Impact: 7.5/10</span>
+                </div>
+                <div class="card-content">
+                    <p>Cisco's 2026 sustainability trends analysis emphasizes integration of sustainability as core business discipline, moving beyond standalone initiatives.</p>
+                    <div class="highlight-box">
+                        <strong>Key Focus Areas:</strong>
+                        <ul>
+                            <li>Circular economy product design principles</li>
+                            <li>AI-driven energy efficiency optimization</li>
+                            <li>Scope 3 supply chain decarbonization acceleration</li>
+                            <li>Quantum-ready infrastructure planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <h3 style="color: #f1f5f9; margin-bottom: 20px;">Scan to Access Full Briefing</h3>
+                <img src="cisco_briefing_qr.png" alt="Briefing QR Code" onerror="this.style.display='none'">
+                <p style="color: #94a3b8; margin-top: 15px;">Website: <a href="https://tudi1133.github.io/cisco-sustainability-briefing/" style="color: #38bdf8;">tudi1133.github.io/cisco-sustainability-briefing</a></p>
+            </div>
+        </section>
+        
+        <!-- Vietnam Section -->
+        <section id="vietnam" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">Vietnam PPA Policy Updates</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📜</div>
+                    <div class="card-title">
+                        <span class="category">Decree 58/2025</span>
+                        <h2>Renewable Energy & New Energy Electricity Development</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Vietnamese Government issued Decree 58/2025/NĐ-CP on March 3, 2025, detailing provisions of the Electricity Law regarding renewable energy and new energy electricity development.</p>
+                    <div class="highlight-box">
+                        <strong>Key Provisions:</strong>
+                        <ul>
+                            <li>Direct Power Purchase Agreement (DPPA) framework established</li>
+                            <li>Storage systems with grid connection eligible for incentives</li>
+                            <li>Two-part electricity pricing with fixed/variable components</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">
+                        <span class="category">Master Plan</span>
+                        <h2>Decision 363/2026: National Energy Plan Adjustment</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Decision No. 363/2026/QD-BCT issued March 24, 2026 adjusts Vietnam's national energy master plan 2021-2030.</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">March 3, 2025</div>
+                            <p>Decree 58/2025 establishing DPPA framework</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">September 16, 2025</div>
+                            <p>Resolution supporting two-part electricity pricing</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">March 24, 2026</div>
+                            <p>Decision 363/2026 adjusting national energy targets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-title">
+                        <span class="category">Investment Risks</span>
+                        <h2>28 Foreign Investors' Concerns</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>28 foreign and local investors sent a joint letter to Vietnamese government regarding policy volatility and curtailment risks.</p>
+                    <div class="key-points">
+                        <h4>⚠️ Risk Factors</h4>
+                        <ul>
+                            <li>Retroactive changes to signed power purchase agreements</li>
+                            <li>Grid curtailment affecting solar/wind projects</li>
+                            <li>Uncertain timeline for DPPA implementation</li>
+                        </ul>
+                    </div>
+                    <p><strong>Cisco Supplier Risk:</strong> Vietnam EMS suppliers may face energy cost volatility.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEA Section -->
+        <section id="sea" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">Southeast Asia Green Energy</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌊</div>
+                    <div class="card-title">
+                        <span class="category">Wind Power</span>
+                        <h2>ASEAN Wind Power Expo 2026</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>ASEAN Wind Power Expo 2026 opened March 25-27 at IMPACT Exhibition Center, Bangkok, Thailand.</p>
+                    <div class="highlight-box">
+                        <strong>Market Highlights:</strong>
+                        <ul>
+                            <li>ASEAN wind technical potential: 1,112 GW</li>
+                            <li>Installed capacity projected to exceed 100 GW by 2025</li>
+                            <li>Vietnam, Thailand, Philippines leading growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">☀️</div>
+                    <div class="card-title">
+                        <span class="category">Solar</span>
+                        <h2>China-ASEAN 400MW Solar Partnership</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Huasun New Energy signed strategic MoUs with China Railway Shanghai Engineering Bureau, Zheshang Zhotong, and TBEA on March 24, 2026 for joint ASEAN photovoltaic market development.</p>
+                    <div class="highlight-box">
+                        <strong>Partnership Model:</strong>
+                        <ul>
+                            <li>HET (High Efficiency Territory) cells deployment</li>
+                            <li>Joint venture for ASEAN project development</li>
+                            <li>400 MW target pipeline</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌏</div>
+                    <div class="card-title">
+                        <span class="category">China-ASEAN</span>
+                        <h2>Clean Energy Cooperation Framework</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Summit on China-ASEAN clean energy cooperation scheduled May 22, 2026 in Beijing.</p>
+                    <div class="highlight-box">
+                        <strong>Investment Trends:</strong>
+                        <ul>
+                            <li>Chinese cumulative investment in ASEAN renewables: 5x growth since 2014</li>
+                            <li>Total installed capacity: ~60 GW across 47 countries</li>
+                            <li>Cross-border power trade negotiations ongoing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- China Section -->
+        <section id="china" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">China-SEA Power Grid Infrastructure</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔌</div>
+                    <div class="card-title">
+                        <span class="category">Cross-Border</span>
+                        <h2>China-ASEAN Power Interconnection</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>China's SOEs expanding renewable energy investments across ASEAN region, with 21 central enterprises investing in 359 wind and solar projects across 47 countries.</p>
+                    <div class="highlight-box">
+                        <strong>Key Players:</strong>
+                        <ul>
+                            <li>Sinopec: Vietnam, Thailand renewable projects</li>
+                            <li>China Three Gorges: Southeast Asia hydropower</li>
+                            <li>State Power Investment Corporation: Regional expansion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">
+                        <span class="category">Supply Chain</span>
+                        <h2>Cisco SEA Supplier Energy Profile</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Understanding energy sources for Cisco's key suppliers in Vietnam, Thailand, and Philippines.</p>
+                    <div class="highlight-box">
+                        <strong>Energy Risk Assessment:</strong>
+                        <ul>
+                            <li>Grid carbon intensity varies significantly by country</li>
+                            <li>Renewable energy procurement opportunities expanding</li>
+                            <li>Regulatory requirements increasing for carbon disclosure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Policy Section -->
+        <section id="policy" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">Policy & Regulatory Updates</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-title">
+                        <span class="category">China</span>
+                        <h2>Zero-Carbon Factory Guidelines</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>MIIT Guidelines on Zero-Carbon Factory Construction (Order No. 13, 2026) - Issued January 14, 2026.</p>
+                    <div class="highlight-box">
+                        <strong>Implementation Timeline:</strong>
+                        <ul>
+                            <li><strong>2026:</strong> Pilot program in 50 cities</li>
+                            <li><strong>2027:</strong> Evaluation of pilot results</li>
+                            <li><strong>2028:</strong> Mandatory compliance for large facilities</li>
+                        </ul>
+                    </div>
+                    <div class="key-points">
+                        <h4>📋 Key Requirements</h4>
+                        <ul>
+                            <li>Carbon accounting for facilities >10,000 tons CO2/year</li>
+                            <li>Green electricity certificate procurement</li>
+                            <li>Renewable energy installation mandates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-title">
+                        <span class="category">National</span>
+                        <h2>2026 Government Work Report</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Premier Li Qiang's Government Work Report - NPC Session, March 5, 2026.</p>
+                    <div class="highlight-box">
+                        <strong>Carbon Commitments:</strong>
+                        <ul>
+                            <li>15th Five-Year Plan: 17% unit GDP emission reduction</li>
+                            <li>Deepen zero-carbon parks and factories construction</li>
+                            <li>Green and low-carbon development policy improvements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔋</div>
+                    <div class="card-title">
+                        <span class="category">ESG</span>
+                        <h2>Semiconductor Sustainability Forum 2026</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>SCC Sustainability and ESG Summit 2026 held March 27 in Shanghai alongside SEMICON China 2026.</p>
+                    <div class="highlight-box">
+                        <strong>Key Topics:</strong>
+                        <ul>
+                            <li>Low-carbon environmental protection</li>
+                            <li>Energy conservation and emission reduction</li>
+                            <li>ESG practices in semiconductor industry</li>
+                            <li>Supply chain water resource management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>Cisco Sustainability Intelligence Briefing | Generated Weekly</p>
+        <p>Sources: Vietnam MOTIT, ASEAN, China MIIT, Cisco, Green Peace</p>
+        <p style="margin-top: 15px;">🌿 <a href="https://tudi1133.github.io/cisco-sustainability-briefing/">View Full Briefing</a></p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

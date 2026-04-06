@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisco Sustainability Intel Briefing — Mar 23, 2026</title>
+  <style>
+    :root {
+      --cisco-blue: #049fd9;
+      --cisco-dark: #0d274d;
+      --cisco-mid: #1b3a5e;
+      --accent: #00bceb;
+      --green: #00c853;
+      --amber: #ffc107;
+      --red: #ef5350;
+      --text: #e8edf2;
+      --muted: #8ba4bc;
+      --surface: #0f2240;
+      --card: #132d4e;
+      --border: #1e3f63;
+      --highlight: rgba(0, 188, 235, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cisco-dark);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    .masthead {
+      background: linear-gradient(135deg, #071524 0%, #0d274d 60%, #0a3060 100%);
+      border-bottom: 2px solid var(--cisco-blue);
+      padding: 0;
+    }
+    .masthead-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 20px;
+    }
+    .journal-label {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--cisco-blue);
+      margin-bottom: 8px;
+    }
+    h1.title {
+      font-family: 'Georgia', serif;
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    h1.title span { color: var(--accent); }
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-bar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-bar span { display: flex; align-items: center; gap: 6px; }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 28px;
+    }
+    @media (max-width: 720px) {
+      .container { grid-template-columns: 1fr; }
+    }
+    main { min-width: 0; }
+    aside { min-width: 0; }
+    .section-label {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      border-left: 3px solid var(--cisco-blue);
+      padding-left: 8px;
+      margin-bottom: 10px;
+    }
+    h2 { font-size: 18px; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    h3 { font-size: 14px; color: var(--accent); margin-bottom: 6px; }
+    .exec-summary {
+      background: var(--highlight);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cisco-blue);
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #c5d8ea;
+    }
+    .exec-summary strong { color: #fff; }
+    .top3-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .intel-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .intel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(4,159,217,0.15);
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-badge {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .rank-1 { background: #ffd600; color: #000; }
+    .rank-2 { background: #b0bec5; color: #000; }
+    .rank-3 { background: #bf8c46; color: #fff; }
+    .card-header-text { flex: 1; }
+    .card-category {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      margin-bottom: 3px;
+    }
+    .card-header h3 { color: #fff; font-size: 15px; margin: 0; }
+    .card-body { padding: 14px 18px 16px; }
+    .card-body p { font-size: 13px; color: #b8cfe0; margin-bottom: 10px; }
+    .impact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .impact-label {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+    .impact-bar-bg {
+      flex: 1;
+      height: 6px;
+      background: #1a3352;
+      border-radius: 3px;
+    }
+    .impact-bar-fill { height: 6px; border-radius: 3px; transition: width 1s ease; }
+    .fill-high { background: linear-gradient(90deg, #00bceb, #00e676); }
+    .fill-med  { background: linear-gradient(90deg, #ffc107, #ff9800); }
+    .fill-score {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .cisco-justification {
+      background: rgba(0,188,235,0.07);
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 0 4px 4px 0;
+      font-size: 12px;
+      color: #9fbbd0;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .cisco-justification strong { color: var(--accent); }
+    .data-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .chip {
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .chip-green { border-color: var(--green); color: var(--green); background: rgba(0,200,83,0.08); }
+    .chip-blue  { border-color: var(--accent); color: var(--accent); background: rgba(0,188,235,0.08); }
+    .chip-amber { border-color: var(--amber); color: var(--amber); background: rgba(255,193,7,0.08); }
+    .data-section { margin-bottom: 32px; }
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 560px) { .data-grid { grid-template-columns: 1fr 1fr; } }
+    .data-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .data-stat .big {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .data-stat .unit { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .data-stat .desc { font-size: 10px; color: #7a96b0; margin-top: 5px; letter-spacing: 0.03em; }
+    .method-section { margin-bottom: 32px; }
+    .method-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .method-item:last-child { border-bottom: none; }
+    .method-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .method-text strong { color: #d0e8f5; display: block; margin-bottom: 3px; font-size: 13px; }
+    .method-text span { color: #8baabb; }
+    .strat-section { margin-bottom: 32px; }
+    .strat-box {
+      background: linear-gradient(135deg, #0e2d50 0%, #0a3060 100%);
+      border: 1px solid #2a5080;
+      border-radius: 8px;
+      padding: 20px 22px;
+      margin-top: 12px;
+    }
+    .strat-box h3 { color: var(--accent); font-size: 13px; margin-bottom: 8px; }
+    .strat-box p { font-size: 13px; color: #b0cce0; margin-bottom: 10px; }
+    .strat-box p:last-child { margin-bottom: 0; }
+    .strat-cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 18px;
+      background: var(--cisco-blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+    }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+    .sidebar-card h4 {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cisco-blue);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .signal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #0f1e30;
+      font-size: 12px;
+      color: #9fbbd0;
+    }
+    .signal-item:last-child { border-bottom: none; }
+    .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+    .sd-green { background: var(--green); }
+    .sd-amber { background: var(--amber); }
+    .sd-red   { background: var(--red); }
+    .risk-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid #0f1e30;
+      font-size: 11px;
+    }
+    .risk-row:last-child { border-bottom: none; }
+    .risk-name { color: #9fbbd0; }
+    .risk-badge {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      letter-spacing: 0.05em;
+    }
+    .rb-low    { background: rgba(0,200,83,0.15);  color: var(--green); }
+    .rb-med    { background: rgba(255,193,7,0.15);  color: var(--amber); }
+    .rb-high   { background: rgba(239,83,80,0.15);  color: var(--red); }
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 24px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 10px;
+      color: #4a6888;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="journal-label">Cisco Sustainability Intel Agent &nbsp;|&nbsp; Weekly Dispatch</div>
+    <h1 class="title">Supply Chain <span>Sustainability</span> Intelligence Brief</h1>
+    <div class="subtitle">Water Stewardship · Renewable Energy PPAs · SEA Green Policy · Carbon Neutrality · Green Finance</div>
+    <div class="meta-bar">
+      <span><span class="dot"></span> LIVE BRIEF</span>
+      <span>Issue Date: Monday, March 23, 2026</span>
+      <span>Coverage Window: Mar 16 – Mar 23, 2026</span>
+      <span>Focus Region: Vietnam &amp; Southeast Asia</span>
+      <span>Audience: Cisco Sustainability Managers</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+<main>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">
+    This week's intelligence reveals three high-impact developments shaping Cisco's Asia supply chain sustainability strategy. <strong>China's grid dominance in Southeast Asia</strong> is accelerating through power infrastructure partnerships, creating both renewable energy opportunities and geopolitical supply chain risks for electronics manufacturers. <strong>China's 2026 Government Work Report</strong> reinforces zero-carbon industrial park mandates, signaling tightened ESG requirements for suppliers. <strong>Cisco's 2026 sustainability roadmap</strong> centers on circular design, AI-driven energy efficiency, and quantum-readiness, providing a clear benchmark for supplier engagement. Together, these signals indicate that near-term supplier risk management must prioritize <strong>regulatory compliance, renewable energy procurement stability, and circular economy readiness</strong>.
+  </div>
+
+  <!-- TOP 3 ACTIONABLE INTEL -->
+  <div class="section-label">Top 3 Actionable Intelligence Items</div>
+  <div class="top3-grid">
+
+    <!-- CARD 1 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-1">1</div>
+        <div class="card-header-text">
+          <div class="card-category">Green Energy · Grid Infrastructure · China-SEA</div>
+          <h3>China's Power Grid Dominance in Southeast Asia — Opportunities &amp; Supply Chain Risks</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-blue">Grid infrastructure export</span>
+          <span class="chip chip-amber">Supply chain dependency risk</span>
+          <span class="chip chip-green">Renewable integration</span>
+        </div>
+        <p>China is leveraging power infrastructure partnerships to strengthen its economic influence across Southeast Asia. Through grid construction, renewable energy project development (wind, solar, hydro), and cross-border power trade agreements, China is binding regional economies to Chinese power infrastructure. The China-Laos 500kV interconnection project exemplifies this strategy, using drone and helicopter协同 transportation to minimize environmental impact while connecting renewable sources to regional grids.</p>
+        <div class="impact-row">
+          <span class="impact-label">IMPACT SCORE</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:88%"></div></div>
+          <span class="fill-score">8.8 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">SUPPLIER RISK</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-med" style="width:75%"></div></div>
+          <span class="fill-score">Medium–High</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>Why this matters for Cisco:</strong> Chinese-built and operated grids in SEA may create <strong>indirect dependency risks</strong> for Cisco's Vietnam and ASEAN suppliers. If renewable energy procurement relies on Chinese-managed grid infrastructure, political or economic disruptions could affect power supply stability. Cisco should map Tier-1 supplier energy sources against grid ownership/operation to identify concentration risks, and diversify renewable energy procurement across jurisdictions with independent grid infrastructure (e.g., Thailand, Malaysia with regional utilities).
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-2">2</div>
+        <div class="card-header-text">
+          <div class="card-category">ESG Policy · Zero-Carbon · China 2026</div>
+          <h3>China's 2026 Government Work Report — Zero-Carbon Parks &amp; Tighter ESG Requirements</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-green">Zero-carbon park mandates</span>
+          <span class="chip chip-blue">Green low-carbon policy</span>
+          <span class="chip chip-amber">Fifteenth Five-Year momentum</span>
+        </div>
+        <p>China's 2026 Government Work Report (presented March 5) emphasizes <strong>green low-carbon development policy</strong> with specific mandates for zero-carbon industrial parks and factories. The report outlines a comprehensive policy framework for decarbonizing industrial zones through integrated renewable energy, energy efficiency, and carbon management systems. This represents a tightening of environmental compliance requirements that will directly affect Cisco's suppliers operating in China.</p>
+        <div class="impact-row">
+          <span class="impact-label">IMPACT SCORE</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:85%"></div></div>
+          <span class="fill-score">8.5 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">COMPLIANCE PRESSURE</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:82%"></div></div>
+          <span class="fill-score">High</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>Why this matters for Cisco:</strong> Cisco suppliers in China face accelerating ESG compliance requirements as zero-carbon park mandates take effect. Suppliers in non-compliant zones risk operational restrictions, increased energy costs (if carbon pricing expands), and reputational damage. Cisco should proactively engage Chinese Tier-1 suppliers on <strong>zero-carbon transition roadmaps</strong>, prioritizing facilities in pilot zero-carbon industrial parks and offering technical assistance for ISO 14064 carbon accounting implementation.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="intel-card">
+      <div class="card-header">
+        <div class="rank-badge rank-3">3</div>
+        <div class="card-header-text">
+          <div class="card-category">Sustainability Tech · AI · Cisco 2026</div>
+          <h3>Cisco 2026 Sustainability: Circular Design, AI Energy Efficiency, Quantum Readiness</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="data-chips">
+          <span class="chip chip-green">100% circular design FY25</span>
+          <span class="chip chip-blue">AI energy optimization</span>
+          <span class="chip chip-amber">Quantum sustainability</span>
+        </div>
+        <p>Cisco's 2026 sustainability trends focus on three strategic pillars: <strong>circular design integration</strong> (confirmed 100% compliance for new products in FY25), <strong>AI-driven energy efficiency</strong> for data centers and network infrastructure, and <strong>quantum readiness</strong> including sustainability implications of quantum computing infrastructure. Cisco positions sustainability as a <strong>core business discipline</strong> rather than a standalone initiative, integrating ESG metrics into procurement, product lifecycle, and supplier management processes.</p>
+        <div class="impact-row">
+          <span class="impact-label">IMPACT SCORE</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:80%"></div></div>
+          <span class="fill-score">8.0 / 10</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">SUPPLIER ALIGNMENT</span>
+          <div class="impact-bar-bg"><div class="impact-bar-fill fill-high" style="width:78%"></div></div>
+          <span class="fill-score">High</span>
+        </div>
+        <div class="cisco-justification">
+          <strong>Why this matters for Cisco:</strong> Cisco's 2026 sustainability roadmap provides a clear <strong>supplier engagement benchmark</strong>. Suppliers must align with circular design principles (design for disassembly, material reuse), demonstrate AI-driven operational efficiency improvements, and prepare for emerging sustainability reporting requirements tied to quantum infrastructure. Cisco should update supplier scorecards to reflect these three pillars, with specific KPIs for circular material content, energy efficiency improvements, and ESG disclosure maturity levels aligned with ISSB standards.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KEY DATA POINTS -->
+  <div class="data-section">
+    <div class="section-label">Key Data Points This Week</div>
+    <div class="data-grid">
+      <div class="data-stat">
+        <div class="big">100%</div>
+        <div class="unit">Circular Design, Cisco FY25</div>
+        <div class="desc">All new Cisco products meet circular design principles</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">23%</div>
+        <div class="unit">ASEAN Renewable Target</div>
+        <div class="desc">Share of primary energy from renewables by 2025+</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">5x+</div>
+        <div class="unit">China-ASEAN Energy Investment</div>
+        <div class="desc">Growth since 2014 in hydro, wind, solar projects</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">500kV</div>
+        <div class="unit">China-Laos Grid</div>
+        <div class="desc">Cross-border power interconnection operational</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">Zero-Carbon</div>
+        <div class="unit">Industrial Parks Mandate</div>
+        <div class="desc">China 2026 Government Work Report policy</div>
+      </div>
+      <div class="data-stat">
+        <div class="big">2亿kW+</div>
+        <div class="unit">China New Wind/Solar</div>
+        <div class="desc">New renewable capacity target for 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY NOTES -->
+  <div class="method-section">
+    <div class="section-label">Methodology Notes</div>
+    <div class="method-item">
+      <div class="method-icon">⚡</div>
+      <div class="method-text">
+        <strong>China-SEA Grid Infrastructure Dependency Analysis</strong>
+        <span>China's power infrastructure export strategy in Southeast Asia involves building and operating grid systems, renewable energy projects, and cross-border interconnection lines. This creates <strong>indirect energy security dependencies</strong> for electronics manufacturers: if production facilities rely on Chinese-operated grids, energy supply decisions may be influenced by factors beyond local regulatory oversight. The China-Laos 500kV interconnection demonstrates both the scale of infrastructure investment and China's commitment to regional energy integration. For supply chain risk management, mapping supplier energy sources against grid ownership provides critical visibility into concentration risks.</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">🏭</div>
+      <div class="method-text">
+        <strong>Zero-Carbon Industrial Parks — Compliance Implications</strong>
+        <span>China's zero-carbon industrial park initiative requires comprehensive decarbonization of designated zones through renewable energy integration (onsite solar, wind, procurement), energy efficiency upgrades (smart grid, building automation), carbon management systems (monitoring, reporting, verification), and circular economy practices (waste heat recovery, water reuse). Suppliers in non-designated parks may face competitive disadvantages as ESG requirements tighten. Cisco's supplier engagement should prioritize facilities in or transitioning to zero-carbon park status, with particular attention to energy mix disclosure and carbon footprint documentation.</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">🔄</div>
+      <div class="method-text">
+        <strong>Circular Design — From Initiative to Standard Practice</strong>
+        <span>Cisco's confirmation of 100% circular design integration for FY25 products represents a shift from circularity as a sustainability initiative to circular design as a <strong>baseline product development requirement</strong>. This means material selection, disassembly design, and end-of-life planning are embedded at the design stage rather than addressed post-production. For suppliers, this translates to new requirements for material documentation (restricted substances, recycled content), design-for-disassembly compatibility, and participation in take-back programs. The operational impact includes reduced virgin material costs, lower end-of-life disposal liabilities, and improved ESG disclosure data quality.</span>
+      </div>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">🤖</div>
+      <div class="method-text">
+        <strong>AI-Driven Energy Efficiency in Data Centers</strong>
+        <span>AI optimization for data center energy management represents a significant operational efficiency opportunity. AI systems can dynamically adjust cooling, power distribution, and workload scheduling based on real-time conditions, reducing PUE (Power Usage Effectiveness) by 15-30% compared to static management approaches. For Cisco's own operations and supplier engagement, AI-driven energy efficiency should be treated as a <strong>near-term, high-ROI sustainability investment</strong> that simultaneously reduces costs and carbon footprint.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGIC RECOMMENDATION -->
+  <div class="strat-section">
+    <div class="section-label">Strategic Recommendation for Cisco Sustainability Managers</div>
+    <div class="strat-box">
+      <h3>Immediate Actions (Next 30 Days)</h3>
+      <p><strong>1. Map Supplier Energy Grid Dependencies:</strong> Survey Tier-1 and Tier-2 suppliers in Vietnam, Thailand, Malaysia, and China on their primary energy sources and grid operators. Identify facilities relying on Chinese-operated grid infrastructure and assess energy security risk levels. Prioritize renewable energy procurement diversification for high-risk sites.</p>
+      <p><strong>2. Engage Chinese Suppliers on Zero-Carbon Park Transition:</strong> For Cisco suppliers operating in China, initiate discussions on zero-carbon industrial park transition timelines and compliance requirements. Offer Cisco resources (technical guidance, ESG reporting templates, supplier training) to accelerate supplier readiness for tightened ESG requirements under the 2026 policy framework.</p>
+      <p><strong>3. Update Supplier Scorecards to Cisco 2026 Pillars:</strong> Revise supplier ESG scorecards to align with Cisco's three 2026 sustainability pillars: (a) circular design compliance rate, (b) AI-driven energy efficiency improvements, and (c) ISSB-aligned ESG disclosure maturity. Set 2026 targets and quarterly milestones for each pillar.</p>
+      <a class="strat-cta" href="#">Schedule Supplier ESG Review →</a>
+    </div>
+  </div>
+
+</main>
+
+<aside>
+
+  <!-- QUICK SIGNALS -->
+  <div class="sidebar-card">
+    <h4>Quick Signal Tracker</h4>
+    <div class="signal-item">
+      <div class="signal-dot sd-amber"></div>
+      <span>China-SEA grid infrastructure dependency creating energy security risks</span>
+    </div>
+    <div class="signal-item">
+      <div class="signal-dot sd-green"></div>
+      <span>China 2026 Government Work Report mandates zero-carbon industrial parks</span>
+    </div>
+    <div class="signal-item">
+      <div class="signal-dot sd-green"></div>
+      <span>Cisco confirms 100% circular design integration for FY25 products</span>
+    </div>
+    <div class="signal-item">
+      <div class="signal-dot sd-green"></div>
+      <span>China-Laos 500kV interconnection operational with drone transport</span>
+    </div>
+    <div class="signal-item">
+      <div class="signal-dot sd-green"></div>
+      <span>ASEAN-China clean energy investment grew 5x+ since 2014</span>
+    </div>
+    <div class="signal-item">
+      <div class="signal-dot sd-green"></div>
+      <span>Cisco 2026 AI energy efficiency: 15-30% PUE reduction potential</span>
+    </div>
+  </div>
+
+  <!-- WATER RISK MATRIX -->
+  <div class="sidebar-card">
+    <h4>Water Risk Radar — Supply Regions</h4>
+    <div class="risk-row">
+      <span class="risk-name">Vietnam (North)</span>
+      <span class="risk-badge rb-low">LOW</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Thailand (Chao Phraya)</span>
+      <span class="risk-badge rb-med">MEDIUM</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Taiwan (North)</span>
+      <span class="risk-badge rb-low">LOW</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">China (Yangtze)</span>
+      <span class="risk-badge rb-med">MEDIUM</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Southern India</span>
+      <span class="risk-badge rb-high">HIGH</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Malaysia (Selangor)</span>
+      <span class="risk-badge rb-low">LOW</span>
+    </div>
+  </div>
+
+  <!-- PPA STATUS TABLE -->
+  <div class="sidebar-card">
+    <h4>SEA Corporate PPA Readiness</h4>
+    <div class="risk-row">
+      <span class="risk-name">Vietnam</span>
+      <span class="risk-badge rb-low">ACTIVE</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Thailand</span>
+      <span class="risk-badge rb-low">ACTIVE</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Malaysia</span>
+      <span class="risk-badge rb-med">PILOT</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Indonesia</span>
+      <span class="risk-badge rb-med">DEVELOPING</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">Philippines</span>
+      <span class="risk-badge rb-med">LIMITED</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-name">China</span>
+      <span class="risk-badge rb-low">ACTIVE</span>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sidebar-card">
+    <h4>Source Provenance</h4>
+    <div style="font-size:10px; color:#6a8aaa; line-height:1.8;">
+      <div>📄 163.com — China-SEA Power Grid Strategy, Mar 19, 2026</div>
+      <div>📄 Xinhua — China 2026 Government Work Report, Mar 13, 2026</div>
+      <div>📄 China News — Zero-Carbon Parks Policy, Mar 18, 2026</div>
+      <div>📄 China News Service — China-Laos Grid, Mar 23, 2026</div>
+      <div>📄 Cisco Blogs — Sustainability Trends 2026, Jan 9, 2026</div>
+      <div>📄 Commonshare — Cisco Circular Design AI Efficiency, Jan 9, 2026</div>
+      <div style="margin-top:8px; color:#3a5a78;">Coverage: Mar 16–23, 2026</div>
+    </div>
+  </div>
+
+</aside>
+</div>
+
+<footer>
+  <span>© 2026 Cisco Sustainability Intelligence — Internal Use Only</span>
+  <span>Cisco Sustainability Intel Agent · Automated Weekly Dispatch</span>
+  <span>Next issue: Mon Mar 30, 2026</span>
+</footer>
+
+</body>
+</html>

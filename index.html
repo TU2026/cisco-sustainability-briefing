@@ -120,6 +120,31 @@
             font-size: 0.8em;
         }
         .footer a { color: #049fd9; text-decoration: none; }
+        .archive-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        .archive-link:hover {
+            border-color: #049fd9;
+            color: #e2e8f0;
+            background: rgba(4,159,217,0.05);
+        }
+        .archive-count {
+            background: rgba(100,116,139,0.2);
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.78em;
+            color: #64748b;
+        }
         @media (max-width: 500px) {
             .cards { grid-template-columns: 1fr; }
             h1 { font-size: 1.7em; }
@@ -151,6 +176,11 @@
             <div class="card-arrow">→</div>
         </a>
     </div>
+
+    <a href="archive/" class="archive-link">
+        📁 往期简报归档 · Archive
+        <span class="archive-count">4 issues</span>
+    </a>
 
     <div class="footer">
         <p>Cisco Sustainability Intelligence Briefing · Published every Monday</p>

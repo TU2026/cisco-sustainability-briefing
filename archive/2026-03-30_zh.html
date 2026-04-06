@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco 可持续发展情报简报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); min-height: 100vh; color: #e2e8f0; }
+        .header { background: rgba(0,0,0,0.3); padding: 40px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .header h1 { font-size: 2.5em; color: #38bdf8; margin-bottom: 10px; }
+        .header p { color: #94a3b8; font-size: 1.1em; }
+        .header .date { color: #f59e0b; font-weight: 600; margin-top: 10px; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .lang-btn { background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+        .lang-btn:hover { background: #38bdf8; color: #0a1628; }
+        .nav-tabs { display: flex; justify-content: center; background: rgba(0,0,0,0.2); padding: 0; gap: 4px; flex-wrap: wrap; }
+        .nav-tab { padding: 15px 30px; background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 16px; transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .nav-tab:hover { color: #38bdf8; }
+        .nav-tab.active { color: #38bdf8; border-bottom-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .card-header { display: flex; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        .card-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-right: 15px; flex-shrink: 0; }
+        .card-title { flex: 1; min-width: 200px; }
+        .card-title h2 { font-size: 1.4em; color: #f1f5f9; margin-bottom: 5px; }
+        .card-title .category { color: #38bdf8; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        .impact-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0a1628; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 700; }
+        .card-content { color: #cbd5e1; line-height: 1.8; font-size: 1.05em; }
+        .card-content ul { margin: 15px 0; padding-left: 25px; }
+        .card-content li { margin-bottom: 10px; }
+        .card-content strong { color: #38bdf8; }
+        .highlight-box { background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.15)); border-left: 4px solid #38bdf8; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .key-points { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 15px 20px; margin-top: 15px; }
+        .key-points h4 { color: #f59e0b; margin-bottom: 10px; }
+        .key-points li { color: #fef3c7; }
+        .footer { text-align: center; padding: 40px 20px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+        .footer a { color: #38bdf8; text-decoration: none; }
+        .qr-section { text-align: center; margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+        .qr-section img { width: 200px; height: 200px; border-radius: 8px; }
+        .timeline { border-left: 2px solid #38bdf8; padding-left: 30px; margin-left: 25px; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -36px; width: 12px; height: 12px; background: #38bdf8; border-radius: 50%; }
+        .timeline-date { color: #f59e0b; font-weight: 600; margin-bottom: 5px; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .container { padding: 20px 15px; } .nav-tab { padding: 12px 15px; font-size: 14px; } }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="location.href='cisco_sustainability_briefing.html'">English</button>
+    </div>
+    
+    <header class="header">
+        <h1>🌿 Cisco 可持续发展情报简报</h1>
+        <p>每周情报简报 | 2026年3月30日周</p>
+        <p class="date">📅 更新日期: 2026年3月30日</p>
+    </header>
+    
+    <nav class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('overview')">总览</button>
+        <button class="nav-tab" onclick="showSection('vietnam')">越南PPA</button>
+        <button class="nav-tab" onclick="showSection('sea')">东南亚绿能</button>
+        <button class="nav-tab" onclick="showSection('china')">中国电网</button>
+        <button class="nav-tab" onclick="showSection('policy')">政策动态</button>
+    </nav>
+    
+    <div class="container">
+        <!-- 总览 Section -->
+        <section id="overview" class="section active">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">本周重点情报</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🇻🇳</div>
+                    <div class="card-title">
+                        <span class="category">政策</span>
+                        <h2>越南调整国家能源总体规划</h2>
+                    </div>
+                    <span class="impact-badge">影响度: 8.8/10</span>
+                </div>
+                <div class="card-content">
+                    <p>2026年3月24日，越南工贸部发布第363/2026/QD-BCT号决定，批准对2021年至2030年展望及至2050年的国家能源总体规划进行调整。</p>
+                    <div class="highlight-box">
+                        <strong>关键调整:</strong>
+                        <ul>
+                            <li>可再生能源装机目标提高15-20%</li>
+                            <li>电网基础设施投资加速，新增120亿美元</li>
+                            <li>DPPA参与者强制采用两部制电价</li>
+                        </ul>
+                    </div>
+                    <p><strong>对Cisco供应链影响:</strong> 越南EMS供应商可能面临新的合规要求。屋顶光伏激励政策可能影响设施能源成本。</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌏</div>
+                    <div class="card-title">
+                        <span class="category">市场</span>
+                        <h2>中国-东盟清洁能源合作峰会</h2>
+                    </div>
+                    <span class="impact-badge">影响度: 8.5/10</span>
+                </div>
+                <div class="card-content">
+                    <p>中国-东盟清洁能源合作峰会定于2026年5月22日在北京举办，多个东盟国家驻华使馆和中国行业协会联合主办。</p>
+                    <div class="highlight-box">
+                        <strong>战略意义:</strong>
+                        <ul>
+                            <li>中国在东盟可再生能源投资较2014年增长超5倍</li>
+                            <li>累计风电光伏装机容量接近6000万千瓦</li>
+                            <li>跨境电力贸易框架正在谈判中</li>
+                        </ul>
+                    </div>
+                    <p><strong>Cisco相关性:</strong> 供应链脱碳路径可借助东盟光伏/风电采购机会。</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-title">
+                        <span class="category">政策</span>
+                        <h2>中国强制推行零碳工厂</h2>
+                    </div>
+                    <span class="impact-badge">影响度: 8.2/10</span>
+                </div>
+                <div class="card-content">
+                    <p>2026年1月14日，中国工信部发布《关于开展零碳工厂建设工作的指导意见》（工信部联节〔2026〕13号），建立零碳制造国家标准。</p>
+                    <div class="highlight-box">
+                        <strong>主要要求:</strong>
+                        <ul>
+                            <li>第一阶段: 2027年前在50个城市开展零碳工业园区试点</li>
+                            <li>年排放超1万吨企业强制碳核算</li>
+                            <li>绿色电力证书采购要求</li>
+                        </ul>
+                    </div>
+                    <p><strong>供应链影响:</strong> 中国一二线供应商须在2028年前建立碳核算体系。</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-title">
+                        <span class="category">市场</span>
+                        <h2>中国央企在东南亚扩大新能源投资</h2>
+                    </div>
+                    <span class="impact-badge">影响度: 7.8/10</span>
+                </div>
+                <div class="card-content">
+                    <p>截至2025年6月30日，中国21家央企已在全球47个国家投资359个风电和光伏项目，累计装机容量接近6000万千瓦。</p>
+                    <div class="highlight-box">
+                        <strong>最新动态:</strong>
+                        <ul>
+                            <li>中石化、三峡集团在越南、泰国、菲律宾扩展项目</li>
+                            <li>华晟+中铁上海局+浙商中拓在东盟签署400MW光伏合作</li>
+                            <li>东盟风能博览会3月25-27日在曼谷开幕</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">
+                        <span class="category">Cisco</span>
+                        <h2>Cisco 2026可持续发展战略</h2>
+                    </div>
+                    <span class="impact-badge">影响度: 7.5/10</span>
+                </div>
+                <div class="card-content">
+                    <p>Cisco 2026年可持续发展趋势分析强调将可持续性作为核心业务 discipline，超出独立倡议范畴。</p>
+                    <div class="highlight-box">
+                        <strong>重点领域:</strong>
+                        <ul>
+                            <li>循环经济产品设计原则</li>
+                            <li>AI驱动的能效优化</li>
+                            <li>范围三供应链脱碳加速</li>
+                            <li>量子就绪基础设施规划</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <h3 style="color: #f1f5f9; margin-bottom: 20px;">扫码访问完整简报</h3>
+                <img src="cisco_briefing_qr.png" alt="简报二维码" onerror="this.style.display='none'">
+                <p style="color: #94a3b8; margin-top: 15px;">网站: <a href="https://tudi1133.github.io/cisco-sustainability-briefing/" style="color: #38bdf8;">tudi1133.github.io/cisco-sustainability-briefing</a></p>
+            </div>
+        </section>
+        
+        <!-- 越南 Section -->
+        <section id="vietnam" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">越南PPA政策动态</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📜</div>
+                    <div class="card-title">
+                        <span class="category">第58/2025号法令</span>
+                        <h2>可再生能源和新能源电力发展优惠政策</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>2025年3月3日，越南政府颁布第58/2025/NĐ-CP号法令，详细规定《电力法》中关于可再生能源和新能源电力发展的若干条款。</p>
+                    <div class="highlight-box">
+                        <strong>核心条款:</strong>
+                        <ul>
+                            <li>建立直接电力购买协议(DPPA)框架</li>
+                            <li>并网储能系统可享受激励政策</li>
+                            <li>两部制电价（固定+浮动）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title">
+                        <span class="category">总体规划</span>
+                        <h2>第363/2026号决定：国家能源规划调整</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>2026年3月24日发布的第363/2026/QD-BCT号决定调整越南2021-2030年国家能源总体规划。</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025年3月3日</div>
+                            <p>第58/2025号法令建立DPPA框架</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025年9月16日</div>
+                            <p>决议支持两部制电价</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026年3月24日</div>
+                            <p>第363/2026号决定调整国家能源目标</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-title">
+                        <span class="category">投资风险</span>
+                        <h2>28家外资投资者联合致信</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>28家外资及本土投资商联名向越南政府致信，表达对政策波动和限电风险的担忧。</p>
+                    <div class="key-points">
+                        <h4>⚠️ 风险因素</h4>
+                        <ul>
+                            <li>追溯修改已签署的购电协议</li>
+                            <li>光伏/风电项目面临电网限电</li>
+                            <li>DPPA实施时间表不确定</li>
+                        </ul>
+                    </div>
+                    <p><strong>Cisco供应商风险:</strong> 越南EMS供应商可能面临能源成本波动。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 东南亚 Section -->
+        <section id="sea" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">东南亚绿色能源</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌊</div>
+                    <div class="card-title">
+                        <span class="category">风电</span>
+                        <h2>2026东盟风能博览会</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>2026东盟风能博览会于3月25-27日在泰国曼谷IMPACT展览中心盛大开幕。</p>
+                    <div class="highlight-box">
+                        <strong>市场亮点:</strong>
+                        <ul>
+                            <li>东盟风电技术可开发总量: 1,112吉瓦</li>
+                            <li>预计2025年装机容量突破1亿千瓦</li>
+                            <li>越南、泰国、菲律宾领跑增长</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">☀️</div>
+                    <div class="card-title">
+                        <span class="category">光伏</span>
+                        <h2>中国-东盟400MW光伏合作</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>2026年3月24日，华晟新能源与中铁上海工程局、浙商中拓光盈、特变电工签署战略合作谅解备忘录，联合开拓东南亚光伏市场。</p>
+                    <div class="highlight-box">
+                        <strong>合作模式:</strong>
+                        <ul>
+                            <li>部署高效异质结(HET)电池</li>
+                            <li>合资开发东盟项目</li>
+                            <li>目标pipeline: 400兆瓦</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌏</div>
+                    <div class="card-title">
+                        <span class="category">中国-东盟</span>
+                        <h2>清洁能源合作框架</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>中国-东盟清洁能源合作峰会定于2026年5月22日在北京举办。</p>
+                    <div class="highlight-box">
+                        <strong>投资趋势:</strong>
+                        <ul>
+                            <li>中国在东盟可再生能源累计投资: 较2014年增长5倍</li>
+                            <li>总装机容量: 约6000万千瓦，覆盖47国</li>
+                            <li>跨境电力贸易谈判进行中</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 中国 Section -->
+        <section id="china" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">中国-东南亚电网基础设施</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔌</div>
+                    <div class="card-title">
+                        <span class="category">跨境互联</span>
+                        <h2>中国-东盟电力互联</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>中国央企在东盟地区扩大可再生能源投资，21家央企在47个国家投资359个风电和光伏项目。</p>
+                    <div class="highlight-box">
+                        <strong>主要企业:</strong>
+                        <ul>
+                            <li>中石化: 越南、泰国可再生能源项目</li>
+                            <li>三峡集团: 东南亚水电</li>
+                            <li>国电投: 区域扩展</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">
+                        <span class="category">供应链</span>
+                        <h2>Cisco东南亚供应商能源画像</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>了解Cisco在越南、泰国和菲律宾主要供应商的能源来源。</p>
+                    <div class="highlight-box">
+                        <strong>能源风险评估:</strong>
+                        <ul>
+                            <li>电网碳强度因国家差异显著</li>
+                            <li>可再生能源采购机会扩大</li>
+                            <li>碳披露监管要求增加</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 政策 Section -->
+        <section id="policy" class="section">
+            <h1 style="font-size: 2em; margin-bottom: 30px; color: #38bdf8;">政策与监管动态</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-title">
+                        <span class="category">中国</span>
+                        <h2>零碳工厂建设指导意见</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>工信部《关于开展零碳工厂建设工作的指导意见》（工信部联节〔2026〕13号）- 2026年1月14日发布。</p>
+                    <div class="highlight-box">
+                        <strong>实施时间表:</strong>
+                        <ul>
+                            <li><strong>2026年:</strong> 50个城市试点</li>
+                            <li><strong>2027年:</strong> 试点评估</li>
+                            <li><strong>2028年:</strong> 大型设施强制合规</li>
+                        </ul>
+                    </div>
+                    <div class="key-points">
+                        <h4>📋 主要要求</h4>
+                        <ul>
+                            <li>年排放超1万吨企业碳核算</li>
+                            <li>绿色电力证书采购</li>
+                            <li>可再生能源安装要求</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-title">
+                        <span class="category">国家政策</span>
+                        <h2>2026年政府工作报告</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>李强总理全国人大会议政府工作报告 - 2026年3月5日。</p>
+                    <div class="highlight-box">
+                        <strong>碳承诺:</strong>
+                        <ul>
+                            <li>十五五: 单位GDP排放降低17%</li>
+                            <li>深入推进零碳园区和工厂建设</li>
+                            <li>完善绿色低碳发展政策</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔋</div>
+                    <div class="card-title">
+                        <span class="category">ESG</span>
+                        <h2>SCC可持续发展与ESG高峰论坛2026</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>SCC可持续发展与ESG高峰论坛2026于3月27日在上海浦东嘉里大酒店成功举办，与SEMICON China 2026同期举办。</p>
+                    <div class="highlight-box">
+                        <strong>核心议题:</strong>
+                        <ul>
+                            <li>低碳环保</li>
+                            <li>节能减排</li>
+                            <li>半导体行业ESG实践</li>
+                            <li>供应链水资源管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>Cisco 可持续发展情报简报 | 每周自动生成</p>
+        <p>数据来源: 越南工贸部、东盟、中国工信部、Cisco、绿色和平组织</p>
+        <p style="margin-top: 15px;">🌿 <a href="https://tudi1133.github.io/cisco-sustainability-briefing/">查看完整简报</a></p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

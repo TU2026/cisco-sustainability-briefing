@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco 可持续发展情报简报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); min-height: 100vh; color: #e2e8f0; }
+        .header { background: rgba(0,0,0,0.3); padding: 40px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .header h1 { font-size: 2.3em; color: #38bdf8; margin-bottom: 10px; }
+        .header p { color: #94a3b8; font-size: 1.05em; }
+        .header .date { color: #f59e0b; font-weight: 600; margin-top: 10px; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .lang-btn { background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .lang-btn:hover { background: #38bdf8; color: #0a1628; }
+        .nav-tabs { display: flex; justify-content: center; background: rgba(0,0,0,0.2); padding: 0; gap: 4px; flex-wrap: wrap; }
+        .nav-tab { padding: 15px 22px; background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 15px; transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .nav-tab:hover { color: #38bdf8; }
+        .nav-tab.active { color: #38bdf8; border-bottom-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .card-header { display: flex; align-items: flex-start; margin-bottom: 20px; }
+        .card-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-right: 15px; flex-shrink: 0; }
+        .card-title { flex: 1; }
+        .card-title h2 { font-size: 1.35em; color: #f1f5f9; margin-bottom: 5px; line-height: 1.4; }
+        .card-title .category { color: #38bdf8; font-size: 0.9em; letter-spacing: 0.5px; }
+        .impact-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0a1628; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 700; white-space: nowrap; }
+        .impact-high { background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; }
+        .impact-med { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0a1628; }
+        .card-content { color: #cbd5e1; line-height: 1.9; font-size: 1.02em; }
+        .card-content ul { margin: 15px 0; padding-left: 25px; }
+        .card-content li { margin-bottom: 10px; }
+        .card-content strong { color: #38bdf8; }
+        .highlight-box { background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.15)); border-left: 4px solid #38bdf8; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .key-points { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 15px 20px; margin-top: 15px; }
+        .key-points h4 { color: #f59e0b; margin-bottom: 10px; }
+        .key-points li { color: #fef3c7; }
+        .executive-summary { background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(99,102,241,0.1)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 30px; margin-bottom: 30px; }
+        .executive-summary h2 { color: #38bdf8; font-size: 1.6em; margin-bottom: 15px; }
+        .executive-summary p { color: #cbd5e1; line-height: 2; font-size: 1.02em; }
+        .top3-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .top3-item { background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 12px; padding: 20px; }
+        .top3-item .rank { font-size: 2.5em; font-weight: 900; color: #f59e0b; margin-bottom: 8px; }
+        .top3-item h3 { color: #f1f5f9; font-size: 1.05em; margin-bottom: 10px; line-height: 1.5; }
+        .top3-item .importance { color: #fde68a; font-size: 0.95em; line-height: 1.8; border-top: 1px solid rgba(245,158,11,0.2); padding-top: 10px; margin-top: 10px; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .data-point { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        .data-point .value { font-size: 2em; font-weight: 700; color: #38bdf8; margin-bottom: 5px; }
+        .data-point .label { color: #94a3b8; font-size: 0.88em; line-height: 1.5; }
+        .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .strategy-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .strategy-box h3 { color: #38bdf8; margin-bottom: 15px; font-size: 1.05em; }
+        .strategy-box li { color: #cbd5e1; margin-bottom: 8px; line-height: 1.6; }
+        .footer { text-align: center; padding: 40px 20px; color: #64748b; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+        .footer a { color: #38bdf8; text-decoration: none; }
+        .qr-section { text-align: center; margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+        .qr-section img { width: 180px; height: 180px; border-radius: 8px; }
+        .timeline { border-left: 2px solid #38bdf8; padding-left: 30px; margin-left: 15px; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -36px; width: 12px; height: 12px; background: #38bdf8; border-radius: 50%; }
+        .timeline-date { color: #f59e0b; font-weight: 600; margin-bottom: 5px; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.6em; } .container { padding: 20px 15px; } .nav-tab { padding: 12px 10px; font-size: 13px; } .strategy-grid { grid-template-columns: 1fr; } .top3-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <a href="cisco_sustainability_briefing.html" class="lang-btn">🌐 English</a>
+</div>
+
+<div class="header">
+    <h1>🌿 Cisco 可持续发展情报简报</h1>
+    <p>每周情报报告 — 越南PPA · 东南亚绿色能源 · 供应链水资源 · 碳中和进展</p>
+    <div class="date">📅 2026年4月6日当周 | 自动化每周简报</div>
+</div>
+
+<div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('overview')">📊 总览</button>
+    <button class="nav-tab" onclick="showSection('vietnam')">🇻🇳 越南PPA</button>
+    <button class="nav-tab" onclick="showSection('sea')">🌏 东南亚能源</button>
+    <button class="nav-tab" onclick="showSection('cisco')">🏢 Cisco动态</button>
+    <button class="nav-tab" onclick="showSection('water')">💧 水资源风险</button>
+    <button class="nav-tab" onclick="showSection('carbon')">🌱 碳中和</button>
+</div>
+
+<!-- 总览 -->
+<div id="overview" class="section active">
+    <div class="container">
+
+        <div class="executive-summary">
+            <h2>📋 执行摘要</h2>
+            <p>本周可持续发展领域由三股力量主导：其一，越南企业直接购电协议（DPPA）法律框架（第80号法令）正进入落地执行阶段，金杜律师事务所（2026年3月30日）发布最新实操指南；其二，半导体供应链水资源风险意识急速上升——SEMI协会3月28日发布的《涟漪效应》报告证实，2012年后新建超过40%的半导体工厂位于预计2030年前面临高度水压力的流域，直接威胁Cisco的PCB及元器件供应基础；其三，Cisco首席可持续发展官（CSO）Mary de Wysocki阐述了2026年五大可持续发展趋势，宣布100%新产品已嵌入循环设计原则，并将AI能效与量子就绪基础设施列为长期韧性的核心支柱。</p>
+        </div>
+
+        <h2 style="color:#f59e0b; margin-bottom:20px; font-size:1.4em;">🏆 本周Top 3 最值得行动的发现</h2>
+        <div class="top3-grid">
+            <div class="top3-item">
+                <div class="rank">#1</div>
+                <h3>SEMI《涟漪效应》报告：40%以上新建工厂将面临2030年水危机</h3>
+                <div class="importance">
+                    <strong>对Cisco的重要性：</strong>FY25已追踪15家PCB供应商（总取水量3763万m³），报告证实这是系统性供应链水风险。Cisco最优供应商WUS昆山（0.1545 m³/m²）与最差Gold TW（1.7916 m³/m²）之间存在11倍效率差距——需制定差异化供应商发展战略，控制物理和声誉风险。
+                </div>
+            </div>
+            <div class="top3-item">
+                <div class="rank">#2</div>
+                <h3>越南第80号法令DPPA框架：企业绿色购电进入执行阶段</h3>
+                <div class="importance">
+                    <strong>对Cisco的重要性：</strong>Cisco在评估越南代工厂商的可再生能源采购路径时，两种DPPA模式（专用线路 vs. 金融合约）提供了清晰的法律机制。然而货币、反暴利条款、电网拥堵等条款需要深入尽职调查——Cisco采购与法律团队应立即开展供应商准备度评估。
+                </div>
+            </div>
+            <div class="top3-item">
+                <div class="rank">#3</div>
+                <h3>Cisco CSO宣布：100%新产品已嵌入循环设计原则</h3>
+                <div class="importance">
+                    <strong>对Cisco的重要性：</strong>这一里程碑兑现了FY26循环设计承诺，使Cisco在欧盟《可持续产品生态设计法规》（ESPR）要求正式实施前占据有利地位，并强化了围绕材料效率的供应商协作——这是Scope 3减排的关键杠杆。
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color:#38bdf8; margin-bottom:20px; font-size:1.4em;">📈 关键数据点</h2>
+        <div class="data-grid">
+            <div class="data-point">
+                <div class="value">3763万</div>
+                <div class="label">m³ FY25 PCB供应商总取水量</div>
+            </div>
+            <div class="data-point">
+                <div class="value">40%+</div>
+                <div class="label">2012年后新建半导体工厂将面临2030高度水压力</div>
+            </div>
+            <div class="data-point">
+                <div class="value">240亿</div>
+                <div class="label">美元 2050年全球IT水风险年损失估算</div>
+            </div>
+            <div class="data-point">
+                <div class="value">100%</div>
+                <div class="label">Cisco新产品已嵌入循环设计原则 (FY26)</div>
+            </div>
+            <div class="data-point">
+                <div class="value">3倍</div>
+                <div class="label">AI驱动美国数据中心电网需求2030年预计增长</div>
+            </div>
+            <div class="data-point">
+                <div class="value">2040</div>
+                <div class="label">Cisco价值链净零GHG目标年</div>
+            </div>
+        </div>
+
+        <h2 style="color:#38bdf8; margin-bottom:20px; font-size:1.4em;">🎯 战略建议</h2>
+        <div class="strategy-grid">
+            <div class="strategy-box">
+                <h3>⚡ 短期行动（0–3个月）</h3>
+                <ul>
+                    <li>梳理越南PCB/EMS供应商对第80号法令DPPA的准备度，识别Top 5候选进行绿电PPA试点</li>
+                    <li>将SEMI《涟漪效应》流域数据整合进Cisco供应商风险评分模型</li>
+                    <li>向采购团队传达金杜律师事务所DPPA法律分析（2026年3月30日）</li>
+                    <li>优先对末位PCB供应商（Gold TW: 1.79 m³/m²）制定水效改善计划</li>
+                </ul>
+            </div>
+            <div class="strategy-box">
+                <h3>🚀 中期行动（3–12个月）</h3>
+                <ul>
+                    <li>建立越南DPPA采购框架——治理规则、法律模板、汇率风险对冲方案</li>
+                    <li>在高风险供应商集群（台湾、韩国）启动流域层面水资源管理合作伙伴关系</li>
+                    <li>将Cisco Silicon One芯片能效数据与客户ESG报告需求对齐</li>
+                    <li>建立PCB供应链Scope 3供应商水资源与碳排放KPI季度看板</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="qr-section">
+            <p style="color:#94a3b8; margin-bottom:15px;">📱 扫码在手机上访问本简报</p>
+            <img src="cisco_briefing_qr.png" alt="简报二维码">
+            <p style="color:#64748b; margin-top:10px; font-size:0.9em;"><a href="https://tudi1133.github.io/cisco-sustainability-briefing/" target="_blank">https://tudi1133.github.io/cisco-sustainability-briefing/</a></p>
+        </div>
+
+    </div>
+</div>
+
+<!-- 越南PPA -->
+<div id="vietnam" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">⚡</div>
+                <div class="card-title">
+                    <div class="category">越南 · 企业购电协议 · 第80号法令</div>
+                    <h2>越南绿色能源大门敞开：企业PPA进入落地执行阶段</h2>
+                </div>
+                <span class="impact-badge impact-high">高影响</span>
+            </div>
+            <div class="card-content">
+                <div class="highlight-box">
+                    <strong>来源：</strong>金杜律师事务所（2026年3月30日）| IEEFA | Vietnam Briefing<br>
+                    <strong>背景：</strong>越南第80/2024/ND-CP号法令确立了两条DPPA路径；第57号法令（2025年10月）进一步完善了框架。
+                </div>
+                <p>越南直接购电协议（DPPA）生态系统正在快速成熟。继2024年7月3日颁布第80号法令，以及2025年10月进一步细化的第57号法令，企业绿色能源采购的法律基础设施已基本到位——尽管关键执行细节仍在明确中。</p>
+                <ul>
+                    <li><strong>两条DPPA路径：</strong>（1）专用物理线路——可再生能源开发商与企业用户之间直接双边交易；（2）通过国家电网的金融合约——开发商向EVN售电，企业用户从EVN购电，差价合约（CfD）结算价差</li>
+                    <li><strong>战略驱动力：</strong>越南制造业竞争力与可再生能源获取直接挂钩；有ESG承诺的跨国企业（包括Cisco供应商）面临越来越大的绿色采购压力</li>
+                    <li><strong>关键待解问题：</strong>PPA合同中的货币/汇率指数化；反暴利干预风险；电网拥堵风险分配；项目开发商融资担保权利</li>
+                    <li><strong>后续改革路线：</strong>将国家电力系统调度中心从EVN剥离；出台海上风电法规；颁布新《电力法》；推出小型屋顶光伏余电上网收购方案</li>
+                </ul>
+                <div class="key-points">
+                    <h4>🎯 Cisco相关性</h4>
+                    <ul>
+                        <li>越南代工厂商（富士康越南、伟创力等）是DPPA试点项目的最佳候选</li>
+                        <li>越南盾/美元合同中的汇率风险是重大障碍——Cisco应与财务顾问共同评估对冲结构</li>
+                        <li>第57号法令在第80号法令实施仅8个月后即出台，表明政策持续演变——建议每季度跟踪</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">☀️</div>
+                <div class="card-title">
+                    <div class="category">越南 · 可再生能源前景 · 2026</div>
+                    <h2>越南2026年可再生能源展望：光储一体化加速扩展</h2>
+                </div>
+                <span class="impact-badge impact-med">中等影响</span>
+            </div>
+            <div class="card-content">
+                <p>2026年越南可再生能源发展轨迹表现出强劲动能，主要由制造业需求驱动。随着竞争性招标取代固定上网电价，国家能源结构正在转变。</p>
+                <ul>
+                    <li><strong>光储加速：</strong>全球太阳能和电池储能成本持续下降，越南正从固定FiT过渡到标准化竞争招标，为项目融资创造更好条件</li>
+                    <li><strong>制造业纽带：</strong>越南作为全球供应链（含电子制造）制造目的地的吸引力，日益与提供经过核实的绿色能源采购能力挂钩</li>
+                    <li><strong>第八期电力发展规划：</strong>2025年Decision 768/QD修订案将离岸风电和大规模太阳能确立为越南2030年能源组合的骨干</li>
+                    <li><strong>美国关税背景：</strong>越南太阳能战略正在美国贸易紧张（RMIT，2025年5月）的背景下重新评估——国内太阳能需求正变得比出口导向更为重要</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 东南亚能源 -->
+<div id="sea" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🌏</div>
+                <div class="card-title">
+                    <div class="category">东南亚 · 能源转型 · 区域电网</div>
+                    <h2>2026年东盟能源：中国-东南亚能源互联互通加速推进</h2>
+                </div>
+                <span class="impact-badge impact-med">中等影响</span>
+            </div>
+            <div class="card-content">
+                <div class="highlight-box">
+                    <strong>来源：</strong>东盟能源中心《2026年东盟能源》| Springer 中国-东南亚能源合作（2026年1月）| SEA Public Policy
+                </div>
+                <p>中国-东南亚能源关系正进入结构性整合新阶段，中国双碳目标与东南亚对清洁能源投资和基础设施的需求形成互补。</p>
+                <ul>
+                    <li><strong>中国双碳驱动：</strong>中国2030年前碳达峰、2060年前碳中和的承诺正在创造跨境清洁能源贸易需求，东南亚提供互补的风能、太阳能和水电资源</li>
+                    <li><strong>电网互联互通：</strong>中国电力科学研究院（SGCC）建议东南亚国家借鉴中国在可再生能源并网和大规模电网建设运营方面的工程经验</li>
+                    <li><strong>2026年亚洲可持续能源周：</strong>行业峰会（2026年5月，曼谷）将讨论清洁能源转型、储能技术和跨境监管框架——是获取供应链可持续发展情报的重要渠道</li>
+                    <li><strong>南南合作框架：</strong>中国在东南亚能源转型中的角色日益通过发展合作渠道体现，对技术标准和供应链对齐具有影响</li>
+                </ul>
+                <div class="key-points">
+                    <h4>🎯 Cisco相关性</h4>
+                    <ul>
+                        <li>区域电网互联互通最终可实现可再生能源凭证（REC）和能源属性证书（EAC）跨境流转——扩展Cisco在马来西亚、泰国、越南的绿电选项</li>
+                        <li>关注东盟电力网（APG）进展——跨境REC框架是东南亚Scope 2市场化核算的前提条件</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📊</div>
+                <div class="card-title">
+                    <div class="category">东南亚 · 投资 · 市场规模</div>
+                    <h2>东南亚可再生能源市场2025–2026：区域投资格局分析</h2>
+                </div>
+                <span class="impact-badge">信息参考</span>
+            </div>
+            <div class="card-content">
+                <p>Source of Asia市场情报报告（2025年5月）和东盟能源中心2026年旗舰出版物提供了印度尼西亚、越南、泰国、菲律宾和马来西亚可再生能源投资流向和政策框架的最新背景。</p>
+                <ul>
+                    <li><strong>政策差异化：</strong>各东盟成员国拥有不同的可再生能源框架——越南DPPA比印度尼西亚B2B模式或泰国VSPP方案更为成熟</li>
+                    <li><strong>企业需求驱动：</strong>有净零承诺的跨国制造商是整个地区企业PPA的主要需求方</li>
+                    <li><strong>投资优先领域：</strong>太阳能、离岸风电和电网级储能是前三大投资品类；绿色氢能尚在早期，但政策关注度上升</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cisco动态 -->
+<div id="cisco" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🏢</div>
+                <div class="card-title">
+                    <div class="category">Cisco · 首席可持续发展官 · 2026趋势</div>
+                    <h2>Cisco CSO发布2026年五大可持续发展趋势</h2>
+                </div>
+                <span class="impact-badge impact-high">高影响</span>
+            </div>
+            <div class="card-content">
+                <div class="highlight-box">
+                    <strong>来源：</strong>Mary de Wysocki，Cisco高级副总裁兼首席可持续发展官 | Cisco博客（2025年12月22日）| CSRwire（2026年1月9日）
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">趋势一：可持续发展成为核心商业学科</div>
+                        <p>91%的大型企业现在披露可持续发展信息（OECD数据）。全球标准（ISSB、ESRS）正在趋同。Cisco将能源效率、安全性和循环运营整合进核心产品规划。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">趋势二：循环性——设计主导，而非回收主导</div>
+                        <p><strong>里程碑达成：</strong>100%的Cisco新产品和包装已嵌入循环设计原则。正在利用数字孪生技术在生产前模拟产品生命周期和材料影响。这是欧盟ESPR法规临近背景下的直接竞争优势。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">趋势三：创新规模化——从智能建筑到微电网</div>
+                        <p>Cisco Silicon One低功耗高性能芯片和智能建筑解决方案正在帮助客户大规模降低能耗。微电网和分布式能源管理正从试点走向主流部署。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">趋势四：AI重塑能源格局</div>
+                        <p>AI工作负载将使美国数据中心电网需求在2030年前近乎增长三倍。Cisco网络优化解决方案帮助客户提高效率和可见性——将Cisco定位为可持续发展的赋能者，而不仅仅是实践者。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">趋势五：量子技术——从概念到准备就绪</div>
+                        <p>Cisco正与IBM联合开发容错量子系统，聚焦于长期安全和韧性基础设施建设——为下一个十年安全可持续网络奠定基础。</p>
+                    </div>
+                </div>
+                <div class="key-points">
+                    <h4>🎯 净零目标提示</h4>
+                    <ul>
+                        <li>Cisco净零GHG目标：<strong>2040年</strong>覆盖整个价值链</li>
+                        <li>来自采购商品和服务的Scope 3减排是核心杠杆——PCB供应链（水、能源、碳）居于中心位置</li>
+                        <li>MSCI ESG评级：<strong>AA</strong>（2026年）——保持行业领先地位</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 水资源风险 -->
+<div id="water" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">💧</div>
+                <div class="card-title">
+                    <div class="category">半导体 · 水资源风险 · SEMI报告</div>
+                    <h2>SEMI《涟漪效应》报告：水资源风险已成半导体行业下一大核心商业挑战</h2>
+                </div>
+                <span class="impact-badge impact-high">高影响</span>
+            </div>
+            <div class="card-content">
+                <div class="highlight-box">
+                    <strong>来源：</strong>Marvell博客（2026年2月11日）| SEMI《涟漪效应》报告（2026年3月28日）| TNFD科技行业用水依赖性研究（2026年2月）| 世界经济论坛（2024年12月）
+                </div>
+                <p>半导体供应链正面临结构性水资源风险拐点。SEMI协会《涟漪效应：半导体价值链中的水风险与韧性》报告（2026年3月）将此定性为核心商业挑战，而非单纯的环境议题。</p>
+                <ul>
+                    <li><strong>用水规模：</strong>单个晶圆厂每日用水量多达<strong>1000万加仑</strong>——相当于30万人口城市的用水量——尽管大部分水会被回收利用</li>
+                    <li><strong>未来风险集中度：</strong><strong>2012年后新建的超过40%半导体工厂</strong>位于预计2030-2040年面临高度或极高水压力的流域</li>
+                    <li><strong>财务风险敞口：</strong>水资源相关风险可能使全球大型IT企业<strong>到2050年每年损失240亿美元</strong></li>
+                    <li><strong>数据透明度缺口：</strong>仅有50%的企业与供应商合作应对水风险；多级供应商风险追踪仍极为有限</li>
+                    <li><strong>风险热点：</strong>台湾、韩国和美国部分地区——核心半导体制造区域——流域水压力最高</li>
+                </ul>
+                <div class="key-points">
+                    <h4>🎯 Cisco PCB供应链水效情况（FY25）</h4>
+                    <ul>
+                        <li><strong>最优：</strong>WUS昆山（0.1545 m³/m²）——比最差供应商高效11倍</li>
+                        <li><strong>最差：</strong>Gold Circuit台湾（1.7916 m³/m²）——需紧急制定改善计划</li>
+                        <li><strong>FY25总取水量：</strong>37,638,028 m³（15家PCB供应商）</li>
+                        <li><strong>行动建议：</strong>采用SEMI推荐三阶段方法：风险评估 → 站点行动与集体参与 → 透明核查与报告</li>
+                    </ul>
+                </div>
+                <h3 style="color:#38bdf8; margin: 20px 0 12px;">SEMI推荐水资源管理三阶段路线图</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">第一阶段：风险评估</div>
+                        <p>采用情境化方法，运用AWS标准、TNFD框架和WRI Aqueduct工具，对每个供应商站点进行流域级风险评估</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">第二阶段：站点行动与集体参与</div>
+                        <p>部署实时水监测、AI预测模型、再生水利用技术；在流域层面与当地政府和社区开展协作</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">第三阶段：透明核查与报告</div>
+                        <p>建立供应链水资源报告统一数据标准；通过第三方审计核查（如WUS昆山PCF所用的CCIC认证）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 碳中和 -->
+<div id="carbon" class="section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🌱</div>
+                <div class="card-title">
+                    <div class="category">净零 · Scope 3 · 供应链脱碳</div>
+                    <h2>净零政策驱动供应链脱碳：最新学术与行业证据</h2>
+                </div>
+                <span class="impact-badge impact-med">中等影响</span>
+            </div>
+            <div class="card-content">
+                <div class="highlight-box">
+                    <strong>来源：</strong>《自然》（2025年3月24日）| ScienceDirect（2025年12月）| Orange ChangeNow公告（2026年3月31日）
+                </div>
+                <p>最新研究和行业实践正在汇聚于一个共识：Scope 3——尤其是供应链——是实现净零目标的决定性前沿。Orange 2026年3月31日宣布的第10份供应商进步计划（目标2040年净零），与Cisco自身的价值链方法如出一辙。</p>
+                <ul>
+                    <li><strong>Scope 3 的必要性：</strong>《自然》（2025年）分析确认，净零目标日益<em>要求</em>减少间接Scope 3排放——仅靠内部运营无法真正实现净零</li>
+                    <li><strong>动态能力视角：</strong>ScienceDirect研究（2025年12月）显示，净零政策通过在供应商组织中培养"动态能力"来推动供应链脱碳——这为Cisco供应商参与投入提供了理论依据</li>
+                    <li><strong>同业对标——Orange：</strong>电信同业Orange于2026年3月31日签署第10份供应商进步计划，目标同为2040年净零——与Cisco目标年份完全一致，提供了竞合参照</li>
+                    <li><strong>上海国际碳中和技术博览会：</strong>即将举办（2026年），聚焦零碳、负碳和低碳解决方案——Cisco展示供应链创新成果、参与中国供应商生态的重要平台</li>
+                </ul>
+                <div class="key-points">
+                    <h4>🎯 Cisco净零进度指标</h4>
+                    <ul>
+                        <li>目标：<strong>2040年</strong>价值链（含Scope 3）净零GHG</li>
+                        <li>PCB供应链FY25碳足迹数据已有（WUS昆山：28.81 kgCO₂e/panel；方正重庆8层板：115 kgCO₂e——异常值待核查）</li>
+                        <li>CCL（覆铜板）确认为最大PCB碳排热点，占比35.8%（约6.26 kgCO₂e/panel）</li>
+                        <li>Cisco Silicon One能效提升为Scope 1+2贡献；供应商PCF减排驱动Scope 3下降</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🤝</div>
+                <div class="card-title">
+                    <div class="category">行业合作 · TNFD · 报告框架</div>
+                    <h2>TNFD 2026年科技行业用水依赖性报告：自然相关风险进入主流披露</h2>
+                </div>
+                <span class="impact-badge">信息参考</span>
+            </div>
+            <div class="card-content">
+                <p>自然相关财务信息披露工作组（TNFD）于2026年2月发布了科技行业用水依赖性案例研究，借助BCG和麦肯锡研究成果。这标志着水资源风险将日益成为主流投资者和监管机构披露要求——而非仅是可持续发展的"加分项"。</p>
+                <ul>
+                    <li><strong>TNFD框架：</strong>提供评估自然相关依赖性和风险的标准化方法——适用于Cisco的PCB供应链水资源管理计划</li>
+                    <li><strong>投资者压力：</strong>随着TNFD披露成为标准，投资者将评估供应链中的水资源风险敞口——Cisco现有的FY25 PCB用水数据（WUS昆山至Gold TW的跨度）提供了先发优势</li>
+                    <li><strong>整合机会：</strong>将SEMI《涟漪效应》框架与TNFD披露要求相结合，可构建全面的水资源风险管理与报告策略</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Cisco 可持续发展情报简报 | 每周自动生成 | <a href="https://tudi1133.github.io/cisco-sustainability-briefing/">https://tudi1133.github.io/cisco-sustainability-briefing/</a></p>
+    <p style="margin-top:8px;">2026年4月6日当周 | 来源：金杜律师事务所、SEMI、Marvell、Cisco博客、TNFD、IEEFA、《自然》、ScienceDirect</p>
+    <p style="margin-top:8px;"><a href="cisco_sustainability_briefing.html">🌐 View English Version</a></p>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
