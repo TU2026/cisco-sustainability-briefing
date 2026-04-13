@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco Sustainability Intelligence Briefing — April 7, 2026</title>
+    <title>Cisco Sustainability Intelligence Briefing — April 14, 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -79,807 +79,364 @@
         }
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+            50% { opacity: 0.5; transform: scale(1.3); }
         }
 
-        /* Language switch */
-        .lang-switch {
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            z-index: 1000;
-        }
-        .lang-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(4, 159, 217, 0.15);
-            border: 1px solid #049fd9;
-            color: #049fd9;
-            padding: 7px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .lang-btn:hover {
-            background: #049fd9;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        /* Layout */
-        .layout {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 0;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .main-content { padding: 40px 40px 40px 0; min-width: 0; }
-        .sidebar { padding: 40px 0 40px 30px; border-left: 1px solid rgba(255,255,255,0.08); }
-
-        /* Section labels */
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #049fd9;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(4,159,217,0.3);
-        }
+        /* Main container */
+        .container { max-width: 960px; margin: 0 auto; padding: 40px 20px 60px; }
 
         /* Executive Summary */
         .exec-summary {
-            background: linear-gradient(135deg, rgba(4,159,217,0.08) 0%, rgba(13,39,77,0.5) 100%);
-            border: 1px solid rgba(4,159,217,0.2);
-            border-radius: 16px;
-            padding: 32px;
+            background: linear-gradient(135deg, rgba(0,188,235,0.08) 0%, rgba(4,159,217,0.04) 100%);
+            border: 1px solid rgba(0,188,235,0.25);
+            border-left: 4px solid #00bceb;
+            border-radius: 12px;
+            padding: 28px 32px;
             margin-bottom: 36px;
         }
-        .exec-summary p {
-            color: #cbd5e1;
-            font-size: 1.02em;
-            line-height: 1.8;
-            margin-bottom: 12px;
-        }
-        .exec-summary p:last-child { margin-bottom: 0; }
-        .exec-summary strong { color: #00bceb; }
-
-        /* Intelligence Cards */
-        .intel-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 20px;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-            position: relative;
-            overflow: hidden;
-        }
-        .intel-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #049fd9, #00bceb);
-            border-radius: 16px 0 0 16px;
-        }
-        .intel-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(4,159,217,0.3);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-        }
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            gap: 12px;
-        }
-        .card-rank {
+        .exec-summary .label {
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #049fd9;
-        }
-        .impact-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: linear-gradient(135deg, #d97706, #f59e0b);
-            color: #0a1628;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-        .intel-card h3 {
-            font-size: 1.2em;
-            color: #f1f5f9;
-            margin-bottom: 12px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .intel-card .summary {
-            color: #94a3b8;
-            font-size: 0.95em;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-        .cisco-impact {
-            background: rgba(0,188,235,0.08);
-            border: 1px solid rgba(0,188,235,0.2);
-            border-radius: 10px;
-            padding: 14px 18px;
-            margin-top: 14px;
-        }
-        .cisco-impact .ci-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
             color: #00bceb;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
-        .cisco-impact p {
-            color: #cbd5e1;
-            font-size: 0.9em;
-            line-height: 1.6;
+        .exec-summary p {
+            color: #cbd5e0;
+            font-size: 0.98em;
+            margin-bottom: 10px;
         }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 14px;
-        }
-        .tag {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #94a3b8;
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-size: 11px;
+        .exec-summary p:last-child { margin-bottom: 0; }
+
+        /* Section headings */
+        .section-title {
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* Key Data Points Grid */
-        .data-grid {
+        /* Top 3 Action Items */
+        .top3-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+        .top3-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 22px 26px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: border-color 0.2s;
+        }
+        .top3-card:hover { border-color: rgba(0,188,235,0.3); }
+        .top3-number {
+            flex-shrink: 0;
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, #00bceb, #0d7abf);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: 800; color: #fff;
+        }
+        .top3-content h3 { font-size: 1em; font-weight: 700; color: #f0f6ff; margin-bottom: 6px; }
+        .top3-content .finding { color: #94a3b8; font-size: 0.9em; margin-bottom: 8px; }
+        .top3-content .importance {
+            background: rgba(0,188,235,0.07);
+            border-left: 3px solid #00bceb;
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.85em;
+            color: #7dd3fc;
+        }
+        .top3-content .importance strong { color: #00bceb; }
+
+        /* Key Data Points */
+        .kpi-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             margin-bottom: 36px;
         }
-        .data-card {
-            background: rgba(255,255,255,0.04);
+        @media (max-width: 640px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+        .kpi-card {
+            background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 20px 18px;
             text-align: center;
-            transition: border-color 0.2s;
         }
-        .data-card:hover { border-color: rgba(4,159,217,0.3); }
-        .data-card .value {
+        .kpi-card .kpi-value {
             font-size: 2em;
             font-weight: 800;
             color: #00bceb;
             line-height: 1.1;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
-        .data-card .label {
-            color: #64748b;
-            font-size: 0.78em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .data-card .context {
-            color: #94a3b8;
-            font-size: 0.82em;
-            margin-top: 6px;
-        }
+        .kpi-card .kpi-label { font-size: 0.78em; color: #64748b; line-height: 1.4; }
+        .kpi-card .kpi-source { font-size: 0.7em; color: #475569; margin-top: 6px; }
 
-        /* Strategic Recommendations */
-        .reco-block {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 20px;
-        }
-        .reco-block h4 {
-            color: #f1f5f9;
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .reco-horizon {
-            display: inline-block;
-            background: rgba(4,159,217,0.15);
-            border: 1px solid rgba(4,159,217,0.4);
-            color: #049fd9;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            padding: 3px 10px;
-            border-radius: 8px;
-        }
-        .reco-list { list-style: none; }
-        .reco-list li {
-            color: #cbd5e1;
-            font-size: 0.93em;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-        .reco-list li:last-child { border-bottom: none; }
-        .reco-list li::before {
-            content: '→';
-            color: #049fd9;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-        /* Methodology */
-        .methodology {
+        /* News Articles */
+        .news-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+        .news-card {
             background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
             padding: 20px 24px;
+            transition: border-color 0.2s;
+        }
+        .news-card:hover { border-color: rgba(0,188,235,0.25); }
+        .news-card .news-meta {
+            display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+        }
+        .news-tag {
+            font-size: 0.7em; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+            padding: 3px 9px; border-radius: 12px;
+        }
+        .tag-vietnam { background: rgba(239,68,68,0.15); color: #fca5a5; }
+        .tag-sea { background: rgba(34,197,94,0.15); color: #86efac; }
+        .tag-cisco { background: rgba(0,188,235,0.15); color: #7dd3fc; }
+        .tag-water { background: rgba(59,130,246,0.15); color: #93c5fd; }
+        .tag-carbon { background: rgba(168,85,247,0.15); color: #d8b4fe; }
+        .news-date { font-size: 0.75em; color: #475569; }
+        .news-card h3 { font-size: 0.97em; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+        .news-card p { font-size: 0.87em; color: #94a3b8; line-height: 1.6; }
+        .news-card .news-source { font-size: 0.75em; color: #475569; margin-top: 8px; font-style: italic; }
+
+        /* Strategic Recommendation */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             margin-bottom: 36px;
         }
-        .methodology p {
-            color: #64748b;
-            font-size: 0.85em;
-            line-height: 1.7;
-        }
-        .methodology strong { color: #94a3b8; }
-
-        /* Sidebar */
-        .sidebar-card {
-            background: rgba(255,255,255,0.04);
+        @media (max-width: 640px) { .strategy-grid { grid-template-columns: 1fr; } }
+        .strategy-card {
+            background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 14px;
-            padding: 22px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 22px 24px;
         }
-        .sidebar-card h3 {
-            font-size: 0.82em;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #049fd9;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .strategy-card.short { border-top: 3px solid #f59e0b; }
+        .strategy-card.mid { border-top: 3px solid #10b981; }
+        .strategy-card .s-label {
+            font-size: 0.7em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 12px;
         }
-
-        /* Quick Signals */
-        .signal-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+        .strategy-card.short .s-label { color: #f59e0b; }
+        .strategy-card.mid .s-label { color: #10b981; }
+        .strategy-card h3 { font-size: 0.95em; font-weight: 700; color: #e2e8f0; margin-bottom: 10px; }
+        .strategy-card ul { list-style: none; padding: 0; }
+        .strategy-card ul li {
+            font-size: 0.87em; color: #94a3b8; padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-left: 16px; position: relative; line-height: 1.5;
         }
-        .signal-item:last-child { border-bottom: none; }
-        .signal-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            margin-top: 6px;
-        }
-        .signal-dot.green { background: #22c55e; }
-        .signal-dot.yellow { background: #f59e0b; }
-        .signal-dot.red { background: #ef4444; }
-        .signal-text {
-            color: #94a3b8;
-            font-size: 0.82em;
-            line-height: 1.5;
-        }
-        .signal-text strong { color: #e2e8f0; }
-
-        /* Meter Bar */
-        .meter-item {
-            margin-bottom: 14px;
-        }
-        .meter-item:last-child { margin-bottom: 0; }
-        .meter-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-        }
-        .meter-label { color: #94a3b8; font-size: 0.82em; }
-        .meter-value { color: #e2e8f0; font-size: 0.82em; font-weight: 600; }
-        .meter-bar {
-            height: 6px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .meter-fill {
-            height: 100%;
-            border-radius: 3px;
-            transition: width 1s ease;
-        }
-        .meter-fill.blue { background: linear-gradient(90deg, #049fd9, #00bceb); }
-        .meter-fill.orange { background: linear-gradient(90deg, #d97706, #f59e0b); }
-        .meter-fill.green { background: linear-gradient(90deg, #16a34a, #22c55e); }
-        .meter-fill.red { background: linear-gradient(90deg, #dc2626, #ef4444); }
-
-        /* Source provenance */
-        .source-item {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-        }
-        .source-item:last-child { border-bottom: none; }
-        .source-name { color: #94a3b8; font-size: 0.8em; }
-        .source-badge {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 8px;
-            white-space: nowrap;
-        }
-        .source-badge.gov { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
-        .source-badge.intl { background: rgba(4,159,217,0.15); color: #049fd9; border: 1px solid rgba(4,159,217,0.3); }
-        .source-badge.corp { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
-        .source-badge.media { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+        .strategy-card ul li:last-child { border-bottom: none; }
+        .strategy-card ul li::before { content: '→'; position: absolute; left: 0; color: #475569; }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: #334155;
-            font-size: 0.82em;
-            max-width: 1280px;
-            margin: 0 auto;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: #475569;
+            font-size: 0.8em;
         }
-        .footer a { color: #049fd9; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-
-        /* Nav bar */
-        .nav-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px 20px;
-            background: rgba(4,159,217,0.06);
-            border-bottom: 1px solid rgba(4,159,217,0.15);
-            font-size: 13px;
-        }
-        .nav-bar a {
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 4px 12px;
-            border-radius: 6px;
-            transition: all 0.15s;
-        }
-        .nav-bar a:hover { color: #00bceb; background: rgba(0,188,235,0.1); }
-        .nav-sep { color: #334155; }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .layout { grid-template-columns: 1fr; }
-            .main-content { padding: 30px 0; }
-            .sidebar { padding: 0 0 30px; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
-            .data-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .header h1 { font-size: 1.7em; }
-            .data-grid { grid-template-columns: 1fr 1fr; }
-        }
+        .footer a { color: #00bceb; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<a href="cisco_sustainability_briefing_zh.html" class="lang-btn" style="position:fixed;top:16px;right:16px;z-index:1000;display:inline-flex;align-items:center;gap:6px;background:rgba(4,159,217,0.15);border:1px solid #049fd9;color:#049fd9;padding:7px 16px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;">🌐 中文版</a>
-
-<!-- Header -->
 <div class="header">
-    <div class="header-label">Weekly Intelligence Report</div>
-    <h1>Cisco <span>Sustainability</span> Intelligence Briefing</h1>
-    <p class="subtitle">Southeast Asia Energy · Supply Chain Water · Cisco ESG Updates</p>
+    <div class="header-label">Weekly Intelligence</div>
+    <h1>Cisco <span>Sustainability</span> Briefing</h1>
+    <div class="subtitle">Supply Chain · Green Energy · Carbon Neutrality · Water Management</div>
     <div class="date-badge">
         <span class="dot"></span>
-        Week of March 31 – April 6, 2026 &nbsp;|&nbsp; Issue #52
+        Week of April 14, 2026
     </div>
 </div>
 
-<!-- Nav bar -->
-<nav class="nav-bar">
-    <a href="index.html">🏠 Home</a>
-    <a href="archive/">📁 Archive</a>
-    <span class="nav-sep">·</span>
-    <a href="archive/2026-03-30_en.html">← Previous Issue (Mar 30)</a>
-</nav>
-
-<div class="layout">
-<div class="main-content">
+<div class="container">
 
     <!-- Executive Summary -->
-    <div class="section-label">Executive Summary</div>
     <div class="exec-summary">
-        <p>
-            This week delivered three high-signal developments for Cisco's sustainability and supply chain strategy in Southeast Asia.
-            Vietnam's Prime Minister signed <strong>Directive 10/CT-TTg on March 30</strong>, mandating rooftop solar adoption targets
-            (≥10% penetration for public buildings and households by 2030) and requiring industrial facilities consuming over
-            500,000 kWh/year to cut electricity use by at least 3% in 2026—a direct policy signal for Cisco's supplier facilities in Vietnam.
-        </p>
-        <p>
-            Concurrently, the <strong>UNDP/EU-hosted CSERA Summit in Kuala Lumpur (March 30–31)</strong> elevated mandatory environmental
-            due diligence on supply chains to the top of Asia Pacific boardroom agendas, with water stewardship explicitly flagged as
-            a material risk. China Energy Engineering Group's meeting with Vietnam's EVN on April 1 confirms accelerating
-            <strong>China-Vietnam renewable energy infrastructure alignment</strong>, reshaping the regional energy procurement landscape
-            for multinational manufacturers.
-        </p>
-        <p>
-            Impact scores and Cisco-specific actions are detailed below. All three items warrant immediate strategy team review.
-        </p>
+        <div class="label">Executive Summary</div>
+        <p>This week's intelligence highlights three converging forces reshaping Cisco's supply chain sustainability landscape. Vietnam's DPPA regime enters a new phase of market liberalization — with MoIT removing private-line price controls — accelerating green procurement optionality for manufacturing tenants in industrial parks. Simultaneously, the semiconductor industry faces intensifying water risk scrutiny: Marvell's April analysis confirms 40%+ of new fab capacity planned since 2021 sits in high water-stress watersheds by 2030, with S&P Global projecting $24B annual IT sector losses from water risks by 2050.</p>
+        <p>On the corporate net-zero front, 2026 is emerging as the "year of reckoning" — SBTi-aligned companies (~2,200 validated, ~2,800 in pipeline) are now being stress-tested on Scope 3 execution, not just ambition. Cisco's February VPPA with R.Power in Poland and its 100% circular design embedding across new products position it well, but supply chain Scope 3 data transparency — especially at PCB/component level — remains the critical gap to close.</p>
     </div>
 
-    <!-- Top 3 Intelligence Items -->
-    <div class="section-label">Top 3 Actionable Intelligence Items</div>
+    <!-- Top 3 Action Items -->
+    <div class="section-title">Top 3 Most Actionable Findings This Week</div>
+    <div class="top3-grid">
 
-    <!-- Item 1 -->
-    <div class="intel-card">
-        <div class="card-top">
-            <span class="card-rank">#1 · Energy Policy</span>
-            <span class="impact-badge">⚡ Impact 9.2/10</span>
+        <div class="top3-card">
+            <div class="top3-number">1</div>
+            <div class="top3-content">
+                <h3>Vietnam DPPA Price Controls Removed — Industrial Parks Now Fully Liberalized</h3>
+                <div class="finding">Vietnam's Ministry of Industry and Trade (MoIT) has officially removed price-range restrictions for DPPA transactions via private grids (announced Jan 2026, now in effect). Industrial parks, economic zones, and export processing zones can now freely negotiate RE prices — and intermediate retailers can transact without the "large consumer" 30MW threshold requirement. Becamex-VSIP's network (12,000 ha, 20 parks) is among the first to benefit.</div>
+                <div class="importance"><strong>Why it matters for Cisco:</strong> Cisco's key EMS partners (Foxconn Quang Ninh, Wistron) operate in Vietnam industrial parks that are now eligible for direct green power procurement without price caps. This opens a viable path to verifiable renewable energy certificates (RECs) for Vietnam-origin PCB Scope 2 emissions — a gap previously blocking PCF accuracy at sub-supplier level.</div>
+            </div>
         </div>
-        <h3>Vietnam Directive 10/CT-TTg: Mandatory Rooftop Solar & Industrial Energy Cuts Effective 2026</h3>
-        <div class="summary">
-            Prime Minister Pham Minh Chinh signed Directive 10/CT-TTg on <strong>March 30, 2026</strong>,
-            establishing binding energy reduction targets for industrial and commercial operators in Vietnam.
-            Key mandates include: (1) All facilities consuming >500,000 kWh/year must reduce electricity
-            consumption by ≥3% in 2026; (2) Peak-hour load shedding of ≥3,000 MW may be enforced during
-            April–July high demand months; (3) A national target of ≥10% rooftop solar penetration across
-            public offices and commercial facilities by 2030. The Ministry of Industry and Trade, Ministry of
-            Construction, and local governments are required to issue implementation rules within 90 days.
-            Green credit lines and ESCO financing are being structured to support compliance.
-        </div>
-        <div class="cisco-impact">
-            <div class="ci-label">Cisco Relevance</div>
-            <p>Multiple Cisco strategic PCB and electronics suppliers operate facilities in Vietnam with annual
-            electricity consumption well above the 500,000 kWh threshold. Directive 10 creates a regulatory
-            compliance obligation that Cisco should proactively track via supplier scorecards.
-            The rooftop solar mandate and ESCO financing windows represent a near-term opportunity to support
-            Scope 3 emissions reductions in the Vietnam supply chain without capital expenditure from Cisco directly.</p>
-        </div>
-        <div class="tags">
-            <span class="tag">Vietnam</span>
-            <span class="tag">Directive 10/CT-TTg</span>
-            <span class="tag">Rooftop Solar</span>
-            <span class="tag">Industrial Energy</span>
-            <span class="tag">Scope 3</span>
-        </div>
-    </div>
 
-    <!-- Item 2 -->
-    <div class="intel-card">
-        <div class="card-top">
-            <span class="card-rank">#2 · Supply Chain Risk</span>
-            <span class="impact-badge">💧 Impact 8.5/10</span>
+        <div class="top3-card">
+            <div class="top3-number">2</div>
+            <div class="top3-content">
+                <h3>Semiconductor Water Risk: 40%+ of New Fabs Face 2030 Water Crisis — $24B Annual Loss Projected</h3>
+                <div class="finding">Marvell's April 4, 2026 analysis, building on SEMI's "Ripple Effects" report (Mar 28, 2026), confirms that over 40% of semiconductor manufacturing capacity planned since 2021 is located in watersheds expected to face high or extreme water stress by 2030–2040. A single fab consumes 10M gallons/day — equivalent to a city of 300,000. S&P Global projects $24B annual losses for the global IT sector from water-related risks by 2050. Only 16% of analyzed facilities are currently impacted, but the trajectory is sharply upward.</div>
+                <div class="importance"><strong>Why it matters for Cisco:</strong> Cisco's PCB supply chain is concentrated in Taiwan (TSMC-adjacent), South Korea, and increasingly Vietnam/Malaysia — all flagged as high water-risk jurisdictions. The SEMI/Marvell framework (AWS standard + TNFD LEAP + SBTN) provides an actionable supplier water audit template. Cisco should prioritize Tier-1 PCB suppliers for water stewardship baseline assessment in FY26 Q3.</div>
+            </div>
         </div>
-        <h3>UNDP/EU CSERA Summit Elevates Mandatory Environmental Due Diligence Across Asian Supply Chains</h3>
-        <div class="summary">
-            The <strong>Corporate Sustainability and Environmental Rights in Asia (CSERA) Summit</strong>, co-hosted
-            by UNDP and the EU, convened in Kuala Lumpur on March 30–31, 2026, gathering business leaders,
-            investors, and policymakers from across Asia. The summit explicitly advanced the case for
-            <strong>mandatory human rights and environmental due diligence (mHREDD)</strong> legislation modeled
-            on the EU Corporate Sustainability Due Diligence Directive (CS3D). Key outcomes: (1) Water stewardship
-            and ecosystem degradation identified as top-tier material risks for Asian supply chains;
-            (2) "Double materiality" assessment frameworks promoted as standard practice for supplier risk evaluation;
-            (3) EU-funded technical assistance programs for Asia-based suppliers announced, targeting 2026–2028 rollout.
-            UNDP Malaysia Representative Edward Vrkić stated: <em>"Rights-based frameworks must be the foundation of
-            long-term corporate resilience, not mere compliance exercises."</em>
-        </div>
-        <div class="cisco-impact">
-            <div class="ci-label">Cisco Relevance</div>
-            <p>Cisco's supply chain in Southeast Asia — particularly PCB manufacturers, semiconductor assemblers,
-            and EMS providers in Malaysia, Vietnam, and Thailand — will face increasing scrutiny under emerging
-            mHREDD frameworks. Water risk is explicitly listed as a material exposure in Cisco's PCB supply chain
-            (FY25 data: total supply chain water withdrawal 37.6M m³). This summit signals that voluntary supplier
-            programs may become legally mandated, accelerating the need to embed water KPIs in Cisco supplier
-            contracts and audits by 2027.</p>
-        </div>
-        <div class="tags">
-            <span class="tag">UNDP</span>
-            <span class="tag">mHREDD</span>
-            <span class="tag">Water Risk</span>
-            <span class="tag">Supply Chain</span>
-            <span class="tag">Malaysia</span>
-            <span class="tag">EU CS3D</span>
-        </div>
-    </div>
 
-    <!-- Item 3 -->
-    <div class="intel-card">
-        <div class="card-top">
-            <span class="card-rank">#3 · Energy Infrastructure</span>
-            <span class="impact-badge">🔌 Impact 7.8/10</span>
+        <div class="top3-card">
+            <div class="top3-number">3</div>
+            <div class="top3-content">
+                <h3>Indonesia Launches National Carbon Market in June 2026 — SEA Carbon Architecture Crystallizing</h3>
+                <div class="finding">Indonesia will formally launch its National Carbon Market in June 2026, with large-scale trading commencing July 2026. Vietnam has simultaneously introduced a legal framework allowing renewable energy projects to monetize up to 90% of carbon credits via cross-border transactions. Singapore's C3T Committee (NCCS + SBF) is operational, helping corporations navigate climate disclosure and green procurement. Southeast Asia's carbon market infrastructure is now cohering into a multi-jurisdiction system.</div>
+                <div class="importance"><strong>Why it matters for Cisco:</strong> As SEA carbon markets mature, Cisco and its suppliers will face both compliance obligations and procurement opportunities — verified carbon credits tied to RE procurement can serve dual use (Scope 2 claim + carbon offset). Cisco's supply chain sustainability team should map supplier facilities against Indonesia/Vietnam carbon registry frameworks before Q3 FY26.</div>
+            </div>
         </div>
-        <h3>China Energy Engineering Group – Vietnam EVN Partnership: Renewable Energy & Grid Infrastructure Acceleration</h3>
-        <div class="summary">
-            On <strong>April 1, 2026</strong>, China Energy Engineering Group Global (CEEC Global, Fortune Global 500 #228)
-            met with Vietnam Electricity (EVN) to advance partnership discussions on renewable energy, storage,
-            LNG power, and grid infrastructure. EVN endorsed cooperation aligned with Vietnam's
-            <strong>Eighth Power Development Plan (PDP8-revised)</strong>, covering renewable energy, nuclear power,
-            smart grid modernization, and digital transformation. CEEC Global has already executed 70+ power
-            projects in Vietnam. Separately, the <strong>Vietnam-China interconnected power grid</strong> has been
-            under coordinated operation since January 2026, managed jointly by NSMO and Lancang Mekong International
-            Southern Power Grid Company. This bilateral alignment significantly strengthens Vietnam's baseload
-            renewable capacity, reducing grid reliability risk for industrial consumers.
-        </div>
-        <div class="cisco-impact">
-            <div class="ci-label">Cisco Relevance</div>
-            <p>Cisco's Vietnam-based suppliers benefit directly from grid stabilization through China-Vietnam
-            interconnection and PDP8 renewable buildout. More strategically, as Vietnam's corporate PPA
-            (DPPA) framework matures under Resolution 253/2025 and Directive 10, the expanding renewable
-            generation base creates better conditions for Cisco to support direct renewable energy procurement
-            by key Vietnam suppliers — a critical Scope 3 lever for FY27 targets.</p>
-        </div>
-        <div class="tags">
-            <span class="tag">China-Vietnam Grid</span>
-            <span class="tag">CEEC</span>
-            <span class="tag">EVN</span>
-            <span class="tag">PDP8</span>
-            <span class="tag">Corporate PPA</span>
-            <span class="tag">DPPA</span>
-        </div>
+
     </div>
 
     <!-- Key Data Points -->
-    <div class="section-label" style="margin-top:36px;">Key Data Points</div>
-    <div class="data-grid">
-        <div class="data-card">
-            <div class="value">3%</div>
-            <div class="label">Vietnam Mandatory Energy Cut</div>
-            <div class="context">For facilities >500k kWh/yr in 2026 under Directive 10</div>
+    <div class="section-title">Key Data Points</div>
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">40%+</div>
+            <div class="kpi-label">New semiconductor fabs (post-2021) in high water-stress zones by 2030</div>
+            <div class="kpi-source">SEMI / Marvell, Apr 2026</div>
         </div>
-        <div class="data-card">
-            <div class="value">3,000 MW</div>
-            <div class="label">Peak Load Reduction Target</div>
-            <div class="context">April–July 2026 demand response obligation, Vietnam</div>
+        <div class="kpi-card">
+            <div class="kpi-value">$24B</div>
+            <div class="kpi-label">Annual IT sector losses from water risks projected by 2050</div>
+            <div class="kpi-source">S&P Global via Marvell</div>
         </div>
-        <div class="data-card">
-            <div class="value">10%</div>
-            <div class="label">Rooftop Solar Target</div>
-            <div class="context">Vietnam national penetration goal by 2030 (all commercial buildings)</div>
+        <div class="kpi-card">
+            <div class="kpi-value">10M gal</div>
+            <div class="kpi-label">Daily water consumption per semiconductor fab (equivalent to 300K-person city)</div>
+            <div class="kpi-source">SEMI Ripple Effects, Mar 2026</div>
         </div>
-        <div class="data-card">
-            <div class="value">37.6M m³</div>
-            <div class="label">Cisco PCB Supply Chain Water</div>
-            <div class="context">FY25 total supplier water withdrawal across 15 PCB factories</div>
+        <div class="kpi-card">
+            <div class="kpi-value">90%</div>
+            <div class="kpi-label">Vietnam RE project carbon credits eligible for cross-border monetization</div>
+            <div class="kpi-source">Vietnam Carbon Market Framework, 2026</div>
         </div>
-        <div class="data-card">
-            <div class="value">70+</div>
-            <div class="label">CEEC Projects in Vietnam</div>
-            <div class="context">China Energy Engineering Group's existing Vietnam power project portfolio</div>
+        <div class="kpi-card">
+            <div class="kpi-value">2,200+</div>
+            <div class="kpi-label">Companies with SBTi-validated net-zero commitments globally (2,800 in pipeline)</div>
+            <div class="kpi-source">Net Zero Update, Feb 2026</div>
         </div>
-        <div class="data-card">
-            <div class="value">2026–28</div>
-            <div class="label">EU mHREDD Technical Aid</div>
-            <div class="context">EU-funded programs for Asian supplier environmental compliance readiness</div>
-        </div>
-    </div>
-
-    <!-- Strategic Recommendations -->
-    <div class="section-label">Strategic Recommendations</div>
-
-    <div class="reco-block">
-        <h4><span class="reco-horizon">Short-term · 0–3 months</span></h4>
-        <ul class="reco-list">
-            <li>Map all Vietnam-based tier-1 and tier-2 suppliers against Vietnam Directive 10 thresholds (>500k kWh/year). Flag those requiring 3% energy reduction compliance and incorporate into 2026 supplier sustainability scorecards by Q2 2026.</li>
-            <li>Engage Vietnam supplier sustainability leads to assess readiness for rooftop solar installation and ESCO financing under the green credit programs being designed by Vietnam's Ministry of Finance and State Bank.</li>
-            <li>Distribute CSERA summit outcomes to Cisco's Supply Chain CSR team. Initiate gap assessment: which existing supplier audit protocols cover water stewardship and ecosystem risk under double-materiality standards?</li>
-            <li>Monitor EVN/CEEC MOU signing and DPPA pilot announcements from Vietnam's Ministry of Industry and Trade for opportunities to co-enroll key suppliers into direct renewable procurement programs.</li>
-        </ul>
-    </div>
-
-    <div class="reco-block">
-        <h4><span class="reco-horizon">Medium-term · 3–12 months</span></h4>
-        <ul class="reco-list">
-            <li>Design a Vietnam Supplier Renewable Energy Acceleration Program: partner with 3–5 high-spend PCB/EMS suppliers in Vietnam to jointly procure rooftop solar + storage under ESCO structures. Target: 20% on-site renewable share at pilot sites by end-FY26.</li>
-            <li>Embed water stewardship KPIs (water intensity per unit output, water recycling rate) as mandatory contract clauses for Cisco suppliers in water-stressed basins (Mekong Delta, Pearl River Delta). Align with WRI Aqueduct 4.0 risk zones.</li>
-            <li>Prepare a Cisco position paper on mHREDD readiness for Asia Supply Chain leadership, covering gap analysis vs. EU CS3D requirements, and propose a phased supplier engagement roadmap ahead of anticipated regional regulatory adoption (2027–2028).</li>
-            <li>Engage with Vietnam PDP8 implementation milestones and DPPA framework finalization to position Cisco as an anchor corporate off-taker in Vietnam's first utility-scale wind/solar DPPA project, strengthening Scope 3 RE100 commitment.</li>
-        </ul>
-    </div>
-
-    <!-- Methodology -->
-    <div class="section-label" style="margin-top:36px;">Methodology Notes</div>
-    <div class="methodology">
-        <p>
-            <strong>Coverage window:</strong> March 31 – April 6, 2026 (Monday–Sunday). 
-            <strong>Sources:</strong> Official government directives (Vietnam Ministry of Industry and Trade, ASEM Connect Vietnam), 
-            international organization publications (UNDP Malaysia), financial media (The Investor VN, VietnamEnergy.vn), 
-            and Cisco corporate sustainability channels. 
-            <strong>Impact Score methodology:</strong> 0–10 composite score weighted by regulatory certainty (40%), 
-            supply chain proximity to Cisco operations (35%), and time-sensitivity for action (25%). 
-            <strong>Scope:</strong> Items selected for high signal-to-noise ratio; general market commentary excluded. 
-            All data points cited with primary source attribution. AI-assisted research synthesis; verified against primary sources.
-        </p>
-    </div>
-
-</div><!-- /main-content -->
-
-<!-- Sidebar -->
-<div class="sidebar">
-
-    <div class="sidebar-card">
-        <h3>⚡ Quick Signals</h3>
-        <div class="signal-item">
-            <span class="signal-dot green"></span>
-            <span class="signal-text"><strong>Vietnam DPPA framework</strong> — Green credit programs under design; ESCO window opening Q2 2026</span>
-        </div>
-        <div class="signal-item">
-            <span class="signal-dot yellow"></span>
-            <span class="signal-text"><strong>Peak load risk</strong> — Vietnam grid tightness April–July; supplier production shift planning needed</span>
-        </div>
-        <div class="signal-item">
-            <span class="signal-dot red"></span>
-            <span class="signal-text"><strong>mHREDD regulatory momentum</strong> — Asia mandatory supply chain due diligence accelerating; 2027 adoption likely in 2+ markets</span>
-        </div>
-        <div class="signal-item">
-            <span class="signal-dot green"></span>
-            <span class="signal-text"><strong>China-Vietnam grid integration</strong> — Operational since Jan 2026; strengthens renewable baseload for Vietnam industrial consumers</span>
-        </div>
-        <div class="signal-item">
-            <span class="signal-dot yellow"></span>
-            <span class="signal-text"><strong>Water stewardship</strong> — Double-materiality frameworks advancing; voluntary programs becoming insufficient</span>
+        <div class="kpi-card">
+            <div class="kpi-value">Jun 2026</div>
+            <div class="kpi-label">Indonesia National Carbon Market official launch date (trading from Jul)</div>
+            <div class="kpi-source">Reccessary, Apr 2026</div>
         </div>
     </div>
 
-    <div class="sidebar-card">
-        <h3>💧 Water Risk Radar</h3>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Mekong Delta (Vietnam)</span>
-                <span class="meter-value" style="color:#ef4444;">HIGH</span>
+    <!-- News Articles -->
+    <div class="section-title">News Coverage This Week</div>
+    <div class="news-grid">
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-vietnam">Vietnam PPA</span>
+                <span class="news-date">Jan 28, 2026</span>
             </div>
-            <div class="meter-bar"><div class="meter-fill red" style="width:85%"></div></div>
+            <h3>Vietnam MoIT Removes DPPA Price Controls for Private Grid Transactions</h3>
+            <p>Vietnam's Ministry of Industry and Trade agreed to eliminate price-range restrictions for Direct Power Purchase Agreements conducted via private grids, following a proposal from Becamex-VSIP. The change aligns with the National Assembly's resolution on energy development for 2026–2030. Industrial parks, economic zones, and export processing zones can now access DPPA without the 30MW large-consumer threshold, with prices freely negotiated between parties.</p>
+            <div class="news-source">Source: Sohu / Vietnam Energy News, Jan 28, 2026</div>
         </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Pearl River Delta (GBA)</span>
-                <span class="meter-value" style="color:#f59e0b;">MED-HIGH</span>
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-sea">SEA Energy</span>
+                <span class="news-date">Apr 10, 2026</span>
             </div>
-            <div class="meter-bar"><div class="meter-fill orange" style="width:68%"></div></div>
+            <h3>Thailand Expands DPPA Access as World Bank Cuts GDP Forecast to 1.3%</h3>
+            <p>With Thailand's 2026 GDP forecast downgraded to 1.3% amid energy challenges, PM Anutin's government is accelerating DPPA expansion for corporate green power access and introduced B20 biodiesel at a 5-baht/liter discount. Thailand is targeting year-end DPPA framework clarity. Meanwhile, 40+ Thai companies ranked in S&P Global Sustainability Yearbook 2026 (top 1%), and CBAM-compliant exports to the EU grew nearly 55% in 2025.</p>
+            <div class="news-source">Source: Reccessary, Apr 10, 2026</div>
         </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Yangtze River (Kunshan/Chongqing)</span>
-                <span class="meter-value" style="color:#f59e0b;">MEDIUM</span>
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-cisco">Cisco</span>
+                <span class="news-date">Feb 2026</span>
             </div>
-            <div class="meter-bar"><div class="meter-fill orange" style="width:55%"></div></div>
+            <h3>Cisco Signs Long-Term VPPA with R.Power for Four Polish Solar Projects</h3>
+            <p>Cisco entered a long-term virtual power purchase agreement with R.Power S.A. — facilitated through SR Inc.'s Net Zero Consortium for Buyers (NZCB) — supporting the development of four new solar energy projects in Poland. This follows Cisco's milestone achievement of embedding circular economy design principles into 100% of new products and packaging by the end of FY2025. Cisco's CSO Mary de Wysocki confirmed continued progress on the company's 2040 net-zero target path.</p>
+            <div class="news-source">Source: Sustainable Tech Partner, Feb 5, 2026</div>
         </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Central Thailand</span>
-                <span class="meter-value" style="color:#f59e0b;">MEDIUM</span>
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-water">Water Risk</span>
+                <span class="news-date">Apr 4, 2026</span>
             </div>
-            <div class="meter-bar"><div class="meter-fill orange" style="width:50%"></div></div>
+            <h3>Marvell: Semiconductor Water Risk Is the Next Major Business Challenge</h3>
+            <p>Marvell's Senior Sustainability Manager Alua Suleimenova published a detailed analysis confirming that water risk is rapidly ascending the semiconductor industry's risk register. The piece builds on SEMI's "Ripple Effects" report, outlining a three-phase water stewardship roadmap: (1) water risk assessment, (2) site-level action + collective engagement, and (3) transparent verification and reporting. Only 50% of companies currently engage suppliers on the $77B supply chain water risk identified by CDP data.</p>
+            <div class="news-source">Source: Marvell Blog / Semiconductor Engineering, Apr 4, 2026</div>
         </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Malaysia (Penang/Klang Valley)</span>
-                <span class="meter-value" style="color:#22c55e;">LOW-MED</span>
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-sea">SEA Carbon</span>
+                <span class="news-date">Apr 2026</span>
             </div>
-            <div class="meter-bar"><div class="meter-fill green" style="width:32%"></div></div>
+            <h3>Indonesia Carbon Market Launches June 2026; Vietnam Enables 90% Credit Monetization</h3>
+            <p>Indonesia will formally open its National Carbon Market in June 2026 with full-scale trading in July, creating a new compliance and voluntary carbon mechanism for the region's largest emitter. In parallel, Vietnam has introduced legal provisions allowing renewable energy projects to sell up to 90% of carbon credits via cross-border transactions. Singapore's NCCS and SBF jointly launched the C3T Committee to support corporate climate disclosure and green procurement navigation.</p>
+            <div class="news-source">Source: Reccessary, Apr 2026</div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-tag tag-carbon">Net Zero</span>
+                <span class="news-date">Feb 4, 2026</span>
+            </div>
+            <h3>2026: The Corporate Net-Zero "Year of Reckoning" — SBTi Validates 2,200 Companies</h3>
+            <p>Net Zero Update's annual review finds that 2,200 companies now hold SBTi-validated net-zero commitments, with 2,800 in the validation pipeline. The report identifies a widening credibility gap: 42% of Fortune 500 companies plan to use carbon credits to achieve net-zero, while high-quality carbon removal credits command 300%+ price premiums. Companies with authentic Scope 3 strategies — like eBay's 2045 net-zero with 90% direct emission reduction by 2030 — are becoming the benchmark.</p>
+            <div class="news-source">Source: Net Zero Update, Feb 4, 2026</div>
+        </div>
+
+    </div>
+
+    <!-- Strategic Recommendation -->
+    <div class="section-title">Strategic Recommendation</div>
+    <div class="strategy-grid">
+        <div class="strategy-card short">
+            <div class="s-label">⚡ Short-Term (0–3 Months)</div>
+            <h3>Immediate Actions for Cisco Supply Chain Team</h3>
+            <ul>
+                <li>Engage Foxconn Quang Ninh and Wistron Vietnam on DPPA eligibility under the new MoIT framework — assess readiness for direct RE procurement by Q2 FY26</li>
+                <li>Adopt SEMI "Ripple Effects" three-phase water stewardship framework as the baseline for Tier-1 PCB supplier water audits in FY26 Q3</li>
+                <li>Map Vietnam and Indonesia supplier facilities against upcoming national carbon registry frameworks (pre-register before June 2026 Indonesia market launch)</li>
+                <li>Review Marvell/SEMI water risk watershed data against Cisco's PCB supplier geographic footprint (Taiwan, Korea, Vietnam, Malaysia)</li>
+            </ul>
+        </div>
+        <div class="strategy-card mid">
+            <div class="s-label">📈 Mid-Term (3–12 Months)</div>
+            <h3>Strategic Positioning for FY26–FY27</h3>
+            <ul>
+                <li>Develop a SEA Green Power Procurement Roadmap leveraging Vietnam DPPA + Thailand DPPA + Indonesia carbon market as a multi-jurisdiction RE strategy</li>
+                <li>Establish Scope 3 water data collection requirements for PCB suppliers, aligned with AWS standard and TNFD LEAP framework</li>
+                <li>Explore participation in Indonesia national carbon market as a buyer of verified RE credits to backstop Scope 2 claims from SEA supplier facilities</li>
+                <li>Integrate SEA carbon market developments into Cisco's supplier sustainability scorecard update for FY27 RFQ cycle</li>
+                <li>Partner with Singapore C3T Committee for regional Scope 3 disclosure alignment across ASEAN supplier base</li>
+            </ul>
         </div>
     </div>
 
-    <div class="sidebar-card">
-        <h3>🌏 SEA PPA Readiness Index</h3>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Vietnam (DPPA)</span>
-                <span class="meter-value">72%</span>
-            </div>
-            <div class="meter-bar"><div class="meter-fill blue" style="width:72%"></div></div>
-        </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Thailand (CPPA)</span>
-                <span class="meter-value">61%</span>
-            </div>
-            <div class="meter-bar"><div class="meter-fill blue" style="width:61%"></div></div>
-        </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Malaysia (Corporate RE)</span>
-                <span class="meter-value">55%</span>
-            </div>
-            <div class="meter-bar"><div class="meter-fill blue" style="width:55%"></div></div>
-        </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Indonesia (cPPA)</span>
-                <span class="meter-value">38%</span>
-            </div>
-            <div class="meter-bar"><div class="meter-fill blue" style="width:38%"></div></div>
-        </div>
-        <div class="meter-item">
-            <div class="meter-header">
-                <span class="meter-label">Philippines (Green Energy)</span>
-                <span class="meter-value">44%</span>
-            </div>
-            <div class="meter-bar"><div class="meter-fill blue" style="width:44%"></div></div>
-        </div>
-    </div>
-
-    <div class="sidebar-card">
-        <h3>📚 Source Provenance</h3>
-        <div class="source-item">
-            <span class="source-name">Vietnam Government (Directive 10)</span>
-            <span class="source-badge gov">GOV</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">UNDP Malaysia (CSERA Summit)</span>
-            <span class="source-badge intl">INTL ORG</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">The Investor VN (CEEC-EVN)</span>
-            <span class="source-badge media">MEDIA</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">Cisco Blogs (Sustainability Trends)</span>
-            <span class="source-badge corp">CORP</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">VietnamEnergy.vn</span>
-            <span class="source-badge media">MEDIA</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">Vietnam.vn (Grid Coordination)</span>
-            <span class="source-badge gov">GOV</span>
-        </div>
-        <div class="source-item">
-            <span class="source-name">Baker McKenzie (Resolution 253)</span>
-            <span class="source-badge intl">LEGAL</span>
-        </div>
-    </div>
-
-</div><!-- /sidebar -->
-</div><!-- /layout -->
+</div>
 
 <div class="footer">
-    <p>Cisco Sustainability Intelligence Briefing · Issue #52 · Week of April 7, 2026</p>
+    <p>Cisco Sustainability Intelligence Briefing · Week of April 14, 2026 · Auto-generated via WorkBuddy</p>
     <p style="margin-top:6px;">
-        <a href="https://hilarious-cucurucho-71c1c7.netlify.app">hilarious-cucurucho-71c1c7.netlify.app</a> &nbsp;|&nbsp;
-        <a href="cisco_sustainability_briefing_zh.html">中文版</a> &nbsp;|&nbsp;
-        Internal use only · Cisco GSC Sustainability Team
-    </p>
-    <p style="margin-top:8px; color:#1e293b;">
-        Generated April 7, 2026 · AI-assisted research synthesis · Sources verified against primary publications
+        <a href="https://tu2026.github.io/cisco-sustainability-briefing/">View Online</a> ·
+        <a href="cisco_sustainability_briefing_zh.html">中文版</a>
     </p>
 </div>
 
