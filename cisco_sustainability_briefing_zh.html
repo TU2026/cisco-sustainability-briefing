@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco 可持续发展情报简报 - 2026年4月21日</title>
+    <title>Cisco 可持续发展智能简报 - 2026年4月27日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.7; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
         .header { background: linear-gradient(135deg, #0d274d 0%, #049fd9 100%); padding: 50px 20px 40px; text-align: center; position: relative; overflow: hidden; }
         .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(0,188,235,0.15) 0%, transparent 60%); pointer-events: none; }
         .header-label { display: inline-block; background: rgba(0,188,235,0.2); border: 1px solid #00bceb; color: #00bceb; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; }
-        .header h1 { font-size: 2.2em; color: #fff; font-weight: 700; margin-bottom: 10px; }
+        .header h1 { font-size: 2.4em; color: #fff; font-weight: 700; margin-bottom: 10px; }
         .header h1 span { color: #00bceb; }
         .header .subtitle { color: rgba(255,255,255,0.7); font-size: 1em; margin-bottom: 16px; }
         .date-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 24px; font-size: 0.9em; color: #fff; font-weight: 600; }
@@ -43,6 +43,7 @@
         .tag-water { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
         .tag-policy { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
         .tag-carbon { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+        .tag-cisco { background: rgba(4,159,217,0.15); color: #49bef2; border: 1px solid rgba(4,159,217,0.3); }
         .kpi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
         @media(max-width:600px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
         .kpi-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px; text-align: center; }
@@ -78,183 +79,299 @@
         .water-risk-level { display: flex; align-items: center; gap: 6px; }
         .risk-bar { width: 60px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
         .risk-fill { height: 100%; border-radius: 3px; }
-        .risk-critical { background: #f87171; } .risk-high { background: #fbbf24; }
-        .risk-pct { font-size: 11px; color: #64748b; }
-        .ppa-item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .ppa-item:last-child { border-bottom: none; }
-        .ppa-country { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-        .ppa-name { font-size: 0.88em; font-weight: 600; color: #e2e8f0; }
-        .ppa-score-badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
-        .score-ready { background: rgba(52,211,153,0.2); color: #34d399; }
-        .score-partial { background: rgba(251,191,36,0.2); color: #fbbf24; }
-        .score-early { background: rgba(248,113,113,0.2); color: #f87171; }
-        .ppa-progress { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
-        .ppa-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg,#049fd9,#00bceb); }
-        .ppa-note { font-size: 11px; color: #64748b; margin-top: 4px; }
-        .source-list { list-style: none; }
-        .source-list li { font-size: 0.82em; color: #64748b; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 6px; }
-        .source-list li:last-child { border-bottom: none; }
-        .source-type { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; flex-shrink: 0; }
-        .src-primary { background: rgba(4,159,217,0.2); color: #049fd9; }
-        .src-secondary { background: rgba(100,116,139,0.3); color: #94a3b8; }
-        .src-synthesized { background: rgba(167,139,250,0.2); color: #a78bfa; }
-        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer a { color: #049fd9; text-decoration: none; }
-        .confidence-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
-        .conf-high { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
-        .conf-med { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
-        .sidebar .section { margin-bottom: 16px; }
+        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 10px; }
+        .source-badge { display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #64748b; font-size: 10px; padding: 2px 8px; border-radius: 4px; margin: 2px; }
     </style>
 </head>
 <body>
-<a href="cisco_sustainability_briefing.html" class="lang-btn lang-switch">&#127760; English</a>
+
+<div class="lang-switch">
+    <a href="cisco_sustainability_briefing.html" class="lang-btn">&#127760; English</a>
+</div>
+
 <div class="header">
-    <div class="header-label">&#9889; 每周情报 - 供应链可持续发展</div>
-    <h1>Cisco <span>可持续发展</span> 情报简报</h1>
-    <p class="subtitle">越南PPA | 东南亚绿色能源 | 水资源管理 | 碳市场 | 供应链ESG</p>
-    <div class="date-badge"><div class="dot"></div>2026年4月21日 | 第19期</div>
+    <div class="header-label">&#128274; Cisco Intelligence</div>
+    <h1>可持续发展 <span>智能简报</span></h1>
+    <div class="subtitle">供应链与可再生能源战略监测 · 每周更新</div>
+    <div class="date-badge">
+        <span class="dot"></span>
+        2026年4月27日 &nbsp;|&nbsp; 第7期
+    </div>
 </div>
+
 <div class="main-layout">
-<div class="main-content">
-    <div class="section exec-summary">
-        <div class="section-title">&#128203; 执行摘要</div>
-        <p><span class="highlight-tag">碳市场</span> ICAP 2026年度状况报告（4月14日发布）确认全球碳市场已达到历史性转折点：41个运营中的ETS系统覆盖全球26%的温室气体排放，2025年收入近800亿美元创历史新高。日本、印度和越南三个新国家级ETS系统于2026年启动，中国计划2027年前将全国碳市场过渡到绝对总量控制。越南ETS已设定初始配额：2025年2.431亿吨CO2当量，2026年2.684亿吨CO2当量，覆盖110家设施（34家火电厂、25家钢铁厂、51家水泥厂）。对Cisco供应链而言，碳成本暴露正迅速成为关键制造区域的重要实质性因素。</p>
-        <p><span class="highlight-tag">地缘能源</span> IEA执行董事法提赫·比罗尔于4月18日警告，霍尔木兹海峡中断代表"史上最大能源安全威胁"，2026年3月没有油轮通过海峡向亚洲市场运输石油。这一地缘政治冲击正在加速东南亚可再生能源转型：菲律宾宣布国家能源紧急状态并加快推进22个可再生能源项目；柬埔寨启动10亿美元抽水蓄能和2亿美元风电投资；越南批准1.9亿美元在嘉莱省建设3个太阳能+1个风电项目。对Cisco而言，这些发展缩短了电网碳强度下降时间表，但同时也加剧了可再生能源资产的竞争。</p>
-        <p><span class="highlight-tag">CDP 2026</span> CDP 2026年披露周期（6月15日开放）引入重大变化：森林商品覆盖从4类扩展至7类（新增可可、咖啡、橡胶），新设海洋模块，增强水安全指标包括废水排放数据和SBTN淡水目标选项。Cisco供应商已被要求通过CDP年度披露，面对更广的披露范围，将直接影响Cisco范围3数据收集能力和供应链ESG绩效追踪。</p>
+    <!-- Left Column -->
+    <div class="left-col">
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <div class="section-title">&#128203; 执行摘要</div>
+            <div class="exec-summary">
+                <p>
+                    <span class="highlight-tag">碳市场</span>
+                    亚太碳市场在2026年迎来决定性的运营转折点：日本GX-ETS由自愿向强制转变（覆盖约300-400家企业）；越南第112/2026/ND-CP号法令（5月19日生效）正式确立《巴黎协定》第6.2条和6.4条下跨境碳信用转移的监管框架；IETA欧洲气候峰会（巴塞罗那，4月14-16日）确认全球碳定价已覆盖全球GDP的63%。对Cisco供应链而言，这意味着亚洲主要制造合作伙伴面临近期合规成本敞口。
+                </p>
+                <p>
+                    <span class="highlight-tag">能源</span>
+                    越南工商会（VCCI）主办的研讨会（4月21日）揭示了DPPA框架的系统性缺口——定价不明确、参与者资格受限、储能政策缺失——导致大型企业买家仍无法签订长期清洁电力合同。与此同时，Cisco发布的FY25年度目的报告（4月13日）确认，较2019财年基准Scope 1&2排放减少90%，并首次实现全球自有和租赁设施100%使用可再生电力，这一里程碑提升了对供应商的期望标准。
+                </p>
+                <p>
+                    <span class="highlight-tag">投资</span>
+                    东南亚能源转型领域累计吸引18亿美元资金（来源：Tracxn/TechNode，4月20日），但90%流向太阳能和电动汽车，电池储能仅获1.19亿美元，能效仅获7700万美元，严重供给不足。新加坡作为金融枢纽吸走了78-94%的资本，而越南、印尼和菲律宾——Cisco供应商工厂所在地——获得的直接投资极为有限，带来供应链韧性风险。
+                </p>
+            </div>
+        </div>
+
+        <!-- Top 3 Actionable Findings -->
+        <div class="section">
+            <div class="section-title">&#9889; Top 3 本周最值得行动的发现</div>
+
+            <!-- Finding 1 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">1</div>
+                    <div class="intel-title">越南第112/2026号法令 — 跨境碳信用转移正式入法（5月19日生效）</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.4</div>
+                        <div class="score-label">影响力</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-carbon">碳市场</div>
+                <div class="intel-body">
+                    越南总理于2026年4月7日签署第112/2026/ND-CP号法令，创建首个关于《巴黎协定》第6.2条和6.4条下碳信用国际转移的全面监管框架。该法令于5月19日生效，指定农业与环境部为国家主管机构，实施信用转移上限以平衡国际市场参与和国内气候目标，并填补了此前阻碍碳融资流动的透明度与可信度缺口。越南2026年ETS设施级配额覆盖110家生产设施，合计约2.684亿吨CO₂当量。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; 对Cisco的重要性</div>
+                    <div class="content">Cisco在越南的EMS合作伙伴（富士康、伟创力设施）将面临强制性设施级配额合规要求。应立即启动供应商MRV（监测、报告与核查）体系准备，避免ETS正式执行时出现合规缺口和潜在供应中断风险。</div>
+                </div>
+            </div>
+
+            <!-- Finding 2 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">2</div>
+                    <div class="intel-title">Cisco FY25：Scope 1&2减排90%、100%可再生电力 — 供应商差距进一步扩大</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.1</div>
+                        <div class="score-value-label" style="font-size:10px;color:#64748b;">影响力</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-cisco">Cisco 直接</div>
+                <div class="intel-body">
+                    Cisco FY25年度目的报告（2026年4月13日）确认：较FY2019基准Scope 1&2温室气体减少90%，并首次实现全球所有自有和租赁设施100%使用可再生电力。关键运营成就包括：班加罗尔92兆瓦太阳能+风能设施、德克萨斯州172兆瓦太阳能虚拟购电协议（2027年上线），欧洲电动汽车车队占比从2019财年11%升至66%。88%的组件、制造和物流供应商已设定温室气体减排目标（超过80%的既定目标），4个供应商点承诺采购约2800万度清洁电力。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; 对Cisco的重要性</div>
+                    <div class="content">随着Cisco自身Scope 1&2排放接近净零，Scope 3（供应商排放）已成为战略重心。88%的供应商目标覆盖里程碑意味着剩余12%的供应商——主要是亚洲中小型二级/三级供应商——是下一优先级。供应链可持续团队应为FY26财年正式公布Scope 3减排目标做好准备。</div>
+                </div>
+            </div>
+
+            <!-- Finding 3 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">3</div>
+                    <div class="intel-title">东南亚能源转型：18亿美元资金中90%流向太阳能+电动汽车 — 储能与能效严重匮乏</div>
+                    <div class="impact-score">
+                        <div class="score-value">8.7</div>
+                        <div class="score-label">影响力</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-energy">东南亚能源</div>
+                <div class="intel-body">
+                    据Tracxn数据（TechNode Global，4月20日发布），东南亚能源转型领域累计吸引18亿美元资金，但太阳能（11亿美元，62%）和电动汽车（5.05亿美元）占主导。电池储能仅获1.19亿美元，能效仅获7700万美元，两者合计仅占11%。新加坡作为金融枢纽吸走了太阳能78%、储能94%以及几乎全部能效投资，而越南、印尼、泰国和菲律宾——Cisco主要制造地理区域——获得的直接投资极为有限。缺乏一致性政策框架和电网基础设施限制是根本原因。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; 对Cisco的重要性</div>
+                    <div class="content">越南、印尼和菲律宾电池储能和电网基础设施投资不足，造成复合风险：即使供应商承诺RE目标，也可能因电网不稳定而无法获得可靠的可再生电力。Cisco供应商RE赋能计划应充分考虑电网可靠性约束，并将直接投资或购电协议担保纳入供应商发展方案。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Data Points -->
+        <div class="section">
+            <div class="section-title">&#128200; 关键数据点</div>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">90%</div>
+                    <div class="kpi-label">Cisco Scope 1&2 减排幅度（较FY2019基准）</div>
+                    <div class="kpi-trend trend-up">&#8599; FY25里程碑</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-label">Cisco 全球可再生电力覆盖率（FY25）</div>
+                    <div class="kpi-trend trend-up">&#8599; 史上首次全面实现</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">2.684亿吨</div>
+                    <div class="kpi-label">越南2026年ETS设施配额（110个设施）</div>
+                    <div class="kpi-trend trend-warn">&#9888; 2026年5月生效</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">$18亿</div>
+                    <div class="kpi-label">东南亚能源转型累计融资</div>
+                    <div class="kpi-trend trend-warn">&#9888; 90%集中于太阳能+电动汽车</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">63%</div>
+                    <div class="kpi-label">全球碳定价覆盖的GDP比例</div>
+                    <div class="kpi-trend trend-up">&#8599; IETA 2026年峰会数据</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">88%</div>
+                    <div class="kpi-label">已设定减排目标的Cisco供应商比例</div>
+                    <div class="kpi-trend trend-up">&#8599; 超越80%既定目标</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Recommendation -->
+        <div class="section">
+            <div class="section-title">&#127919; 战略建议</div>
+            <div class="rec-grid">
+                <div class="rec-card short">
+                    <div class="rec-period">&#9201; 短期行动（0-3个月）</div>
+                    <ul class="rec-list">
+                        <li>梳理越南Cisco供应商与第112/2026号法令ETS配额覆盖的110家设施的重叠情况，在5月19日生效前启动MRV就绪评估</li>
+                        <li>向采购和供应商发展团队传达Cisco的Scope 3战略含义——Scope 1&2目标已实现后，下一轮审核将更严格审查供应商排放</li>
+                        <li>针对越南、印尼和菲律宾DPPA框架缺口及电网储能投资不足问题，评估供应商可再生能源战略的可行性</li>
+                    </ul>
+                </div>
+                <div class="rec-card medium">
+                    <div class="rec-period">&#128336; 中期行动（3-12个月）</div>
+                    <ul class="rec-list">
+                        <li>制定多国碳信用采购策略，结合亚太ETS进展（日本GX-ETS、越南ETS、新加坡ICC），为主要供应商对冲Scope 3合规成本</li>
+                        <li>与越南VCCI和DPPA利益相关方接洽，推动扩大合格参与者范围（涵盖有Cisco供应商的工业园区）并强化储能政策支持</li>
+                        <li>将东南亚储能基础设施风险纳入Cisco供应商可持续发展评分卡，考虑在关键供应商设施共同投资太阳能+储能项目</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="section">
-        <div class="section-title">&#127919; 本周三大可行动情报</div>
-        <div class="intel-item">
-            <span class="category-tag tag-carbon">碳市场</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">1</div>
-                <div class="intel-title">全球碳市场加速扩张 -- 41个ETS系统覆盖26%全球排放；越南ETS确定配额</div>
-                <div class="impact-score"><div class="score-value">9.6</div><div class="score-label">影响度</div></div>
+
+    <!-- Right Sidebar -->
+    <div class="right-col">
+
+        <!-- Market Signals -->
+        <div class="section">
+            <div class="section-title">&#128308; 市场信号</div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-red"></div>
+                <div class="signal-text">
+                    <strong>越南DPPA——框架缺口持续存在</strong>
+                    VCCI论坛（4月21日）确认，DPPA定价、储能政策和参与者资格问题仍未解决，工业园区运营商签署绿色电力合同的障碍依然存在。
+                </div>
             </div>
-            <div class="intel-body">ICAP 2026年度状况报告（4月14日）记录了史无前例的碳市场扩张。2026年三个新国家级ETS启动：日本（从自愿转向强制）、印度（全国性系统）、越南（国家级系统）。越南ETS于2025年6月启动试点，现已确定具体配额：2025年2.431亿吨CO2当量、2026年2.684亿吨CO2当量，覆盖110家设施（34家火电、25家钢铁、51家水泥）。2025-2028试点期免费分配配额，2029年起引入拍卖机制。碳信用可抵消最高30%排放量。中国全国碳市场计划2027年前过渡到绝对总量控制。全球ETS收入2025年达近800亿美元创历史新高。 <span class="confidence-badge conf-high">&#9679; 高置信度</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco相关性</div><div class="content">Cisco越南制造供应商（富士康北江、纬创VSIP）现已在活跃的碳定价体系下运营。虽然2025-2028免费分配提供过渡缓冲，Cisco应将碳成本预测整合入供应商总拥有成本（TCO）模型。30%抵消机制为Cisco创造了投资越南可再生能源项目的机会——这些项目可为供应商合规产生碳信用，同时推进范围3减排目标。</div></div>
-        </div>
-        <div class="intel-item">
-            <span class="category-tag tag-energy">东南亚能源危机</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">2</div>
-                <div class="intel-title">霍尔木兹海峡中断引发东南亚能源紧急状态 -- 菲律宾、柬埔寨、越南加速可再生能源大型项目</div>
-                <div class="impact-score"><div class="score-value">9.2</div><div class="score-label">影响度</div></div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-amber"></div>
+                <div class="signal-text">
+                    <strong>全球碳政策——需求滞后于供给</strong>
+                    IETA巴塞罗那峰会：高质量碳信用已存在，但企业买家在等待更明确的政策指引才会大规模采购。第二波买家仍在观望。
+                </div>
             </div>
-            <div class="intel-body">IEA执行董事比罗尔4月18日警告确认，2026年3月没有油轮通过霍尔木兹海峡，造成"史上最大能源安全威胁"。地缘政治冲击已催化东南亚各国紧急应对：菲律宾宣布国家能源紧急状态，正在推进22个可再生能源项目（12个太阳能、6个水电、2个生物质能、1个风电、1个综合系统）；柬埔寨启动10亿美元/1000兆瓦抽水蓄能电站（2026年4月）和2亿美元/150兆瓦风电场（2026年2月批准）；越南批准1.9亿美元在嘉莱省建设3个太阳能电站+1个风电场，目标2028年底并网；缅甸Shwemyaung太阳能电站将于2026年6月开始发电。 <span class="confidence-badge conf-high">&#9679; 高置信度</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco相关性</div><div class="content">能源危机正在加速Cisco关键制造管辖区的电网去碳化时间表。菲律宾能源紧急状态可能加速电网可再生能源改善，使Cisco马尼拉地区供应商受益。越南嘉莱省太阳能/风电项目到2029年可提供额外企业PPA供应。Cisco应监控这些发展并重新评估区域可再生能源采购策略——化石燃料的地缘政治溢价使可再生能源PPA的成本竞争力优于此前模型预测。</div></div>
-        </div>
-        <div class="intel-item">
-            <span class="category-tag tag-policy">CDP 2026 / 供应链</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">3</div>
-                <div class="intel-title">CDP 2026披露周期 -- 新增海洋模块、扩展森林范围、增强水指标重塑供应链ESG</div>
-                <div class="impact-score"><div class="score-value">8.5</div><div class="score-label">影响度</div></div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-green"></div>
+                <div class="signal-text">
+                    <strong>Cisco可再生能源——100%里程碑达成</strong>
+                    FY25年度目的报告（4月13日）确认史上首次全球100%使用可再生电力。为科技行业供应链可再生能源期望设立新标杆。
+                </div>
             </div>
-            <div class="intel-body">CDP 2026年披露周期（6月15日开放，第25个周期）引入重大变化，直接影响Cisco供应链可持续发展要求。关键更新：(1) 森林商品披露从4类扩展至7类，新增可可、咖啡和橡胶——统一计分意味着更广的供应商评估负担；(2) 新设海洋模块（2026年为过渡年，不评分）；(3) 增强水安全指标，包括废水排放水平和SBTN淡水目标报告选项；(4) 塑料披露与艾伦·麦克阿瑟基金会全球承诺对标。虽然2026年新模块为过渡期，但供应商应立即开始数据收集。 <span class="confidence-badge conf-high">&#9679; 高置信度</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco相关性</div><div class="content">Cisco要求所有供应商通过CDP年度披露。扩大的范围意味着Cisco的PCB供应商（线缆组件中使用橡胶部件、硅胶垫片）可能面临新的森林商品披露要求。增强的水指标（废水排放）直接影响Cisco在台中和中国大陆的一级PCB晶圆代工厂供应商。Cisco应在Q3 2026前发布更新后的供应商指南，并在FY27披露周期前将新CDP指标纳入供应商评分卡权重。</div></div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128202; 关键数据点</div>
-        <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-value">41个</div><div class="kpi-label">全球运营中的ETS系统</div><div class="kpi-trend trend-up">2026年新增3个（日、印、越）</div></div>
-            <div class="kpi-card"><div class="kpi-value">$800亿</div><div class="kpi-label">全球ETS收入（2025年）</div><div class="kpi-trend trend-up">创历史新高</div></div>
-            <div class="kpi-card"><div class="kpi-value">2.68亿吨</div><div class="kpi-label">越南ETS配额（2026年）</div><div class="kpi-trend trend-warn">覆盖110家设施</div></div>
-            <div class="kpi-card"><div class="kpi-value">85%+</div><div class="kpi-label">领先晶圆厂水回收率</div><div class="kpi-trend trend-up">台湾基准（5-7nm）</div></div>
-            <div class="kpi-card"><div class="kpi-value">$10亿+</div><div class="kpi-label">柬埔寨清洁能源投资</div><div class="kpi-trend trend-up">抽水蓄能+风电</div></div>
-            <div class="kpi-card"><div class="kpi-value">63%</div><div class="kpi-label">ETS覆盖全球经济GDP</div><div class="kpi-trend trend-up">G20中14国已建立ETS</div></div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128300; 方法说明</div>
-        <ul class="method-list">
-            <li>覆盖时间窗口：2026年4月14-21日。情报项目按时效性、信息来源权威性和Cisco供应链相关性排序。</li>
-            <li>影响度评分（0-10）：政策势头（30%）、投资活动（25%）、Cisco供应链交叉（30%）、行动紧迫性（15%）。</li>
-            <li>碳市场数据：ICAP 2026年度状况报告（4月14日）、越南ETS监管更新（法令29/2026、决定263/2026）、ESG研究院分析。</li>
-            <li>东南亚能源：IEA/Bernama报告via The Star（4月18日）、菲律宾、柬埔寨、越南、缅甸各国政府项目公告。</li>
-            <li>CDP 2026：G&amp;A研究院分析（4月16日）、CDP官方披露页面、艾伦·麦克阿瑟基金会对标文档。</li>
-            <li>半导体水资源数据：Energy Solutions Intelligence晶圆厂基准研究（2026年1月）、SEMI ERMR工作组水资源风险报告（2026年3月）。</li>
-            <li>置信度级别：高 = 2个以上独立主要来源；中 = 1个主要来源加次要来源佐证。</li>
-        </ul>
-    </div>
-    <div class="section">
-        <div class="section-title">&#129517; 战略建议</div>
-        <div class="rec-grid">
-            <div class="rec-card short">
-                <div class="rec-period">短期（0-3个月）</div>
-                <ul class="rec-list">
-                    <li>更新Cisco供应商CDP指南以反映2026年变化（森林商品、水指标、海洋模块）-- Q3 2026前发布</li>
-                    <li>将越南ETS碳成本预测整合入富士康北江和纬创VSIP的供应商TCO模型</li>
-                    <li>评估菲律宾能源紧急状态对马尼拉地区供应商电网组合和可再生能源采购方案的影响</li>
-                    <li>与排名前5的PCB供应商试点WWF水资源风险筛选工具 -- 对标新CDP水安全指标</li>
-                </ul>
+            <div class="signal-item">
+                <div class="signal-indicator sig-amber"></div>
+                <div class="signal-text">
+                    <strong>东南亚储能资金缺口——电网风险上升</strong>
+                    储能仅获1.19亿美元，而太阳能获11亿美元。越南/印尼/菲律宾若无紧急投资再平衡，电网可靠性面临风险。
+                </div>
             </div>
-            <div class="rec-card medium">
-                <div class="rec-period">中期（3-12个月）</div>
-                <ul class="rec-list">
-                    <li>利用越南ETS 30%抵消机制制定越南可再生能源投资策略 -- 产生碳信用同时推进范围3目标</li>
-                    <li>将新CDP指标纳入FY27供应商评分卡权重（森林商品、废水排放、SBTN水目标）</li>
-                    <li>对标2027年中国绝对总量控制时间表绘制Cisco亚太供应商地图 -- 准备范围3数据收集升级</li>
-                    <li>委托对所有Cisco制造基地进行WRI Aqueduct 2026水资源压力重新评估，纳入最新半导体晶圆厂基准数据</li>
-                </ul>
+            <div class="signal-item">
+                <div class="signal-indicator sig-green"></div>
+                <div class="signal-text">
+                    <strong>越南ETS——监管确定性提升</strong>
+                    第112/2026号法令（5月19日生效）提供首个清晰的碳信用转移法律框架，为越南供应商解锁国际碳融资渠道。
+                </div>
             </div>
         </div>
+
+        <!-- Water Risk Monitor -->
+        <div class="section">
+            <div class="section-title">&#128167; 水资源风险监测</div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">越南（南部）</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:72%;background:#f87171;"></div></div>
+                    <span style="font-size:11px;color:#f87171;font-weight:700;">高风险</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">菲律宾（吕宋岛）</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:65%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">中高风险</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">印度尼西亚（爪哇）</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:58%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">中高风险</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">泰国（中部）</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:48%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">中等风险</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">马来西亚（槟城）</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:32%;background:#34d399;"></div></div>
+                    <span style="font-size:11px;color:#34d399;font-weight:700;">低风险</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sources & Methodology -->
+        <div class="section">
+            <div class="section-title">&#128214; 本期数据来源</div>
+            <ul class="method-list">
+                <li>ETP/UNOPS：越南第112/2026/ND-CP号法令分析（2026年4月7日）</li>
+                <li>CarbonMeld：亚太碳市场2026年报告（2026年3月31日）</li>
+                <li>Cisco博客：FY25年度目的报告 — 能源供应篇（2026年4月13日）</li>
+                <li>TechNode Global：东南亚能源转型融资报告（2026年4月20日）</li>
+                <li>越南工商会/WTO中心：DPPA和BESS论坛总结（2026年4月22日）</li>
+                <li>Carbonaires：IETA欧洲气候峰会主要发现（2026年4月18日）</li>
+            </ul>
+        </div>
+
+        <!-- Next Issue Preview -->
+        <div class="section">
+            <div class="section-title">&#128336; 下期预告</div>
+            <ul class="method-list">
+                <li>越南ETS第112号法令实施进展与供应商合规准备</li>
+                <li>日本GX-ETS强制阶段启动对供应链的影响</li>
+                <li>东盟电网跨境电力交易最新进展</li>
+                <li>Cisco FY26 Q3财报可持续发展指标更新</li>
+            </ul>
+        </div>
+
     </div>
 </div>
-<div class="sidebar">
-    <div class="section">
-        <div class="section-title">&#128225; 快速信号</div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>越南ETS配额确定</strong>2026年2.684亿吨CO2当量；110家设施；2028年前免费分配</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>ICAP：碳市场进入主流</strong>41个ETS系统覆盖全球63% GDP；年收入800亿美元</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>霍尔木兹中断加深</strong>3月零油轮运输；东南亚加速可再生能源紧急应对</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>CDP 2026范围扩大</strong>新增海洋模块；森林商品+3；水指标增强</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>东盟电网一体化推进</strong>APG在APAEC 2026-2030下进入协调基础设施阶段</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128167; 水风险雷达</div>
-        <div class="water-risk-item"><div class="water-risk-location">台湾（PCB/PCBA）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-critical" style="width:85%"></div></div><div class="risk-pct">高</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">深圳（组装）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:65%"></div></div><div class="risk-pct">中高</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">北江（越南）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:55%"></div></div><div class="risk-pct">中</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">胡志明市</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:60%"></div></div><div class="risk-pct">中高</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">郑州（富士康）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-critical" style="width:80%"></div></div><div class="risk-pct">高</div></div></div>
-        <p style="font-size:11px;color:#475569;margin-top:10px;">来源：WRI Aqueduct水资源风险地图集，按SEMI ERMR 2026和Energy Solutions晶圆厂基准数据更新。</p>
-    </div>
-    <div class="section">
-        <div class="section-title">&#9889; 东南亚PPA就绪度</div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">越南</div><div class="ppa-score-badge score-partial">推进中</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:78%"></div></div><div class="ppa-note">第57号法令生效；ETS已运行；嘉莱省RE项目获批（1.9亿美元）</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">菲律宾</div><div class="ppa-score-badge score-ready">就绪</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:85%"></div></div><div class="ppa-note">国家能源紧急状态；22个RE项目加速推进</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">柬埔寨</div><div class="ppa-score-badge score-partial">推进中</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:65%"></div></div><div class="ppa-note">12亿美元清洁能源投资；2030年70%RE目标</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">泰国</div><div class="ppa-score-badge score-partial">部分</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:58%"></div></div><div class="ppa-note">亚开行基金+APG一体化或加速</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">马来西亚</div><div class="ppa-score-badge score-partial">部分</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:62%"></div></div><div class="ppa-note">电网互联资金改善接入</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#127758; 碳市场追踪</div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">越南ETS</div><div class="ppa-score-badge score-partial">试点</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:40%"></div></div><div class="ppa-note">110家设施；2028年前免费分配；2029年全面实施</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">中国全国碳市场</div><div class="ppa-score-badge score-ready">运行中</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:70%"></div></div><div class="ppa-note">2027年起绝对总量控制；扩大行业覆盖</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">印度ETS</div><div class="ppa-score-badge score-early">2026新</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:20%"></div></div><div class="ppa-note">全国性系统刚启动</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">日本ETS</div><div class="ppa-score-badge score-early">2026新</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:25%"></div></div><div class="ppa-note">从自愿过渡到强制</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128218; 来源追溯</div>
-        <ul class="source-list">
-            <li><span class="source-type src-primary">主要</span> ICAP 2026年度状况报告（2026年4月14日）</li>
-            <li><span class="source-type src-primary">主要</span> IEA/Bernama：霍尔木兹中断与东南亚能源转向（2026年4月18日）</li>
-            <li><span class="source-type src-primary">主要</span> ICAP：越南ETS监管更新（2026年3月25日）</li>
-            <li><span class="source-type src-primary">主要</span> 越南决定263/QD-TTg：温室气体配额分配（2026年2月9日）</li>
-            <li><span class="source-type src-secondary">分析</span> ESG研究院：越南碳市场（2025年12月31日）</li>
-            <li><span class="source-type src-secondary">分析</span> G&amp;A研究院：CDP 2026更新（2026年4月16日）</li>
-            <li><span class="source-type src-secondary">分析</span> Energy Solutions：半导体水资源基准（2026年1月）</li>
-            <li><span class="source-type src-secondary">分析</span> 贝克麦坚时：越南第57号法令PPA框架</li>
-            <li><span class="source-type src-synthesized">综合</span> ACE：2026年东盟能源报告（2026年2月3日）</li>
-        </ul>
-    </div>
-</div>
-</div>
+
 <div class="footer">
-    <p>Cisco 可持续发展情报简报 - 第19期 - 2026年4月21日</p>
-    <p style="margin-top:6px;">为Cisco供应链可持续发展团队编制 - <a href="cisco_sustainability_briefing.html">English Version</a></p>
-    <p style="margin-top:6px;color:#334155;">情报汇编自公开来源。未经授权不得对外分发。数据截止至2026年4月21日。</p>
+    <p>Cisco 可持续发展智能简报 &nbsp;|&nbsp; 第7期 &nbsp;|&nbsp; 2026年4月27日</p>
+    <p style="margin-top:6px;">供供应链可持续发展团队参阅 &nbsp;|&nbsp; Cisco Systems</p>
+    <p style="margin-top:8px;">
+        <span class="source-badge">ETP/UNOPS</span>
+        <span class="source-badge">CarbonMeld</span>
+        <span class="source-badge">Cisco FY25报告</span>
+        <span class="source-badge">TechNode Global</span>
+        <span class="source-badge">越南工商会VCCI</span>
+        <span class="source-badge">Carbonaires/IETA</span>
+    </p>
+    <p style="margin-top:10px; color:#334155;">本简报每周自动生成。所有数据来源于过去7天内发布的公开报告。</p>
 </div>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco Sustainability Intelligence Briefing - April 21, 2026</title>
+    <title>Cisco Sustainability Intelligence Briefing - April 27, 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
@@ -43,6 +43,7 @@
         .tag-water { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
         .tag-policy { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
         .tag-carbon { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+        .tag-cisco { background: rgba(4,159,217,0.15); color: #49bef2; border: 1px solid rgba(4,159,217,0.3); }
         .kpi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
         @media(max-width:600px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
         .kpi-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px; text-align: center; }
@@ -78,183 +79,299 @@
         .water-risk-level { display: flex; align-items: center; gap: 6px; }
         .risk-bar { width: 60px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
         .risk-fill { height: 100%; border-radius: 3px; }
-        .risk-critical { background: #f87171; } .risk-high { background: #fbbf24; }
-        .risk-pct { font-size: 11px; color: #64748b; }
-        .ppa-item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .ppa-item:last-child { border-bottom: none; }
-        .ppa-country { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-        .ppa-name { font-size: 0.88em; font-weight: 600; color: #e2e8f0; }
-        .ppa-score-badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
-        .score-ready { background: rgba(52,211,153,0.2); color: #34d399; }
-        .score-partial { background: rgba(251,191,36,0.2); color: #fbbf24; }
-        .score-early { background: rgba(248,113,113,0.2); color: #f87171; }
-        .ppa-progress { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
-        .ppa-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg,#049fd9,#00bceb); }
-        .ppa-note { font-size: 11px; color: #64748b; margin-top: 4px; }
-        .source-list { list-style: none; }
-        .source-list li { font-size: 0.82em; color: #64748b; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 6px; }
-        .source-list li:last-child { border-bottom: none; }
-        .source-type { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; flex-shrink: 0; }
-        .src-primary { background: rgba(4,159,217,0.2); color: #049fd9; }
-        .src-secondary { background: rgba(100,116,139,0.3); color: #94a3b8; }
-        .src-synthesized { background: rgba(167,139,250,0.2); color: #a78bfa; }
-        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer a { color: #049fd9; text-decoration: none; }
-        .confidence-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
-        .conf-high { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
-        .conf-med { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
-        .sidebar .section { margin-bottom: 16px; }
+        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 10px; }
+        .source-badge { display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #64748b; font-size: 10px; padding: 2px 8px; border-radius: 4px; margin: 2px; }
     </style>
 </head>
 <body>
-<a href="cisco_sustainability_briefing_zh.html" class="lang-btn lang-switch">&#127760; Chinese</a>
+
+<div class="lang-switch">
+    <a href="cisco_sustainability_briefing_zh.html" class="lang-btn">&#127760; 中文版</a>
+</div>
+
 <div class="header">
-    <div class="header-label">&#9889; Weekly Intel - Supply Chain Sustainability</div>
-    <h1>Cisco <span>Sustainability</span> Intelligence Briefing</h1>
-    <p class="subtitle">Vietnam PPA | SEA Green Energy | Water Stewardship | Carbon Markets | Supply Chain ESG</p>
-    <div class="date-badge"><div class="dot"></div>Week of April 21, 2026 | Issue #19</div>
+    <div class="header-label">&#128274; Cisco Intelligence</div>
+    <h1>Sustainability <span>Intelligence Briefing</span></h1>
+    <div class="subtitle">Supply Chain &amp; Renewable Energy Strategy Monitor</div>
+    <div class="date-badge">
+        <span class="dot"></span>
+        Week of April 27, 2026 &nbsp;|&nbsp; Issue #7
+    </div>
 </div>
+
 <div class="main-layout">
-<div class="main-content">
-    <div class="section exec-summary">
-        <div class="section-title">&#128203; Executive Summary</div>
-        <p><span class="highlight-tag">CARBON MARKETS</span> The ICAP Status Report 2026 (April 14) confirms global carbon markets have reached a historic inflection point: 41 operational ETS systems now cover 26% of global GHG emissions and generated nearly $80 billion in revenue in 2025. Three new national systems -- Japan, India, and Vietnam -- launched in 2026, while China prepares to transition its national carbon market to absolute cap control by 2027. Vietnam's ETS has set initial quotas of 243 MtCO2e (2025) and 268 MtCO2e (2026) covering 110 facilities across power, steel, and cement sectors. For Cisco's supply chain, this means carbon cost exposure is rapidly becoming a material factor across key manufacturing jurisdictions.</p>
-        <p><span class="highlight-tag">GEOPOLITICAL ENERGY</span> IEA Executive Director Fatih Birol warned (April 18) that the Strait of Hormuz disruption represents "the biggest energy security threat in history," with zero oil tanker shipments to Asian markets in March 2026. This geopolitical shock is accelerating Southeast Asia's renewable energy pivot: the Philippines declared an energy emergency and is fast-tracking 22 RE projects; Cambodia launched a $1B pumped hydro and $200M wind investment; Vietnam approved $190M for 3 solar + 1 wind projects in Gia Lai province. For Cisco, these developments reduce grid carbon intensity timelines but also intensify competition for RE assets.</p>
-        <p><span class="highlight-tag">CDP 2026</span> CDP's 2026 disclosure cycle introduces significant changes (opening June 15): expanded forest commodity coverage (adding cocoa, coffee, rubber), a new ocean module, and enhanced water security metrics including wastewater discharge data and SBTN freshwater target options. Cisco suppliers -- already required to disclose annually via CDP -- will face broader disclosure scope, directly impacting Cisco's Scope 3 data collection capabilities and supply chain ESG performance tracking.</p>
+    <!-- Left Column -->
+    <div class="left-col">
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <div class="section-title">&#128203; Executive Summary</div>
+            <div class="exec-summary">
+                <p>
+                    <span class="highlight-tag">CARBON</span>
+                    Asia-Pacific carbon markets hit a decisive operational inflection point in 2026: Japan's GX-ETS shifts from voluntary to mandatory (~300-400 companies), Vietnam's Decree No. 112/2026/ND-CP (effective May 19) formalizes cross-border credit transfers under Paris Agreement Articles 6.2 &amp; 6.4, and the IETA European Climate Summit (Barcelona, April 14-16) confirmed that carbon pricing now covers 63% of global GDP. For Cisco's supply chain, this signals near-term compliance cost exposure for major Asian manufacturing partners.
+                </p>
+                <p>
+                    <span class="highlight-tag">ENERGY</span>
+                    Vietnam's VCCI-organized forum (April 21) exposed systemic gaps in the DPPA framework — unclear pricing, limited participant eligibility, and underdeveloped BESS policy — that continue to delay large corporate buyers from locking in long-term clean power contracts. Meanwhile, Cisco's FY25 Purpose Report (released April 13) confirms 90% Scope 1&2 reduction vs. 2019 baseline and 100% renewable electricity across all owned and leased facilities globally — a milestone that reinforces Cisco's leadership but raises the bar for supplier expectations.
+                </p>
+                <p>
+                    <span class="highlight-tag">INVESTMENT</span>
+                    Southeast Asia attracted $1.8B in energy transition funding (per Tracxn/TechNode, April 20), but 90% flowed to solar and EVs, leaving battery storage (only $119M) and energy efficiency ($77M) severely underfunded. Singapore captured 78-94% of the capital as a financial hub, while Vietnam, Indonesia, and the Philippines — where Cisco suppliers operate — received minimal direct investment, creating supply-chain resilience risk.
+                </p>
+            </div>
+        </div>
+
+        <!-- Top 3 Actionable Findings -->
+        <div class="section">
+            <div class="section-title">&#9889; Top 3 Most Actionable Findings This Week</div>
+
+            <!-- Finding 1 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">1</div>
+                    <div class="intel-title">Vietnam Decree 112/2026 — Cross-Border Carbon Credits Formalized (Effective May 19)</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.4</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-carbon">Carbon Markets</div>
+                <div class="intel-body">
+                    Vietnam's Prime Minister signed Decree No. 112/2026/ND-CP on April 7, 2026, creating the first comprehensive regulatory framework for carbon credit international transfers under Paris Agreement Articles 6.2 and 6.4. Effective May 19, 2026, it designates the Ministry of Agriculture and Environment as the national authority, implements transfer caps to balance international market participation with domestic climate targets, and addresses transparency/credibility gaps that previously blocked carbon finance flows. Vietnam's facility-level quotas cover 110 production facilities with ~268.4 MtCO₂e allocations for 2026.
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; Cisco Supply Chain Relevance</div>
+                    <div class="content">Cisco's Vietnam-based EMS partners (Foxconn, Flextronics facilities) will face mandatory facility-level quota compliance by 2026. Supplier engagement on MRV readiness — monitoring, reporting, and verification systems — should begin now to avoid compliance gaps and potential supply disruptions when the ETS turns enforceable.</div>
+                </div>
+            </div>
+
+            <!-- Finding 2 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">2</div>
+                    <div class="intel-title">Cisco FY25: 90% Scope 1&2 Reduction, 100% Renewable Electricity — Supplier Gap Widens</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.1</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-cisco">Cisco Direct</div>
+                <div class="intel-body">
+                    Cisco's FY25 Purpose Report (April 13, 2026) confirms: 90% reduction in Scope 1&2 GHG vs. FY2019 baseline, and for the first time, 100% renewable electricity across all owned and leased facilities globally. Key operational achievements include a 92 MW solar+wind facility in Bangalore (India), a 172 MW solar virtual PPA in Texas (online 2027), and EV fleet penetration in Europe reaching 66% (from 11% in FY2019). 88% of component, manufacturing, and logistics suppliers now have GHG reduction targets, exceeding the 80% goal, and 4 supplier sites committed to purchasing ~28 million kWh of clean energy.
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; Cisco Supply Chain Relevance</div>
+                    <div class="content">As Cisco's own Scope 1&2 footprint approaches net-zero, Scope 3 (supplier emissions) is now the strategic frontier. The 88% supplier target coverage milestone means the remaining 12% of supply base — likely smaller, Asia-based Tier-2/3 suppliers — are the next priority. Supply chain sustainability teams should prepare for a formal Scope 3 reduction target announcement in FY26.</div>
+                </div>
+            </div>
+
+            <!-- Finding 3 -->
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">3</div>
+                    <div class="intel-title">SEA Energy Transition: $1.8B Funding but 90% in Solar+EV — Storage &amp; Efficiency Starved</div>
+                    <div class="impact-score">
+                        <div class="score-value">8.7</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <div class="category-tag tag-energy">SEA Energy</div>
+                <div class="intel-body">
+                    Per Tracxn data published April 20, 2026, Southeast Asia's energy transition sector attracted $1.8B in cumulative funding, but solar ($1.1B, 62%) and EVs ($505M) dominated. Battery storage received only $119M and energy efficiency just $77M — together a mere 11% of total. Singapore captured 78-94% of capital as a financial hub despite not being where Cisco supplier factories are located. Vietnam, Indonesia, Thailand, and the Philippines — key Cisco manufacturing geographies — received minimal direct investment. Grid infrastructure constraints and lack of consistent policy frameworks were cited as root causes.
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">&#127978; Cisco Supply Chain Relevance</div>
+                    <div class="content">The underinvestment in battery storage and grid infrastructure in Vietnam, Indonesia, and the Philippines creates a compounding risk: suppliers in these countries may struggle to access reliable renewable electricity for their operations even if they commit to RE targets. Cisco's supplier RE enablement programs should account for grid reliability constraints and consider direct investment or offtake guarantees as part of supplier development.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Data Points -->
+        <div class="section">
+            <div class="section-title">&#128200; Key Data Points</div>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">90%</div>
+                    <div class="kpi-label">Cisco Scope 1&2 Reduction vs FY2019</div>
+                    <div class="kpi-trend trend-up">&#8599; FY25 milestone</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-label">Cisco Renewable Electricity Coverage (FY25)</div>
+                    <div class="kpi-trend trend-up">&#8599; First-ever global achievement</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">268.4 Mt</div>
+                    <div class="kpi-label">Vietnam 2026 ETS Facility Quota (110 sites)</div>
+                    <div class="kpi-trend trend-warn">&#9888; Effective May 2026</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">$1.8B</div>
+                    <div class="kpi-label">SEA Energy Transition Funding (Cumulative)</div>
+                    <div class="kpi-trend trend-warn">&#9888; 90% solar+EV only</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">63%</div>
+                    <div class="kpi-label">Global GDP Covered by Carbon Pricing</div>
+                    <div class="kpi-trend trend-up">&#8599; IETA 2026 Summit</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">88%</div>
+                    <div class="kpi-label">Cisco Suppliers with GHG Reduction Targets</div>
+                    <div class="kpi-trend trend-up">&#8599; Exceeded 80% goal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Recommendation -->
+        <div class="section">
+            <div class="section-title">&#127919; Strategic Recommendation</div>
+            <div class="rec-grid">
+                <div class="rec-card short">
+                    <div class="rec-period">&#9201; Short-term (0-3 months)</div>
+                    <ul class="rec-list">
+                        <li>Map Cisco Vietnam suppliers against the 110 facilities covered by Decree 112/2026 ETS quotas; initiate MRV readiness assessments before the May 19 effective date</li>
+                        <li>Brief procurement and supplier development teams on Cisco's Scope 3 implications now that Scope 1&2 targets are achieved — the next audit cycle will scrutinize supplier emissions harder</li>
+                        <li>Evaluate supplier RE offtake strategies in Vietnam, Indonesia, and Philippines given the DPPA framework gaps and grid storage underinvestment identified this week</li>
+                    </ul>
+                </div>
+                <div class="rec-card medium">
+                    <div class="rec-period">&#128336; Medium-term (3-12 months)</div>
+                    <ul class="rec-list">
+                        <li>Develop a multi-country carbon credit procurement strategy aligned with Asia-Pacific ETS developments (Japan GX-ETS, Vietnam ETS, Singapore ICC) to hedge Scope 3 compliance costs for key suppliers</li>
+                        <li>Engage with VCCI and DPPA stakeholders in Vietnam to advocate for expanded eligible participant categories (including industrial parks with Cisco suppliers) and stronger BESS policy support</li>
+                        <li>Incorporate SEA storage infrastructure risk into Cisco's supplier sustainability scorecards; consider co-investment in on-site solar+storage projects at critical supplier facilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="section">
-        <div class="section-title">&#127919; Top 3 Actionable Intelligence Items</div>
-        <div class="intel-item">
-            <span class="category-tag tag-carbon">Carbon Market</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">1</div>
-                <div class="intel-title">Global Carbon Market Expansion Accelerates -- 41 ETS Systems Cover 26% of Global Emissions; Vietnam ETS Sets Quotas</div>
-                <div class="impact-score"><div class="score-value">9.6</div><div class="score-label">Impact</div></div>
+
+    <!-- Right Sidebar -->
+    <div class="right-col">
+
+        <!-- Market Signals -->
+        <div class="section">
+            <div class="section-title">&#128308; Market Signals</div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-red"></div>
+                <div class="signal-text">
+                    <strong>Vietnam DPPA — Framework Gaps Persist</strong>
+                    VCCI forum (April 21) confirmed DPPA pricing, BESS policy, and participant eligibility remain unresolved. Industrial park operators still face barriers to green power contracts.
+                </div>
             </div>
-            <div class="intel-body">The ICAP Status Report 2026 (April 14) documents unprecedented carbon market expansion. Three new national ETS systems launched in 2026: Japan (transitioning from voluntary to mandatory), India (national system), and Vietnam (national system). Vietnam's ETS, launched in June 2025 pilot, has now issued specific quotas: 243 MtCO2e for 2025 and 268 MtCO2e for 2026, covering 110 facilities (34 thermal power, 25 steel, 51 cement). Free allocation applies during 2025-2028 pilot, with auction mechanism from 2029. Carbon credits can offset up to 30% of emissions. China's national carbon market plans transition to absolute cap control by 2027. Global ETS revenue reached nearly $80 billion in 2025 -- a historic high. <span class="confidence-badge conf-high">&#9679; High Confidence</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco Relevance</div><div class="content">Cisco's Vietnam manufacturing suppliers (Foxconn Bac Ninh, Wistron VSIP) now operate under an active carbon pricing regime. While 2025-2028 free allocation provides a transition buffer, Cisco should integrate carbon cost projections into supplier total cost of ownership (TCO) models. The 30% offset mechanism creates an opportunity for Cisco to invest in Vietnamese RE projects that generate carbon credits for supplier compliance, simultaneously advancing Scope 3 reduction goals.</div></div>
-        </div>
-        <div class="intel-item">
-            <span class="category-tag tag-energy">SEA Energy Crisis</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">2</div>
-                <div class="intel-title">Strait of Hormuz Disruption Triggers SEA Energy Emergency -- Philippines, Cambodia, Vietnam Accelerate RE Mega-Projects</div>
-                <div class="impact-score"><div class="score-value">9.2</div><div class="score-label">Impact</div></div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-amber"></div>
+                <div class="signal-text">
+                    <strong>Global Carbon Policy — Demand Lags Supply</strong>
+                    IETA Barcelona: high-quality carbon credits exist, but corporate buyers await clearer policy guidance before scaling procurement. Second-wave buyers still on the sidelines.
+                </div>
             </div>
-            <div class="intel-body">IEA Executive Director Fatih Birol's April 18 warning confirmed zero oil tanker shipments through the Strait of Hormuz in March 2026, creating the "biggest energy security threat in history." The geopolitical shock has catalyzed emergency responses across Southeast Asia: the Philippines declared a national energy emergency and is fast-tracking 22 renewable projects (12 solar, 6 hydro, 2 biomass, 1 wind, 1 integrated system); Cambodia launched a $1B/1,000MW pumped hydro plant (April 2026) and a $200M/150MW wind farm (approved Feb 2026); Vietnam approved $190M for 3 solar plants + 1 wind farm in Gia Lai province targeting grid connection by end-2028; Myanmar's Shwemyaung solar plant begins generation in June 2026. <span class="confidence-badge conf-high">&#9679; High Confidence</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco Relevance</div><div class="content">The energy crisis is accelerating grid decarbonization timelines in Cisco's key manufacturing jurisdictions. Philippines' energy emergency may fast-track grid RE improvements, benefiting Cisco's Manila-area suppliers. Vietnam's Gia Lai solar/wind projects could provide additional corporate PPA supply by 2029. Cisco should monitor these developments and reassess regional RE procurement strategy -- the geopolitical premium on fossil fuels makes RE PPAs more cost-competitive than previously modeled.</div></div>
-        </div>
-        <div class="intel-item">
-            <span class="category-tag tag-policy">CDP 2026 / Supply Chain</span>
-            <div class="intel-item-header">
-                <div class="intel-rank">3</div>
-                <div class="intel-title">CDP 2026 Disclosure Cycle -- New Ocean Module, Expanded Forest Scope, and Enhanced Water Metrics Reshape Supply Chain ESG</div>
-                <div class="impact-score"><div class="score-value">8.5</div><div class="score-label">Impact</div></div>
+            <div class="signal-item">
+                <div class="signal-indicator sig-green"></div>
+                <div class="signal-text">
+                    <strong>Cisco RE — 100% Renewable Milestone Achieved</strong>
+                    FY25 Purpose Report (April 13) confirms 100% renewable electricity globally for first time. Sets new benchmark for tech sector supply chain RE expectations.
+                </div>
             </div>
-            <div class="intel-body">CDP's 2026 disclosure cycle (opening June 15, 2026 -- its 25th cycle) introduces major changes with direct implications for Cisco's supply chain sustainability requirements. Key updates: (1) Forest disclosure expanded from 4 to 7 commodities, adding cocoa, coffee, and rubber -- unified scoring means broader supplier assessment burden; (2) New ocean module introduced (transition year, no scoring in 2026); (3) Enhanced water security metrics including wastewater discharge levels and SBTN freshwater target reporting; (4) Plastic disclosure aligned with Ellen MacArthur Foundation's Global Commitment. While 2026 modules are transitional, suppliers should begin data collection immediately. <span class="confidence-badge conf-high">&#9679; High Confidence</span></div>
-            <div class="intel-cisco-impact"><div class="label">Cisco Relevance</div><div class="content">Cisco requires all suppliers to disclose annually via CDP. The expanded scope means Cisco's PCB suppliers (using rubber components in cable assemblies, silicone gaskets) may now face forest commodity disclosure requirements. Enhanced water metrics (wastewater discharge) directly impact Cisco's Tier-1 PCB fab suppliers in Taiwan and China. Cisco should issue updated supplier guidance by Q3 2026 and incorporate new CDP metrics into supplier scorecard weighting ahead of the FY27 disclosure cycle.</div></div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128202; Key Data Points</div>
-        <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-value">41</div><div class="kpi-label">Operational ETS Systems Worldwide</div><div class="kpi-trend trend-up">+3 new in 2026 (JP, IN, VN)</div></div>
-            <div class="kpi-card"><div class="kpi-value">$80B</div><div class="kpi-label">Global ETS Revenue (2025)</div><div class="kpi-trend trend-up">Historic high</div></div>
-            <div class="kpi-card"><div class="kpi-value">268 Mt</div><div class="kpi-label">Vietnam ETS Quota (2026)</div><div class="kpi-trend trend-warn">110 facilities covered</div></div>
-            <div class="kpi-card"><div class="kpi-value">85%+</div><div class="kpi-label">Leading Fab Water Reclamation Rate</div><div class="kpi-trend trend-up">Taiwan benchmark (5-7nm)</div></div>
-            <div class="kpi-card"><div class="kpi-value">$1B+</div><div class="kpi-label">Cambodia Clean Energy Investment</div><div class="kpi-trend trend-up">Pumped hydro + wind</div></div>
-            <div class="kpi-card"><div class="kpi-value">63%</div><div class="kpi-label">Global GDP Covered by ETS</div><div class="kpi-trend trend-up">14 of 20 G20 nations</div></div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128300; Methodology Notes</div>
-        <ul class="method-list">
-            <li>Coverage window: April 14-21, 2026. Intelligence items prioritized by recency, source authority, and Cisco supply chain relevance.</li>
-            <li>Impact Scores (0-10): policy momentum (30%), investment activity (25%), Cisco supply chain intersection (30%), time-to-action urgency (15%).</li>
-            <li>Carbon market data: ICAP Status Report 2026 (April 14), Vietnam ETS regulatory updates (Decree 29/2026, Decision 263/2026), ESG Institute analysis.</li>
-            <li>SEA energy: IEA/Bernama report via The Star (April 18, 2026), national government project announcements from Philippines, Cambodia, Vietnam, Myanmar.</li>
-            <li>CDP 2026: G&amp;A Institute analysis (April 16, 2026), CDP official disclosure page, Ellen MacArthur Foundation alignment documentation.</li>
-            <li>Semiconductor water data: Energy Solutions Intelligence fab benchmark study (January 2026), SEMI ERMR Working Group water risk paper (March 2026).</li>
-            <li>Confidence levels: High = 2+ independent primary sources; Medium = 1 primary + secondary corroboration.</li>
-        </ul>
-    </div>
-    <div class="section">
-        <div class="section-title">&#129517; Strategic Recommendations</div>
-        <div class="rec-grid">
-            <div class="rec-card short">
-                <div class="rec-period">Short-Term (0-3 Months)</div>
-                <ul class="rec-list">
-                    <li>Update Cisco Supplier CDP Guidance to reflect 2026 changes (forest commodities, water metrics, ocean module) -- issue by Q3 2026</li>
-                    <li>Integrate Vietnam ETS carbon cost projections into supplier TCO models for Foxconn Bac Ninh and Wistron VSIP</li>
-                    <li>Assess Philippines energy emergency impact on Manila-area supplier grid mix and RE procurement options</li>
-                    <li>Pilot WWF Water Risk Filter with top 5 PCB suppliers -- align with new CDP water security metrics</li>
-                </ul>
+            <div class="signal-item">
+                <div class="signal-indicator sig-amber"></div>
+                <div class="signal-text">
+                    <strong>SEA Storage Funding Gap — Grid Risk Rising</strong>
+                    Only $119M reached battery storage vs. $1.1B for solar. Grid reliability in Vietnam/Indonesia/Philippines at risk without urgent investment rebalancing.
+                </div>
             </div>
-            <div class="rec-card medium">
-                <div class="rec-period">Medium-Term (3-12 Months)</div>
-                <ul class="rec-list">
-                    <li>Develop Vietnam RE investment strategy leveraging 30% ETS offset mechanism -- generate carbon credits while advancing Scope 3 goals</li>
-                    <li>Incorporate new CDP metrics into FY27 supplier scorecard weighting (forest commodities, wastewater discharge, SBTN water targets)</li>
-                    <li>Map Cisco APAC suppliers against 2027 China absolute cap timeline -- prepare Scope 3 data collection upgrade</li>
-                    <li>Commission WRI Aqueduct 2026 water stress reassessment for all Cisco manufacturing sites including new semiconductor fab benchmarks</li>
-                </ul>
+            <div class="signal-item">
+                <div class="signal-indicator sig-green"></div>
+                <div class="signal-text">
+                    <strong>Vietnam ETS — Regulatory Certainty Improving</strong>
+                    Decree 112/2026 (effective May 19) provides first clear legal framework for carbon credit transfers, unlocking international carbon finance for Vietnamese suppliers.
+                </div>
             </div>
         </div>
+
+        <!-- Water Risk Monitor -->
+        <div class="section">
+            <div class="section-title">&#128167; Water Risk Monitor</div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">Vietnam (South)</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:72%;background:#f87171;"></div></div>
+                    <span style="font-size:11px;color:#f87171;font-weight:700;">High</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">Philippines (Luzon)</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:65%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">Med-High</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">Indonesia (Java)</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:58%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">Med-High</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">Thailand (Central)</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:48%;background:#fbbf24;"></div></div>
+                    <span style="font-size:11px;color:#fbbf24;font-weight:700;">Medium</span>
+                </div>
+            </div>
+            <div class="water-risk-item">
+                <div class="water-risk-location">Malaysia (Penang)</div>
+                <div class="water-risk-level">
+                    <div class="risk-bar"><div class="risk-fill" style="width:32%;background:#34d399;"></div></div>
+                    <span style="font-size:11px;color:#34d399;font-weight:700;">Low</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sources & Methodology -->
+        <div class="section">
+            <div class="section-title">&#128214; Sources This Week</div>
+            <ul class="method-list">
+                <li>ETP/UNOPS: Decree No. 112/2026/ND-CP Analysis (Apr 7, 2026)</li>
+                <li>CarbonMeld: Asia-Pacific Carbon Markets 2026 Report (Mar 31, 2026)</li>
+                <li>Cisco Blogs: FY25 Purpose Report — Energy Supply (Apr 13, 2026)</li>
+                <li>TechNode Global: SEA Energy Transition Funding Report (Apr 20, 2026)</li>
+                <li>VCCI/WTO Center: Vietnam DPPA &amp; BESS Forum Summary (Apr 22, 2026)</li>
+                <li>Carbonaires: IETA European Climate Summit Key Takeaways (Apr 18, 2026)</li>
+            </ul>
+        </div>
+
+        <!-- Next Issue Preview -->
+        <div class="section">
+            <div class="section-title">&#128336; Next Issue Preview</div>
+            <ul class="method-list">
+                <li>Vietnam ETS Decree 112 implementation progress &amp; supplier readiness</li>
+                <li>Japan GX-ETS mandatory phase launch impact on supply chains</li>
+                <li>ASEAN Power Grid cross-border electricity trading developments</li>
+                <li>Cisco FY26 Q3 earnings sustainability metrics update</li>
+            </ul>
+        </div>
+
     </div>
 </div>
-<div class="sidebar">
-    <div class="section">
-        <div class="section-title">&#128225; Quick Signals</div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>Vietnam ETS Quotas Set</strong>268 MtCO2e for 2026; 110 facilities; free allocation through 2028</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>ICAP: Carbon Markets Mainstream</strong>41 ETS systems cover 63% of global GDP; $80B annual revenue</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>Hormuz Disruption Deepens</strong>Zero oil shipments in March; SEA accelerating RE emergency response</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>CDP 2026 Scope Expanded</strong>New ocean module; forest commodities +3; water metrics enhanced</div></div>
-        <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>ASEAN Grid Integration Advances</strong>APG enters coordinated infrastructure phase under APAEC 2026-2030</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128167; Water Risk Radar</div>
-        <div class="water-risk-item"><div class="water-risk-location">Taiwan (PCB/PCBA)</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-critical" style="width:85%"></div></div><div class="risk-pct">High</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">Shenzhen (Assembly)</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:65%"></div></div><div class="risk-pct">Med-H</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">Bac Ninh, Vietnam</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:55%"></div></div><div class="risk-pct">Med</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">Ho Chi Minh City</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-high" style="width:60%"></div></div><div class="risk-pct">Med-H</div></div></div>
-        <div class="water-risk-item"><div class="water-risk-location">Zhengzhou (Foxconn)</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-critical" style="width:80%"></div></div><div class="risk-pct">High</div></div></div>
-        <p style="font-size:11px;color:#475569;margin-top:10px;">Source: WRI Aqueduct Water Risk Atlas, updated with SEMI ERMR 2026 and Energy Solutions fab benchmarks.</p>
-    </div>
-    <div class="section">
-        <div class="section-title">&#9889; SEA PPA Readiness</div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Vietnam</div><div class="ppa-score-badge score-partial">Advancing</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:78%"></div></div><div class="ppa-note">Decree 57 active; ETS live; Gia Lai RE projects approved ($190M)</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Philippines</div><div class="ppa-score-badge score-ready">Ready</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:85%"></div></div><div class="ppa-note">Energy emergency declared; 22 RE projects fast-tracked</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Cambodia</div><div class="ppa-score-badge score-partial">Advancing</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:65%"></div></div><div class="ppa-note">$1.2B clean energy investment; 70% RE target by 2030</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Thailand</div><div class="ppa-score-badge score-partial">Partial</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:58%"></div></div><div class="ppa-note">ADB fund + APG integration may accelerate</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Malaysia</div><div class="ppa-score-badge score-partial">Partial</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:62%"></div></div><div class="ppa-note">Grid interconnection funding improving access</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#127758; Carbon Market Tracker</div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Vietnam ETS</div><div class="ppa-score-badge score-partial">Pilot</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:40%"></div></div><div class="ppa-note">110 facilities; free allocation to 2028; full from 2029</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">China National</div><div class="ppa-score-badge score-ready">Active</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:70%"></div></div><div class="ppa-note">Absolute cap from 2027; expanding sector coverage</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">India ETS</div><div class="ppa-score-badge score-early">New 2026</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:20%"></div></div><div class="ppa-note">National system just launched</div></div>
-        <div class="ppa-item"><div class="ppa-country"><div class="ppa-name">Japan ETS</div><div class="ppa-score-badge score-early">New 2026</div></div><div class="ppa-progress"><div class="ppa-fill" style="width:25%"></div></div><div class="ppa-note">Transitioned from voluntary to mandatory</div></div>
-    </div>
-    <div class="section">
-        <div class="section-title">&#128218; Source Provenance</div>
-        <ul class="source-list">
-            <li><span class="source-type src-primary">PRIMARY</span> ICAP Status Report 2026 (Apr 14, 2026)</li>
-            <li><span class="source-type src-primary">PRIMARY</span> IEA/Bernama: Hormuz Disruption &amp; SEA Energy Pivot (Apr 18, 2026)</li>
-            <li><span class="source-type src-primary">PRIMARY</span> ICAP: Vietnam ETS Regulatory Update (Mar 25, 2026)</li>
-            <li><span class="source-type src-primary">PRIMARY</span> Vietnam Decision 263/QD-TTg: GHG Quota Allocation (Feb 9, 2026)</li>
-            <li><span class="source-type src-secondary">ANALYSIS</span> ESG Institute: Vietnam Carbon Market (Dec 31, 2025)</li>
-            <li><span class="source-type src-secondary">ANALYSIS</span> G&amp;A Institute: CDP 2026 Updates (Apr 16, 2026)</li>
-            <li><span class="source-type src-secondary">ANALYSIS</span> Energy Solutions: Semiconductor Water Benchmarks (Jan 2026)</li>
-            <li><span class="source-type src-secondary">ANALYSIS</span> Baker McKenzie: Vietnam Decree 57 DPPA Framework</li>
-            <li><span class="source-type src-synthesized">SYNTH</span> ACE: ASEAN Energy in 2026 Report (Feb 3, 2026)</li>
-        </ul>
-    </div>
-</div>
-</div>
+
 <div class="footer">
-    <p>Cisco Sustainability Intelligence Briefing - Issue #19 - Week of April 21, 2026</p>
-    <p style="margin-top:6px;">Prepared for Cisco Supply Chain Sustainability Team - <a href="cisco_sustainability_briefing_zh.html">Chinese Version</a></p>
-    <p style="margin-top:6px;color:#334155;">Intelligence compiled from public sources. Not for external distribution. Data current as of April 21, 2026.</p>
+    <p>Cisco Sustainability Intelligence Briefing &nbsp;|&nbsp; Issue #7 &nbsp;|&nbsp; April 27, 2026</p>
+    <p style="margin-top:6px;">Prepared for Supply Chain Sustainability Team &nbsp;|&nbsp; Cisco Systems</p>
+    <p style="margin-top:8px;">
+        <span class="source-badge">ETP/UNOPS</span>
+        <span class="source-badge">CarbonMeld</span>
+        <span class="source-badge">Cisco FY25 Report</span>
+        <span class="source-badge">TechNode Global</span>
+        <span class="source-badge">VCCI</span>
+        <span class="source-badge">Carbonaires/IETA</span>
+    </p>
+    <p style="margin-top:10px; color:#334155;">This briefing is auto-generated weekly. All data sourced from publicly available reports published in the past 7 days.</p>
 </div>
+
 </body>
 </html>
