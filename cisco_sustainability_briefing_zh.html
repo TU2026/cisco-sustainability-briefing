@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco 可持续发展情报简报 - 2026年4月28日</title>
+    <title>Cisco 可持续发展情报简报 - 2026年5月4日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
         .header { background: linear-gradient(135deg, #0d274d 0%, #049fd9 100%); padding: 50px 20px 40px; text-align: center; position: relative; overflow: hidden; }
         .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(0,188,235,0.15) 0%, transparent 60%); pointer-events: none; }
         .header-label { display: inline-block; background: rgba(0,188,235,0.2); border: 1px solid #00bceb; color: #00bceb; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; }
@@ -66,7 +66,9 @@
         .signal-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .signal-item:last-child { border-bottom: none; }
         .signal-indicator { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-        .sig-green { background: #34d399; } .sig-amber { background: #fbbf24; } .sig-red { background: #f87171; }
+        .sig-green { background: #34d399; box-shadow: 0 0 6px rgba(52,211,153,0.5); }
+        .sig-amber { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,0.5); }
+        .sig-red { background: #f87171; box-shadow: 0 0 6px rgba(248,113,113,0.5); }
         .signal-text { font-size: 0.85em; color: #94a3b8; }
         .signal-text strong { color: #e2e8f0; display: block; font-size: 0.92em; }
         .water-risk-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -77,6 +79,7 @@
         .risk-fill { height: 100%; border-radius: 3px; }
         .risk-medium { background: linear-gradient(90deg,#fbbf24,#f59e0b); }
         .risk-low { background: linear-gradient(90deg,#34d399,#10b981); }
+        .risk-high { background: linear-gradient(90deg,#f87171,#ef4444); }
         .risk-label { font-size: 10px; font-weight: 700; }
         .ppa-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .ppa-item:last-child { border-bottom: none; }
@@ -100,105 +103,115 @@
         <a href="cisco_sustainability_briefing.html" class="lang-btn">🌐 English</a>
     </div>
     <div class="header">
-        <div class="header-label">情报简报 <span class="issue-badge">#53</span></div>
-        <h1>Cisco <span>可持续发展</span>情报简报</h1>
+        <div class="header-label">可持续发展情报简报 <span class="issue-badge">第54期</span></div>
+        <h1>Cisco <span>可持续发展</span> 情报</h1>
         <p class="subtitle">供应链 · 可再生能源 · 水资源管理 · 碳战略</p>
         <div class="date-badge">
             <div class="dot"></div>
-            覆盖周期：2026年4月21–27日 &nbsp;|&nbsp; 发布：2026年4月28日
+            2026年4月28日 – 5月4日 &nbsp;|&nbsp; 发布于2026年5月4日
         </div>
     </div>
     <div class="main-layout">
         <div class="main-col">
             <div class="section exec-summary">
-                <div class="section-title">执行摘要 · Executive Summary</div>
-                <p>本周情报聚焦三条相互交织的供应链可持续发展压力线。<span class="highlight-tag">储能紧迫性</span> 越南正式将电池储能系统（BESS）从"辅助技术"升级为<strong>战略性基础设施</strong>。越通社（4月26日）报道2030年BESS市场潜力达60亿美元，PDP8目标装机1万–1.63万兆瓦，而当前已安装容量不足100兆瓦——差距超过99%。电网不稳定直接威胁到越南合同制造商向Cisco承诺的Scope 3绿电供应目标。</p>
-                <p><span class="highlight-tag">东南亚分化</span> RECCESSARY（4月16日）量化了结构性分化：越南以电子出口规模（1265亿美元）和可再生能源成本潜力领先，泰国在上游PCB供应（35亿美元，东盟第一）、电网可靠性和碳定价基础设施方面占优。CBAM成本差距现已可量化：越南钢铁约238欧元/吨 vs 泰国约194欧元/吨，1万吨钢铁出货多出约43.6万欧元成本（2027年起）。<span class="highlight-tag">IMF宏观风险</span> IMF（4月16日）将亚洲能源冲击升级为结构性关切——亚洲进口全球38%石油和24%天然气，2026年通胀预计翻番至2.6%——进一步强化了在Cisco供应商中加速推进可再生能源采购的战略和财务逻辑。</p>
+                <div class="section-title">执行摘要</div>
+                <p>本周情报揭示两大里程碑事件，正在重塑思科东南亚供应链可持续发展战略。<span class="highlight-tag">全球纪录</span>IEA全球能源回顾2026（4月20日）确认2025年为历史性转折点：全球可再生能源新增装机容量创纪录达到<strong>800 GW</strong>，其中光伏新增605 GW（占75%），发电量较2022年翻番。光伏首次成为<strong>全球电力增长的最大单一来源</strong>，超越所有化石燃料。这从根本上改善了加速思科越南/泰国供应商可再生能源采购的经济论据。</p>
+                <p><span class="highlight-tag">东盟2000亿美元信号</span>Bizruption Asia（2月13日）量化了东盟可再生能源部署雄心：<strong>到2030年投资2000亿美元</strong>，由亚开行/世界银行联合融资支持，APAEC 2026–2030目标作为后盾。越南BESS框架取得突破——第62/2025/TT-BCT号通知于2026年1月26日生效，成为东盟首个大型经济体的工商业储能收入框架。<span class="highlight-tag">供应链水风险</span>SEMI/Marvell "涟漪效应"报告首次建立了覆盖140家半导体设施、89个水资源流域的基线。思科供应链水资源管理项目需要对照此新行业标准进行基准评估。<span class="highlight-tag">思科进展</span>思科FY25目的报告确认Scope 1&2较FY2019基准减排90%、Scope 3减排35%——展现了企业公信力，可在供应商参与项目中善加利用。</p>
             </div>
             <div class="section">
-                <div class="section-title">Top 3 本周最值得行动的发现</div>
+                <div class="section-title">本周最值得行动的三大发现</div>
                 <div class="intel-item">
                     <div class="intel-item-header">
                         <div class="intel-rank">1</div>
-                        <div class="intel-title">越南BESS大规模部署成战略基础设施必选项——2030年市场规模60亿美元，与PDP8目标差距悬殊</div>
-                        <div class="impact-score"><div class="score-value">9.3</div><div class="score-label">影响 /10</div></div>
+                        <div class="intel-title">IEA全球能源回顾2026：光伏新增605 GW创纪录 — 跃升全球最大单一电力增长来源</div>
+                        <div class="impact-score"><div class="score-value">9.5</div><div class="score-label">影响评分/10</div></div>
                     </div>
-                    <span class="category-tag tag-energy">⚡ 可再生能源 / 储能</span>
-                    <p class="intel-body">越通社（4月26日）：越南将BESS纳入战略性基础设施的压力持续升温。修订版PDP8设定2030年储能目标为1万–1.63万兆瓦，而截至2025年初已安装容量不足100兆瓦——缺口超过99%。4月22日VCCI/工业贸易部论坛确认，若BESS无法大规模铺开，包括直接购电协议（DPPA）在内的更广泛能源转型将难以可靠推进。主要瓶颈：辅助服务市场监管框架缺失、前期资本成本高且绿色融资渠道有限、技术及消防安全标准尚未完善。GG Industries已启动5 GWh/年国产BESS工厂规划——供应链本地化的早期信号。越南BESS市场到2030年预计达60亿美元。</p>
+                    <span class="category-tag tag-energy">⚡ 可再生能源</span>
+                    <p class="intel-body">IEA全球能源回顾2026（4月20日）：2025年全球可再生能源新增装机容量创纪录达到<strong>800 GW</strong>，其中光伏新增605 GW（占75%）。光伏总发电量较2022年翻番，现占全球发电量8%以上。储能成为增长最快的电力技术。东盟国家处于有利位置：10个东盟成员国中8个已设定净零/碳中和目标，APAEC 2026–2030目标是初级能源供应中可再生能源占比达35%。世界银行（2月2日）"绿色地平线"报告确认东亚巨大可再生能源潜力，越南和菲律宾在光伏成本竞争力方面领先。Robeco（2026年3月）指出，AI/数字化加速正在推动芯片需求增长，同时增加能源需求——形成循环，对可再生能源采购紧迫性形成增强效应。</p>
                     <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">越南合同制造商（鸿海、伟创力网络）依赖稳定电网；BESS缺口导致限电风险，将损害Cisco对越南供应商Scope 3绿电承诺的兑现。Cisco供应商RE项目必须将BESS就绪度纳入工厂层面评估标准。此外，Cisco网络设备日益嵌入BESS管理平台——越南60亿美元储能市场是Cisco直接产品收入机遇。</div>
+                        <div class="label">对思科的重要性</div>
+                        <div class="content">800 GW里程碑和成本持续下降，验证了加速思科越南/印尼/泰国供应商可再生能源采购的合理性。APAEC 35%目标表明区域电网脱碳将加速——思科的Scope 3可再生能源模型应纳入更快的电网排放因子改善假设。AI基础设施增长（Robeco）是双刃剑：更高的能源需求同时放大了紧迫性和思科可再生能源电网管理网络解决方案的机会。</div>
                     </div>
                 </div>
                 <div class="intel-item">
                     <div class="intel-item-header">
                         <div class="intel-rank">2</div>
-                        <div class="intel-title">越南与泰国脱碳轨迹分化：CBAM成本差约44欧元/吨，现已可量化</div>
-                        <div class="impact-score"><div class="score-value">8.7</div><div class="score-label">影响 /10</div></div>
+                        <div class="intel-title">越南BESS收入框架生效：第62号通知1月26日生效 — 东盟首个大型工商业储能规则</div>
+                        <div class="impact-score"><div class="score-value">9.0</div><div class="score-label">影响评分/10</div></div>
                     </div>
-                    <span class="category-tag tag-carbon">♻ 碳排放 / CBAM</span>
-                    <p class="intel-body">RECCESSARY（4月16日）：越南ETS处于试点阶段，2029年前不会产生有效碳价格信号；泰国于2025年12月通过《气候变化法》，碳税200泰铢/吨（约5.7美元）。CBAM碳成本敞口：越南钢铁约238欧元/吨 vs 泰国约194欧元/吨，差距43.6欧元/吨。越南MRV基础设施严重薄弱：不足11%的大型企业完成第三方碳核查，且无国家碳注册平台。越南以17个活跃FTA（EVFTA、CPTPP、美国市场）的贸易准入领先；泰国以上游PCB生态领先（东盟第一，35亿美元/年）。两国DPPA框架均受限——越南源于定价和输电费用不明确，泰国源于制造业50兆瓦的准入门槛。</p>
+                    <span class="category-tag tag-energy">⚡ 储能 / 电网</span>
+                    <p class="intel-body">Energy Storage News（2月16日）：随着<strong>第62/2025/TT-BCT号通知于2026年1月26日生效</strong>，越南成为东盟首个为工商业用户引入专用储能（BESS）收入框架的大型经济体。这解决了阻碍越南直接电力采购（DPPA）市场的关键监管瓶颈。PiloTech AI（4月8日）分析显示，工商业BESS系统现在可以叠加多重收入来源：需量电费管理 + DPPA平衡 + 辅助服务。VietnamPlus（4月26日）报道，越南面临来自快速增长可再生能源装机带来的持续电网压力，储能对于稳定性已变得迫切需要。Norton Rose Fulbright指出，电力发展计划八（PDP8）大幅提高了储能目标。Pilotech计算，越南工商业用户的BESS投资回报率在合理电价水平下现已转正——使供应商端储能具备经济可行性。</p>
                     <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">Cisco的PCB供应链深度暴露于越南组装和泰国上游制造两条线。CBAM差距量化为供应链可持续发展团队提供了明确的优先级指标：建立越南供应商MRV能力是近期关键行动。Cisco还应针对越南延迟的碳定价时间线，对2030年Scope 3目标模型进行压力测试，并评估EU目的地硬件组件的CBAM暴露是否构成实质成本风险。</div>
+                        <div class="label">对思科的重要性</div>
+                        <div class="content">思科越南代工厂现在可以将BESS评估为与可再生能源采购并行、财务上有吸引力的投资。BESS减少了对不稳定电网的依赖，直接支持Scope 3可再生能源承诺。思科供应商可持续发展团队应为FY27评估中的越南一级供应商制定BESS就绪检查清单。此外，思科用于BESS管理的网络/物联网产品代表着越南快速增长的价值60亿美元储能市场的潜在产品收入来源。</div>
                     </div>
                 </div>
                 <div class="intel-item">
                     <div class="intel-item-header">
                         <div class="intel-rank">3</div>
-                        <div class="intel-title">IMF警示亚洲能源冲击：通胀升至2.6%、增长放缓至4.4%，RE对冲成财务战略要务</div>
-                        <div class="impact-score"><div class="score-value">8.1</div><div class="score-label">影响 /10</div></div>
+                        <div class="intel-title">SEMI"涟漪效应"：覆盖140家半导体设施、89个流域的首次水风险基线建立</div>
+                        <div class="impact-score"><div class="score-value">8.6</div><div class="score-label">影响评分/10</div></div>
                     </div>
-                    <span class="category-tag tag-policy">📋 宏观 / 政策</span>
-                    <p class="intel-body">IMF博客（4月16日，作者Pescatori &amp; Srinivasan）：亚洲进口全球38%的石油、24%的天然气；能源成本约占区域GDP的2.5%。2026年通胀预计从1.4%翻升至2.6%；增长从5%放缓至4.4%。供应链传导渠道包括化肥、石化产品及材料（氦、硫磺）——均为电子制造的上游投入。IMF明确建议将"能效、电网和替代能源投资"作为应对未来化石燃料进口冲击的结构性对冲手段。泰国和马来西亚作为石油依赖型经济体，宏观脆弱性更高。在不利情景下，亚洲增长可能损失1–2个百分点。</p>
+                    <span class="category-tag tag-carbon">💧 水资源管理</span>
+                    <p class="intel-body">SEMI/Marvell（2026年1-2月）："涟漪效应"报告使用Waterplan的AI风险引擎分析了全球<strong>89个独特水资源流域中的140家半导体设施</strong>。关键发现：在建半导体工厂中超过25%、2021年以来宣布的新工厂中40%处于预计到2030年将面临严重水资源压力的流域。台湾以台积电为中心的晶圆厂集群、韩国半导体走廊及新兴东南亚设施均处于高风险状态。瑞士再保险（2026年2月）独立量化了台湾半导体制造的气候-水风险，将干旱、洪水和极端高温列为重大风险因素。Robeco（2026年3月）指出，芯片制造商正越来越多地对水资源短缺进行对冲——这一战略转变将影响全球供应链成本结构。</p>
                     <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">东南亚能源成本通胀将推高Cisco供应商运营费用，并对合同定价谈判形成压力。Cisco供应商RE项目（屋顶光伏、DPPA促进）具有双重价值：既降低碳排放，又为化石能源价格波动提供成本对冲。IMF宏观框架为加速供应商能效投资（超越合规要求）提供了强有力的ROI论据，使Cisco的供应商参与项目获得更坚实的商业案例支持。</div>
+                        <div class="label">对思科的重要性</div>
+                        <div class="content">思科的上游PCB及元器件供应商已嵌入此半导体水风险网络。SEMI基线为评估思科二级/三级供应商流域水风险暴露提供了首个量化工具。思科水资源管理计划应将SEMI的89流域风险图纳入供应商资质认证。缺水地区可能面临生产削减——思科供应链韧性团队应将关键子层级供应商与此水风险数据进行映射，并制定应急采购计划。</div>
                     </div>
                 </div>
             </div>
             <div class="section">
-                <div class="section-title">关键数据点 · Key Data Points</div>
+                <div class="section-title">关键数据点</div>
                 <div class="kpi-grid">
-                    <div class="kpi-card"><div class="kpi-value">&lt;100</div><div class="kpi-label">越南BESS已安装容量（兆瓦），vs PDP8 2030年目标1万–1.63万兆瓦</div><div class="kpi-trend trend-down">⚠ 差距严重</div></div>
-                    <div class="kpi-card"><div class="kpi-value">60亿$</div><div class="kpi-label">越南2030年BESS市场潜力（越通社，4月26日）</div><div class="kpi-trend trend-up">↑ Cisco产品机遇</div></div>
-                    <div class="kpi-card"><div class="kpi-value">44欧元</div><div class="kpi-label">越南vs泰国CBAM碳成本差（每吨钢铁，2027年起）</div><div class="kpi-trend trend-warn">⚠ 供应商风险</div></div>
-                    <div class="kpi-card"><div class="kpi-value">2.6%</div><div class="kpi-label">亚洲2026年通胀预测（IMF，4月16日），从1.4%上升</div><div class="kpi-trend trend-down">↑ 成本压力</div></div>
-                    <div class="kpi-card"><div class="kpi-value">1265亿$</div><div class="kpi-label">越南2024年电子出口额；本土供应商参与FDI供应链比例不足15%</div><div class="kpi-trend trend-warn">↑ Scope 3暴露</div></div>
-                    <div class="kpi-card"><div class="kpi-value">&lt;11%</div><div class="kpi-label">越南大型企业中已完成第三方碳核查的比例（RECCESSARY，4月16日）</div><div class="kpi-trend trend-down">⚠ MRV风险</div></div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">800 GW</div>
+                        <div class="kpi-label">2025年全球可再生能源新增装机（历史纪录）</div>
+                        <div class="kpi-trend trend-up">↑ 较2024年增长33%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">605 GW</div>
+                        <div class="kpi-label">2025年全球光伏新增装机</div>
+                        <div class="kpi-trend trend-up">↑ 占全部可再生能源的75%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">$2000亿</div>
+                        <div class="kpi-label">东盟2030年可再生能源投资目标</div>
+                        <div class="kpi-trend trend-up">↑ 亚开行/世界银行支持</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">140家</div>
+                        <div class="kpi-label">水风险研究覆盖的半导体设施</div>
+                        <div class="kpi-trend trend-warn">涉及89个独特水资源流域</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">35%</div>
+                        <div class="kpi-label">思科Scope 3碳排放减排（FY25）</div>
+                        <div class="kpi-trend trend-up">↑ 较FY2019基准</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">90%</div>
+                        <div class="kpi-label">思科Scope 1&2减排幅度（较FY2019）</div>
+                        <div class="kpi-trend trend-up">↑ 实现100%可再生电力</div>
+                    </div>
                 </div>
             </div>
             <div class="section">
-                <div class="section-title">方法论说明 · Methodology Notes</div>
-                <ul class="method-list">
-                    <li>覆盖周期：2026年4月21–27日。扫描来源：越通社 (VNA)、Vietstock/VCCI、RECCESSARY、IMF博客、vietnamenergy.vn、RE100.vn。</li>
-                    <li>影响评分（0–10）反映对Cisco供应链可持续发展KPI的重要性：Scope 3减排、供应商RE采购、水资源管理和合规就绪度。</li>
-                    <li>CBAM成本估算来自RECCESSARY分析（基于欧盟默认排放因子）；实际成本因产品级碳强度计算方法而异。</li>
-                    <li>BESS缺口数据来自越通社（4月26日），引用越南电力局和PDP8修订目标；当前安装容量&lt;100兆瓦为2025年初估计值。</li>
-                    <li>IMF宏观数据来自2026年4月世界经济展望初版（4月14日发布）；博客发布日期4月16日。</li>
-                    <li>水资源风险数据基于WRI Aqueduct 4.0和CDP东南亚制造集群的持续评估；本周无新发布的主要水资源数据。</li>
-                </ul>
-            </div>
-            <div class="section">
-                <div class="section-title">战略建议 · Strategic Recommendations</div>
+                <div class="section-title">战略建议</div>
                 <div class="rec-grid">
                     <div class="rec-card short">
-                        <div class="rec-period">近期 · 0–3个月</div>
+                        <div class="rec-period">⏱ 短期行动（0–3个月）</div>
                         <ul class="rec-list">
-                            <li>对越南前10大CM/EMS供应商启动BESS就绪度评估，识别工厂层面的电网暴露风险</li>
-                            <li>更新Scope 3供应商数据请求，纳入MRV核查状态；将缺乏第三方审计的越南供应商列为高优先级</li>
-                            <li>向采购团队汇报越南vs泰国CBAM成本差，为PCB和外壳组件采购优化提供决策依据</li>
-                            <li>与EVN-CEEC或SPEV类中介接洽，探索为越南前3家合同制造商提供DPPA促进支持</li>
+                            <li>更新思科越南供应商可再生能源路线图，纳入第62号通知BESS框架；向一级代工厂通报工商业BESS投资机会</li>
+                            <li>将SEMI 89流域水风险图纳入二级/三级供应商资质认证标准；要求高水风险设施提交水资源管理计划</li>
+                            <li>将IEA 800 GW里程碑作为供应商可再生能源参与沟通中的数据支撑——加强加速采购的商业论据</li>
                         </ul>
                     </div>
                     <div class="rec-card medium">
-                        <div class="rec-period">中期 · 3–12个月</div>
+                        <div class="rec-period">⏱ 中期行动（3–12个月）</div>
                         <ul class="rec-list">
-                            <li>制定越南供应商RE路线图，整合DPPA、屋顶光伏和BESS里程碑，与PDP8 2026–2030目标对齐</li>
-                            <li>加入RE100、VCCI等联盟，倡导加快BESS监管框架落地</li>
-                            <li>开展CBAM情景建模，覆盖Cisco越南采购PCB和金属组件；建立欧盟合规文档协议</li>
-                            <li>探索Cisco网络设备在越南BESS管理和智能电网基础设施中的产品定位（60亿美元市场信号）</li>
-                            <li>将IMF能源冲击风险纳入供应商财务韧性评估；在一级资质认定标准中加权RE对冲供应商</li>
+                            <li>制定与2000亿美元APAEC路径一致的东盟供应商脱碳投资论据；优先考虑有BESS+光伏混合计划的越南代工厂</li>
+                            <li>使用SEMI涟漪效应方法论建立思科供应链水资源管理标准；纳入年度供应商可持续发展记分卡</li>
+                            <li>对照东盟电网脱碳情景（IEA：APAEC 35%目标）压力测试Scope 3可再生能源模型；如有依据则调整2030年目标</li>
                         </ul>
                     </div>
                 </div>
@@ -206,47 +219,108 @@
         </div>
         <div class="sidebar">
             <div class="sidebar-section">
-                <div class="sidebar-title">⚡ 快速信号</div>
-                <div class="signal-item"><div class="signal-indicator sig-red"></div><div class="signal-text"><strong>越南BESS缺口严重</strong>已安装&lt;100兆瓦 vs 目标1万+兆瓦；电网不稳定威胁RE承诺兑现</div></div>
-                <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>DPPA框架悬而未决</strong>VCCI/工业部论坛（4月21–22日）：定价、输电费用和结算机制仍未明确</div></div>
-                <div class="signal-item"><div class="signal-indicator sig-amber"></div><div class="signal-text"><strong>IMF能源通胀预警</strong>亚洲2026年通胀2.6%；化石燃料成本攀升，RE对冲急迫性上升</div></div>
-                <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>RE100越南动力增强</strong>常信东奈（3月5日）等供应商RE100部署加速，供应商生态趋于成熟</div></div>
-                <div class="signal-item"><div class="signal-indicator sig-green"></div><div class="signal-text"><strong>越南天然气/储能政策论坛</strong>4月22日VEA会议推进了2026–2030年气电+BESS监管提案</div></div>
+                <div class="sidebar-title">🔭 监测信号</div>
+                <div class="signal-item">
+                    <div class="signal-indicator sig-amber"></div>
+                    <div class="signal-text"><strong>越南BESS二级市场</strong>关注第62号通知二级市场规则（2026年Q3）——可能为代工厂解锁额外BESS收入来源</div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-indicator sig-green"></div>
+                    <div class="signal-text"><strong>APAEC 2026–2030推进</strong>东盟成员国实施计划预计2026年Q2-Q3出台——关注国家层面可再生能源采购激励政策</div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-indicator sig-amber"></div>
+                    <div class="signal-text"><strong>中国碳市场行业扩展</strong>中国扩大碳市场覆盖水泥/钢铁/铝行业（2025年3月工作计划）——关注越南CBAM对等政策响应</div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-indicator sig-amber"></div>
+                    <div class="signal-text"><strong>东盟电网倡议</strong>亚开行/世界银行东盟电网融资（2025年10月）——跨境可再生能源贸易可能改变越南/菲律宾可再生能源经济性</div>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-indicator sig-green"></div>
+                    <div class="signal-text"><strong>思科FY26可持续性目标</strong>思科FY26目标预计2026年中发布——关注更新的Scope 3供应商参与强度和水资源管理目标</div>
+                </div>
             </div>
             <div class="sidebar-section">
-                <div class="sidebar-title">💧 水风险雷达 · 东南亚</div>
-                <div class="water-risk-item"><div class="water-risk-location">越南北部（河内周边）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-medium" style="width:60%"></div></div><span class="risk-label trend-warn">中高</span></div></div>
-                <div class="water-risk-item"><div class="water-risk-location">胡志明市 / 同奈</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-medium" style="width:55%"></div></div><span class="risk-label trend-warn">中等</span></div></div>
-                <div class="water-risk-item"><div class="water-risk-location">曼谷 / 东部海湾</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-medium" style="width:65%"></div></div><span class="risk-label trend-warn">中高</span></div></div>
-                <div class="water-risk-item"><div class="water-risk-location">槟城 / 雪兰莪（马）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-medium" style="width:50%"></div></div><span class="risk-label trend-warn">中等</span></div></div>
-                <div class="water-risk-item"><div class="water-risk-location">成都 / 重庆（中国）</div><div class="water-risk-level"><div class="risk-bar"><div class="risk-fill risk-low" style="width:30%"></div></div><span class="risk-label trend-up">低</span></div></div>
-                <div style="font-size:10px;color:#475569;margin-top:10px;">基于WRI Aqueduct 4.0基线；本周无新增主要数据。关注旱季过渡期（4–5月）。</div>
+                <div class="sidebar-title">🌏 东盟可再生能源就绪指数</div>
+                <div class="ppa-item">
+                    <div class="ppa-country">越南 — BESS框架已生效</div>
+                    <div class="ppa-bar-wrap">
+                        <div class="ppa-bar"><div class="ppa-fill" style="width:82%"></div></div>
+                        <div class="ppa-score">82/100</div>
+                    </div>
+                </div>
+                <div class="ppa-item">
+                    <div class="ppa-country">泰国 — CBAM就绪度</div>
+                    <div class="ppa-bar-wrap">
+                        <div class="ppa-bar"><div class="ppa-fill" style="width:76%"></div></div>
+                        <div class="ppa-score">76/100</div>
+                    </div>
+                </div>
+                <div class="ppa-item">
+                    <div class="ppa-country">菲律宾 — 电网可靠性</div>
+                    <div class="ppa-bar-wrap">
+                        <div class="ppa-bar"><div class="ppa-fill" style="width:58%"></div></div>
+                        <div class="ppa-score">58/100</div>
+                    </div>
+                </div>
+                <div class="ppa-item">
+                    <div class="ppa-country">印尼 — 上游PCB产业</div>
+                    <div class="ppa-bar-wrap">
+                        <div class="ppa-bar"><div class="ppa-fill" style="width:51%"></div></div>
+                        <div class="ppa-score">51/100</div>
+                    </div>
+                </div>
             </div>
             <div class="sidebar-section">
-                <div class="sidebar-title">🌱 东南亚PPA就绪指数</div>
-                <div class="ppa-item"><div class="ppa-country">🇹🇭 泰国</div><div class="ppa-bar-wrap"><div class="ppa-bar"><div class="ppa-fill" style="width:68%"></div></div><div class="ppa-score">6.8</div></div></div>
-                <div class="ppa-item"><div class="ppa-country">🇻🇳 越南</div><div class="ppa-bar-wrap"><div class="ppa-bar"><div class="ppa-fill" style="width:52%"></div></div><div class="ppa-score">5.2</div></div></div>
-                <div class="ppa-item"><div class="ppa-country">🇲🇾 马来西亚</div><div class="ppa-bar-wrap"><div class="ppa-bar"><div class="ppa-fill" style="width:60%"></div></div><div class="ppa-score">6.0</div></div></div>
-                <div class="ppa-item"><div class="ppa-country">🇮🇳 印度</div><div class="ppa-bar-wrap"><div class="ppa-bar"><div class="ppa-fill" style="width:75%"></div></div><div class="ppa-score">7.5</div></div></div>
-                <div class="ppa-item"><div class="ppa-country">🇵🇭 菲律宾</div><div class="ppa-bar-wrap"><div class="ppa-bar"><div class="ppa-fill" style="width:45%"></div></div><div class="ppa-score">4.5</div></div></div>
-                <div style="font-size:10px;color:#475569;margin-top:10px;">评分（0–10）：政策清晰度+电网准入+市场流动性+RE容量。越南因BESS/DPPA框架悬而未决本周下调0.3分。</div>
+                <div class="sidebar-title">💧 供应链水风险指数</div>
+                <div class="water-risk-item">
+                    <div class="water-risk-location">台湾（台积电集群）</div>
+                    <div class="water-risk-level">
+                        <div class="risk-bar"><div class="risk-fill risk-high" style="width:88%"></div></div>
+                        <span class="risk-label" style="color:#f87172">高风险</span>
+                    </div>
+                </div>
+                <div class="water-risk-item">
+                    <div class="water-risk-location">韩国（首尔走廊）</div>
+                    <div class="water-risk-level">
+                        <div class="risk-bar"><div class="risk-fill risk-medium" style="width:72%"></div></div>
+                        <span class="risk-label" style="color:#fbbf24">中风险</span>
+                    </div>
+                </div>
+                <div class="water-risk-item">
+                    <div class="water-risk-location">越南（北部/南部）</div>
+                    <div class="water-risk-level">
+                        <div class="risk-bar"><div class="risk-fill risk-medium" style="width:55%"></div></div>
+                        <span class="risk-label" style="color:#fbbf24">中风险</span>
+                    </div>
+                </div>
+                <div class="water-risk-item">
+                    <div class="water-risk-location">泰国（东部海岸）</div>
+                    <div class="water-risk-level">
+                        <div class="risk-bar"><div class="risk-fill risk-low" style="width:38%"></div></div>
+                        <span class="risk-label" style="color:#34d399">低风险</span>
+                    </div>
+                </div>
             </div>
             <div class="sidebar-section">
-                <div class="sidebar-title">📌 来源出处</div>
-                <div class="source-item"><span class="source-badge"></span>越通社 (VNA) — 2026年4月26日 · 越南BESS战略基础设施</div>
-                <div class="source-item"><span class="source-badge"></span>VCCI / vcci.com.vn — 2026年4月23日 · 4月21日RE政策论坛</div>
-                <div class="source-item"><span class="source-badge"></span>Vietstock/Bizhub — 2026年4月22日 · DPPA+储能框架缺口</div>
-                <div class="source-item"><span class="source-badge"></span>RECCESSARY — 2026年4月16日 · 越南vs泰国2050 RE、供应链、碳成本</div>
-                <div class="source-item"><span class="source-badge"></span>IMF博客 — 2026年4月16日 · 亚洲能源冲击、通胀、供应链</div>
-                <div class="source-item"><span class="source-badge"></span>vietnamenergy.vn — 2026年4月26日 · 气电+BESS法规2026–2030</div>
-                <div class="source-item"><span class="source-badge"></span>RE100.vn — 2026年4月15日 · 越南RE100供应商网络更新</div>
+                <div class="sidebar-title">📚 方法论与来源</div>
+                <div class="source-item"><div class="source-badge"></div>IEA全球能源回顾2026（2026年4月20日）— iea.org</div>
+                <div class="source-item"><div class="source-badge"></div>SEMI"涟漪效应"水风险报告（2026年1-2月）— semi.org</div>
+                <div class="source-item"><div class="source-badge"></div>Energy Storage News — 越南BESS框架（2026年2月16日）</div>
+                <div class="source-item"><div class="source-badge"></div>VietnamPlus — 越南BESS基础设施（2026年4月26日）</div>
+                <div class="source-item"><div class="source-badge"></div>Bizruption Asia — 东盟2000亿美元可再生能源浪潮（2026年2月13日）</div>
+                <div class="source-item"><div class="source-badge"></div>东盟能源中心 — APAEC 2026–2030</div>
+                <div class="source-item"><div class="source-badge"></div>世界银行 — 绿色地平线：东亚可持续能源未来（2026年2月）</div>
+                <div class="source-item"><div class="source-badge"></div>思科FY25目的报告（2026年1月）— cisco.com</div>
+                <div class="source-item"><div class="source-badge"></div>Robeco — 芯片的未来取决于水（2026年3月）</div>
+                <div class="source-item"><div class="source-badge"></div>瑞士再保险 — 气候风险：台湾半导体（2026年2月）</div>
             </div>
         </div>
     </div>
     <div class="footer">
-        <p>Cisco 可持续发展情报简报 · 第53期 · 2026年4月21–27日</p>
-        <p style="margin-top:6px;">仅供内部使用 · 供应链可持续发展部门 · Cisco Systems</p>
-        <p style="margin-top:6px;"><a href="https://tu2026.github.io/cisco-sustainability-briefing/" style="color:#049fd9;text-decoration:none;">tu2026.github.io/cisco-sustainability-briefing</a></p>
+        <p>Cisco 可持续发展情报简报 — 第54期 &nbsp;|&nbsp; 发布于2026年5月4日</p>
+        <p>由 WorkBuddy AI 生成 &nbsp;|&nbsp; 思科供应链可持续发展部</p>
     </div>
 </body>
 </html>
