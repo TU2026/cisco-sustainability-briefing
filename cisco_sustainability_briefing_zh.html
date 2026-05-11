@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco 可持续发展情报简报 - 2026年5月4日</title>
+    <title>Cisco 可持续发展情报简报 - 2026年5月11日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
         .header { background: linear-gradient(135deg, #0d274d 0%, #049fd9 100%); padding: 50px 20px 40px; text-align: center; position: relative; overflow: hidden; }
         .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(0,188,235,0.15) 0%, transparent 60%); pointer-events: none; }
         .header-label { display: inline-block; background: rgba(0,188,235,0.2); border: 1px solid #00bceb; color: #00bceb; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; }
@@ -42,285 +42,303 @@
         .tag-energy { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
         .tag-carbon { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
         .tag-policy { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
+        .tag-water { background: rgba(56,189,248,0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); }
         .kpi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
         @media(max-width:600px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
         .kpi-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px; text-align: center; }
         .kpi-value { font-size: 1.8em; font-weight: 800; color: #00bceb; line-height: 1.1; margin-bottom: 4px; }
         .kpi-label { font-size: 11px; color: #64748b; line-height: 1.4; }
         .kpi-trend { font-size: 11px; font-weight: 600; margin-top: 4px; }
-        .trend-up { color: #34d399; } .trend-down { color: #f87171; } .trend-warn { color: #fbbf24; }
-        .method-list { list-style: none; }
-        .method-list li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88em; color: #94a3b8; }
-        .method-list li:last-child { border-bottom: none; }
-        .method-list li::before { content: "\25C6"; color: #049fd9; font-size: 8px; margin-top: 5px; flex-shrink: 0; }
-        .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media(max-width:600px){.rec-grid{grid-template-columns:1fr}}
-        .rec-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 16px; }
-        .rec-card .rec-period { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
-        .rec-card.short { border-top: 3px solid #049fd9; } .rec-card.short .rec-period { color: #049fd9; }
-        .rec-card.medium { border-top: 3px solid #a78bfa; } .rec-card.medium .rec-period { color: #a78bfa; }
-        .rec-list { list-style: none; }
-        .rec-list li { font-size: 0.88em; color: #cbd5e1; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; }
-        .rec-list li:last-child { border-bottom: none; }
-        .rec-list li::before { content: "\2192"; color: #049fd9; flex-shrink: 0; }
-        .signal-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .trend-up { color: #34d399; }
+        .trend-warn { color: #fbbf24; }
+        .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media(max-width:600px){.strategy-grid{grid-template-columns:1fr}}
+        .strategy-card { background: rgba(13,39,77,0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 18px; }
+        .strategy-card h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #049fd9; margin-bottom: 12px; }
+        .strategy-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.88em; color: #cbd5e1; }
+        .strategy-num { min-width: 20px; height: 20px; background: rgba(4,159,217,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #049fd9; flex-shrink: 0; margin-top: 2px; }
+        .sidebar { }
+        .sidebar-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .sidebar-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #049fd9; margin-bottom: 14px; }
+        .topic-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .topic-item:last-child { border-bottom: none; }
+        .topic-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+        .topic-text { font-size: 0.85em; color: #94a3b8; }
+        .topic-text strong { color: #cbd5e1; display: block; font-size: 0.9em; }
+        .signal-item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
         .signal-item:last-child { border-bottom: none; }
-        .signal-indicator { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-        .sig-green { background: #34d399; box-shadow: 0 0 6px rgba(52,211,153,0.5); }
-        .sig-amber { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,0.5); }
-        .sig-red { background: #f87171; box-shadow: 0 0 6px rgba(248,113,113,0.5); }
-        .signal-text { font-size: 0.85em; color: #94a3b8; }
-        .signal-text strong { color: #e2e8f0; display: block; font-size: 0.92em; }
-        .water-risk-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .water-risk-item:last-child { border-bottom: none; }
-        .water-risk-location { font-size: 0.85em; color: #e2e8f0; font-weight: 600; }
-        .water-risk-level { display: flex; align-items: center; gap: 6px; }
-        .risk-bar { width: 60px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
-        .risk-fill { height: 100%; border-radius: 3px; }
-        .risk-medium { background: linear-gradient(90deg,#fbbf24,#f59e0b); }
-        .risk-low { background: linear-gradient(90deg,#34d399,#10b981); }
-        .risk-high { background: linear-gradient(90deg,#f87171,#ef4444); }
-        .risk-label { font-size: 10px; font-weight: 700; }
-        .ppa-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .ppa-item:last-child { border-bottom: none; }
-        .ppa-country { font-size: 0.85em; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
-        .ppa-bar-wrap { display: flex; align-items: center; gap: 8px; }
-        .ppa-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
-        .ppa-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg,#049fd9,#00bceb); }
-        .ppa-score { font-size: 11px; font-weight: 700; color: #049fd9; min-width: 30px; text-align: right; }
-        .source-item { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.82em; color: #64748b; }
-        .source-item:last-child { border-bottom: none; }
-        .source-badge { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #049fd9; margin-top: 5px; flex-shrink: 0; }
-        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px; }
-        .sidebar { position: sticky; top: 20px; }
-        .sidebar-section { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
-        .sidebar-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #049fd9; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(4,159,217,0.2); }
-        .issue-badge { display: inline-block; background: rgba(4,159,217,0.1); border: 1px solid rgba(4,159,217,0.3); color: #049fd9; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-left: 8px; }
+        .signal-title { font-size: 0.85em; font-weight: 600; color: #f1f5f9; margin-bottom: 4px; }
+        .signal-desc { font-size: 0.8em; color: #64748b; }
+        .signal-badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; margin-top: 4px; }
+        .badge-high { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+        .badge-medium { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .badge-positive { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+        .footer { text-align: center; padding: 30px 20px; color: #334155; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer a { color: #049fd9; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="lang-switch">
-        <a href="cisco_sustainability_briefing.html" class="lang-btn">🌐 English</a>
+
+<div class="lang-switch">
+    <a href="cisco_sustainability_briefing.html" class="lang-btn">🌐 English Version</a>
+</div>
+
+<div class="header">
+    <div class="header-label">情报简报</div>
+    <h1>Cisco <span>可持续发展</span>情报简报</h1>
+    <p class="subtitle">供应链 · 可再生能源 · 碳中和 · 供水管理</p>
+    <div class="date-badge">
+        <span class="dot"></span>
+        2026年5月11日 · 自动生成
     </div>
-    <div class="header">
-        <div class="header-label">可持续发展情报简报 <span class="issue-badge">第54期</span></div>
-        <h1>Cisco <span>可持续发展</span> 情报</h1>
-        <p class="subtitle">供应链 · 可再生能源 · 水资源管理 · 碳战略</p>
-        <div class="date-badge">
-            <div class="dot"></div>
-            2026年4月28日 – 5月4日 &nbsp;|&nbsp; 发布于2026年5月4日
+</div>
+
+<div class="main-layout">
+    <div class="main-content">
+
+        <!-- Executive Summary -->
+        <div class="section exec-summary">
+            <div class="section-title">执行摘要</div>
+            <p>本周，亚太区可持续发展领域迎来资本部署与政策成熟的里程碑式交汇。<span class="highlight-tag">亚洲开发银行（ADB）</span>于5月3日宣布将在2035年前向亚洲及太平洋地区投入700亿美元能源与数字基础设施专项资金，东南亚为核心受益区，标志着机构资本对区域清洁能源转型的强烈信心。与此同时，<span class="highlight-tag">世界经济论坛（WEF）</span>于5月3日发布报告，将亚太区"脱碳新浪潮"定性为区域经济超3万亿美元增长机遇，并指出工业电气化与绿色氢能是解锁这一机遇的关键杠杆。</p>
+            <p>在供应链韧性方面，SEMI更新的"涟漪效应"报告（2026年5月）重新确认：洪水风险与声誉水风险是半导体供应链当前面临的最主要威胁——超过水资源物理短缺风险。随着25%以上在建晶圆厂处于严重水压力流域，思科的越南及东南亚供应链面临复合型水风险叠加。与此同时，新加坡Green Finance Week Asia（5月8日）聚焦于弥合1.2万亿美元清洁能源融资缺口——直接关联思科供应商可再生能源转型战略的资金来源问题。</p>
         </div>
-    </div>
-    <div class="main-layout">
-        <div class="main-col">
-            <div class="section exec-summary">
-                <div class="section-title">执行摘要</div>
-                <p>本周情报揭示两大里程碑事件，正在重塑思科东南亚供应链可持续发展战略。<span class="highlight-tag">全球纪录</span>IEA全球能源回顾2026（4月20日）确认2025年为历史性转折点：全球可再生能源新增装机容量创纪录达到<strong>800 GW</strong>，其中光伏新增605 GW（占75%），发电量较2022年翻番。光伏首次成为<strong>全球电力增长的最大单一来源</strong>，超越所有化石燃料。这从根本上改善了加速思科越南/泰国供应商可再生能源采购的经济论据。</p>
-                <p><span class="highlight-tag">东盟2000亿美元信号</span>Bizruption Asia（2月13日）量化了东盟可再生能源部署雄心：<strong>到2030年投资2000亿美元</strong>，由亚开行/世界银行联合融资支持，APAEC 2026–2030目标作为后盾。越南BESS框架取得突破——第62/2025/TT-BCT号通知于2026年1月26日生效，成为东盟首个大型经济体的工商业储能收入框架。<span class="highlight-tag">供应链水风险</span>SEMI/Marvell "涟漪效应"报告首次建立了覆盖140家半导体设施、89个水资源流域的基线。思科供应链水资源管理项目需要对照此新行业标准进行基准评估。<span class="highlight-tag">思科进展</span>思科FY25目的报告确认Scope 1&2较FY2019基准减排90%、Scope 3减排35%——展现了企业公信力，可在供应商参与项目中善加利用。</p>
-            </div>
-            <div class="section">
-                <div class="section-title">本周最值得行动的三大发现</div>
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">1</div>
-                        <div class="intel-title">IEA全球能源回顾2026：光伏新增605 GW创纪录 — 跃升全球最大单一电力增长来源</div>
-                        <div class="impact-score"><div class="score-value">9.5</div><div class="score-label">影响评分/10</div></div>
-                    </div>
-                    <span class="category-tag tag-energy">⚡ 可再生能源</span>
-                    <p class="intel-body">IEA全球能源回顾2026（4月20日）：2025年全球可再生能源新增装机容量创纪录达到<strong>800 GW</strong>，其中光伏新增605 GW（占75%）。光伏总发电量较2022年翻番，现占全球发电量8%以上。储能成为增长最快的电力技术。东盟国家处于有利位置：10个东盟成员国中8个已设定净零/碳中和目标，APAEC 2026–2030目标是初级能源供应中可再生能源占比达35%。世界银行（2月2日）"绿色地平线"报告确认东亚巨大可再生能源潜力，越南和菲律宾在光伏成本竞争力方面领先。Robeco（2026年3月）指出，AI/数字化加速正在推动芯片需求增长，同时增加能源需求——形成循环，对可再生能源采购紧迫性形成增强效应。</p>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对思科的重要性</div>
-                        <div class="content">800 GW里程碑和成本持续下降，验证了加速思科越南/印尼/泰国供应商可再生能源采购的合理性。APAEC 35%目标表明区域电网脱碳将加速——思科的Scope 3可再生能源模型应纳入更快的电网排放因子改善假设。AI基础设施增长（Robeco）是双刃剑：更高的能源需求同时放大了紧迫性和思科可再生能源电网管理网络解决方案的机会。</div>
+
+        <!-- Top 3 Intelligence Items -->
+        <div class="section">
+            <div class="section-title">本周最值得行动的三大发现</div>
+
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">1</div>
+                    <div class="intel-title">亚洲开发银行承诺2035年前投入700亿美元支持亚洲能源与数字基础设施——东南亚成核心受益区</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.4</div>
+                        <div class="score-label">影响指数</div>
                     </div>
                 </div>
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">2</div>
-                        <div class="intel-title">越南BESS收入框架生效：第62号通知1月26日生效 — 东盟首个大型工商业储能规则</div>
-                        <div class="impact-score"><div class="score-value">9.0</div><div class="score-label">影响评分/10</div></div>
-                    </div>
-                    <span class="category-tag tag-energy">⚡ 储能 / 电网</span>
-                    <p class="intel-body">Energy Storage News（2月16日）：随着<strong>第62/2025/TT-BCT号通知于2026年1月26日生效</strong>，越南成为东盟首个为工商业用户引入专用储能（BESS）收入框架的大型经济体。这解决了阻碍越南直接电力采购（DPPA）市场的关键监管瓶颈。PiloTech AI（4月8日）分析显示，工商业BESS系统现在可以叠加多重收入来源：需量电费管理 + DPPA平衡 + 辅助服务。VietnamPlus（4月26日）报道，越南面临来自快速增长可再生能源装机带来的持续电网压力，储能对于稳定性已变得迫切需要。Norton Rose Fulbright指出，电力发展计划八（PDP8）大幅提高了储能目标。Pilotech计算，越南工商业用户的BESS投资回报率在合理电价水平下现已转正——使供应商端储能具备经济可行性。</p>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对思科的重要性</div>
-                        <div class="content">思科越南代工厂现在可以将BESS评估为与可再生能源采购并行、财务上有吸引力的投资。BESS减少了对不稳定电网的依赖，直接支持Scope 3可再生能源承诺。思科供应商可持续发展团队应为FY27评估中的越南一级供应商制定BESS就绪检查清单。此外，思科用于BESS管理的网络/物联网产品代表着越南快速增长的价值60亿美元储能市场的潜在产品收入来源。</div>
-                    </div>
+                <div class="category-tag tag-energy">能源金融</div>
+                <div class="intel-body">
+                    亚洲开发银行于2026年5月3日宣布，将在2035年前为亚洲及太平洋地区能源与数字基础设施提供700亿美元资金支持。计划聚焦区域电网互联互通、跨境电力贸易扩展及宽带网络普及。越南、印尼、菲律宾等东南亚国家被列为核心受益方，可再生能源并网与电网现代化为重点投资方向。新加坡央行同步通过绿色投资伙伴关系（Green Investments Partnership）支持生物能源与太阳能项目，进一步放大区域资本供给。
                 </div>
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">3</div>
-                        <div class="intel-title">SEMI"涟漪效应"：覆盖140家半导体设施、89个流域的首次水风险基线建立</div>
-                        <div class="impact-score"><div class="score-value">8.6</div><div class="score-label">影响评分/10</div></div>
-                    </div>
-                    <span class="category-tag tag-carbon">💧 水资源管理</span>
-                    <p class="intel-body">SEMI/Marvell（2026年1-2月）："涟漪效应"报告使用Waterplan的AI风险引擎分析了全球<strong>89个独特水资源流域中的140家半导体设施</strong>。关键发现：在建半导体工厂中超过25%、2021年以来宣布的新工厂中40%处于预计到2030年将面临严重水资源压力的流域。台湾以台积电为中心的晶圆厂集群、韩国半导体走廊及新兴东南亚设施均处于高风险状态。瑞士再保险（2026年2月）独立量化了台湾半导体制造的气候-水风险，将干旱、洪水和极端高温列为重大风险因素。Robeco（2026年3月）指出，芯片制造商正越来越多地对水资源短缺进行对冲——这一战略转变将影响全球供应链成本结构。</p>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对思科的重要性</div>
-                        <div class="content">思科的上游PCB及元器件供应商已嵌入此半导体水风险网络。SEMI基线为评估思科二级/三级供应商流域水风险暴露提供了首个量化工具。思科水资源管理计划应将SEMI的89流域风险图纳入供应商资质认证。缺水地区可能面临生产削减——思科供应链韧性团队应将关键子层级供应商与此水风险数据进行映射，并制定应急采购计划。</div>
-                    </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对思科的意义</div>
+                    <div class="content">ADB跨境电网互联投资直接加速了越南及东南亚DPPA执行所需的物理基础设施成熟度——随着电网互联互通水平提升，思科供应商可再生能源采购路线图的可操作性大幅增强。思科网络与物联网产品亦嵌入智能电网部署，存在潜在的需求拉动效应。</div>
                 </div>
             </div>
-            <div class="section">
-                <div class="section-title">关键数据点</div>
-                <div class="kpi-grid">
-                    <div class="kpi-card">
-                        <div class="kpi-value">800 GW</div>
-                        <div class="kpi-label">2025年全球可再生能源新增装机（历史纪录）</div>
-                        <div class="kpi-trend trend-up">↑ 较2024年增长33%</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">605 GW</div>
-                        <div class="kpi-label">2025年全球光伏新增装机</div>
-                        <div class="kpi-trend trend-up">↑ 占全部可再生能源的75%</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">$2000亿</div>
-                        <div class="kpi-label">东盟2030年可再生能源投资目标</div>
-                        <div class="kpi-trend trend-up">↑ 亚开行/世界银行支持</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">140家</div>
-                        <div class="kpi-label">水风险研究覆盖的半导体设施</div>
-                        <div class="kpi-trend trend-warn">涉及89个独特水资源流域</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">35%</div>
-                        <div class="kpi-label">思科Scope 3碳排放减排（FY25）</div>
-                        <div class="kpi-trend trend-up">↑ 较FY2019基准</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">90%</div>
-                        <div class="kpi-label">思科Scope 1&2减排幅度（较FY2019）</div>
-                        <div class="kpi-trend trend-up">↑ 实现100%可再生电力</div>
+
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">2</div>
+                    <div class="intel-title">WEF：亚太"脱碳新浪潮"若成功实施可带来3万亿美元以上经济效益——工业电气化成关键</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.1</div>
+                        <div class="score-label">影响指数</div>
                     </div>
                 </div>
+                <div class="category-tag tag-carbon">净零目标</div>
+                <div class="intel-body">
+                    世界经济论坛于2026年5月3日发布分析指出，太阳能与风能已重塑能源经济格局，但亚太地区正面临难度更大的"第二波"脱碳挑战——即工业、建筑与交通领域的深度脱碳。报告指出，若亚太区实现净零目标，2035年前可扩大区域经济规模逾3万亿美元，但前提是解锁工业电气化、绿色氢能及长时储能。标普全球（4月29日）亦确认，亚太国家将在2026年持续扩大可再生能源装机容量，尽管面临地缘政治压力与通胀挑战，能源转型势能保持强劲。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对思科的意义</div>
+                    <div class="content">亚太工业电气化浪潮为思科能源管理技术与智能制造解决方案创造重大需求信号。对于供应链可持续性，思科FY26五年能源效率投资计划的收官之年恰与区域工业脱碳参与峰值势能重合——可最大化外部传播价值，并通过WEF/IEA框架提升客户参与度。</div>
+                </div>
             </div>
-            <div class="section">
-                <div class="section-title">战略建议</div>
-                <div class="rec-grid">
-                    <div class="rec-card short">
-                        <div class="rec-period">⏱ 短期行动（0–3个月）</div>
-                        <ul class="rec-list">
-                            <li>更新思科越南供应商可再生能源路线图，纳入第62号通知BESS框架；向一级代工厂通报工商业BESS投资机会</li>
-                            <li>将SEMI 89流域水风险图纳入二级/三级供应商资质认证标准；要求高水风险设施提交水资源管理计划</li>
-                            <li>将IEA 800 GW里程碑作为供应商可再生能源参与沟通中的数据支撑——加强加速采购的商业论据</li>
-                        </ul>
+
+            <div class="intel-item">
+                <div class="intel-item-header">
+                    <div class="intel-rank">3</div>
+                    <div class="intel-title">SEMI"涟漪效应"更新版：洪水风险与声誉水风险成为半导体供应链首要威胁</div>
+                    <div class="impact-score">
+                        <div class="score-value">8.8</div>
+                        <div class="score-label">影响指数</div>
                     </div>
-                    <div class="rec-card medium">
-                        <div class="rec-period">⏱ 中期行动（3–12个月）</div>
-                        <ul class="rec-list">
-                            <li>制定与2000亿美元APAEC路径一致的东盟供应商脱碳投资论据；优先考虑有BESS+光伏混合计划的越南代工厂</li>
-                            <li>使用SEMI涟漪效应方法论建立思科供应链水资源管理标准；纳入年度供应商可持续发展记分卡</li>
-                            <li>对照东盟电网脱碳情景（IEA：APAEC 35%目标）压力测试Scope 3可再生能源模型；如有依据则调整2030年目标</li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="category-tag tag-water">供水管理</div>
+                <div class="intel-body">
+                    SEMI更新的"涟漪效应：半导体价值链水风险与韧性"报告（2026年5月7日发布）确认：洪水风险与声誉水相关风险已超越水资源物理短缺风险，成为半导体供应链当前最严峻的威胁。Marvell-SEMI联合分析覆盖140家半导体设施、89个水资源流域，发现结构化供水管理路径（structured water stewardship）是当前关键缺口。Marvell配套博客（5月5日）强调："创新与技术必须在推进价值链供水管理方面发挥核心作用"，并指出企业供应链策略中普遍存在的水风险低估问题。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对思科的意义</div>
+                    <div class="content">鉴于思科PCB及半导体供应商集中于越南（湄公河三角洲洪水风险）及台湾/马来西亚（季风与水短缺暴露区），SEMI更新报告进一步强化了在思科一级至二级供应商记分卡中嵌入水风险评估的紧迫性。声誉风险维度对CDP披露周期尤为重要——主动水风险披露可降低监管与投资者风险敞口。</div>
                 </div>
             </div>
         </div>
-        <div class="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">🔭 监测信号</div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>越南BESS二级市场</strong>关注第62号通知二级市场规则（2026年Q3）——可能为代工厂解锁额外BESS收入来源</div>
+
+        <!-- Key Data Points -->
+        <div class="section">
+            <div class="section-title">关键数据点</div>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">700亿</div>
+                    <div class="kpi-label">ADB承诺2035年前向亚洲能源与数字基础设施投入（美元）</div>
+                    <div class="kpi-trend trend-up">↑ 新增承诺</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-green"></div>
-                    <div class="signal-text"><strong>APAEC 2026–2030推进</strong>东盟成员国实施计划预计2026年Q2-Q3出台——关注国家层面可再生能源采购激励政策</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">3万亿+</div>
+                    <div class="kpi-label">WEF预测亚太完全实现净零目标可带来的经济增长（美元）</div>
+                    <div class="kpi-trend trend-up">↑ 长期利好</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>中国碳市场行业扩展</strong>中国扩大碳市场覆盖水泥/钢铁/铝行业（2025年3月工作计划）——关注越南CBAM对等政策响应</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">150+</div>
+                    <div class="kpi-label">Green Finance Week Asia与会清洁能源金融领袖人数（新加坡，5月8日）</div>
+                    <div class="kpi-trend trend-up">↑ 资本动员中</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>东盟电网倡议</strong>亚开行/世界银行东盟电网融资（2025年10月）——跨境可再生能源贸易可能改变越南/菲律宾可再生能源经济性</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">140座</div>
+                    <div class="kpi-label">SEMI水风险报告分析的半导体设施数量，覆盖89个水资源流域</div>
+                    <div class="kpi-trend trend-warn">⚠ 洪水风险居首</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-green"></div>
-                    <div class="signal-text"><strong>思科FY26可持续性目标</strong>思科FY26目标预计2026年中发布——关注更新的Scope 3供应商参与强度和水资源管理目标</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">90%</div>
+                    <div class="kpi-label">思科FY25范围1&2温室气体排放较FY2019基准减排幅度（已确认）</div>
+                    <div class="kpi-trend trend-up">✓ 目标达成</div>
                 </div>
-            </div>
-            <div class="sidebar-section">
-                <div class="sidebar-title">🌏 东盟可再生能源就绪指数</div>
-                <div class="ppa-item">
-                    <div class="ppa-country">越南 — BESS框架已生效</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:82%"></div></div>
-                        <div class="ppa-score">82/100</div>
-                    </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">FY26</div>
+                    <div class="kpi-label">思科五年能源效率投资计划的收官之年——关键执行期</div>
+                    <div class="kpi-trend trend-up">↑ 关键年份</div>
                 </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">泰国 — CBAM就绪度</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:76%"></div></div>
-                        <div class="ppa-score">76/100</div>
-                    </div>
-                </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">菲律宾 — 电网可靠性</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:58%"></div></div>
-                        <div class="ppa-score">58/100</div>
-                    </div>
-                </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">印尼 — 上游PCB产业</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:51%"></div></div>
-                        <div class="ppa-score">51/100</div>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar-section">
-                <div class="sidebar-title">💧 供应链水风险指数</div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">台湾（台积电集群）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-high" style="width:88%"></div></div>
-                        <span class="risk-label" style="color:#f87172">高风险</span>
-                    </div>
-                </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">韩国（首尔走廊）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-medium" style="width:72%"></div></div>
-                        <span class="risk-label" style="color:#fbbf24">中风险</span>
-                    </div>
-                </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">越南（北部/南部）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-medium" style="width:55%"></div></div>
-                        <span class="risk-label" style="color:#fbbf24">中风险</span>
-                    </div>
-                </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">泰国（东部海岸）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-low" style="width:38%"></div></div>
-                        <span class="risk-label" style="color:#34d399">低风险</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar-section">
-                <div class="sidebar-title">📚 方法论与来源</div>
-                <div class="source-item"><div class="source-badge"></div>IEA全球能源回顾2026（2026年4月20日）— iea.org</div>
-                <div class="source-item"><div class="source-badge"></div>SEMI"涟漪效应"水风险报告（2026年1-2月）— semi.org</div>
-                <div class="source-item"><div class="source-badge"></div>Energy Storage News — 越南BESS框架（2026年2月16日）</div>
-                <div class="source-item"><div class="source-badge"></div>VietnamPlus — 越南BESS基础设施（2026年4月26日）</div>
-                <div class="source-item"><div class="source-badge"></div>Bizruption Asia — 东盟2000亿美元可再生能源浪潮（2026年2月13日）</div>
-                <div class="source-item"><div class="source-badge"></div>东盟能源中心 — APAEC 2026–2030</div>
-                <div class="source-item"><div class="source-badge"></div>世界银行 — 绿色地平线：东亚可持续能源未来（2026年2月）</div>
-                <div class="source-item"><div class="source-badge"></div>思科FY25目的报告（2026年1月）— cisco.com</div>
-                <div class="source-item"><div class="source-badge"></div>Robeco — 芯片的未来取决于水（2026年3月）</div>
-                <div class="source-item"><div class="source-badge"></div>瑞士再保险 — 气候风险：台湾半导体（2026年2月）</div>
             </div>
         </div>
+
+        <!-- Strategic Recommendations -->
+        <div class="section">
+            <div class="section-title">战略建议</div>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>短期行动（0–3个月）</h4>
+                    <div class="strategy-item">
+                        <div class="strategy-num">1</div>
+                        <div>推进越南DPPA就绪度评估：对照第253/2025号决议资格标准，梳理现有一级供应商，识别H2 2026截止窗口前最适合直接PPA注册的TOP 5候选供应商。</div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-num">2</div>
+                        <div>更新供应商水风险记分卡权重体系（按SEMI报告，将洪水风险与声誉风险单独核算）——优先针对湄公河三角洲及马来西亚沿海地区供应商制定强化披露要求。</div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-num">3</div>
+                        <div>向思科可持续发展领导层汇报ADB 700亿美元承诺——评估与现有越南电网转型倡导工作的协同性，识别潜在合作机会。</div>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <h4>中期行动（3–12个月）</h4>
+                    <div class="strategy-item">
+                        <div class="strategy-num">1</div>
+                        <div>利用Green Finance Week Asia会议成果，识别供应商可再生能源转型的共同融资结构——探索新加坡金管局绿色投资伙伴关系正在试点的混合融资机制。</div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-num">2</div>
+                        <div>将思科FY26能源效率计划收官年成果与亚太"第二波"脱碳叙事对齐——通过WEF/IEA框架最大化外部传播价值，推动客户参与度提升。</div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-num">3</div>
+                        <div>启动CDP水安全供应商参与活动，优先针对水压力流域内采购额前20名供应商；使用SEMI 89个流域风险地图作为优先级排序基线数据来源。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="footer">
-        <p>Cisco 可持续发展情报简报 — 第54期 &nbsp;|&nbsp; 发布于2026年5月4日</p>
-        <p>由 WorkBuddy AI 生成 &nbsp;|&nbsp; 思科供应链可持续发展部</p>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="sidebar-card">
+            <div class="sidebar-title">覆盖主题</div>
+            <div class="topic-item">
+                <div class="topic-dot" style="background:#a78bfa"></div>
+                <div class="topic-text">
+                    <strong>越南能源政策</strong>
+                    第253/2025号决议：2026–2030年海上风电与可再生能源加速
+                </div>
+            </div>
+            <div class="topic-item">
+                <div class="topic-dot" style="background:#fbbf24"></div>
+                <div class="topic-text">
+                    <strong>东南亚绿色金融</strong>
+                    ADB 700亿美元承诺；Green Finance Week Asia，新加坡
+                </div>
+            </div>
+            <div class="topic-item">
+                <div class="topic-dot" style="background:#049fd9"></div>
+                <div class="topic-text">
+                    <strong>思科可持续发展</strong>
+                    FY26五年计划收官年；FY25 90%碳减排已确认
+                </div>
+            </div>
+            <div class="topic-item">
+                <div class="topic-dot" style="background:#38bdf8"></div>
+                <div class="topic-text">
+                    <strong>供应链水风险</strong>
+                    SEMI涟漪效应更新版：洪水与声誉风险居首
+                </div>
+            </div>
+            <div class="topic-item">
+                <div class="topic-dot" style="background:#34d399"></div>
+                <div class="topic-text">
+                    <strong>碳中和进展</strong>
+                    WEF亚太脱碳新浪潮；标普全球可再生能源装机展望
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="sidebar-title">重点关注信号</div>
+            <div class="signal-item">
+                <div class="signal-title">越南海上风电电价</div>
+                <div class="signal-desc">第253号决议规定2025–2030年运营项目的定价机制，FIT/市场电价细则预计H2 2026公布。</div>
+                <span class="signal-badge badge-high">高优先级</span>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">ADB东南亚项目管线</div>
+                <div class="signal-desc">ADB将公布700亿美元承诺下的具体国别能源项目，关注越南电网现代化分配方案。</div>
+                <span class="signal-badge badge-medium">持续监控</span>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">亚太Q2可再生能源装机数据</div>
+                <div class="signal-desc">标普全球追踪亚太可再生能源装机进展——Q2 2026数据预计6月发布。</div>
+                <span class="signal-badge badge-medium">持续监控</span>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">思科FY26能源目标</div>
+                <div class="signal-desc">FY26为五年计划收官年，关注年中能效目标与供应商碳排参与里程碑。</div>
+                <span class="signal-badge badge-positive">进展正常</span>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="sidebar-title">本周主要数据来源</div>
+            <div class="signal-item">
+                <div class="signal-title">亚洲开发银行新闻稿</div>
+                <div class="signal-desc">ADB 700亿美元能源与数字基础设施计划公告 — 2026年5月3日</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">世界经济论坛分析</div>
+                <div class="signal-desc">《亚太如何驾驭脱碳新浪潮》— 2026年5月3日发布</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">SEMI / Marvell联合报告</div>
+                <div class="signal-desc">《涟漪效应：半导体价值链水风险与韧性》— 2026年5月7日发布</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">思科官方博客</div>
+                <div class="signal-desc">《我们如何建设更清洁、更高效的能源供应》— FY25目的报告，2026年4月13日</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-title">Green Finance Week Asia</div>
+                <div class="signal-desc">150+领袖齐聚新加坡，聚焦清洁能源金融 — 2026年5月8日</div>
+            </div>
+        </div>
+
     </div>
+</div>
+
+<div class="footer">
+    <p>Cisco 可持续发展情报简报 · 2026年5月11日自动生成</p>
+    <p style="margin-top:6px">覆盖范围：越南PPA · 东南亚可再生能源 · 思科可持续发展 · 供应链水风险 · 碳中和</p>
+    <p style="margin-top:6px"><a href="cisco_sustainability_briefing.html">Switch to English</a> · <a href="index.html">← 返回首页</a></p>
+</div>
+
 </body>
 </html>
