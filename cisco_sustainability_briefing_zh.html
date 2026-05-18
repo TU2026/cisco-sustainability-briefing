@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco可持续发展情报简报 - 2026年5月11日</title>
+    <title>Cisco可持续发展情报简报 - 2026年5月18日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a1628; min-height: 100vh; color: #e2e8f0; line-height: 1.6; }
@@ -48,341 +48,309 @@
         .kpi-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px; text-align: center; }
         .kpi-value { font-size: 1.8em; font-weight: 800; color: #00bceb; line-height: 1.1; margin-bottom: 4px; }
         .kpi-label { font-size: 11px; color: #64748b; line-height: 1.4; }
-        .kpi-trend { font-size: 11px; font-weight: 600; margin-top: 4px; }
-        .trend-up { color: #34d399; } .trend-down { color: #f87171; } .trend-warn { color: #fbbf24; }
-        .method-list { list-style: none; }
-        .method-list li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88em; color: #94a3b8; }
-        .method-list li:last-child { border-bottom: none; }
-        .method-list li::before { content: "\25C6"; color: #049fd9; font-size: 8px; margin-top: 5px; flex-shrink: 0; }
-        .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media(max-width:600px){.rec-grid{grid-template-columns:1fr}}
-        .rec-card { background: rgba(13,39,77,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 16px; }
-        .rec-card .rec-period { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
-        .rec-card.short { border-top: 3px solid #049fd9; } .rec-card.short .rec-period { color: #049fd9; }
-        .rec-card.medium { border-top: 3px solid #a78bfa; } .rec-card.medium .rec-period { color: #a78bfa; }
-        .rec-list { list-style: none; }
-        .rec-list li { font-size: 0.88em; color: #cbd5e1; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; }
-        .rec-list li:last-child { border-bottom: none; }
-        .rec-list li::before { content: "\2192"; color: #049fd9; flex-shrink: 0; }
-        .signal-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .signal-item:last-child { border-bottom: none; }
-        .signal-indicator { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-        .sig-green { background: #34d399; box-shadow: 0 0 6px rgba(52,211,153,0.5); }
-        .sig-amber { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,0.5); }
-        .sig-red { background: #f87171; box-shadow: 0 0 6px rgba(248,113,113,0.5); }
-        .signal-text { font-size: 0.85em; color: #94a3b8; }
-        .signal-text strong { color: #e2e8f0; display: block; font-size: 0.92em; }
-        .water-risk-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .water-risk-item:last-child { border-bottom: none; }
-        .water-risk-location { font-size: 0.85em; color: #e2e8f0; font-weight: 600; }
-        .water-risk-level { display: flex; align-items: center; gap: 6px; }
-        .risk-bar { width: 60px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
-        .risk-fill { height: 100%; border-radius: 3px; }
-        .risk-medium { background: linear-gradient(90deg,#fbbf24,#f59e0b); }
-        .risk-low { background: linear-gradient(90deg,#34d399,#10b981); }
-        .risk-high { background: linear-gradient(90deg,#f87171,#ef4444); }
-        .risk-label { font-size: 10px; font-weight: 700; }
-        .ppa-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .ppa-item:last-child { border-bottom: none; }
-        .ppa-country { font-size: 0.85em; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
-        .ppa-bar-wrap { display: flex; align-items: center; gap: 8px; }
-        .ppa-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
-        .ppa-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg,#049fd9,#00bceb); }
-        .ppa-score { font-size: 11px; font-weight: 700; color: #049fd9; min-width: 30px; text-align: right; }
-        .source-item { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.82em; color: #64748b; }
-        .source-item:last-child { border-bottom: none; }
-        .source-badge { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #049fd9; margin-top: 5px; flex-shrink: 0; }
-        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.82em; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px; }
-        .sidebar { position: sticky; top: 20px; }
-        .sidebar-section { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
-        .sidebar-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #049fd9; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(4,159,217,0.2); }
-        .issue-badge { display: inline-block; background: rgba(4,159,217,0.1); border: 1px solid rgba(4,159,217,0.3); color: #049fd9; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-left: 8px; }
+        .sidebar-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .sidebar-card-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #049fd9; margin-bottom: 14px; }
+        .timeline-item { display: flex; gap: 12px; margin-bottom: 14px; }
+        .timeline-dot { width: 8px; height: 8px; background: #049fd9; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .timeline-content { flex: 1; }
+        .timeline-date { font-size: 10px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .timeline-text { font-size: 0.85em; color: #94a3b8; margin-top: 2px; }
+        .action-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .action-item:last-child { border-bottom: none; }
+        .action-horizon { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+        .horizon-short { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+        .horizon-mid { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .action-text { font-size: 0.85em; color: #94a3b8; }
+        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer a { color: #049fd9; text-decoration: none; }
+        .top3-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.35); color: #fbbf24; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <div class="lang-switch">
-        <a href="cisco_sustainability_briefing.html" class="lang-btn">English</a>
-    </div>
 
-    <header class="header">
-        <div class="header-label">情报简报</div>
-        <h1>Cisco <span>可持续发展</span>情报</h1>
-        <div class="subtitle">东南亚供应链可持续发展情报</div>
-        <div class="date-badge">
-            <span class="dot"></span>
-            2026年5月11日（周一）&nbsp;|&nbsp; 第54期
+<a href="cisco_sustainability_briefing.html" class="lang-switch">
+    <span class="lang-btn">🌐 English</span>
+</a>
+
+<div class="header">
+    <div class="header-label">⚡ 情报简报</div>
+    <h1>Cisco <span>可持续发展</span>情报</h1>
+    <p class="subtitle">越南PPA · 东南亚绿色能源 · 水资源风险 · 碳中和进展</p>
+    <div class="date-badge"><span class="dot"></span> 2026年5月18日当周 · 自动生成</div>
+</div>
+
+<div class="main-layout">
+    <div class="main-col">
+
+        <!-- 执行摘要 -->
+        <div class="section">
+            <div class="section-title">执行摘要</div>
+            <div class="exec-summary">
+                <p>本周情报聚焦三大交汇主题：<span class="highlight-tag">DPPA执行</span>越南DPPA框架进入最关键阶段——定价执行。MOIT第20/2026/TT-BCT号通告于6月2日生效，明确了决定DPPA商业可行性的过网电价计算方法。与此同时，<span class="highlight-tag">清洁能源投资转型</span> IEA《世界能源投资2025》证实东南亚清洁能源投资占比已接近50%，创历史性里程碑，而1,300亿美元的煤炭资产面临搁浅风险。此外，<span class="highlight-tag">宏观脱碳</span> WEF与德勤强调亚太净零目标若成功实施可在2070年前释放50万亿美元经济价值，工业电气化与绿氢是需要近期行动的关键杠杆。</p>
+                <p>对于Cisco供应链战略而言，越南DPPA市场深化（直接影响富士康/和硕制造集群）与IEA确认东南亚清洁能源投资势头的交叉点，构成加速推进区域可再生能源采购承诺的有利窗口。</p>
+            </div>
         </div>
-    </header>
 
-    <div class="main-layout">
-        <main>
-            <div class="section exec-summary">
-                <div class="section-title">执行摘要</div>
-                <p><span class="highlight-tag">越南PPA</span>2025年12月11日越南国会通过第253/2025/QH15号决议，标志越南DPPA框架的关键转变：离网PPA定价实现双边自主协商，废除前期限制项目融资可行性的价格上限；工业园区、出口加工区、高新技术区等新主体纳入参与资格范围；工贸部（MOIT）正在起草实施法令，预计2026年第二季度颁布。</p>
-                <p><span class="highlight-tag">Cisco供应链</span>Cisco于2026年4月14日与英国DEScycle公司合作，在英国威尔顿示范工厂启动模块化电子废料金属回收试验——应对AI基础设施扩张带来的矿物密集型压力。此举标志着金属回收从下游废弃物处理职能战略性重定位为供应链基础设施层。</p>
-                <p><span class="highlight-tag">区域政策</span>亚洲开发银行2026年3月发布《推进东盟绿色经济转型》报告，将私营部门定位为绿色转型的"关键引擎"，东盟正在全球不确定性加剧背景下实施APAEC 2026-2030目标。越南储能（BESS）部署与PDP8目标差距悬殊——已安装不足100兆瓦，而目标为10,000–16,300兆瓦，至2030年市场规模达60亿美元。</p>
-            </div>
+        <!-- Top 3 本周最值得行动的发现 -->
+        <div class="section">
+            <div class="section-title">🏆 Top 3 — 本周最值得行动的发现</div>
 
-            <div class="section">
-                <div class="section-title">本周Top 3 可行动情报</div>
-
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">1</div>
-                        <div class="intel-title">越南DPPA实施提速——第253/2025/QH15号决议颁布，双边定价机制落地</div>
-                        <div class="impact-score">
-                            <div class="score-value">9.2</div>
-                            <div class="score-label">影响分</div>
-                        </div>
-                    </div>
-                    <span class="category-tag tag-energy">能源</span>
-                    <span class="category-tag tag-policy">政策</span>
-                    <div class="intel-body">
-                        <p>2025年12月11日越南国会通过第253/2025/QH15号决议并即刻生效，从根本上重塑了DPPA机制。核心变化：（1）<strong>双边自主定价</strong>——离网PPA价格由买卖双方自主协商，废除此前限制项目银行可融资性的价格上限；（2）<strong>准入主体大幅扩容</strong>——工业园区、经济区、出口加工区、工业集群、高新技术区及其零售电力供应商均可参与；（3）离网模式推进技术中性扩展；（4）并网DPPA纳入生物质发电，最低装机容量要求10MW；（5）越南电力集团（EVN）须依据近10年历史数据公示输电服务费和差额补偿费计算方式。工贸部（MOIT）目前正起草后续实施法令（预计2026年一二季度颁布）。</p>
-                        <p style="margin-top:8px;"><strong>当前准入门槛：</strong>目前仅月均用电量不低于20万千瓦时的企业可直接参与，限制了中小企业的直接介入。建议修订草案针对园区、集群内特定零售电力单位设置更适配的准入要求。另外，越南2025年10月试点对大型制造企业实施"容量费+电量费"双组件零售电价，为参与DPPA的企业增添了成本变量——峰值需求高的工序（如SMT贴片、电镀）将面临更高电费。</p>
-                    </div>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">Cisco在越南工业园区内的一二级制造供应商（尤其是电子组装和PCB制造）面临DPPA经济性直接影响。这些供应商作为园区主要用户，负有RE100承诺或Scope 2减排目标，可通过双边RE合同落实之前无法实现的绿电采购。Cisco供应链团队应主动梳理供应商月用电量，筛选≥20万千瓦时/月的企业，并评估通过园区级零售电力供应商开展集合PPA模式的可行性。双组件电价改革同样影响供应商运营成本——峰值需求高的工厂将承受比例更高的成本压力，应纳入供应商可持续发展评估体系。</div>
+            <div class="intel-item">
+                <div class="top3-badge">⭐ #1 最值得立即行动</div>
+                <span class="category-tag tag-policy">政策 · 越南DPPA</span>
+                <div class="intel-item-header">
+                    <div class="intel-rank">1</div>
+                    <div class="intel-title">越南第20/2026号通告：DPPA定价规则6月2日生效——"真正的故事是执行，而非法规"</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.5</div>
+                        <div class="score-label">影响力</div>
                     </div>
                 </div>
-
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">2</div>
-                        <div class="intel-title">Cisco联合DEScycle开展模块化电子废料金属回收试验</div>
-                        <div class="impact-score">
-                            <div class="score-value">8.7</div>
-                            <div class="score-label">影响分</div>
-                        </div>
-                    </div>
-                    <span class="category-tag tag-supply">供应链</span>
-                    <span class="category-tag tag-carbon">碳排放</span>
-                    <div class="intel-body">
-                        <p>2026年4月14日，Cisco宣布与英国DEScycle合作，在其位于英国威尔顿的示范工厂开展模块化金属回收平台试验。Cisco提供退役硬件——Cisco设备经拆解后的电子废弃电路板经DEScycle工艺处理。试验以受控批次方式进行，全程跟踪金属回收率和工艺经济性，目标是验证性能与成本可行性，评估其融入Cisco逆向供应链（含材料全程可追溯）的方式。目前仍处于示范规模阶段，尚未商业化推广。</p>
-                        <p style="margin-top:8px;">战略意义超越单一试验：分析师指出，这代表"金属回收——长期作为下游职能——有望成为供应链基础设施层"的系统性转变。传统冶炼高度资本密集、能耗大、地理集中——扩产需数年。DEScycle模块化设备规模较小，可靠近硬件退役地点运营，减少运输、实现本地材料循环，缩短回收链。Cisco CSO将此试验定位为"减少废弃物同时创造报废服务商业价值"的可持续发展探索之一。</p>
-                    </div>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">此试验折射出Cisco应对AI基础设施扩张趋势下将关键矿产回收内部化的战略意图。对供应链可持续发展项目：（1）推进循环经济目标，助力Scope 3上游材料减量；（2）随AI硬件密度提升，网络和硅片产品对铜、金需求持续增加——本地化回收对冲未来供应短缺风险；（3）试验成果可纳入未来供应商行为准则更新中的供应商级物料管理要求；（4）采购团队应评估DEScycle式模块化回收装置在越南、台湾、墨西哥等Cisco主要制造中心部署的可行性，以实现铜和贵金属的闭环管理。</div>
-                    </div>
+                <div class="intel-body">
+                    越南工贸部于2026年4月17日发布第20/2026/TT-BCT号通告（6月2日生效），修订第10/2025号通告，为DPPA框架建立电价确定方法和原则。根据第57号法令，最低项目规模确定为<strong>3兆瓦</strong>，谈判的DPPA电价不得超过各类可再生能源的最高上网电价上限。该通告解决了阻碍DPPA推进的最大商业障碍：过网成本透明度。行业分析（MT Stonegate，2026年5月）指出越南框架现已进入<strong>"定价与资格执行阶段"</strong>，实际市场采用率将在此阶段决定——而非此前的政策公告阶段。
                 </div>
-
-                <div class="intel-item">
-                    <div class="intel-item-header">
-                        <div class="intel-rank">3</div>
-                        <div class="intel-title">亚开行发布《推进东盟绿色经济转型》报告——私营部门被定位为"关键引擎"</div>
-                        <div class="impact-score">
-                            <div class="score-value">7.9</div>
-                            <div class="score-label">影响分</div>
-                        </div>
-                    </div>
-                    <span class="category-tag tag-policy">政策</span>
-                    <span class="category-tag tag-energy">能源</span>
-                    <div class="intel-body">
-                        <p>亚洲开发银行（ADB）与菲律宾贸工部（DTI）于2026年3月联合发布《推进东盟绿色经济转型》报告，这份112页的评估报告涵盖东盟绿色经济指标、转型路径、绿色就业与技能、政策框架以及私营部门的作用。报告于2026年3月12日发布，依据CC BY 3.0 IGO协议免费提供PDF版本。报告指出，东盟正在"全球不确定性加剧"背景下实施《东盟能源合作行动计划2026-2030》（APAEC），将私营部门投资定位为实现绿色经济目标的首要驱动力。</p>
-                        <p style="margin-top:8px;">与此相呼应，东盟能源中心（ACE）发布的《2026年东盟能源》确认2026年是区域能源合作的关键之年，各国已开始执行APAEC 2026-2030目标。2026年3月17日发布的越南62号通告是落实PDP8宏大BESS目标的具体步骤——然而当前已安装不足100兆瓦，与10,000–16,300兆瓦的目标差距悬殊。越南BESS市场预计到2030年累计规模达60亿美元。</p>
-                    </div>
-                    <div class="intel-cisco-impact">
-                        <div class="label">对Cisco的重要性</div>
-                        <div class="content">对Cisco亚洲供应链可持续发展战略：（1）ADB报告框架为评估各东盟国家在支持Cisco RE采购和Scope 3减排目标方面的综合能力提供了政策路线图；（2）东盟各国政府倚重私营部门投资绿色基础设施，为Cisco与东道国政府谈判优先RE采购权提供了筹码；（3）越南BESS基础设施差距直接影响Cisco供应商的电网稳定性——电网不稳定增加备用发电成本并推高Scope 2排放；（4）越南制造供应商越来越需要展示对APAEC和绿色经济框架的对齐以维持认证资质和客户采购资格。</div>
-                    </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对Cisco的重要性</div>
+                    <div class="content">Cisco在越南的关键一级供应商（富士康北江、和硕等）现可在第20号通告后对DPPA经济性进行实际建模。此刻是推动供应商开展DPPA可行性评估的最佳时机——先行者将在开发商溢价因市场需求上升前锁定更低的长期可再生能源电价。</div>
                 </div>
             </div>
 
-            <div class="section">
-                <div class="section-title">关键数据指标</div>
-                <div class="kpi-grid">
-                    <div class="kpi-card">
-                        <div class="kpi-value">10-16 GW</div>
-                        <div class="kpi-label">越南PDP8储能（BESS）2030年目标</div>
-                        <div class="kpi-trend trend-warn">现已安装不足100MW</div>
+            <div class="intel-item">
+                <div class="top3-badge">⭐ #2 最值得关注</div>
+                <span class="category-tag tag-energy">能源 · IEA数据</span>
+                <div class="intel-item-header">
+                    <div class="intel-rank">2</div>
+                    <div class="intel-title">IEA《世界能源投资2025》：东南亚清洁能源占比历史性达约50%——但1,300亿美元煤炭搁浅资产风险迫近</div>
+                    <div class="impact-score">
+                        <div class="score-value">9.2</div>
+                        <div class="score-label">影响力</div>
                     </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">20万</div>
-                        <div class="kpi-label">DPPA参与最低月用电量（千瓦时）</div>
-                        <div class="kpi-trend trend-up">园区准入门槛待调整</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">44欧元</div>
-                        <div class="kpi-label">CBAM碳成本（欧元/吨）</div>
-                        <div class="kpi-trend trend-down">越南出口商面临压力</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">&lt;11%</div>
-                        <div class="kpi-label">越南拥有第三方认证排放数据企业占比</div>
-                        <div class="kpi-trend trend-warn">CBAM申报数据缺口</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">112页</div>
-                        <div class="kpi-label">亚开行东盟绿色经济报告篇幅</div>
-                        <div class="kpi-trend trend-up">2026年3月发布</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">60亿</div>
-                        <div class="kpi-label">越南BESS市场规模预测（美元）</div>
-                        <div class="kpi-trend trend-up">预测至2030年</div>
-                    </div>
+                </div>
+                <div class="intel-body">
+                    IEA《世界能源投资2025》东南亚专题（2026年5月14日发布）揭示历史性拐点：清洁能源投资从2015年的每年30亿美元增至2025年的470亿美元，现已占总能源投资的<strong>近50%</strong>——相较于历史上化石燃料占60%的主导地位发生根本性转变。然而，2015年以来累计煤炭投资超过<strong>1,100亿美元</strong>，按25年经济寿命计算预计有<strong>1,300亿美元未回收资本</strong>面临搁浅风险。越南、泰国、马来西亚已成为<strong>中国以外全球前三大太阳能光伏制造基地</strong>。印度尼西亚镍产量占全球<strong>60%以上</strong>，2024年中国在印尼精炼投资额达3,000亿美元。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对Cisco的重要性</div>
+                    <div class="content">IEA数据验证了Cisco东南亚供应链脱碳投资主题：清洁能源基础设施正在Cisco制造合作伙伴所在的国家快速扩张。Cisco应在FY26供应商接触中引用此数据——越南/泰国/马来西亚的供应商可结合当地清洁能源投资势头，可信地承诺更高的可再生能源目标。</div>
                 </div>
             </div>
 
-            <div class="section">
-                <div class="section-title">方法论说明</div>
-                <ul class="method-list">
-                    <li>覆盖周期：2026年5月4日至5月11日（2026年第18周）</li>
-                    <li>来源：Mt. Stonegate越南DPPA分析（6天前），Data Center Knowledge（4月14日），亚开行/菲律宾DTI（2026年3月），东盟能源中心（2026年），Bain/GenZero/Google/渣打/淡马锡绿色经济报告（2025年4月30日），越南62号通告（2026年3月17日），WRI越南DPPA简报（2024年11月），诺顿罗氏PDP8/BESS法律解析</li>
-                    <li>数据时效：研究于2026年5月11日完成。所有前瞻性监管时间表均直接引用政府/政策文件</li>
-                    <li>影响评分标准（0-10分）：Cisco供应链风险敞口严重程度 + 监管时间紧迫性 + 财务重大性 + 竞争差异化潜力</li>
-                    <li>对Cisco的影响分析为内部评估意见，Cisco官方立场请参见 cisco.com/sustainability</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">战略建议</div>
-                <div class="rec-grid">
-                    <div class="rec-card short">
-                        <div class="rec-period">短期行动（0-3个月）</div>
-                        <ul class="rec-list">
-                            <li>梳理越南一二级供应商所在工业园区和月用电量，标注月均≥20万千瓦时者为DPPA准入候选人</li>
-                            <li>对接Cisco CSO团队，将DEScycle试验成果纳入下一轮《供应商行为准则》循环经济要求修订</li>
-                            <li>基于WRI Aqueduct或CDP水资源数据，对Cisco越南和泰国前20供应商开展水资源风险评估</li>
-                        </ul>
+            <div class="intel-item">
+                <div class="top3-badge">⭐ #3 战略叙事价值</div>
+                <span class="category-tag tag-carbon">碳中和 · 亚太净零</span>
+                <div class="intel-item-header">
+                    <div class="intel-rank">3</div>
+                    <div class="intel-title">WEF+德勤：亚太净零可释放2070年50万亿美元价值——工业电气化与绿氢是关键杠杆</div>
+                    <div class="impact-score">
+                        <div class="score-value">8.7</div>
+                        <div class="score-label">影响力</div>
                     </div>
-                    <div class="rec-card medium">
-                        <div class="rec-period">中期行动（3-12个月）</div>
-                        <ul class="rec-list">
-                            <li>评估通过园区级零售电力供应商为越南供应商集群开展集合PPA的试点模式；接洽EVN或持牌售电公司</li>
-                            <li>开发供应商Scope 2脱碳行动手册，与越南双组件电价改革和CBAM申报时间节点对齐</li>
-                            <li>利用亚开行《东盟绿色经济转型》报告与越南、泰国、菲律宾等东道国政府沟通，争取优先RE资源获取渠道</li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="intel-body">
+                    世界经济论坛（2026年5月3日）与德勤确认，亚太"下一波脱碳浪潮"现已超越太阳能和风能阶段——关键挑战是工业脱碳。实现净零目标可为亚太经济增加<strong>约500亿美元（2070年前）</strong>，并释放高达<strong>900亿美元的总经济机遇</strong>。WEF确定四大关键行动领域：①工业电气化、②绿氢规模化、③电网现代化、④碳市场整合。标普全球（2026年5月13日）证实，2026年AI驱动的负荷增长和电网瓶颈正在对企业可再生能源采购战略形成新压力。
+                </div>
+                <div class="intel-cisco-impact">
+                    <div class="label">对Cisco的重要性</div>
+                    <div class="content">Cisco FY26五年能效投资计划（最终年）与这一宏观转型高度契合：公司的AI赋能能源管理工具和范围3供应商参与计划，直接呼应WEF强调的工业电气化挑战。Cisco应在可持续发展传播和CSO接触中充分利用这一宏观叙事框架。</div>
                 </div>
             </div>
-        </main>
+        </div>
 
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">快速信号</div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>越南DPPA定价自由化</strong>离网PPA双边自主定价落地——价格上限已废除</div>
+        <!-- 关键数据点 -->
+        <div class="section">
+            <div class="section-title">关键数据点</div>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">~50%</div>
+                    <div class="kpi-label">东南亚清洁能源占总能源投资比例（IEA 2025）</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>工贸部实施法令待出台</strong>后续DPPA规则预计2026年Q2颁布——需密切跟踪</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">1,300亿</div>
+                    <div class="kpi-label">东南亚煤炭搁浅资产风险（IEA估算，美元）</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-green"></div>
-                    <div class="signal-text"><strong>Cisco DEScycle试验进行中</strong>模块化电子废料金属回收示范在英国运营</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">3 MW</div>
+                    <div class="kpi-label">越南DPPA最低项目规模（第20号通告，2026年6月）</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-red"></div>
-                    <div class="signal-text"><strong>越南BESS差距严峻</strong>已安装不足100MW vs. PDP8目标10,000–16,300MW</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">50万亿</div>
+                    <div class="kpi-label">亚太净零经济增值潜力（2070年，德勤/WEF，美元）</div>
                 </div>
-                <div class="signal-item">
-                    <div class="signal-indicator sig-amber"></div>
-                    <div class="signal-text"><strong>CBAM申报强制执行</strong>越南出口商CBAM申报期开启——不足11%有认证排放数据</div>
+                <div class="kpi-card">
+                    <div class="kpi-value">140</div>
+                    <div class="kpi-label">SEMI水风险基准覆盖半导体设施数量（89个水盆地）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt;60%</div>
+                    <div class="kpi-label">印度尼西亚占全球镍供应份额（IEA 2025）</div>
                 </div>
             </div>
+        </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">水资源风险雷达</div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">越南北部工业区</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-high" style="width:75%"></div></div>
-                        <span class="risk-label" style="color:#f87171">高</span>
-                    </div>
+        <!-- 其他情报 -->
+        <div class="section">
+            <div class="section-title">本周其他情报</div>
+
+            <div class="intel-item">
+                <span class="category-tag tag-energy">能源 · 菲律宾</span>
+                <div class="intel-item-header">
+                    <div class="intel-title">菲律宾在ABMX 2026发布"Pax Silica" AI+绿色制造枢纽战略（5月16日）</div>
                 </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">泰国中部平原</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-medium" style="width:60%"></div></div>
-                        <span class="risk-label" style="color:#fbbf24">中</span>
-                    </div>
-                </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">班加罗尔/金奈（印度）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-high" style="width:80%"></div></div>
-                        <span class="risk-label" style="color:#f87171">高</span>
-                    </div>
-                </div>
-                <div class="water-risk-item">
-                    <div class="water-risk-location">柔佛/槟城（马来西亚）</div>
-                    <div class="water-risk-level">
-                        <div class="risk-bar"><div class="risk-fill risk-low" style="width:35%"></div></div>
-                        <span class="risk-label" style="color:#34d399">低</span>
-                    </div>
+                <div class="intel-body">在东盟商业媒体交流会2026（第48届东盟峰会边会）上，菲律宾投资署宣布大力推进将菲律宾打造为区域AI和绿色制造枢纽的战略。新克拉克城"Pax Silica"项目被定位为深度融入全球科技供应链的大型AI工业园区。三菱汽车计划在菲律宾建设混合动力汽车组装设施，钢铁厂SteelAsia已在使用地热能生产钢铁。亚行区域首席经济学家James Villafuerte呼吁东盟"不要浪费这次危机"，倡导建设一体化供应链和更强的社会保护体系。</div>
+                <div class="intel-cisco-impact">
+                    <div class="label">与Cisco的关联</div>
+                    <div class="content">菲律宾新兴AI工业园区战略可能为Cisco提供未来供应链多元化机遇。该国强调可再生能源+先进制造业，与Cisco范围3供应商标准高度一致。</div>
                 </div>
             </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">东南亚PPA准备度</div>
-                <div class="ppa-item">
-                    <div class="ppa-country">越南DPPA</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:75%"></div></div>
-                        <div class="ppa-score">75%</div>
-                    </div>
+            <div class="intel-item">
+                <span class="category-tag tag-supply">供应链 · 水资源</span>
+                <div class="intel-item-header">
+                    <div class="intel-title">SEMI《涟漪效应》水风险报告：供应商层面水数据透明度被认定为"最大结构性缺口"（2026年5月更新）</div>
                 </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">泰国PPA</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:55%"></div></div>
-                        <div class="ppa-score">55%</div>
-                    </div>
-                </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">菲律宾RE法</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:50%"></div></div>
-                        <div class="ppa-score">50%</div>
-                    </div>
-                </div>
-                <div class="ppa-item">
-                    <div class="ppa-country">印尼GREET</div>
-                    <div class="ppa-bar-wrap">
-                        <div class="ppa-bar"><div class="ppa-fill" style="width:35%"></div></div>
-                        <div class="ppa-score">35%</div>
-                    </div>
+                <div class="intel-body">SEMI《涟漪效应》水风险报告（2026年5月更新版，与Waterplan联合发布）持续在半导体行业讨论中作为涵盖140家设施、89个水盆地的权威风险基线被引用。Marvell的分析进一步强调，<strong>供应商层面水数据透明度不足</strong>是有效水风险管理的首要障碍——而非仅仅是物理性缺水。报告呼吁建立类似GHG报告框架的结构化水数据披露标准。这与CDP本季度早些时候发布的2026年强化水安全指标高度契合。</div>
+                <div class="intel-cisco-impact">
+                    <div class="label">与Cisco的关联</div>
+                    <div class="content">Cisco PCB供应链包含SEMI基准中识别的水资源压力地区的工厂。要求二级PCB供应商按结构化方式披露水数据（例如采用Waterplan框架）将填补这一缺口，并强化Cisco水风险报告的可信度。</div>
                 </div>
             </div>
+        </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">来源溯源</div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    Mt. Stonegate — 越南DPPA 2026更新（6天前）
+        <!-- 战略建议 -->
+        <div class="section">
+            <div class="section-title">战略建议</div>
+            <div style="margin-bottom:12px;">
+                <div class="action-item">
+                    <span class="action-horizon horizon-short">短期 0-3月</span>
+                    <div class="action-text"><strong>越南DPPA供应商接触：</strong>在第20号通告后，与富士康北江和和硕越南可持续发展团队就DPPA可行性展开接触。核心问题：供应商能否独立达到3MW门槛，或通过工业园区聚合需求实现？在开发商溢价随市场需求上升前行动窗口有限。</div>
                 </div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    Data Center Knowledge — Cisco/DEScycle（2026年4月14日）
+                <div class="action-item">
+                    <span class="action-horizon horizon-short">短期 0-3月</span>
+                    <div class="action-text"><strong>PCB水数据披露要求：</strong>向二级PCB供应商发起结构化水数据请求，采用SEMI/Waterplan基准指标（物理风险、水质风险、干旱、洪水KPI）。将其定位为与CDP 2026强化水安全指标的接轨举措。</div>
                 </div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    亚洲开发银行 — 东盟绿色经济（2026年3月）
+                <div class="action-item">
+                    <span class="action-horizon horizon-mid">中期 3-12月</span>
+                    <div class="action-text"><strong>东南亚RE采购战略更新：</strong>利用IEA证实东南亚清洁能源投资已达~50%平价这一数据，加速为区域设定Cisco范围3可再生能源目标。建议为越南/马来西亚/泰国供应商提出范围3第1类可再生能源子目标，在FY27前落地。</div>
                 </div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    东盟能源中心 — 2026年东盟能源
-                </div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    Norton Rose Fulbright — 越南BESS法律解析
-                </div>
-                <div class="source-item">
-                    <div class="source-badge"></div>
-                    WRI — 越南DPPA简报（2024年11月）
+                <div class="action-item">
+                    <span class="action-horizon horizon-mid">中期 3-12月</span>
+                    <div class="action-text"><strong>亚太脱碳叙事用于CSO接触：</strong>在即将到来的2026 MSFT峰会及外部CSO传播中，充分运用WEF/德勤"亚太净零50万亿美元经济增值"叙事框架。将Cisco工业电气化工具定位为直接赋能亚太"下一波脱碳浪潮"的关键推手。</div>
                 </div>
             </div>
-        </aside>
+        </div>
+
     </div>
 
-    <footer class="footer">
-        <p>Cisco可持续发展情报简报 — 第54期 | 2026年5月11日</p>
-        <p>覆盖周期：2026年5月4日至11日 | 为Cisco供应链可持续发展项目编制</p>
-        <p style="margin-top:8px;color:#64748b;">数据来源已注明，Cisco相关分析为内部评估意见。联系方式：dit2@cisco.com</p>
-    </footer>
+    <div class="sidebar-col">
+
+        <!-- 本周时间线 -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-title">📅 本周时间线</div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026年5月3日</div>
+                    <div class="timeline-text">WEF发布"下一波脱碳浪潮"——亚太净零= 2070年前$50万亿</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026年5月7日</div>
+                    <div class="timeline-text">ResLink分析：越南DPPA第57号法令——最低3MW，3-9个月审批</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026年5月14日</div>
+                    <div class="timeline-text">IEA《世界能源投资2025》东南亚专题发布——清洁能源占总投资~50%</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026年5月16日</div>
+                    <div class="timeline-text">菲律宾ABMX 2026："Pax Silica" AI+绿色制造枢纽宣布</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:#fbbf24"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026年6月2日（即将）</div>
+                    <div class="timeline-text">越南第20/2026号通告DPPA定价规则正式生效</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 持续跟踪清单 -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-title">👁 持续跟踪清单</div>
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:#a78bfa"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">越南DPPA市场</div>
+                    <div class="timeline-text">第20号通告框架下首个商业DPPA签署——预计2026年下半年</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:#fb923c"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">印度尼西亚碳市场</div>
+                    <div class="timeline-text">国家碳市场启动（2026年6月）——关注跨境碳信用规则对越南/印尼RE项目的影响</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:#34d399"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Cisco FY26能效计划</div>
+                    <div class="timeline-text">五年能效投资计划最终年——年末范围1&2相对FY2019基准的排放报告</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:#fbbf24"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">SEMI水数据披露</div>
+                    <div class="timeline-text">CDP 2026强化水安全模块——一级供应商披露截止日期临近</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 覆盖主题 -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-title">📌 覆盖主题</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="category-tag tag-policy" style="margin:0">越南PPA政策</span>
+                <span class="category-tag tag-energy" style="margin:0">东南亚绿色能源</span>
+                <span class="category-tag tag-supply" style="margin:0">供应链水资源</span>
+                <span class="category-tag tag-carbon" style="margin:0">碳中和</span>
+                <span class="category-tag" style="margin:0;background:rgba(4,159,217,0.15);color:#049fd9;border:1px solid rgba(4,159,217,0.3)">Cisco可持续发展</span>
+            </div>
+        </div>
+
+        <!-- 本周主要来源 -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-title">📚 本周主要来源</div>
+            <div style="font-size:0.82em;color:#64748b;line-height:1.8;">
+                • IEA《世界能源投资2025》东南亚专题<br>
+                • 越南工贸部第20/2026/TT-BCT号通告<br>
+                • ResLink DPPA分析（2026年5月7日）<br>
+                • WEF"亚太脱碳下一浪潮"（2026年5月3日）<br>
+                • 德勤亚太气候转型报告<br>
+                • Power Philippines / ABMX 2026（2026年5月16日）<br>
+                • SEMI《涟漪效应》水风险报告（更新版）<br>
+                • Marvell半导体水风险博客（2026年2月）<br>
+                • MT Stonegate越南DPPA更新（2026年5月）
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    由WorkBuddy自动生成 · 2026年5月18日当周 · <a href="https://tu2026.github.io/cisco-sustainability-briefing/">tu2026.github.io/cisco-sustainability-briefing</a><br>
+    仅供内部使用 — Cisco可持续发展情报系列
+</div>
+
 </body>
 </html>
