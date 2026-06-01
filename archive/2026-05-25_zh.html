@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思科可持续发展情报简报 — 2026年5月25日（第21周）</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-dark: #0d274d;
+    --cisco-cyan: #00bceb;
+    --bg-primary: #0a1628;
+    --bg-secondary: #0f1f3d;
+    --bg-card: #132448;
+    --bg-card-hover: #163060;
+    --text-primary: #e8f4fd;
+    --text-secondary: #a8c8e8;
+    --text-muted: #6b8db0;
+    --border-color: #1e3a5f;
+    --accent-green: #00d4a0;
+    --accent-amber: #f5a623;
+    --accent-red: #e74c3c;
+    --accent-purple: #8b5cf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'STHeiti', 'Noto Sans CJK SC', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ---- 页眉 ---- */
+  .masthead {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 50%, #051020 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 2rem 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg, transparent, transparent 60px,
+      rgba(4,159,217,0.03) 60px, rgba(4,159,217,0.03) 61px
+    );
+  }
+  .masthead-inner {
+    max-width: 1280px; margin: 0 auto;
+    position: relative; z-index: 1;
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 1rem;
+  }
+  .logo-block { display: flex; align-items: center; gap: 1rem; }
+  .logo-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--cisco-blue), var(--cisco-cyan));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: bold; color: white;
+    flex-shrink: 0;
+  }
+  .pub-title {
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    color: var(--cisco-cyan); text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .pub-name {
+    font-size: 1.55rem; font-weight: bold;
+    color: var(--text-primary); letter-spacing: 0.02em; line-height: 1.2;
+  }
+  .masthead-meta { text-align: right; }
+  .issue-date { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem; }
+  .issue-badge {
+    display: inline-block;
+    background: rgba(4,159,217,0.15);
+    border: 1px solid var(--cisco-blue);
+    color: var(--cisco-cyan);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- 滚动提示条 ---- */
+  .alert-ticker {
+    background: rgba(4,159,217,0.1);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.55rem 2rem;
+    font-size: 0.78rem;
+    color: var(--cisco-cyan);
+    letter-spacing: 0.03em;
+  }
+  .alert-ticker strong { color: var(--accent-amber); margin-right: 0.5rem; }
+
+  /* ---- 主布局 ---- */
+  .page-wrapper {
+    max-width: 1280px; margin: 0 auto; padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem; align-items: start;
+  }
+  @media (max-width: 900px) { .page-wrapper { grid-template-columns: 1fr; } }
+
+  /* ---- 标题标签 ---- */
+  .section-label {
+    display: flex; align-items: center; gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .label-bar {
+    width: 4px; height: 1.5rem;
+    background: linear-gradient(to bottom, var(--cisco-blue), var(--cisco-cyan));
+    border-radius: 2px; flex-shrink: 0;
+  }
+  .label-text {
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--cisco-cyan); font-weight: 600;
+  }
+
+  /* ---- 执行摘要 ---- */
+  .exec-summary {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--cisco-blue);
+    border-radius: 8px; padding: 1.8rem; margin-bottom: 2rem;
+  }
+  .exec-summary p { color: var(--text-secondary); font-size: 0.93rem; margin-bottom: 0.9rem; }
+  .exec-summary p:last-child { margin-bottom: 0; }
+  .exec-highlight {
+    border-left: 3px solid var(--cisco-cyan); padding-left: 1rem;
+    margin: 1rem 0; color: var(--text-primary) !important; font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ---- Top 3 情报条目 ---- */
+  .intel-item {
+    background: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 8px; padding: 1.6rem; margin-bottom: 1.4rem;
+    position: relative; transition: border-color 0.2s, transform 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); transform: translateY(-2px); }
+  .intel-rank {
+    position: absolute; top: 1.2rem; right: 1.4rem;
+    font-size: 2.5rem; font-weight: 900;
+    color: rgba(4,159,217,0.12); line-height: 1;
+  }
+  .intel-category {
+    display: inline-block; font-size: 0.65rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.22rem 0.7rem; border-radius: 3px; margin-bottom: 0.8rem;
+  }
+  .cat-ppa { background: rgba(4,159,217,0.15); color: var(--cisco-blue); border: 1px solid rgba(4,159,217,0.3); }
+  .cat-water { background: rgba(0,188,235,0.12); color: var(--cisco-cyan); border: 1px solid rgba(0,188,235,0.3); }
+  .cat-infra { background: rgba(139,92,246,0.12); color: var(--accent-purple); border: 1px solid rgba(139,92,246,0.3); }
+
+  .intel-title {
+    font-size: 1.05rem; color: var(--text-primary);
+    margin-bottom: 0.7rem; padding-right: 3rem; line-height: 1.5;
+    font-weight: 600;
+  }
+  .intel-body { color: var(--text-secondary); font-size: 0.87rem; margin-bottom: 1rem; }
+
+  .impact-row {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+  }
+  .impact-label { font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; letter-spacing: 0.05em; }
+  .impact-bar-wrap {
+    flex: 1; height: 6px;
+    background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden;
+  }
+  .impact-bar {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(to right, var(--cisco-blue), var(--cisco-cyan));
+  }
+  .impact-score { font-size: 0.8rem; font-weight: bold; color: var(--cisco-cyan); white-space: nowrap; }
+
+  .cisco-relevance {
+    background: rgba(4,159,217,0.07);
+    border: 1px solid rgba(4,159,217,0.2);
+    border-radius: 6px; padding: 0.9rem 1rem;
+  }
+  .cisco-relevance-label {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--cisco-cyan); margin-bottom: 0.4rem; display: block;
+  }
+  .cisco-relevance p { font-size: 0.84rem; color: var(--text-secondary); margin: 0; }
+
+  /* ---- 关键数据网格 ---- */
+  .data-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-bottom: 2rem;
+  }
+  @media (max-width: 700px) { .data-grid { grid-template-columns: repeat(2, 1fr); } }
+  .data-card {
+    background: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 8px; padding: 1.2rem; text-align: center;
+  }
+  .data-metric {
+    font-size: 1.8rem; font-weight: bold; color: var(--cisco-cyan);
+    line-height: 1.1; margin-bottom: 0.3rem;
+  }
+  .data-unit { font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem; }
+  .data-label { font-size: 0.78rem; color: var(--text-secondary); }
+  .data-trend { font-size: 0.72rem; margin-top: 0.3rem; }
+  .trend-up { color: var(--accent-green); }
+  .trend-neutral { color: var(--accent-amber); }
+
+  /* ---- 战略建议 ---- */
+  .strategy-section {
+    background: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 8px; padding: 1.8rem; margin-bottom: 2rem;
+  }
+  .strategy-col-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.2rem;
+  }
+  @media (max-width: 600px) { .strategy-col-grid { grid-template-columns: 1fr; } }
+  .strategy-col {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
+    border-radius: 6px; padding: 1.2rem;
+  }
+  .strategy-col-title {
+    font-size: 0.78rem; font-weight: 600; margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .st-short { color: var(--cisco-blue); }
+  .st-mid { color: var(--cisco-cyan); }
+  .strategy-item {
+    display: flex; gap: 0.7rem; margin-bottom: 0.8rem;
+    font-size: 0.85rem; color: var(--text-secondary); align-items: flex-start;
+  }
+  .strategy-item::before { content: '→'; color: var(--cisco-blue); flex-shrink: 0; margin-top: 0.05em; }
+
+  /* ---- 方法论 ---- */
+  .methodology {
+    background: rgba(13,39,77,0.5); border: 1px solid var(--border-color);
+    border-radius: 8px; padding: 1.4rem; margin-bottom: 2rem;
+  }
+  .methodology p, .methodology li { font-size: 0.82rem; color: var(--text-muted); }
+  .methodology ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+  .methodology li { margin-bottom: 0.3rem; }
+
+  /* ---- 侧边栏 ---- */
+  .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+  .sidebar-card {
+    background: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 8px; overflow: hidden;
+  }
+  .sidebar-card-header {
+    padding: 0.8rem 1.2rem;
+    background: rgba(4,159,217,0.1);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--cisco-cyan); font-weight: 600;
+  }
+  .sidebar-card-body { padding: 1.2rem; }
+
+  .signal-item {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.82rem;
+  }
+  .signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 0.35em; }
+  .dot-green { background: var(--accent-green); }
+  .dot-amber { background: var(--accent-amber); }
+  .dot-blue { background: var(--cisco-blue); }
+  .signal-text { color: var(--text-secondary); }
+  .signal-tag { font-size: 0.65rem; color: var(--text-muted); display: block; margin-top: 0.15rem; }
+
+  .water-risk-item { margin-bottom: 0.9rem; }
+  .water-risk-item:last-child { margin-bottom: 0; }
+  .wrisk-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 0.4rem;
+  }
+  .wrisk-name { font-size: 0.82rem; color: var(--text-secondary); }
+  .wrisk-level {
+    font-size: 0.68rem; padding: 0.18rem 0.55rem; border-radius: 10px; font-weight: 600;
+  }
+  .risk-high { background: rgba(231,76,60,0.2); color: #e74c3c; }
+  .risk-med  { background: rgba(245,166,35,0.2); color: #f5a623; }
+  .risk-low  { background: rgba(0,212,160,0.2); color: #00d4a0; }
+  .wrisk-bar-wrap { height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+  .wrisk-bar { height: 100%; border-radius: 3px; }
+  .rb-high { background: linear-gradient(to right, #c0392b, #e74c3c); }
+  .rb-med  { background: linear-gradient(to right, #d68910, #f5a623); }
+  .rb-low  { background: linear-gradient(to right, #00a680, #00d4a0); }
+
+  .ppa-country {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ppa-country:last-child { border-bottom: none; }
+  .ppa-name { font-size: 0.83rem; color: var(--text-secondary); }
+  .ppa-score-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .ppa-dots { display: flex; gap: 3px; }
+  .ppa-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.12); }
+  .ppa-dot.filled { background: var(--cisco-blue); }
+  .ppa-dot.partial { background: rgba(4,159,217,0.4); }
+  .ppa-label { font-size: 0.68rem; color: var(--text-muted); }
+
+  .source-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem;
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-name { color: var(--text-secondary); }
+  .source-type { font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 10px; }
+  .stype-primary { background: rgba(4,159,217,0.15); color: var(--cisco-blue); }
+  .stype-secondary { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+  .stype-industry { background: rgba(0,212,160,0.15); color: var(--accent-green); }
+
+  .page-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem; color: var(--text-muted); flex-wrap: wrap; gap: 0.5rem;
+  }
+  .footer-link { color: var(--cisco-blue); text-decoration: none; }
+  .footer-link:hover { color: var(--cisco-cyan); }
+
+  .lang-switch { display: inline-flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; }
+  .lang-btn { padding: 0.25rem 0.7rem; border-radius: 4px; text-decoration: none; font-weight: 600; }
+  .lang-btn.active { background: var(--cisco-blue); color: white; }
+  .lang-btn.inactive { background: rgba(255,255,255,0.07); color: var(--text-muted); }
+  .lang-btn.inactive:hover { background: rgba(255,255,255,0.12); color: var(--text-secondary); }
+</style>
+</head>
+<body>
+
+<!-- 页眉 -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="logo-block">
+      <div class="logo-icon">C</div>
+      <div>
+        <div class="pub-title">Cisco 供应链 — 可持续发展情报</div>
+        <div class="pub-name">可持续发展情报简报</div>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <div class="issue-date">2026年5月25日（周一）&nbsp;|&nbsp; 第21周 · FY2026</div>
+      <div class="issue-badge">每周一自动生成</div>
+      <div style="margin-top:0.5rem;">
+        <span class="lang-switch">
+          <a class="lang-btn inactive" href="cisco_sustainability_briefing.html">EN</a>
+          <a class="lang-btn active" href="cisco_sustainability_briefing_zh.html">中文</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 要点提示条 -->
+<div class="alert-ticker">
+  <strong>⚡ 本周高信号：</strong>
+  越南第57号法令DPPA正式运行 · 亚开行700亿美元东南亚基础设施计划 · WRI水范围1-3框架发布 · 思科AI能耗2030年预计增3倍
+</div>
+
+<!-- 主内容 -->
+<div class="page-wrapper">
+  <main>
+
+    <!-- 执行摘要 -->
+    <section>
+      <div class="section-label">
+        <div class="label-bar"></div>
+        <span class="label-text">执行摘要</span>
+      </div>
+      <div class="exec-summary">
+        <p>
+          本周情报周期（2026年5月19日至25日）识别出三项对思科亚太区供应链可持续发展战略具有直接影响的高优先级信号。越南DPPA生态系统在第57号法令框架下正迅速成熟，使RE100承诺从愿景转变为对河内和胡志明市走廊制造合作伙伴具有合同约束力的现实。与此同时，亚洲开发银行于5月7日宣布的700亿美元区域基础设施计划，为跨境可再生能源准入的先发者优势创造了长达十年的战略窗口。
+        </p>
+        <p class="exec-highlight">
+          "越南现已具备法律可执行的直接购电机制。对于在越运营的思科一级EMS合作伙伴而言，问题已从'能否获取可再生能源？'转变为'未来12个月内哪条项目通道最具可行性？'"
+        </p>
+        <p>
+          在水资源领域，WRI于2026年4月30日发布的《水范围1-3》框架提供了标准化方法论，可直接应用于思科PCB供应链水风险评估，从根本上填补了范围三水资源责任追溯的空白。CDP数据显示，全球至少770亿美元的企业价值面临供应链水风险敞口，东南亚PCB制造集群是风险最高的地理区域之一。
+        </p>
+      </div>
+    </section>
+
+    <!-- Top 3 情报条目 -->
+    <section style="margin-bottom: 2rem;">
+      <div class="section-label">
+        <div class="label-bar"></div>
+        <span class="label-text">Top 3 本周最值得行动的发现</span>
+      </div>
+
+      <!-- 条目一 -->
+      <div class="intel-item">
+        <div class="intel-rank">01</div>
+        <span class="intel-category cat-ppa">越南 PPA</span>
+        <h3 class="intel-title">越南第57号法令DPPA全面运行——最低3兆瓦项目规模，合同期限10至20年</h3>
+        <p class="intel-body">
+          根据第57/2024/ND-CP号法令，越南直接购电协议（DPPA）机制已于2026年初正式投入运行，允许大型工业用电企业绕过越南电力集团（EVN）直接与可再生能源发电商签订购电合同。工业和贸易部第10/2026号通知（2026年3月生效）确认3兆瓦及以上项目具备资格。根据2025年试点经验，审批周期为3至9个月。越南-新加坡工业园（VSIP）等工业园区开发商正积极整合租户用电需求以达到DPPA门槛。越南2026年GDP增长目标超10%意味着年均用电需求增速达12%至15%，从结构上压缩了以制造业为主的采购方的可再生能源签约窗口。
+        </p>
+        <div class="impact-row">
+          <span class="impact-label">影响评分</span>
+          <div class="impact-bar-wrap">
+            <div class="impact-bar" style="width:90%"></div>
+          </div>
+          <span class="impact-score">9.0 / 10</span>
+        </div>
+        <div class="cisco-relevance">
+          <span class="cisco-relevance-label">对思科的重要性</span>
+          <p>在越南运营的思科EMS合作伙伴（富士康、伟创力）现在拥有合法途径，可为思科范围三第一类报告和RE100供应链目标记录可再生电力采购。推迟DPPA参与可能导致EMS合作伙伴在英特尔、三星、LG等行动更快的采购方消耗管道容量后，被迫签订次优合同。</p>
+        </div>
+      </div>
+
+      <!-- 条目二 -->
+      <div class="intel-item">
+        <div class="intel-rank">02</div>
+        <span class="intel-category cat-infra">东南亚基础设施</span>
+        <h3 class="intel-title">亚开行承诺700亿美元用于东南亚能源与数字基础设施——2035年前实现近20吉瓦跨境可再生能源整合</h3>
+        <p class="intel-body">
+          亚洲开发银行（ADB）于2026年5月7日宣布一项700亿美元的重大投资计划，涵盖泛亚电力网络和亚太数字高速公路，截止期限为2035年。东南亚是主要受益地区：印度尼西亚、越南和菲律宾被确定为前三大优先市场。该计划目标是实现近20吉瓦跨境可再生能源整合和22000回路公里的输电线路。马来西亚——拥有约60%的区域数据中心项目管道——和越南被定位为核心锚定市场。对于能源密集型制造业，这通过建立电网互联降低了长期可再生能源采购的风险，使清洁电力能够跨境流动至主要需求中心。
+        </p>
+        <div class="impact-row">
+          <span class="impact-label">影响评分</span>
+          <div class="impact-bar-wrap">
+            <div class="impact-bar" style="width:85%"></div>
+          </div>
+          <span class="impact-score">8.5 / 10</span>
+        </div>
+        <div class="cisco-relevance">
+          <span class="cisco-relevance-label">对思科的重要性</span>
+          <p>ADB的互联互通计划从根本上支持思科越南和马来西亚制造运营的长期能源安全，为超越单一国家电网的可再生能源PPA创造结构性条件。思科应积极接触亚开行私营部门业务部门，寻求参与该公共计划的联合投资机会。</p>
+        </div>
+      </div>
+
+      <!-- 条目三 -->
+      <div class="intel-item">
+        <div class="intel-rank">03</div>
+        <span class="intel-category cat-water">水资源管理</span>
+        <h3 class="intel-title">WRI发布《水范围1-3》框架——770亿美元企业价值面临供应链水风险敞口</h3>
+        <p class="intel-body">
+          世界资源研究所（WRI）联合SCS Global Services、太平洋研究所、CEO Water Mandate和WWF，于2026年4月30日发布《水范围1-3》技术框架。这一标准——仿照温室气体核算体系（GHG Protocol）设计——为企业提供了首个统一方法论，用于衡量和披露整个价值链（直接运营→上游供应链→下游产品使用）的水风险。核心发现：将供应链纳入水风险评估的企业识别出供应链水风险的可能性，是仅测量直接运营的企业的7倍。CDP估计全球至少770亿美元的企业价值面临供应链水风险，且与SBTN、TNFD和欧盟CSRD披露要求保持一致。
+        </p>
+        <div class="impact-row">
+          <span class="impact-label">影响评分</span>
+          <div class="impact-bar-wrap">
+            <div class="impact-bar" style="width:80%"></div>
+          </div>
+          <span class="impact-score">8.0 / 10</span>
+        </div>
+        <div class="cisco-relevance">
+          <span class="cisco-relevance-label">对思科的重要性</span>
+          <p>思科PCB水风险分析项目（FY2026A）可直接采用《水范围1-3》方法论，为昆山和深圳PCB供应商集群的报告进行标准化处理。这使思科在CSRD合规时间表上处于领先位置，并为FY27 GHG/水/污染整合目标提供可辩护的范围三水资源核算框架。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关键数据点 -->
+    <section style="margin-bottom: 2rem;">
+      <div class="section-label">
+        <div class="label-bar"></div>
+        <span class="label-text">关键数据点</span>
+      </div>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="data-metric">3MW</div>
+          <span class="data-unit">越南DPPA</span>
+          <div class="data-label">第57号法令资格认定最低项目规模</div>
+          <div class="data-trend trend-up">↑ 2026年3月起正式生效</div>
+        </div>
+        <div class="data-card">
+          <div class="data-metric">$700亿</div>
+          <span class="data-unit">亚开行投资</span>
+          <div class="data-label">东南亚能源与数字基础设施 2026—2035</div>
+          <div class="data-trend trend-up">↑ 2026年5月7日宣布</div>
+        </div>
+        <div class="data-card">
+          <div class="data-metric">~20GW</div>
+          <span class="data-unit">跨境可再生能源</span>
+          <div class="data-label">亚开行东南亚可再生电网整合目标</div>
+          <div class="data-trend trend-up">↑ 2035年达成</div>
+        </div>
+        <div class="data-card">
+          <div class="data-metric">$770亿</div>
+          <span class="data-unit">企业风险敞口</span>
+          <div class="data-label">供应链水风险（CDP估算）</div>
+          <div class="data-trend trend-neutral">→ 基准值；框架已发布可供采用</div>
+        </div>
+        <div class="data-card">
+          <div class="data-metric">12–15%</div>
+          <span class="data-unit">越南能源需求</span>
+          <div class="data-label">年均电力需求增长率（2026年预测）</div>
+          <div class="data-trend trend-neutral">→ 10%+ GDP目标驱动</div>
+        </div>
+        <div class="data-card">
+          <div class="data-metric">3倍</div>
+          <span class="data-unit">AI能耗增长</span>
+          <div class="data-label">思科：2030年美国数据中心电网需求近乎翻三倍</div>
+          <div class="data-trend trend-neutral">→ AI服务器占比：21% → 44%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 战略建议 -->
+    <section style="margin-bottom: 2rem;">
+      <div class="section-label">
+        <div class="label-bar"></div>
+        <span class="label-text">战略建议</span>
+      </div>
+      <div class="strategy-section">
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 0.5rem;">
+          基于本周情报信号，面向思科供应链可持续发展团队的优先行动建议。
+        </p>
+        <div class="strategy-col-grid">
+          <div class="strategy-col">
+            <div class="strategy-col-title st-short">
+              <span>⚡</span> 短期行动（0—3个月）
+            </div>
+            <div class="strategy-item">向在越南的EMS合作伙伴（富士康、伟创力）简报第57号法令DPPA资格要求——确认哪些设施的年用电量达到3MW门槛。</div>
+            <div class="strategy-item">对越南PCB/制造基地1至2个试点可再生能源采购协议的DPPA合同结构启动法律尽职调查。</div>
+            <div class="strategy-item">在FY2026A PCB水风险研讨会中采用WRI《水范围1-3》框架——优先应用于昆山和深圳供应商集群。</div>
+            <div class="strategy-item">向思科CSO团队报告亚开行700亿美元计划，探讨与亚开行私营部门业务部门的潜在联合参与机会。</div>
+          </div>
+          <div class="strategy-col">
+            <div class="strategy-col-title st-mid">
+              <span>📅</span> 中期行动（3—12个月）
+            </div>
+            <div class="strategy-item">制定越南PPA项目管道地图：识别2至3个具备10至20年签约窗口的可再生能源项目（太阳能+风能），与思科FY27—FY30 RE100承诺保持一致。</div>
+            <div class="strategy-item">将《水范围1-3》整合进思科一级供应商ESG评估标准，要求前20家PCB供应商在FY2026年底前完成CDP水资源披露。</div>
+            <div class="strategy-item">持续关注马来西亚亚开行泛亚电力网络进展——在柔佛/赛城走廊布局长期数据中心可再生能源购电协议机会。</div>
+            <div class="strategy-item">制定考虑3倍需求预测的内部AI能效目标，结合思科Silicon One每瓦性能数据进行基础设施规划。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 方法论说明 -->
+    <section>
+      <div class="section-label">
+        <div class="label-bar"></div>
+        <span class="label-text">方法论说明</span>
+      </div>
+      <div class="methodology">
+        <p>本简报每周一09:00（香港时间）自动生成，覆盖滚动7天情报窗口（周一至周日）。内容来源：</p>
+        <ul>
+          <li>一手来源：政府监管文件、多边开发银行官方公告、同行评审框架（WRI、CDP、IEEFA）</li>
+          <li>二手来源：法律顾问出版物（Fraser SVN、WFW、西村朝日）、行业分析报告</li>
+          <li>行业来源：财经媒体（CNBC亚洲、VCCI、Reccessary、Alliance Mount）及NGO数据发布</li>
+          <li>影响评分（0-10）反映：对思科供应链运营的实质性影响、当季可行动性，以及基于来源级别的信号可靠性</li>
+        </ul>
+        <p style="margin-top: 0.6rem;">覆盖范围：越南PPA/DPPA政策 · 东南亚绿色能源基础设施 · 思科可持续发展战略 · 供应链水资源管理 · 污染控制与绿色政策 · 中国-东南亚电网互联</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+
+    <!-- 快速信号 -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">⚡ 本周快速信号</div>
+      <div class="sidebar-card-body">
+        <div class="signal-item">
+          <div class="signal-dot dot-green"></div>
+          <div>
+            <span class="signal-text">越南DPPA机制全面运行——第57号法令+工业和贸易部第10/2026号通知生效</span>
+            <span class="signal-tag">VN-PPA · 已确认 · 2026年5月</span>
+          </div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot dot-blue"></div>
+          <div>
+            <span class="signal-text">亚开行700亿美元宣布——越南、印尼、菲律宾为前三大受益国</span>
+            <span class="signal-tag">东南亚基础设施 · 2026年5月7日</span>
+          </div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot dot-green"></div>
+          <div>
+            <span class="signal-text">WRI《水范围1-3》发布——首个标准化供应链水资源框架</span>
+            <span class="signal-tag">水资源 · 2026年4月30日</span>
+          </div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot dot-amber"></div>
+          <div>
+            <span class="signal-text">思科：AI优化服务器2030年前从数据中心用电21%升至44%</span>
+            <span class="signal-tag">思科内部 · 能源风险</span>
+          </div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot dot-amber"></div>
+          <div>
+            <span class="signal-text">越南2026年GDP目标超10% → 电力需求年增12—15%</span>
+            <span class="signal-tag">越南宏观 · VCCI · 2026年4月</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 水风险雷达 -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">💧 水风险雷达 — 东南亚PCB集群</div>
+      <div class="sidebar-card-body">
+        <div class="water-risk-item">
+          <div class="wrisk-header">
+            <span class="wrisk-name">昆山，中国</span>
+            <span class="wrisk-level risk-high">高风险</span>
+          </div>
+          <div class="wrisk-bar-wrap"><div class="wrisk-bar rb-high" style="width:85%"></div></div>
+        </div>
+        <div class="water-risk-item">
+          <div class="wrisk-header">
+            <span class="wrisk-name">深圳，中国</span>
+            <span class="wrisk-level risk-high">高风险</span>
+          </div>
+          <div class="wrisk-bar-wrap"><div class="wrisk-bar rb-high" style="width:78%"></div></div>
+        </div>
+        <div class="water-risk-item">
+          <div class="wrisk-header">
+            <span class="wrisk-name">胡志明市，越南</span>
+            <span class="wrisk-level risk-med">中等</span>
+          </div>
+          <div class="wrisk-bar-wrap"><div class="wrisk-bar rb-med" style="width:58%"></div></div>
+        </div>
+        <div class="water-risk-item">
+          <div class="wrisk-header">
+            <span class="wrisk-name">河内走廊，越南</span>
+            <span class="wrisk-level risk-med">中等</span>
+          </div>
+          <div class="wrisk-bar-wrap"><div class="wrisk-bar rb-med" style="width:50%"></div></div>
+        </div>
+        <div class="water-risk-item">
+          <div class="wrisk-header">
+            <span class="wrisk-name">槟城，马来西亚</span>
+            <span class="wrisk-level risk-low">较低</span>
+          </div>
+          <div class="wrisk-bar-wrap"><div class="wrisk-bar rb-low" style="width:35%"></div></div>
+        </div>
+        <p style="font-size:0.72rem; color: var(--text-muted); margin-top: 0.8rem;">来源：WRI Aqueduct · 思科PCB FY2026A分析 · 分数为相对风险指示值</p>
+      </div>
+    </div>
+
+    <!-- 东南亚PPA就绪指数 -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">🌏 东南亚 PPA 就绪指数</div>
+      <div class="sidebar-card-body">
+        <div class="ppa-country">
+          <span class="ppa-name">🇻🇳 越南</span>
+          <div class="ppa-score-wrap">
+            <div class="ppa-dots">
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot partial"></div>
+            </div>
+            <span class="ppa-label">4.5/5</span>
+          </div>
+        </div>
+        <div class="ppa-country">
+          <span class="ppa-name">🇲🇾 马来西亚</span>
+          <div class="ppa-score-wrap">
+            <div class="ppa-dots">
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot"></div>
+            </div>
+            <span class="ppa-label">4.0/5</span>
+          </div>
+        </div>
+        <div class="ppa-country">
+          <span class="ppa-name">🇹🇭 泰国</span>
+          <div class="ppa-score-wrap">
+            <div class="ppa-dots">
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot filled"></div><div class="ppa-dot partial"></div>
+              <div class="ppa-dot"></div>
+            </div>
+            <span class="ppa-label">3.5/5</span>
+          </div>
+        </div>
+        <div class="ppa-country">
+          <span class="ppa-name">🇮🇩 印度尼西亚</span>
+          <div class="ppa-score-wrap">
+            <div class="ppa-dots">
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot filled"></div><div class="ppa-dot"></div>
+              <div class="ppa-dot"></div>
+            </div>
+            <span class="ppa-label">3.0/5</span>
+          </div>
+        </div>
+        <div class="ppa-country">
+          <span class="ppa-name">🇵🇭 菲律宾</span>
+          <div class="ppa-score-wrap">
+            <div class="ppa-dots">
+              <div class="ppa-dot filled"></div><div class="ppa-dot filled"></div>
+              <div class="ppa-dot partial"></div><div class="ppa-dot"></div>
+              <div class="ppa-dot"></div>
+            </div>
+            <span class="ppa-label">2.5/5</span>
+          </div>
+        </div>
+        <p style="font-size:0.72rem; color: var(--text-muted); margin-top: 0.8rem;">评分依据：政策框架、电网接入、合同可执行性、可再生能源项目管道及审批速度</p>
+      </div>
+    </div>
+
+    <!-- 信息来源溯源 -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">📚 信息来源溯源</div>
+      <div class="sidebar-card-body">
+        <div class="source-item">
+          <span class="source-name">越南第57号法令/工业和贸易部</span>
+          <span class="source-type stype-primary">一手</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">Reslink Energy（5月7日）</span>
+          <span class="source-type stype-secondary">咨询</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">亚开行 / CNBC亚洲（5月7日）</span>
+          <span class="source-type stype-primary">一手</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">WRI《水范围》（4月30日）</span>
+          <span class="source-type stype-primary">一手</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">思科博客 / CSRWire</span>
+          <span class="source-type stype-industry">行业</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">毕马威越南2026展望</span>
+          <span class="source-type stype-secondary">咨询</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">越南工商联合会可再生政策</span>
+          <span class="source-type stype-primary">一手</span>
+        </div>
+        <div class="source-item">
+          <span class="source-name">IEEFA东南亚清洁能源</span>
+          <span class="source-type stype-industry">行业</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="page-footer">
+  <div>
+    &copy; 2026 Cisco Systems — 供应链可持续发展团队 &nbsp;|&nbsp;
+    仅限内部使用 &nbsp;|&nbsp;
+    <a class="footer-link" href="https://hilarious-cucurucho-71c1c7.netlify.app">hilarious-cucurucho-71c1c7.netlify.app</a>
+  </div>
+  <div>自动生成：2026年5月25日（周一）&nbsp;|&nbsp; 下期：2026年6月1日</div>
+</footer>
+
+</body>
+</html>

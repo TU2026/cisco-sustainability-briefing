@@ -2,6 +2,32 @@
 
 ## Execution History
 
+### Issue #55 — May 18, 2026 (Mon 09:00)
+- **Status**: ✅ SUCCESS
+- **Coverage**: May 11–18, 2026
+- **Top Stories**:
+  1. Cisco FY25 Achieves 90% Scope 1&2 GHG Reduction + 100% Renewable Electricity (Apr 29-30, 2026). Impact 9.3/10.
+  2. Vietnam DPPA MOIT Circular 10/2026: Minimum threshold lowered to 3 MW; BESS <100 MW vs 16 GW PDP8 target; EU CBAM full enforcement €580M/yr liability for Vietnam exporters. Impact 8.9/10.
+  3. Apple Supply Chain 20 GW+ Supplier Clean Energy — new peer benchmark for Cisco; stagnating emission reductions signal need for operational efficiency mandates alongside RE procurement. Impact 8.6/10.
+- **Files Generated**: cisco_sustainability_briefing.html, cisco_sustainability_briefing_zh.html, index.html updated (Issue #55, 6 issues)
+- **Git commit**: b0a4570 — pushed to github.com/TU2026/cisco-sustainability-briefing main ✅
+- **GitHub Pages**: https://tu2026.github.io/cisco-sustainability-briefing/ ✅
+- **Netlify**: Not configured; GitHub Pages is primary deployment URL
+- **Email**: Sent to dit2@cisco.com via macOS mail ✅
+
+### Issue #54 — May 11, 2026 (Mon 09:00)
+- **Status**: ✅ SUCCESS
+- **Coverage**: May 4–11, 2026
+- **Top Stories**:
+  1. Vietnam DPPA Resolution 253/2025/QH15: bilateral pricing freedom for off-grid PPAs (price ceiling removed), expanded to industrial parks/export zones/hi-tech clusters; MOIT implementing decree pending Q2 2026. Impact 9.2/10.
+  2. Cisco/DEScycle Modular Metals Recovery Trial (Apr 14, 2026, Wilton UK): AI-driven mineral intensity pressure drives strategic shift of metals recovery to "supply chain infrastructure layer." Impact 8.7/10.
+  3. ADB ASEAN Green Economy Transition Report (Mar 2026): private sector as critical engine; Vietnam BESS <100 MW vs. 10,000-16,300 MW PDP8 target; $6B market to 2030. Impact 7.9/10.
+- **Files Generated**: cisco_sustainability_briefing.html, cisco_sustainability_briefing_zh.html, index.html updated (Issue #54)
+- **Git commit**: 96ab6be — pushed to github.com/TU2026/cisco-sustainability-briefing main ✅
+- **GitHub Pages**: https://tu2026.github.io/cisco-sustainability-briefing/ ✅
+- **Netlify**: Not configured; GitHub Pages is primary deployment URL
+- **Email**: Sent to dit2@cisco.com via macOS mail ✅
+
 ### Issue #53 — April 28, 2026 (Mon refresh, coverage Apr 21–27)
 - **Status**: ✅ SUCCESS
 - **Coverage**: April 21–27, 2026
