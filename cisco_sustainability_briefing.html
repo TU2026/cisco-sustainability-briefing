@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cisco Sustainability Intelligence Briefing — Week of June 1, 2026</title>
+<title>Cisco Sustainability Intelligence Briefing — Week of June 8, 2026</title>
 <style>
   :root {
     --cisco-blue: #049fd9;
@@ -299,19 +299,20 @@
     font-size: 0.82rem;
     color: var(--text-secondary);
     border-radius: 0 3px 3px 0;
+    margin-bottom: 0.6rem;
   }
   .cisco-relevance strong { color: var(--cisco-blue); }
-  .source-chip {
-    display: inline-block;
-    font-size: 0.65rem;
+  .source-row {
+    font-size: 0.7rem;
     color: var(--text-muted);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border-color);
-    padding: 0.1rem 0.4rem;
-    border-radius: 2px;
     font-family: Arial, sans-serif;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
   }
+  .source-row a {
+    color: var(--cisco-blue);
+    text-decoration: none;
+  }
+  .source-row a:hover { text-decoration: underline; }
 
   /* ---- KEY DATA GRID ---- */
   .data-grid {
@@ -326,6 +327,9 @@
     border-radius: 4px;
     padding: 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .data-card .metric {
     font-size: 1.6rem;
@@ -333,19 +337,27 @@
     color: var(--cisco-cyan);
     font-family: Arial, sans-serif;
     line-height: 1;
+    margin-bottom: 0.3rem;
   }
   .data-card .metric-label {
     font-size: 0.72rem;
     color: var(--text-muted);
     font-family: Arial, sans-serif;
-    margin-top: 0.4rem;
     line-height: 1.3;
+    flex-grow: 1;
   }
   .data-card .metric-trend {
     font-size: 0.7rem;
     font-family: Arial, sans-serif;
+    margin-top: 0.4rem;
+  }
+  .data-card .metric-source {
+    font-size: 0.6rem;
+    font-family: Arial, sans-serif;
     margin-top: 0.3rem;
   }
+  .data-card .metric-source a { color: var(--cisco-blue); text-decoration: none; }
+  .data-card .metric-source a:hover { text-decoration: underline; }
   .trend-up { color: var(--accent-green); }
   .trend-warn { color: var(--accent-amber); }
   .trend-alert { color: var(--accent-red); }
@@ -416,6 +428,7 @@
   .dot-green { background: var(--accent-green); box-shadow: 0 0 6px rgba(0,212,160,0.5); }
   .dot-amber { background: var(--accent-amber); box-shadow: 0 0 6px rgba(245,166,35,0.5); }
   .dot-red   { background: var(--accent-red); box-shadow: 0 0 6px rgba(231,76,60,0.5); }
+  .dot-blue  { background: var(--cisco-blue); box-shadow: 0 0 6px rgba(4,159,217,0.5); }
 
   .radar-row {
     display: flex;
@@ -438,31 +451,6 @@
   .risk-medium { background: rgba(245,166,35,0.2); color: #f5a623; }
   .risk-low    { background: rgba(0,212,160,0.2); color: #00d4a0; }
 
-  .readiness-bar-row {
-    margin-bottom: 0.8rem;
-  }
-  .readiness-bar-row .rb-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.3rem;
-    font-family: Arial, sans-serif;
-  }
-  .rb-track {
-    height: 6px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .rb-fill {
-    height: 100%;
-    border-radius: 3px;
-  }
-  .fill-blue  { background: linear-gradient(90deg, var(--cisco-blue), var(--cisco-cyan)); }
-  .fill-green { background: linear-gradient(90deg, #00b894, var(--accent-green)); }
-  .fill-amber { background: linear-gradient(90deg, #e17055, var(--accent-amber)); }
-
   .source-item {
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -472,7 +460,8 @@
     line-height: 1.4;
   }
   .source-item:last-child { border-bottom: none; }
-  .source-name { color: var(--text-secondary); }
+  .source-item a { color: var(--cisco-blue); text-decoration: none; }
+  .source-item a:hover { text-decoration: underline; }
 
   /* ---- METHODOLOGY ---- */
   .method-box {
@@ -484,6 +473,8 @@
     color: var(--text-muted);
   }
   .method-box p { margin-bottom: 0.4rem; }
+  .method-box a { color: var(--cisco-blue); text-decoration: none; }
+  .method-box a:hover { text-decoration: underline; }
 
   /* ---- FOOTER ---- */
   footer {
@@ -505,13 +496,6 @@
     gap: 0.5rem;
   }
   footer a { color: var(--cisco-blue); text-decoration: none; }
-
-  /* ---- DIVIDER ---- */
-  .rule {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 2rem 0;
-  }
 </style>
 </head>
 <body>
@@ -529,8 +513,8 @@
       </div>
     </div>
     <div class="issue-meta">
-      <div class="issue-num">Issue #57 &nbsp;|&nbsp; Weekly</div>
-      <div class="issue-date">June 1, 2026</div>
+      <div class="issue-num">Issue #59 &nbsp;|&nbsp; Weekly</div>
+      <div class="issue-date">June 8, 2026</div>
       <div class="lang-switch">
         <a href="cisco_sustainability_briefing.html" class="active">EN</a>
         <a href="cisco_sustainability_briefing_zh.html">中文</a>
@@ -543,8 +527,8 @@
 <nav class="nav-bar">
   <div class="nav-bar-inner">
     <a href="#exec-summary">Executive Summary</a>
-    <a href="#action-items">Top Intelligence</a>
-    <a href="#data-points">Key Data</a>
+    <a href="#top-actions">Top 3 Actions</a>
+    <a href="#key-data">Key Data Points</a>
     <a href="#strategy">Strategy</a>
     <a href="#methodology">Methodology</a>
   </div>
@@ -552,261 +536,303 @@
 
 <!-- MAIN CONTENT -->
 <div class="layout">
-  <main>
+<div class="main-content">
 
-    <!-- EXECUTIVE SUMMARY -->
-    <section class="section" id="exec-summary">
-      <div class="section-label">Executive Summary</div>
-      <div class="exec-summary">
-        <p>This week's intelligence cycle (May 26 – June 1, 2026) surfaces three high-signal developments that directly intersect with Cisco's supply chain sustainability commitments. Vietnam's legal enablement of free-negotiated DPPA pricing — effective March 2026 — materially accelerates green power procurement timelines for electronics manufacturers operating in its industrial zones, cutting approval cycles from months to weeks. For Cisco's suppliers concentrated in HCMC and Hanoi industrial parks, this is the most actionable near-term PPA entry window in the region.</p>
-        <p>On the water front, TNFD's February 2026 case study on tech sector water dependency delivers a landmark data benchmark: <span class="highlight-stat">50% of semiconductor water consumption occurs in water-scarce basins</span>, with <span class="highlight-stat">40% of existing fabs</span> located in high-stress watersheds projected by 2030. Cisco's PCB supply chain — anchored in Mekong Delta and Pearl River Delta manufacturing corridors — faces material watershed-level risk that warrants embedded supplier contract KPIs this FY.</p>
-        <p>The green energy infrastructure narrative in Southeast Asia was reinforced this week by <span class="highlight-stat">2.4 GWh</span> in new storage project announcements across the region, led by Chinese battery manufacturers expanding into Malaysia, Philippines, and Indonesia. This infrastructure build-out directly lowers the cost and risk profile for future corporate renewable energy offtake agreements — creating a 12-month window for Cisco to pre-position supplier renewable energy commitments in these markets.</p>
-      </div>
-    </section>
+<!-- EXECUTIVE SUMMARY -->
+<section class="section" id="exec-summary">
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">
+    <p>This week's intelligence highlights <strong>three converging developments</strong> reshaping the operational and strategic landscape for Cisco's supply chain sustainability program. With Vietnam's two-part electricity tariff less than <span class="highlight-stat">23 days from go-live (July 1, 2026)</span>, the unresolved dual-charging conflict between the TPT capacity charge and DPPA Decree 57's grid service fee creates immediate financial exposure for manufacturing partners — including Foxconn's Vietnam operations. BESS peak-shaving emerges as an economically compelling strategy, with a <span class="highlight-stat">~3.4-year payback period</span> validated by real-world case studies.</p>
+    <p>Simultaneously, the <span class="highlight-stat">ADB's $70 billion</span> Pan-Asia energy and digital infrastructure plan (through 2035, targeting 20 GW of cross-border renewable integration) signals unprecedented regional investment in grid modernization — directly relevant as Southeast Asia risks losing billions in green investment without urgent grid reforms. Meanwhile, <span class="highlight-stat">SEMI's record Q1 2026 semiconductor equipment sales ($36.55B, +14% YoY)</span> underscore intensifying resource demands — particularly water and energy — across the electronics supply chain, reinforcing the urgency of Cisco's FY26 PCB water risk analysis initiative.</p>
+  </div>
+</section>
 
-    <!-- TOP 3 ACTION ITEMS -->
-    <section class="section" id="action-items">
-      <div class="section-label">Top 3 Actionable Intelligence Items</div>
+<!-- TOP 3 ACTIONS -->
+<section class="section" id="top-actions">
+  <div class="section-label">Top 3 Actionable Intelligence Items</div>
+  <h2>This Week's Most Urgent Findings</h2>
 
-      <!-- Item 1 -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">1</div>
-          <div class="action-item-title">
-            Vietnam Unlocks Free-Negotiated DPPA Pricing for Industrial Zone Manufacturers
-            <span class="tag tag-policy">Policy</span>
-            <span class="tag tag-energy">PPA</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:92%"></div></div>
-          <span class="impact-score">9.2 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>Vietnam's Resolution No. 253/2025/QH15 (effective March 1, 2026, valid through December 31, 2030) fundamentally restructures the DPPA market for foreign manufacturers. For the first time, electricity prices under both dedicated-line and grid-based DPPAs can be freely negotiated between buyer and seller, without government price caps. PPA negotiation must be completed within <strong>30 days</strong> of submitting valid negotiating documents — a dramatic compression of the previously opaque multi-month process.</p>
-          <p>DPPA eligibility has been expanded to include industrial zones, economic zones, export processing zones, high-tech zones, digital technology zones, and free trade areas. Cisco's Tier-1 PCB and hardware suppliers operating in HCMC's Tan Binh and Hanoi's Hoa Lac industrial parks now qualify directly. The Ministry of Industry and Trade (MOIT) retains authority to set the minimum consumption threshold for "large users."</p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> This is the clearest procurement action window since the 2024 Decree 80 framework was established. Cisco's Vietnam-based suppliers (PCB manufacturers, hardware assemblers) can now execute renewable energy PPAs with <em>price certainty</em> within a defined 30-day window — enabling credible Scope 3 emission reductions that contribute directly to Cisco's FY2030 net-zero supply chain target. The 2026–2030 validity window aligns precisely with Cisco's near-term supplier decarbonization cycle.
-        </div>
-        <div><span class="source-chip">Source: VILAF Legal Update, May 30, 2026 | Vietnam National Assembly Resolution 253/2025/QH15</span></div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">2</div>
-          <div class="action-item-title">
-            TNFD Quantifies Tech Sector's Critical Water Exposure: 50% of Semiconductor Water Draws from Stressed Basins
-            <span class="tag tag-water">Water Risk</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:88%"></div></div>
-          <span class="impact-score">8.8 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>The Taskforce on Nature-related Financial Disclosures (TNFD) published its landmark case study on water dependency in the technology sector (February 2026). Key benchmarks: the global semiconductor industry consumes <strong>~210 trillion liters per year</strong>, equivalent to all of Hong Kong's annual water supply for its 7.5 million residents. Nearly <strong>50% of that consumption occurs in water-scarce areas</strong>. Industry water use doubled between 2012 and 2022 — and advanced nodes require even more ultra-pure water (UPW) per wafer.</p>
-          <p><strong>40% of existing fabs are located in watersheds projected to face high or extreme water stress by 2030.</strong> Over 40% of fabs announced post-2021 face the same risk. Specific hotspots include Taiwan (TSMC-dominated, 70% rainfall from typhoons), the Pearl River Delta (China), and Arizona (Colorado River water cuts). Malaysia's Johor has already suspended approvals for high-water-intensity data center projects following public protests.</p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> Cisco's PCB supply chain is concentrated in Pearl River Delta and Mekong Delta manufacturing corridors — both of which are classified as high-to-extreme water stress zones. TNFD's core recommendation (basin-level management, closed-loop cooling, supplier water KPI disclosure) maps directly to Cisco's FY26 PCB Water Physical Risk analysis framework. Embedding mandatory water intensity KPIs and recycling rate targets into Tier-1 supplier contracts this FY is now both data-justified and investor-expected.
-        </div>
-        <div><span class="source-chip">Source: TNFD Technology Sector Case Study, Feb 2026 | Eco-Business, Feb 10, 2026</span></div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">3</div>
-          <div class="action-item-title">
-            2.4 GWh of New Storage Projects Locked in SEA — Chinese Manufacturers Drive Regional Green Infrastructure
-            <span class="tag tag-energy">Energy Storage</span>
-            <span class="tag tag-supply">Supply Chain</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
-          <span class="impact-score">8.0 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>Six Chinese battery and energy enterprises — HyperStrong, LONGi, Kehua, Tianneng, CATL, and SINOMACH — collectively secured <strong>2.4 GWh</strong> of energy storage projects across Europe and Southeast Asia this week (announced May 26–29, 2026). In the SEA region specifically: HyperStrong won a <strong>440 MWh</strong> project in Pahang, Malaysia (MyBeST national battery storage program); LONGi entered the Philippine distributed PV+storage market via an exclusive distributor; Tianneng signed a strategic framework with Philippine partners for island micro-grid storage with GW-scale long-term ambitions.</p>
-          <p>Concurrently,益美国际控股 (1870.HK) announced a strategic cooperation framework with LONGi on May 28, 2026, targeting green power energy projects across Southeast Asia and Oceania — one of the largest bilateral green power commitments in the region to date.</p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> This infrastructure build-out signals that renewable energy storage capacity is maturing in Malaysia, Philippines, and Indonesia at a pace that makes corporate renewable PPA commitments economically viable within 12–18 months. Cisco's supplier base in these markets — particularly in Penang (Malaysia) and Laguna (Philippines) — can begin structured dialogue with offtake-ready project developers now, establishing supply chain renewable energy coverage aligned with Science Based Targets before 2027 deadlines.
-        </div>
-        <div><span class="source-chip">Source: EnergyTrend, May 29, 2026 | ASEAN Clean Energy Expo | HK Exchange Filing 1870.HK</span></div>
-      </div>
-    </section>
-
-    <!-- KEY DATA POINTS -->
-    <section class="section" id="data-points">
-      <div class="section-label">Key Data Points</div>
-      <div class="data-grid">
-        <div class="data-card">
-          <div class="metric">30</div>
-          <div class="metric-label">Day DPPA negotiation deadline (Vietnam Res. 253)</div>
-          <div class="metric-trend trend-up">↑ Process streamlined</div>
-        </div>
-        <div class="data-card">
-          <div class="metric">210T</div>
-          <div class="metric-label">Liters/year: Semiconductor sector global water consumption</div>
-          <div class="metric-trend trend-warn">⚠ 50% in water-stressed areas</div>
-        </div>
-        <div class="data-card">
-          <div class="metric">2.4 GWh</div>
-          <div class="metric-label">New SEA+Europe storage projects announced this week</div>
-          <div class="metric-trend trend-up">↑ Infrastructure buildout accelerating</div>
-        </div>
-        <div class="data-card">
-          <div class="metric">40%</div>
-          <div class="metric-label">Existing fabs in watersheds facing high stress by 2030 (TNFD)</div>
-          <div class="metric-trend trend-alert">⚡ Critical supply chain exposure</div>
-        </div>
-        <div class="data-card">
-          <div class="metric">44%</div>
-          <div class="metric-label">AI server share of data center power by 2030 (Gartner)</div>
-          <div class="metric-trend trend-warn">↑ From 21% in 2026</div>
-        </div>
-        <div class="data-card">
-          <div class="metric">2030</div>
-          <div class="metric-label">Vietnam DPPA policy validity window (Mar 2026–Dec 2030)</div>
-          <div class="metric-trend trend-up">✓ 4-year certainty window</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STRATEGIC RECOMMENDATIONS -->
-    <section class="section" id="strategy">
-      <div class="section-label">Strategic Recommendations</div>
-      <div class="strategy-grid">
-        <div class="strategy-card">
-          <h4>Near-Term (0–3 Months)</h4>
-          <ul>
-            <li>Identify 3–5 Vietnam industrial zone suppliers eligible for DPPA and initiate 30-day negotiation windows before Q3 FY2026</li>
-            <li>Incorporate TNFD water data benchmarks into FY26 PCB Water Physical Risk report — use 40%/50% fab-in-stress-zone statistics as baseline for materiality assessment</li>
-            <li>Map Cisco's Malaysia and Philippines supplier sites against MyBeST and SEA storage projects for near-term renewable energy PPA readiness dialogue</li>
-          </ul>
-        </div>
-        <div class="strategy-card">
-          <h4>Medium-Term (3–12 Months)</h4>
-          <ul>
-            <li>Embed mandatory water intensity KPIs (water intensity per unit output + recycling rate ≥ 40%) into new Tier-1 supplier contracts in Mekong Delta and Pearl River Delta zones</li>
-            <li>Develop a Vietnam DPPA workshop briefing for Cisco Supply Chain Sustainability to enable supplier-facing engagement aligned with Resolution 253</li>
-            <li>Establish SEA renewable energy supplier readiness program — targeting Malaysia, Philippines, Indonesia — to front-run 2027 SBTi supplier commitments</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- METHODOLOGY -->
-    <section class="section" id="methodology">
-      <div class="section-label">Methodology Notes</div>
-      <div class="method-box">
-        <p><strong>Coverage Period:</strong> May 26 – June 1, 2026 (Monday–Sunday cycle)</p>
-        <p><strong>Sources:</strong> Legal filings (VILAF, Baker McKenzie), TNFD case studies, EnergyTrend industry news, Hong Kong Exchange filings, Cisco official blog/sustainability disclosures, IEEFA energy research</p>
-        <p><strong>Impact Score Methodology:</strong> 0–10 scale assessing (a) direct Cisco supply chain relevance, (b) policy/regulatory urgency, (c) financial materiality, (d) action window specificity. Items scoring ≥ 8.0 are classified as Priority Action.</p>
-        <p><strong>Limitation:</strong> This briefing is generated from publicly available intelligence. Real-time commodity prices and non-public supplier data are not incorporated.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- Quick Signals -->
-    <div class="sidebar-widget">
-      <div class="widget-header">⚡ Quick Signals</div>
-      <div class="widget-body">
-        <div class="signal-item">
-          <div class="signal-dot dot-green"></div>
-          <div>Vietnam DPPA free pricing effective — 30-day PPA execution window now legally enforceable</div>
-        </div>
-        <div class="signal-item">
-          <div class="signal-dot dot-amber"></div>
-          <div>TNFD water risk benchmark: 40% of global fabs in high-stress watersheds by 2030</div>
-        </div>
-        <div class="signal-item">
-          <div class="signal-dot dot-green"></div>
-          <div>2.4 GWh SEA storage secured — Malaysia MyBeST program now operational</div>
-        </div>
-        <div class="signal-item">
-          <div class="signal-dot dot-amber"></div>
-          <div>AI data center power to reach 44% of data center load by 2030 (Gartner) — Cisco product opportunity</div>
-        </div>
-        <div class="signal-item">
-          <div class="signal-dot dot-green"></div>
-          <div>LONGi + 益美 sign SEA/Oceania green power strategic framework (May 28, 2026)</div>
-        </div>
+  <!-- Item 1 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">1</div>
+      <div class="action-item-title">
+        Vietnam Two-Part Tariff: 23 Days to Launch — Dual-Charging Risk for DPPA Remains Unresolved
+        <span class="tag tag-energy">Energy Policy</span>
       </div>
     </div>
+    <div class="impact-row">
+      <span class="impact-label">Impact Score</span>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
+      <span class="impact-score">9.0 / 10</span>
+    </div>
+    <div class="item-body">
+      <p>Vietnam's two-part electricity tariff (TPT) — the most significant retail electricity pricing reform since 2014 — takes effect <strong>July 1, 2026</strong>, less than one month away. Under the new structure, ~7,000 industrial consumers (monthly usage ≥ 200,000 kWh, voltage ≥ 22 kV) will face a <strong>capacity charge of VND 235,414/kW/month</strong> (22 kV tier) on top of existing energy charges, based on declared maximum demand (Pmax) regardless of actual consumption.</p>
+      <p><strong>Critical unresolved issue:</strong> The capacity charge under TPT and the CDPPA grid service fee under Decree 57 both recover grid infrastructure costs — yet neither regulation provides for mutual crediting. Norton Rose Fulbright confirmed in January 2026 that DPPA off-takers are likely still subject to the full capacity charge. An expected Decree 57 amendment to address dual-charging has <strong>not yet materialized</strong>.</p>
+      <p><strong>Financial implications:</strong> The peak-off-peak electricity spread compresses by <strong>35-40%</strong> — from ~VND 2,208/kWh to ~VND 1,300-1,400/kWh — eroding energy arbitrage economics. However, this makes BESS peak-shaving highly attractive: a real Binh Duong factory case study shows a 700 kW / 1,400 kWh BESS reducing Pmax from 4,500 to 3,800 kW, saving <strong>~$78,000/year in capacity charges alone</strong>, with a ~3.4-year static payback.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why This Matters to Cisco:</strong> Foxconn and other Cisco manufacturing partners in Vietnam fall squarely within the TPT pilot scope (22 kV+, &gt;200,000 kWh/month). The July 1 launch creates immediate operational cost exposure. The Cisco-Foxconn Vietnam PPA workshop should urgently incorporate TPT capacity charge modeling and BESS peak-shaving analysis. Contracts must include change-in-law clauses addressing the dual-charging risk.
+    </div>
+    <div class="source-row">
+      Sources: <a href="https://arcusenergyasia.com/resources/regulations/two-part-tariff" target="_blank" rel="noopener">Arcus Energy (Two-Part Tariff Analysis) ↗</a> &nbsp;|&nbsp; <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy (Decree 57 DPPA Framework) ↗</a> &nbsp;|&nbsp; <a href="https://moit.gov.vn/en/support-services/70-years-of-industry-and-trade/moit-accelerates-two-part-electricity-tariff-implementation.html" target="_blank" rel="noopener">MoIT Vietnam ↗</a>
+    </div>
+  </div>
 
-    <!-- Water Risk Radar -->
-    <div class="sidebar-widget">
-      <div class="widget-header">💧 Water Risk Radar — Cisco Supply Zones</div>
-      <div class="widget-body">
-        <div class="radar-row"><span class="radar-name">Pearl River Delta (PCB)</span><span class="radar-risk risk-high">HIGH</span></div>
-        <div class="radar-row"><span class="radar-name">Mekong Delta (Assy)</span><span class="radar-risk risk-high">HIGH</span></div>
-        <div class="radar-row"><span class="radar-name">HCMC Industrial Zones</span><span class="radar-risk risk-medium">MED</span></div>
-        <div class="radar-row"><span class="radar-name">Penang (Malaysia)</span><span class="radar-risk risk-medium">MED</span></div>
-        <div class="radar-row"><span class="radar-name">Greater Taipei (TSMC)</span><span class="radar-risk risk-high">HIGH</span></div>
-        <div class="radar-row"><span class="radar-name">Arizona (New Fabs)</span><span class="radar-risk risk-medium">MED</span></div>
+  <!-- Item 2 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">2</div>
+      <div class="action-item-title">
+        ASEAN Grid Investment Crisis: $70B ADB Plan Deployed as Region Risks Losing Billions in Green Capital
+        <span class="tag tag-supply">Infrastructure</span>
       </div>
     </div>
+    <div class="impact-row">
+      <span class="impact-label">Impact Score</span>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+      <span class="impact-score">8.0 / 10</span>
+    </div>
+    <div class="item-body">
+      <p>The Asian Development Bank formally launched its <strong>$70 billion energy and digital infrastructure plan</strong> through 2035 in May 2026, targeting a Pan-Asia Power Grid connecting 22,000 circuit-km of transmission lines and integrating nearly <strong>20 GW of cross-border renewable energy</strong>. The plan's centerpiece is Southeast Asia — with Indonesia, Vietnam, and the Philippines identified as primary beneficiaries — addressing the structural mismatch where Laos, Cambodia, and Vietnam possess rich hydro, solar, and wind resources but lack cross-border transmission capacity to major demand centers.</p>
+      <p>However, a <a href="https://www.straitstimes.com/asia/se-asia/grid-reforms-vital-to-powering-aseans-green-growth-report" target="_blank" rel="noopener">Straits Times report (May 18) ↗</a> warns that <strong>Southeast Asia risks losing billions in green investment</strong> without urgent grid reforms. The report calls for expanded investment, regulatory modernization, and accelerated cross-border interconnection. The <a href="https://aseanenergy.org/publications/asean-energy-in-2026" target="_blank" rel="noopener">ASEAN Energy in 2026 report ↗</a> marks the beginning of APAEC 2026-2030 implementation — a pivotal moment requiring stronger regulatory harmonization and broader sectoral investment mobilization.</p>
+      <p>Notably, Malaysia (hosting ~60% of Southeast Asia's planned data center projects) and Thailand emerge as critical nodes in the regional energy and data infrastructure landscape, with ADB financing potentially unlocking significant clean energy capacity for the manufacturing and digital sectors.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why This Matters to Cisco:</strong> Cisco's supply chain is heavily concentrated in Southeast Asia (Vietnam, Thailand, Malaysia, Philippines). Grid reliability and renewable energy access directly affect manufacturing operations, Scope 2 emissions accounting, and the feasibility of supplier renewable energy commitments. The ADB plan creates new opportunities for Cisco to engage with regional grid development initiatives and advocate for industrial consumer access to clean energy corridors — particularly relevant for the Cisco-Foxconn Vietnam PPA and broader SE Asia green energy strategy.
+    </div>
+    <div class="source-row">
+      Sources: <a href="https://www.cnbc.com/2026/05/07/adb-70-billion-plan-southeast-asia-digital-infrastructure-power.html" target="_blank" rel="noopener">CNBC (ADB $70B Plan) ↗</a> &nbsp;|&nbsp; <a href="https://www.straitstimes.com/asia/se-asia/grid-reforms-vital-to-powering-aseans-green-growth-report" target="_blank" rel="noopener">The Straits Times ↗</a> &nbsp;|&nbsp; <a href="https://aseanenergy.org/publications/asean-energy-in-2026" target="_blank" rel="noopener">ASEAN Centre for Energy ↗</a> &nbsp;|&nbsp; <a href="https://asean.org/adb-and-world-bank-group-launch-the-asean-power-grid-financing-initiative-with-the-asean-secretariat-and-the-asean-centre-for-energy-ace/" target="_blank" rel="noopener">ASEAN Secretariat ↗</a>
+    </div>
+  </div>
 
-    <!-- SEA PPA Readiness -->
-    <div class="sidebar-widget">
-      <div class="widget-header">🌿 SEA PPA Readiness Index</div>
-      <div class="widget-body">
-        <div class="readiness-bar-row">
-          <div class="rb-label"><span>Vietnam</span><span style="color:var(--cisco-cyan);font-weight:700">88%</span></div>
-          <div class="rb-track"><div class="rb-fill fill-blue" style="width:88%"></div></div>
-        </div>
-        <div class="readiness-bar-row">
-          <div class="rb-label"><span>Malaysia</span><span style="color:var(--cisco-cyan);font-weight:700">74%</span></div>
-          <div class="rb-track"><div class="rb-fill fill-green" style="width:74%"></div></div>
-        </div>
-        <div class="readiness-bar-row">
-          <div class="rb-label"><span>Philippines</span><span style="color:var(--cisco-cyan);font-weight:700">62%</span></div>
-          <div class="rb-track"><div class="rb-fill fill-blue" style="width:62%"></div></div>
-        </div>
-        <div class="readiness-bar-row">
-          <div class="rb-label"><span>Indonesia</span><span style="color:var(--cisco-cyan);font-weight:700">55%</span></div>
-          <div class="rb-track"><div class="rb-fill fill-amber" style="width:55%"></div></div>
-        </div>
-        <div class="readiness-bar-row">
-          <div class="rb-label"><span>Thailand</span><span style="color:var(--cisco-cyan);font-weight:700">50%</span></div>
-          <div class="rb-track"><div class="rb-fill fill-amber" style="width:50%"></div></div>
-        </div>
+  <!-- Item 3 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">3</div>
+      <div class="action-item-title">
+        SEMI Q1 2026 Record: Semiconductor Boom Intensifies Supply Chain Water &amp; Energy Demands
+        <span class="tag tag-water">Water Risk</span>
       </div>
     </div>
+    <div class="impact-row">
+      <span class="impact-label">Impact Score</span>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:70%"></div></div>
+      <span class="impact-score">7.0 / 10</span>
+    </div>
+    <div class="item-body">
+      <p>SEMI reported on June 5 that <strong>Q1 2026 global semiconductor equipment sales reached a record $36.55 billion</strong>, up 14% year-over-year, driven by sustained AI-related investment in advanced logic, DRAM, and advanced packaging capacity expansion. Silicon wafer shipments in Q1 2026 grew 13.1% YoY to 3,275 million square inches, with AI demand extending from advanced logic and memory into power management components. This growth trajectory amplifies the water and energy footprint of the semiconductor supply chain at a critical juncture.</p>
+      <p>In parallel, a new <strong>SEMI "Ripple Effects" report</strong> (published this week) identifies <strong>flooding and reputational water risks</strong> as the most significant threats to the semiconductor supply chain — findings directly relevant to Cisco's FY26 PCB water risk physical risk analysis. The report underscores that clusters concentrated in water-stressed regions of Asia face compounding physical and regulatory water risks.</p>
+      <p>These developments intersect with the <strong>WRI-WWF-SCS-UN coalition</strong> launched on April 30, which is developing the <strong>first standardized Water Scopes 1-3 framework</strong> for corporate value chain water risk assessment and disclosure — expected to be completed by Q4 2027. The framework will provide consistent methodology using WRI's Aqueduct 4.0 tools and WWF's Water Risk Filter, aligning with CDP, GRI, and TNFD disclosure standards.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why This Matters to Cisco:</strong> Cisco's FY26 PCB water risk physical risk analysis initiative operates within precisely this context. The record semiconductor equipment sales signal accelerating production volumes — and corresponding water consumption — at PCB and semiconductor suppliers. The SEMI report's identification of flooding risk is particularly relevant for supplier facilities in flood-prone regions of China and Southeast Asia. Proactive engagement with the WRI Water Scopes 1-3 framework development positions Cisco to lead on supply chain water stewardship ahead of standardized disclosure requirements.
+    </div>
+    <div class="source-row">
+      Sources: <a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI (Water Scopes 1-3 Coalition) ↗</a> &nbsp;|&nbsp; <a href="https://discover.semi.org/rs/320-QBB-055/images/Water-Risk-Paper_Web2.pdf" target="_blank" rel="noopener">SEMI Water Risk Paper ↗</a> &nbsp;|&nbsp; <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/responsible-innovation/supply-chain/stewardship.html" target="_blank" rel="noopener">Cisco Supply Chain Stewardship ↗</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Source Provenance -->
-    <div class="sidebar-widget">
-      <div class="widget-header">📖 Source Provenance</div>
-      <div class="widget-body">
-        <div class="source-item"><span class="source-name">VILAF Legal</span><br>Vietnam Res. 253 energy analysis, May 30, 2026</div>
-        <div class="source-item"><span class="source-name">TNFD</span><br>Tech Sector Water Case Study, Feb 2026</div>
-        <div class="source-item"><span class="source-name">Eco-Business</span><br>TNFD semiconductor water risk, Feb 10, 2026</div>
-        <div class="source-item"><span class="source-name">EnergyTrend</span><br>SEA/Europe storage orders, May 29, 2026</div>
-        <div class="source-item"><span class="source-name">HKEx Filing 1870.HK</span><br>益美国际+LONGi framework, May 28, 2026</div>
-        <div class="source-item"><span class="source-name">Cisco Blog</span><br>Sustainability Trends 2026, Dec 2025</div>
-        <div class="source-item"><span class="source-name">Gartner</span><br>AI server power share forecast, 2025</div>
+<!-- KEY DATA POINTS -->
+<section class="section" id="key-data">
+  <div class="section-label">Key Data Points</div>
+  <h2>This Week's Critical Metrics</h2>
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="metric">VND 235,414</div>
+      <div class="metric-label">Vietnam TPT capacity charge per kW/month (22 kV tier)</div>
+      <div class="metric-trend trend-alert">New cost from July 2026</div>
+      <div class="metric-source"><a href="https://arcusenergyasia.com/resources/regulations/two-part-tariff" target="_blank" rel="noopener">Arcus Energy ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">$70 Billion</div>
+      <div class="metric-label">ADB Pan-Asia energy + digital infrastructure plan (through 2035)</div>
+      <div class="metric-trend trend-up">New commitment — May 2026</div>
+      <div class="metric-source"><a href="https://www.cnbc.com/2026/05/07/adb-70-billion-plan-southeast-asia-digital-infrastructure-power.html" target="_blank" rel="noopener">CNBC/ADB ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">$36.55B</div>
+      <div class="metric-label">Q1 2026 semiconductor equipment sales (+14% YoY)</div>
+      <div class="metric-trend trend-up">Record high</div>
+      <div class="metric-source"><a href="https://www.semi.org/en/news-media-press-releases" target="_blank" rel="noopener">SEMI (June 5) ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">7,000+</div>
+      <div class="metric-label">Industrial consumers entering Vietnam TPT pilot from July 2026</div>
+      <div class="metric-trend trend-warn">Immediate impact zone</div>
+      <div class="metric-source"><a href="https://moit.gov.vn/en/support-services/70-years-of-industry-and-trade/moit-accelerates-two-part-electricity-tariff-implementation.html" target="_blank" rel="noopener">MoIT Vietnam ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">35-40%</div>
+      <div class="metric-label">Compression of peak-off-peak electricity spread under Vietnam TPT</div>
+      <div class="metric-trend trend-alert">Eroding energy arbitrage</div>
+      <div class="metric-source"><a href="https://arcusenergyasia.com/resources/regulations/two-part-tariff" target="_blank" rel="noopener">Arcus Energy ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">20 GW</div>
+      <div class="metric-label">Cross-border renewable energy integration target under ADB plan</div>
+      <div class="metric-trend trend-up">Infrastructure milestone</div>
+      <div class="metric-source"><a href="https://www.cnbc.com/2026/05/07/adb-70-billion-plan-southeast-asia-digital-infrastructure-power.html" target="_blank" rel="noopener">CNBC/ADB ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC RECOMMENDATIONS -->
+<section class="section" id="strategy">
+  <div class="section-label">Strategic Recommendations</div>
+  <h2>Action Framework for Cisco Supply Chain Sustainability</h2>
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <h4>Short-Term (0-3 Months)</h4>
+      <ul>
+        <li><strong>Vietnam PPA Workshop:</strong> Incorporate TPT capacity charge modeling and BESS peak-shaving ROI analysis into the Cisco-Foxconn Vietnam PPA workshop agenda. Model TPT impact on manufacturing partners' electricity costs under three TOU scenarios.</li>
+        <li><strong>Contract Review:</strong> Audit all existing supplier DPPA contracts in Vietnam for dual-charging exposure. Ensure change-in-law clauses specifically address the TPT-CDPPA fee overlap.</li>
+        <li><strong>ADB Engagement:</strong> Initiate dialogue with ADB's energy infrastructure team to explore Cisco supplier integration into the Pan-Asia Power Grid's industrial consumer access programs.</li>
+        <li><strong>Water Risk Alignment:</strong> Align FY26 PCB water risk methodology with the emerging WRI Water Scopes 1-3 framework to ensure future-proof assessment standards.</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <h4>Medium-Term (3-12 Months)</h4>
+      <ul>
+        <li><strong>BESS Deployment:</strong> Evaluate BESS feasibility for Foxconn Vietnam and other high-consumption supplier sites. Target sites with monthly usage &gt;200,000 kWh on 22 kV+ connections.</li>
+        <li><strong>Regional Energy Strategy:</strong> Develop a comprehensive SE Asia supplier energy procurement strategy leveraging ADB-funded grid modernization and ASEAN Power Grid interconnection timelines.</li>
+        <li><strong>Water Stewardship Leadership:</strong> Pilot the WRI Water Scopes 1-3 framework with key PCB suppliers. Position Cisco as an early adopter ahead of the Q4 2027 framework completion.</li>
+        <li><strong>Supplier Expansion:</strong> Extend TPT readiness assessment beyond Foxconn to all Vietnam-based manufacturing partners. Develop standardized BESS business case templates for supplier use.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section" id="methodology">
+  <div class="section-label">Methodology &amp; Source Attribution</div>
+  <div class="method-box">
+    <p><strong>Data Collection Period:</strong> June 1-7, 2026. Sources include regulatory filings, multilateral development bank announcements, industry association reports, corporate disclosures, and major financial media.</p>
+    <p><strong>Impact Scoring:</strong> Composite score (0-10) based on: financial materiality to Cisco supply chain (weight: 40%), regulatory urgency (25%), strategic alignment with Cisco sustainability goals (25%), and information freshness/reliability (10%).</p>
+    <p><strong>Key Sources This Week:</strong></p>
+    <p>
+      • <a href="https://arcusenergyasia.com/resources/regulations/two-part-tariff" target="_blank" rel="noopener">Arcus Energy — Vietnam Two-Part Tariff Analysis ↗</a><br>
+      • <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy — Decree 57 DPPA Framework ↗</a><br>
+      • <a href="https://moit.gov.vn/en/support-services/70-years-of-industry-and-trade/moit-accelerates-two-part-electricity-tariff-implementation.html" target="_blank" rel="noopener">Ministry of Industry and Trade (MoIT), Vietnam ↗</a><br>
+      • <a href="https://www.cnbc.com/2026/05/07/adb-70-billion-plan-southeast-asia-digital-infrastructure-power.html" target="_blank" rel="noopener">CNBC — ADB $70B Asia Infrastructure Plan ↗</a><br>
+      • <a href="https://www.straitstimes.com/asia/se-asia/grid-reforms-vital-to-powering-aseans-green-growth-report" target="_blank" rel="noopener">The Straits Times — ASEAN Grid Reforms ↗</a><br>
+      • <a href="https://aseanenergy.org/publications/asean-energy-in-2026" target="_blank" rel="noopener">ASEAN Centre for Energy — ASEAN Energy in 2026 ↗</a><br>
+      • <a href="https://asean.org/adb-and-world-bank-group-launch-the-asean-power-grid-financing-initiative-with-the-asean-secretariat-and-the-asean-centre-for-energy-ace/" target="_blank" rel="noopener">ASEAN Secretariat — APG Financing Initiative ↗</a><br>
+      • <a href="https://www.semi.org/en/news-media-press-releases" target="_blank" rel="noopener">SEMI — Q1 2026 Semiconductor Equipment Sales ↗</a><br>
+      • <a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI — Water Scopes 1-3 Coalition Launch ↗</a><br>
+      • <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/responsible-innovation/supply-chain/stewardship.html" target="_blank" rel="noopener">Cisco — Supply Chain Environmental Stewardship ↗</a>
+    </p>
+    <p style="margin-top:0.8rem;"><em>Disclaimer: This briefing is prepared for internal Cisco supply chain sustainability team use. All data points are sourced from publicly available information. Links verified as of June 8, 2026.</em></p>
+  </div>
+</section>
+
+</div><!-- /main-content -->
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <!-- Quick Signals -->
+  <div class="sidebar-widget">
+    <div class="widget-header">Quick Signals</div>
+    <div class="widget-body">
+      <div class="signal-item">
+        <div class="signal-dot dot-red"></div>
+        <div><strong>Vietnam TPT Launch:</strong> 23 days to July 1 go-live. Dual-charging risk unresolved. ~7,000 industrial consumers affected.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-dot dot-amber"></div>
+        <div><strong>ASEAN Grid:</strong> ADB $70B plan signals regional commitment but Straits Times warns of "billions at risk" without reform.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-dot dot-blue"></div>
+        <div><strong>SEMI Record:</strong> Q1 equipment sales $36.55B (+14% YoY). AI-driven demand extends water/energy footprint across supply chain.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-dot dot-green"></div>
+        <div><strong>WRI Water Framework:</strong> First standardized Water Scopes 1-3 guidance in development. Early adopter positioning opportunity for Cisco.</div>
       </div>
     </div>
+  </div>
 
-  </aside>
-</div><!-- /.layout -->
+  <!-- Upcoming Events -->
+  <div class="sidebar-widget">
+    <div class="widget-header">Upcoming Events</div>
+    <div class="widget-body">
+      <div class="radar-row">
+        <span class="radar-name">Vietnam TPT Takes Effect</span>
+        <span class="radar-risk risk-high">Jul 1, 2026</span>
+      </div>
+      <div class="radar-row">
+        <span class="radar-name">Cisco-Foxconn Vietnam PPA Workshop</span>
+        <span class="radar-risk risk-medium">TBD Q3 2026</span>
+      </div>
+      <div class="radar-row">
+        <span class="radar-name">MSFT 2026 Summit Prep</span>
+        <span class="radar-risk risk-medium">Ongoing</span>
+      </div>
+      <div class="radar-row">
+        <span class="radar-name">FY26 PCB Water Risk Analysis</span>
+        <span class="radar-risk risk-medium">FY26</span>
+      </div>
+      <div class="radar-row">
+        <span class="radar-name">Decree 57 Amendment (Expected)</span>
+        <span class="radar-risk risk-medium">2026 (TBD)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics Covered -->
+  <div class="sidebar-widget">
+    <div class="widget-header">Topics Covered This Week</div>
+    <div class="widget-body">
+      <div class="radar-row"><span class="radar-name">Vietnam DPPA &amp; Electricity Reform</span><span class="radar-risk risk-high">Critical</span></div>
+      <div class="radar-row"><span class="radar-name">ASEAN Grid &amp; Energy Infrastructure</span><span class="radar-risk risk-high">Critical</span></div>
+      <div class="radar-row"><span class="radar-name">Semiconductor Supply Chain Water Risk</span><span class="radar-risk risk-medium">High</span></div>
+      <div class="radar-row"><span class="radar-name">BESS Peak-Shaving Economics</span><span class="radar-risk risk-medium">High</span></div>
+      <div class="radar-row"><span class="radar-name">Water Scopes 1-3 Framework (WRI)</span><span class="radar-risk risk-medium">Monitor</span></div>
+      <div class="radar-row"><span class="radar-name">Carbon Neutrality &amp; Net-Zero Progress</span><span class="radar-risk risk-low">Steady</span></div>
+    </div>
+  </div>
+
+  <!-- Core Sources -->
+  <div class="sidebar-widget">
+    <div class="widget-header">Core Information Sources</div>
+    <div class="widget-body">
+      <div class="source-item">
+        <a href="https://arcusenergyasia.com/" target="_blank" rel="noopener">Arcus Energy Asia ↗</a><br>
+        <small>Vietnam energy regulation &amp; DPPA analysis</small>
+      </div>
+      <div class="source-item">
+        <a href="https://www.adb.org/" target="_blank" rel="noopener">Asian Development Bank ↗</a><br>
+        <small>Regional infrastructure &amp; energy financing</small>
+      </div>
+      <div class="source-item">
+        <a href="https://aseanenergy.org/" target="_blank" rel="noopener">ASEAN Centre for Energy ↗</a><br>
+        <small>APAEC &amp; regional energy data</small>
+      </div>
+      <div class="source-item">
+        <a href="https://www.semi.org/" target="_blank" rel="noopener">SEMI ↗</a><br>
+        <small>Semiconductor industry data &amp; water risk</small>
+      </div>
+      <div class="source-item">
+        <a href="https://www.wri.org/" target="_blank" rel="noopener">World Resources Institute ↗</a><br>
+        <small>Aqueduct &amp; water risk framework</small>
+      </div>
+      <div class="source-item">
+        <a href="https://www.cisco.com/c/m/en_us/about/purpose.html" target="_blank" rel="noopener">Cisco Purpose Reporting Hub ↗</a><br>
+        <small>FY25 Purpose Report &amp; ESG data</small>
+      </div>
+    </div>
+  </div>
+
+</aside>
+</div><!-- /layout -->
 
 <footer>
   <div class="footer-inner">
-    <div>© 2026 Cisco Systems · Supply Chain Sustainability · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></div>
-    <div>Issue #57 · Published June 1, 2026 · <a href="cisco_sustainability_briefing_zh.html">中文版</a></div>
+    <span>Cisco Sustainability Intelligence Briefing &nbsp;|&nbsp; Issue #59 &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; Internal Use</span>
+    <span><a href="cisco_sustainability_briefing_zh.html">中文版</a> &nbsp;|&nbsp; <a href="https://tu2026.github.io/cisco-sustainability-briefing/">Home</a></span>
   </div>
 </footer>
 
