@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cisco 可持续发展情报简报 — 2026年6月22日</title>
+<title>思科可持续情报简报 — 2026年6月29日 第62期</title>
 <style>
   :root {
     --cisco-blue: #049fd9;
@@ -29,7 +29,7 @@
     font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Georgia', serif;
     background: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75;
     min-height: 100vh;
   }
 
@@ -87,12 +87,12 @@
     color: var(--cisco-blue);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', 'PingFang SC', sans-serif;
     margin-top: 0.2rem;
   }
   .issue-meta {
     text-align: right;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', 'PingFang SC', sans-serif;
   }
   .issue-meta .issue-num {
     font-size: 0.75rem;
@@ -117,7 +117,7 @@
     border-radius: 3px;
     color: var(--text-muted);
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-family: Arial, 'PingFang SC', sans-serif;
     transition: all 0.2s;
   }
   .lang-switch a.active, .lang-switch a:hover {
@@ -137,15 +137,13 @@
     margin: 0 auto;
     display: flex;
     gap: 2rem;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    font-size: 0.75rem;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    font-size: 0.78rem;
     flex-wrap: wrap;
   }
   .nav-bar a {
     color: var(--text-muted);
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
     transition: color 0.2s;
     padding: 0.3rem 0;
   }
@@ -167,10 +165,9 @@
   /* ---- SECTIONS ---- */
   .section { margin-bottom: 2.5rem; }
   .section-label {
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
     color: var(--cisco-blue);
     border-left: 3px solid var(--cisco-blue);
     padding-left: 0.6rem;
@@ -202,7 +199,7 @@
     padding: 0.1rem 0.4rem;
     border-radius: 3px;
     font-weight: 600;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-family: 'PingFang SC', Arial, sans-serif;
   }
 
   /* ---- ACTION ITEMS ---- */
@@ -237,23 +234,22 @@
     justify-content: center;
     font-weight: 700;
     font-size: 0.9rem;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, 'PingFang SC', sans-serif;
     flex-shrink: 0;
   }
   .action-item-title {
     font-size: 1.05rem;
     font-weight: 700;
     color: #fff;
-    line-height: 1.3;
+    line-height: 1.4;
   }
   .action-item-title .tag {
     display: inline-block;
     font-size: 0.65rem;
     padding: 0.15rem 0.5rem;
     border-radius: 2px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'PingFang SC', Arial, sans-serif;
     margin-left: 0.5rem;
     vertical-align: middle;
     font-weight: 400;
@@ -262,15 +258,16 @@
   .tag-water  { background: rgba(4, 159, 217, 0.2); color: var(--cisco-cyan); border: 1px solid rgba(4, 159, 217, 0.4); }
   .tag-supply { background: rgba(245, 166, 35, 0.2); color: var(--accent-amber); border: 1px solid rgba(245, 166, 35, 0.4); }
   .tag-policy { background: rgba(139, 92, 246, 0.2); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.4); }
+  .tag-grid   { background: rgba(231, 76, 60, 0.2); color: var(--accent-red); border: 1px solid rgba(231, 76, 60, 0.4); }
 
   .impact-row {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.8rem;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-family: 'PingFang SC', Arial, sans-serif;
   }
-  .impact-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .impact-label { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.5px; }
   .impact-bar-track {
     flex: 1;
     height: 6px;
@@ -285,27 +282,27 @@
     background: linear-gradient(90deg, var(--cisco-blue), var(--cisco-cyan));
   }
   .impact-score {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--cisco-cyan);
   }
 
-  .item-body { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
+  .item-body { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
   .item-body p { margin-bottom: 0.5rem; }
   .cisco-relevance {
     background: rgba(4, 159, 217, 0.08);
     border-left: 3px solid var(--cisco-blue);
     padding: 0.7rem 0.8rem;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     border-radius: 0 3px 3px 0;
     margin-bottom: 0.6rem;
   }
   .cisco-relevance strong { color: var(--cisco-blue); }
   .source-row {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     color: var(--text-muted);
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-family: 'PingFang SC', Arial, sans-serif;
     margin-top: 0.4rem;
   }
   .source-row a {
@@ -335,25 +332,25 @@
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--cisco-cyan);
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-family: Arial, 'PingFang SC', sans-serif;
     line-height: 1;
     margin-bottom: 0.3rem;
   }
   .data-card .metric-label {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    line-height: 1.3;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    line-height: 1.4;
     flex-grow: 1;
   }
   .data-card .metric-trend {
-    font-size: 0.7rem;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-size: 0.75rem;
+    font-family: 'PingFang SC', Arial, sans-serif;
     margin-top: 0.4rem;
   }
   .data-card .metric-source {
-    font-size: 0.6rem;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    font-size: 0.65rem;
+    font-family: 'PingFang SC', Arial, sans-serif;
     margin-top: 0.3rem;
   }
   .data-card .metric-source a { color: var(--cisco-blue); text-decoration: none; }
@@ -376,17 +373,16 @@
     padding: 1.2rem;
   }
   .strategy-card h4 {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--cisco-cyan);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'PingFang SC', Arial, sans-serif;
     margin-bottom: 0.8rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
   }
   .strategy-card ul { padding-left: 1.1rem; }
-  .strategy-card li { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.5; }
+  .strategy-card li { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.6rem; line-height: 1.6; }
 
   /* ---- SIDEBAR ---- */
   .sidebar { position: relative; }
@@ -397,124 +393,137 @@
     margin-bottom: 1.5rem;
     overflow: hidden;
   }
-  .widget-header {
-    background: var(--bg-secondary);
-    padding: 0.7rem 1rem;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+  .sidebar-widget h3 {
+    font-size: 0.8rem;
     color: var(--cisco-blue);
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    letter-spacing: 1px;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    padding: 0.8rem 1rem;
+    background: rgba(4, 159, 217, 0.08);
     border-bottom: 1px solid var(--border-color);
   }
-  .widget-body { padding: 1rem; }
-
+  .sidebar-widget .widget-body {
+    padding: 0.8rem 1rem;
+    font-size: 0.82rem;
+  }
   .signal-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.8rem;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--border-color);
     font-size: 0.8rem;
   }
-  .signal-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-  .signal-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 0.35rem;
+  .signal-item:last-child { border-bottom: none; }
+  .signal-item .signal-title { color: #fff; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+  .signal-item .signal-meta { color: var(--text-muted); font-family: 'PingFang SC', Arial, sans-serif; font-size: 0.72rem; }
+  .signal-item .signal-meta a { color: var(--cisco-blue); text-decoration: none; }
+  .signal-item .signal-meta a:hover { text-decoration: underline; }
+  .event-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.8rem;
   }
-  .dot-green { background: var(--accent-green); box-shadow: 0 0 6px rgba(0,212,160,0.5); }
-  .dot-amber { background: var(--accent-amber); box-shadow: 0 0 6px rgba(245,166,35,0.5); }
-  .dot-red   { background: var(--accent-red); box-shadow: 0 0 6px rgba(231,76,60,0.5); }
-  .dot-blue  { background: var(--cisco-blue); box-shadow: 0 0 6px rgba(4,159,217,0.5); }
-
-  .radar-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
+  .event-item:last-child { border-bottom: none; }
+  .event-item .event-date {
+    color: var(--cisco-cyan);
+    font-family: Arial, 'PingFang SC', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+  }
+  .event-item .event-title {
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 0.15rem;
+    line-height: 1.5;
+  }
+  .topic-tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin: 0.15rem;
+    background: rgba(4, 159, 217, 0.12);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    border-radius: 3px;
+    font-size: 0.72rem;
+    color: var(--cisco-cyan);
+    font-family: 'PingFang SC', Arial, sans-serif;
+  }
+  .source-link {
+    display: block;
     padding: 0.4rem 0;
+    font-size: 0.78rem;
     border-bottom: 1px solid var(--border-color);
-  }
-  .radar-row:last-child { border-bottom: none; }
-  .radar-name { color: var(--text-secondary); }
-  .radar-risk {
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 600;
-    padding: 0.1rem 0.4rem;
-    border-radius: 2px;
-  }
-  .risk-high   { background: rgba(231,76,60,0.2); color: #e74c3c; }
-  .risk-medium { background: rgba(245,166,35,0.2); color: #f5a623; }
-  .risk-low    { background: rgba(0,212,160,0.2); color: #00d4a0; }
-
-  .source-item {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    padding: 0.35rem 0;
-    border-bottom: 1px solid var(--border-color);
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    color: var(--cisco-blue);
+    text-decoration: none;
+    word-break: break-word;
     line-height: 1.4;
   }
-  .source-item:last-child { border-bottom: none; }
-  .source-item a { color: var(--cisco-blue); text-decoration: none; }
-  .source-item a:hover { text-decoration: underline; }
+  .source-link:last-child { border-bottom: none; }
+  .source-link:hover { color: var(--cisco-cyan); text-decoration: underline; }
+  .source-link .source-domain {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-family: Arial, sans-serif;
+    margin-top: 0.1rem;
+  }
 
   /* ---- METHODOLOGY ---- */
-  .method-box {
+  .methodology {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    padding: 1rem 1.2rem;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
   }
-  .method-box p { margin-bottom: 0.4rem; }
-  .method-box a { color: var(--cisco-blue); text-decoration: none; }
-  .method-box a:hover { text-decoration: underline; }
+  .methodology h3 {
+    color: var(--cisco-blue);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    margin-bottom: 0.6rem;
+  }
+  .methodology ol { padding-left: 1.2rem; margin: 0.6rem 0; }
+  .methodology li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .methodology .full-sources {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border-color);
+  }
+  .methodology .full-sources li a {
+    color: var(--cisco-blue);
+    text-decoration: none;
+    word-break: break-word;
+  }
+  .methodology .full-sources li a:hover { text-decoration: underline; }
 
   /* ---- FOOTER ---- */
-  footer {
+  .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
     padding: 1.5rem 2rem;
-    margin-top: 3rem;
-    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-    font-size: 0.72rem;
+    margin-top: 2rem;
+    text-align: center;
     color: var(--text-muted);
+    font-size: 0.78rem;
+    font-family: 'PingFang SC', Arial, sans-serif;
   }
-  footer .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  footer a { color: var(--cisco-blue); text-decoration: none; }
+  .footer a { color: var(--cisco-blue); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<!-- MASTHEAD -->
 <header class="masthead">
   <div class="masthead-inner">
     <div class="brand">
-      <svg class="cisco-logo" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="32" font-family="Arial" font-size="28" font-weight="900" fill="white">CISCO</text>
-      </svg>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png" alt="Cisco" class="cisco-logo">
       <div class="title-group">
-        <h1>可持续发展情报简报</h1>
-        <div class="subtitle">供应链与环境监测</div>
+        <h1>思科可持续情报简报</h1>
+        <div class="subtitle">越南DPPA · 东南亚电网 · 思科ESG · 水资源风险 · 净零路径</div>
       </div>
     </div>
     <div class="issue-meta">
-      <div class="issue-num">第61期 &nbsp;|&nbsp; 每周更新</div>
-      <div class="issue-date">2026年6月22日</div>
+      <div class="issue-num">第62期 · 周度情报</div>
+      <div class="issue-date">2026年6月29日</div>
       <div class="lang-switch">
         <a href="cisco_sustainability_briefing.html">EN</a>
         <a href="cisco_sustainability_briefing_zh.html" class="active">中文</a>
@@ -523,337 +532,376 @@
   </div>
 </header>
 
-<!-- NAV -->
 <nav class="nav-bar">
   <div class="nav-bar-inner">
-    <a href="#exec-summary">执行摘要</a>
-    <a href="#top-actions">Top 3 行动发现</a>
-    <a href="#key-data">关键数据点</a>
+    <a href="#executive-summary">执行摘要</a>
+    <a href="#top-3">本周Top 3</a>
+    <a href="#key-data">关键数据</a>
     <a href="#strategy">战略建议</a>
     <a href="#methodology">方法论</a>
+    <a href="index.html">历史期数</a>
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
-<div class="layout">
-<div class="main-content">
+<main class="layout">
 
-<!-- EXECUTIVE SUMMARY -->
-<section class="section" id="exec-summary">
-  <div class="section-label">执行摘要</div>
-  <div class="exec-summary">
-    <p>本周情报聚焦于<strong>三个相互交织的合规拐点</strong>。第一，越南两部制电价（TPT）与DPPA双重收费框架距<strong>7月1日生效仅剩9天</strong>，而Resolution 253/2025/QH15自2026年3月1日起正式生效——两者正在重塑所有大型工业用户电费经济性。第二，WEF与IEA几乎同期发布分析，量化东盟电气化缺口为<span class="highlight-stat">每年180亿美元投资不足及到2045年8000亿美元的总投资需求</span>，仅APG跨境输电就需要1000亿美元。第三，思科于2026年4月29日发布<strong>FY25 Purpose Report</strong>，记录首次实现100%全球可再生电力、Scope 1+2减排90%——这一强劲基线必须得到捍卫，因为SBTi V2.0强制碳移除制度即将到来。</p>
-    <p>此外，CDP于<strong>6月18日发布2026年披露问卷</strong>，引入新的海洋披露要求和大幅扩展的Scope 3供应链问卷——这是数千家思科供应商未来几周内启动的合规周期。结合SCS Standards/WRI/WWF水资源Scope 1-3框架的推进，<strong>Scope 3 + 水资源 + 自然相关披露正在成为思科所有主要报告司法管辖区的合规新基线</strong>。</p>
-  </div>
-</section>
+  <article>
 
-<!-- TOP 3 ACTIONS -->
-<section class="section" id="top-actions">
-  <div class="section-label">Top 3 本周最值得行动的发现</div>
-  <h2>本周最紧迫情报</h2>
+    <!-- ===== 执行摘要 ===== -->
+    <section class="section" id="executive-summary">
+      <div class="section-label">01 / 执行摘要</div>
+      <h2>越南DPPA跨过执行门槛：思科供应商三星与富士康同时行动</h2>
+      <div class="exec-summary">
+        <p>
+          2026年第26周是越南直接购电协议（DPPA）机制<span class="highlight-stat">从政策迈向实操</span>的关键一周。6月1日，三星电子越南太原（SEVT）完成了越南第一笔基于电网的DPPA交易，锁定了约70 GWh/年的太阳能供电——该笔交易验证了整套Decree 57 / Decree 146监管框架的可行性。6月9日，富士康（鸿海）与布鲁克菲尔德紧接着宣布建立1 GW的可再生能源平台，同样以越南PPA为核心。
+        </p>
+        <p>
+          对思科而言，这两起事件均具备供应链实质性影响：三星是思科的Tier-1元件供应商，富士康是思科最大的合约制造商。这两笔交易共同确立了一个可复制的模板，思科其他制造伙伴——特别是位于越南安平、太原、北宁工业园区的伙伴——可在越南两部制电价（容量+电量，<span class="highlight-stat">2026年7月1日</span>起试点）生效前跟进。同期，Wood Mackenzie于6月18日发布报告，警示<span class="highlight-stat">柔佛电网连接瓶颈</span>正在成为马来西亚数据中心建设的硬性约束，对依赖柔佛超大规模容量的思科云区域扩展计划具有实质性影响。
+        </p>
+        <p>
+          思科自身的供应商CDP披露要求（目前已对硬件供应商严格执行）以及WRI主导的水资源Scope 1-3指南（2026年4月30日联盟启动）进一步放大了这些供应链信号。综合影响：到2026年Q3，思科在越南和马来西亚的Tier-1采购图谱将同时被"可再生电价"和"水风险"双重重定价——绿色成本溢价的计算不再是可选项，而是竞争入场券。
+        </p>
+      </div>
+    </section>
 
-  <!-- Item 1 -->
-  <div class="action-item">
-    <div class="action-item-header">
-      <div class="rank-badge">1</div>
-      <div class="action-item-title">
-        越南电力市场重置：Resolution 253正式生效，两部制电价距生效仅9天——DPPA双重收费风险仍未解决
-        <span class="tag tag-energy">能源政策</span>
-      </div>
-    </div>
-    <div class="impact-row">
-      <span class="impact-label">紧迫性/关联度</span>
-      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
-      <span class="impact-score">9.0 / 10</span>
-    </div>
-    <div class="item-body">
-      <p>越南电力市场进入决定性一周。<strong>Resolution 253/2025/QH15</strong>——由国会于2025年12月11日通过——自<strong>2026年3月1日起正式生效</strong>，有效期至2030年12月31日。该决议为2026-2030年PDP期间的能源发展确立了具体机制和政策，包括电力发展规划调整、价格自由化以及能源项目审批流程的精简。</p>
-      <p>叠加其上，<strong>两部制电价（TPT）将于2026年7月1日生效——距今仅9天</strong>。根据Decree 57/2025/ND-CP，大型工业用户（每月用电≥200,000 kWh、电压≥22 kV）将按申报的最大需量（Pmax）支付<strong>约235,414越南盾/kW/月</strong>的固定容量电费，无论实际用电量如何。自2026年1月1日起的并行模拟计费显示，平稳负荷用户电费降低约10.7%，而峰谷价差收窄35-40%。</p>
-      <p><strong>未解决的关键问题——DPPA双重收费：</strong>TPT容量电费与Decree 57电网服务费都在回收电网基础设施成本，但缺乏相互抵免机制。Baker McKenzie（2026年3月）和Frasers Law Company（2026年4月）的行业分析确认双重收费风险仍然存在——<strong>截至2026年6月下旬Decree 57尚未发布修订案</strong>。DPPA购电方很可能仍需支付全额容量电费。</p>
-      <p><strong>BESS削峰是经过验证的缓解杠杆：</strong>一个经核实的平阳省工厂案例显示，700 kW / 1,400 kWh的BESS可将最大需量从4,500 kW降至3,800 kW，仅容量电费一项每年可节省约78,000美元，按当前BESS成本静态回收期约3.4年。这已成为任何符合条件的越南供应商现场的基线运营成本缓解措施。</p>
-    </div>
-    <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>富士康及思科在越南的其他制造合作伙伴均属TPT试点范围。7月1日生效将产生直接、可量化的运营成本风险。思科-富士康越南PPA工作坊必须紧急纳入TPT容量电费建模和BESS削峰分析。所有供应商DPPA合同必须包含应对双重收费风险的"法律变更"条款。所有高耗电越南现场必须评估BESS部署可行性。Resolution 253的2030年到期为新的私营可再生能源投资创造了一个硬性窗口期。
-    </div>
-    <div class="source-row">
-      来源：<a href="https://english.luatvietnam.vn/resolution-no-253-2025-qh15-dated-december-11-2025-of-the-national-assembly-on-specific-mechanisms-and-policies-for-national-energy-development-for-422450-doc1.html" target="_blank" rel="noopener">LuatVietnam（Resolution 253 英文版）↗</a> &nbsp;|&nbsp; <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy（Decree 57 DPPA框架）↗</a> &nbsp;|&nbsp; <a href="https://www.frasersvn.com/api/uploads/Legal_Update_EN_Vietnam_s_Energy_Sector_under_Resolution_253_April_2026_00277431x_B66_F8_300d83befc.PDF" target="_blank" rel="noopener">Frasers Law（Resolution 253 法律更新）↗</a> &nbsp;|&nbsp; <a href="https://moit.gov.vn/en/support-services/70-years-of-industry-and-trade/moit-accelerates-two-part-electricity-tariff-implementation.html" target="_blank" rel="noopener">越南工贸部（两部制电价）↗</a>
-    </div>
-  </div>
+    <!-- ===== TOP 3 本周最值得行动的发现 ===== -->
+    <section class="section" id="top-3">
+      <div class="section-label">02 / 本周Top 3</div>
+      <h2>本周三项需要立即决策的情报</h2>
 
-  <!-- Item 2 -->
-  <div class="action-item">
-    <div class="action-item-header">
-      <div class="rank-badge">2</div>
-      <div class="action-item-title">
-        东盟电气化十字路口：WEF与IEA量化每年180亿美元缺口；到2045年总投资需求8000亿美元
-        <span class="tag tag-supply">基础设施</span>
+      <!-- 选题1：三星SEVT -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">1</div>
+          <div class="action-item-title">
+            三星SEVT执行越南首笔电网型DPPA——70 GWh太阳能交易奠定供应链模板
+            <span class="tag tag-energy">DPPA</span>
+            <span class="tag tag-supply">供应链</span>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:94%"></div></div>
+          <span class="impact-score">9.4 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>
+            2026年6月1日，三星电子越南太原公司（SEVT）——位于太原省安春坊安平工业园区——成为越南正式通过DPPA机制采购可再生电力的首家企业，签约每年约70 GWh的太阳能（相当于约17,000户家庭年用电量）。该交易在Decree 57/2025/ND-CP及2025年DPPA实施细则下完成，被业内称为"越南首笔电网型直接PPA"。
+          </p>
+          <p>
+            该交易验证了越南DPPA监管全栈：2024年7月Decree 80 → 2025年3月Decree 57修订 → 2026年工业用户两部制电价试点。交易时间也恰好在越南工业用户两部制电价（容量+电量定价）于2026年7月1日生效前一个月落地。
+          </p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>三星是思科Tier-1元件供应商；SEVT模板现已可直接复制到位于太原/北宁/安平工业园区的其他思科制造伙伴。思科供应链可持续团队应立即（a）确认越南Tier-1供应商的DPPA管道，（b）将报告口径与思科CDP披露要求对齐，（c）在7月1日两部制电价重塑经济性之前锁定绿色成本套利。
+        </div>
+        <div class="source-row">
+          来源：
+          <a href="https://www.reccessary.com/en/news/vietnam-grid-based-dppa-samsung-electronics" target="_blank" rel="noopener">Reccessary — 三星越南首笔电网DPPA ↗</a>
+          ·
+          <a href="https://www.techtimes.com/articles/317607/20260602/samsung-executes-vietnams-first-grid-dppa-70-gwh-solar-deal-sets-supply-chain-template.htm" target="_blank" rel="noopener">TechTimes — 70 GWh太阳能交易 ↗</a>
+          ·
+          <a href="https://www.vietnam.vn/en/samsung-thai-nguyen-tro-thanh-doanh-nghiep-dau-tien-chinh-thuc-mua-dien-tai-tao-thong-qua-co-che-dppa-tai-viet-nam" target="_blank" rel="noopener">越南政府门户 ↗</a>
+        </div>
       </div>
-    </div>
-    <div class="impact-row">
-      <span class="impact-label">紧迫性/关联度</span>
-      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:85%"></div></div>
-      <span class="impact-score">8.5 / 10</span>
-    </div>
-    <div class="item-body">
-      <p>2026年6月中下旬发布的两项重大分析得出一致结论：<strong>东盟电网投资不足已成为可量化的结构性危机</strong>。世界经济论坛（6月8日）发布《<a href="https://www.weforum.org/stories/2026/06/electrification-asean-grid-energy-transition/" target="_blank" rel="noopener">电气化将决定东盟能源转型的成败</a>》，结论是升级国内电网基础设施对整合该地区巨大可再生能源潜力"至关重要"，跨境电网互联互通将具有决定性意义。</p>
-      <p><strong>IEA《为东盟电网融资》报告</strong>（执行摘要于2026年4月25日发布）确立了宏观数字：电力需求快速增长叠加可再生能源部署加速，需要大规模电网投资。<strong>CSIS/EnkiAI分析</strong>（2026年6月）将由此产生的缺口量化为<strong>每年180亿美元</strong>，由AI和EV需求激增驱动，预计3-4年内将出现100 TWh的需求冲击。到2045年发电和输电基础设施总需求估计为<strong>8000亿美元</strong>，其中<strong>仅APG跨境输电就需要1000亿美元</strong>。</p>
-      <p><strong>亚行-世行东盟电网融资倡议（APGF）</strong>——于2025年10月与东盟秘书处和东盟能源中心共同建立——为跨境互联项目的大规模资金动员提供了新融资工具。亚行-新加坡谅解备忘录（最初于2023年7月签署，2025年5月续签，约100亿美元/10年期承诺）是最具体的双边融资渠道之一。2026年6月5日在吉隆坡举办的ENERtec Asia展会进一步强调了电网级储能和跨境互联解决方案在满足数据中心需求方面的紧迫性。</p>
-      <p><strong>风险分化：</strong>马来西亚积极的电网投资支撑了<strong>3.4 GW的规划数据中心容量</strong>，而越南的被动应对仅产生<strong>0.5 GW——6.8倍差距</strong>。中国日报（6月17日）报道，由于资金不足的电网未能跟上激增的能源需求，亚洲面临错失数十亿美元绿色投资的风险。</p>
-    </div>
-    <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>马来西亚与越南之间6.8倍的数据中心容量差距标志着电网可靠性风险最高的地区——直接影响富士康及其他越南制造合作伙伴。绿色经济领域2900亿美元的搁浅资产风险可能减缓思科供应商的可再生能源采购时间表。2026-2027年是决定性窗口：APG将概念转化为可融资项目的能力将决定区域能源轨迹。思科应按电网可靠性等级评估供应商风险暴露，并将电网拥堵风险纳入采购决策。APGF是与多边开发银行接触、寻找电网接入供应商可再生能源项目融资机会的信号。
-    </div>
-    <div class="source-row">
-      来源：<a href="https://www.weforum.org/stories/2026/06/electrification-asean-grid-energy-transition/" target="_blank" rel="noopener">WEF（东盟电气化分析，6月8日）↗</a> &nbsp;|&nbsp; <a href="https://www.iea.org/reports/financing-the-asean-power-grid/executive-summary" target="_blank" rel="noopener">IEA（东盟电网融资）↗</a> &nbsp;|&nbsp; <a href="https://www.adb.org/where-we-work/southeast-asia/asean-power-grid" target="_blank" rel="noopener">亚行（东盟电网）↗</a> &nbsp;|&nbsp; <a href="https://asean.org/adb-and-world-bank-group-launch-the-asean-power-grid-financing-initiative-with-the-asean-secretariat-and-the-asean-centre-for-energy-ace/" target="_blank" rel="noopener">东盟（APGF启动）↗</a> &nbsp;|&nbsp; <a href="https://www.chinadaily.com.cn/a/202606/17/WS6a31fccea310986e2b460701.html" target="_blank" rel="noopener">中国日报（6月17日）↗</a>
-    </div>
-  </div>
 
-  <!-- Item 3 -->
-  <div class="action-item">
-    <div class="action-item-header">
-      <div class="rank-badge">3</div>
-      <div class="action-item-title">
-        2026年披露浪潮：CDP 2026问卷发布，SBTi V2.0于2月1日生效——思科FY25报告奠定强劲基线
-        <span class="tag tag-policy">信息披露</span>
+      <!-- 选题2：富士康-布鲁克菲尔德 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">2</div>
+          <div class="action-item-title">
+            富士康+布鲁克菲尔德启动1 GW越南可再生能源平台——迄今最大单一国家DPPA承诺
+            <span class="tag tag-energy">可再生</span>
+            <span class="tag tag-supply">供应链</span>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:91%"></div></div>
+          <span class="impact-score">9.1 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>
+            2026年6月9日，鸿海科技集团（富士康）与布鲁克菲尔德宣布战略可再生能源合作，将在越南共同开发高达1 GW的公用事业级风电、太阳能和电池储能项目，由长期PPA支撑。富士康首席投资官James Tu将此交易定位为"为我们的运营和供应链锁定长期可再生电力接入"——明确将脱碳锚定于供应链，而非企业PR。
+          </p>
+          <p>
+            以1 GW铭牌容量计算，富士康-布鲁克菲尔德平台规模约为SEVT交易的14倍。该合作还透露出富士康在越南设立专门可再生能源投资平台的意向——一个思科合约制造供应链将继承的金融基础设施层。
+          </p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>富士康/鸿海是思科全球最大的电子制造服务（EMS）伙伴，承担多条思科产品线的生产。1 GW的越南可再生电力将直接降低思科EMS物料清单中嵌入的Scope 3（采购商品和服务）排放。思科供应商参与团队应（a）量化可归属的Scope 3减排量，（b）确保富士康将思科相关设施纳入PPA覆盖范围，（c）将2027年CDP披露叙事对齐以捕获可再生电力归属权。
+        </div>
+        <div class="source-row">
+          来源：
+          <a href="https://www.foxconn.com/en-us/press-center/events/csr-events/2058" target="_blank" rel="noopener">富士康新闻稿 ↗</a>
+          ·
+          <a href="https://english.vov.vn/en/economy/foxconn-brookfield-partner-on-1gw-renewable-energy-project-in-vietnam-post1305115.vov" target="_blank" rel="noopener">越南之声（国家媒体）↗</a>
+        </div>
       </div>
-    </div>
-    <div class="impact-row">
-      <span class="impact-label">紧迫性/关联度</span>
-      <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
-      <span class="impact-score">8.0 / 10</span>
-    </div>
-    <div class="item-body">
-      <p>披露生态系统进入年度压力最大的一周。<strong>CDP于6月18日发布2026年问卷和截止日期</strong>——KPMG描述为"超越2025年相对有限的更新"。完整的企业问卷引入了<strong>新的海洋披露要求</strong>和大幅扩展的Scope 3供应链问卷。2026年周期的多数报告人截止日期在2026年7月至9月之间，使数千家思科供应商在下个月起进入活跃报告窗口。</p>
-      <p><strong>SBTi企业净零标准V2.0</strong>（2026年6月11日发布）将于<strong>2027年2月1日生效</strong>，新规则下的目标验证从2027年Q1开始。企业可继续使用V1至2027年底。新的结构性要求：Scope 1独立目标、2030年起大型用户（≥10 GWh）的小时级电力匹配、2035年起强制碳移除（A类企业从1%线性增长至净零年度的100%）、以及验证时公开OER等级声明（参与/进阶/领导）。</p>
-      <p><strong>思科FY25 Purpose Report</strong>（2026年4月29日发布）提供了强劲基线：<strong>首次实现100%全球可再生电力</strong>、<strong>Scope 1+2绝对减排约90%</strong>、供应链参与覆盖88%采购支出（超过80%目标）、继续履行2040净零承诺。MSCI ESG评级维持AA。KnowESG和Sustainable Tech Partner的独立报道确认了这一轨迹。</p>
-      <p><strong>水风险披露整合：</strong>SCS Standards / WRI / WWF《关于企业价值链水资源Scope 1-3评估指南》的概念说明（2026年4月发布）以及更广泛的《水资源Scope 1-3》框架（2026年4月30日）正在建立水资源风险评估的共同基础，链接WRI的Aqueduct、WWF的Risk Filter与CDP、GRI和TNFD的披露。最终指南预计2027年Q4完成，在此之前有试点披露窗口。</p>
-    </div>
-    <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>CDP 2026周期影响思科所有一级报告供应商以及日益增多的二级供应商。Scope 3供应链问卷的扩展意味着思科供应商参与团队在未来90天内将面临更精细的数据请求。FY25 Purpose Report的100%可再生里程碑是防御性护城河——但SBTi V2.0的小时级匹配和强制移除要求提高了门槛。思科应加速将Scope 3供应商接入CDP平台，评估与公开承诺一致的OER等级，并尽早参与水资源Scope 1-3框架试点。
-    </div>
-    <div class="source-row">
-      来源：<a href="https://www.cdp.net/en/disclosure-2026" target="_blank" rel="noopener">CDP（2026披露中心）↗</a> &nbsp;|&nbsp; <a href="https://kpmg.com/us/en/frv/reference-library/2026/cdp-releases-2026-questionnaires-deadlines.html" target="_blank" rel="noopener">KPMG（CDP 2026分析）↗</a> &nbsp;|&nbsp; <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/strategy.html" target="_blank" rel="noopener">思科（FY25目的报告中心）↗</a> &nbsp;|&nbsp; <a href="https://www.knowesg.com/esg-ratings/cisco-systems-inc" target="_blank" rel="noopener">KnowESG（CSCO MSCI AA）↗</a> &nbsp;|&nbsp; <a href="https://cdn.scsstandards.org/files/2026-04/CONCEPT%20NOTE%20-%20Corporate%20Guidance%20for%20Assessing%20Water%20Scopes%201-3%20in%20Value%20Chains%20-%2020260219%20(1)_0.pdf" target="_blank" rel="noopener">SCS Standards（水资源Scope 1-3概念说明）↗</a>
-    </div>
-  </div>
-</section>
 
-<!-- KEY DATA POINTS -->
-<section class="section" id="key-data">
-  <div class="section-label">关键数据点</div>
-  <h2>本周关键指标</h2>
-  <div class="data-grid">
-    <div class="data-card">
-      <div class="metric">9 天</div>
-      <div class="metric-label">越南两部制电价（TPT）2026年7月1日生效——约7,000家大型工业用户受影响</div>
-      <div class="metric-trend trend-alert">监管悬崖</div>
-      <div class="metric-source"><a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy ↗</a></div>
-    </div>
-    <div class="data-card">
-      <div class="metric">8000 亿美元</div>
-      <div class="metric-label">到2045年东盟发电+输电总投资需求（IEA/CSIS分析）</div>
-      <div class="metric-trend trend-alert">结构性瓶颈</div>
-      <div class="metric-source"><a href="https://www.iea.org/reports/financing-the-asean-power-grid/executive-summary" target="_blank" rel="noopener">IEA ↗</a></div>
-    </div>
-    <div class="data-card">
-      <div class="metric">100%</div>
-      <div class="metric-label">思科FY25全球可再生电力达成（公司史上首次）</div>
-      <div class="metric-trend trend-up">FY25目的报告基线</div>
-      <div class="metric-source"><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/clean-energy.html" target="_blank" rel="noopener">思科 ↗</a></div>
-    </div>
-    <div class="data-card">
-      <div class="metric">180 亿美元/年</div>
-      <div class="metric-label">东盟电网年投资缺口（100 TWh需求冲击，AI+EV驱动）</div>
-      <div class="metric-trend trend-alert">WEF/CSIS量化</div>
-      <div class="metric-source"><a href="https://www.weforum.org/stories/2026/06/electrification-asean-grid-energy-transition/" target="_blank" rel="noopener">WEF ↗</a></div>
-    </div>
-    <div class="data-card">
-      <div class="metric">~3.4 年</div>
-      <div class="metric-label">越南TPT容量电费缓解的BESS削峰验证回收期（平阳案例）</div>
-      <div class="metric-trend trend-up">运营缓解杠杆</div>
-      <div class="metric-source"><a href="https://arcusenergyasia.com/resources/regulations/two-part-tariff" target="_blank" rel="noopener">Arcus Energy ↗</a></div>
-    </div>
-    <div class="data-card">
-      <div class="metric">88%</div>
-      <div class="metric-label">思科FY25供应链参与项目覆盖采购支出比例（目标：80%）</div>
-      <div class="metric-trend trend-up">超过目标</div>
-      <div class="metric-source"><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/strategy.html" target="_blank" rel="noopener">思科 ↗</a></div>
-    </div>
-  </div>
-</section>
+      <!-- 选题3：柔佛电网瓶颈 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">3</div>
+          <div class="action-item-title">
+            Wood Mackenzie：柔佛数据中心电网瓶颈已成为马来西亚AI建设的硬约束
+            <span class="tag tag-grid">电网风险</span>
+            <span class="tag tag-water">水资源</span>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:88%"></div></div>
+          <span class="impact-score">8.8 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>
+            Wood Mackenzie于2026年6月18日发布报告《为柔佛数据中心热潮供电：供应、需求与电网约束》，指出尽管柔佛当前电力供应足以支持近期数据中心需求，<em>电网接入时间表与基础设施审批</em>已成为硬性约束。柔佛目前有约1,500 MW数据中心在建容量，马来西亚全国容量预计将从年初的1,025 MW增至2026年底约2,100 MW。
+          </p>
+          <p>
+            电网瓶颈与柔佛-新加坡走廊的已记录的水资源压力并发；该地区的数据中心耗水正与WRI Aqueduct工具标记的高水压力地理区域交叉。超大规模客户（Microsoft、Google、ByteDance、Amazon）据报正重新评估柔佛选址决策。
+          </p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>思科的协作/云服务以及未来在柔佛超大规模租户处部署的任何本地或混合项目将继承（a）延长的通电时间——影响客户交付承诺，以及（b）水资源相关的社区运营许可风险。思科销售工程和ESG风险团队应将Wood Mackenzie的发现纳入柔佛相关交易的尽职调查，并纳入Scope 3上游数据中心电力建模。
+        </div>
+        <div class="source-row">
+          来源：
+          <a href="https://www.woodmac.com/press-releases/jb-data-center-expansion/" target="_blank" rel="noopener">Wood Mackenzie 新闻稿 ↗</a>
+          ·
+          <a href="https://www.newsflashasia.com/johors-grid-faces-potential-bottlenecks-as-data-centres-expand-rapidly/" target="_blank" rel="noopener">News Flash Asia — 柔佛电网瓶颈 ↗</a>
+          ·
+          <a href="https://sbr.com.sg/telecom-internet/in-focus/data-centres-hit-95-occupancy-power-grid-freezes-supply" target="_blank" rel="noopener">新加坡商业评论 — 95%入驻率 ↗</a>
+        </div>
+      </div>
 
-<!-- STRATEGIC RECOMMENDATIONS -->
-<section class="section" id="strategy">
-  <div class="section-label">战略建议</div>
-  <h2>思科供应链可持续性行动框架</h2>
-  <div class="strategy-grid">
-    <div class="strategy-card">
-      <h4>短期（0-3个月）</h4>
-      <ul>
-        <li><strong>越南TPT就绪演练（9天）：</strong>在7月1日前完成所有越南制造合作伙伴的TPT容量电费建模。启动富士康及其他高耗电现场的BESS可行性评估。主动通知供应商双重收费风险并要求成本转嫁证明文件。</li>
-        <li><strong>CDP 2026供应商动员：</strong>加速将Scope 3供应商接入CDP平台。扩展的Scope 3供应链问卷意味着更精细的数据请求将在30-60天内开始。预先发布思科对齐的数据请求模板。</li>
-        <li><strong>SBTi V2.0 OER等级决策：</strong>在下次验证周期前开始内部评估思科的OER等级声明（参与/进阶/领导）。将20-80美元/tCO₂e的成本范围与持续排放量建模。</li>
-        <li><strong>Resolution 253项目管线审查：</strong>清点所有规划/审批中的越南供应商可再生能源项目。Resolution 253的精简审批路径有效期至2030年——加速项目申报。</li>
-      </ul>
-    </div>
-    <div class="strategy-card">
-      <h4>中期（3-12个月）</h4>
-      <ul>
-        <li><strong>东盟电网风险等级映射：</strong>利用IEA、WEF和CSIS数据将所有东南亚供应商现场按电网可靠性等级映射。6.8倍的马越差距是核心信号。将电网拥堵风险纳入2027年采购决策。</li>
-        <li><strong>APGF / 多边开发银行对接：</strong>与亚行-世行APGF和东盟能源中心对接，识别电网接入供应商可再生能源项目的共同融资机会。1000亿美元的APG管线需要锚定承购方——思科的供应商基础是其中之一。</li>
-        <li><strong>BESS聚合项目：</strong>为越南供应商现场制定标准化BESS商业案例模板。瞄准容量电费节省能实现&lt;4年回收期的现场。汇总跨供应商需求以获得批量定价。</li>
-        <li><strong>水资源Scope 1-3试点：</strong>参与SCS/WRI/WWF试点项目（2027年Q4最终指南），确保思科的水风险方法与新兴披露规范兼容。与TNFD建议采纳协同推进。</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- METHODOLOGY -->
-<section class="section" id="methodology">
-  <div class="section-label">方法论与来源说明</div>
-  <div class="method-box">
-    <p><strong>数据收集期间：</strong>2026年6月16-22日。来源包括SBTi官方出版物、多边开发银行报告、行业法律分析、企业披露及主要媒体。</p>
-    <p><strong>影响力评分：</strong>综合得分（0-10）基于：思科供应链财务重要性（权重40%）、监管紧迫性（25%）、与思科可持续发展目标的战略一致性（25%）以及信息时效性/可靠性（10%）。</p>
-    <p><strong>本周关键来源：</strong></p>
-    <p>
-      &bull; <a href="https://english.luatvietnam.vn/resolution-no-253-2025-qh15-dated-december-11-2025-of-the-national-assembly-on-specific-mechanisms-and-policies-for-national-energy-development-for-422450-doc1.html" target="_blank" rel="noopener">LuatVietnam &mdash; Resolution 253/2025/QH15（英文版）↗</a><br>
-      &bull; <a href="https://vepg.vn/wp-content/uploads/2026/02/253_2025_QH15_687025.pdf" target="_blank" rel="noopener">VEPG &mdash; Resolution 253 全文（PDF）↗</a><br>
-      &bull; <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy &mdash; Decree 57 DPPA框架解读 ↗</a><br>
-      &bull; <a href="https://www.frasersvn.com/api/uploads/Legal_Update_EN_Vietnam_s_Energy_Sector_under_Resolution_253_April_2026_00277431x_B66_F8_300d83befc.PDF" target="_blank" rel="noopener">Frasers Law Company &mdash; Resolution 253法律更新（2026年4月）↗</a><br>
-      &bull; <a href="https://moit.gov.vn/en/support-services/70-years-of-industry-and-trade/moit-accelerates-two-part-electricity-tariff-implementation.html" target="_blank" rel="noopener">越南工贸部 &mdash; 两部制电价实施 ↗</a><br>
-      &bull; <a href="https://www.weforum.org/stories/2026/06/electrification-asean-grid-energy-transition/" target="_blank" rel="noopener">WEF &mdash; 东盟电气化分析（2026年6月8日）↗</a><br>
-      &bull; <a href="https://www.iea.org/reports/financing-the-asean-power-grid/executive-summary" target="_blank" rel="noopener">IEA &mdash; 东盟电网融资（执行摘要）↗</a><br>
-      &bull; <a href="https://www.adb.org/where-we-work/southeast-asia/asean-power-grid" target="_blank" rel="noopener">亚行 &mdash; 东盟电网倡议 ↗</a><br>
-      &bull; <a href="https://asean.org/adb-and-world-bank-group-launch-the-asean-power-grid-financing-initiative-with-the-asean-secretariat-and-the-asean-centre-for-energy-ace/" target="_blank" rel="noopener">东盟秘书处 &mdash; APGF启动公告 ↗</a><br>
-      &bull; <a href="https://www.chinadaily.com.cn/a/202606/17/WS6a31fccea310986e2b460701.html" target="_blank" rel="noopener">中国日报 &mdash; 东盟电网改革（2026年6月17日）↗</a><br>
-      &bull; <a href="https://www.cdp.net/en/disclosure-2026" target="_blank" rel="noopener">CDP &mdash; 2026披露中心 ↗</a><br>
-      &bull; <a href="https://kpmg.com/us/en/frv/reference-library/2026/cdp-releases-2026-questionnaires-deadlines.html" target="_blank" rel="noopener">KPMG &mdash; CDP 2026问卷分析 ↗</a><br>
-      &bull; <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/strategy.html" target="_blank" rel="noopener">思科 &mdash; 能源与可持续发展战略 ↗</a><br>
-      &bull; <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/clean-energy.html" target="_blank" rel="noopener">思科 &mdash; 清洁能源披露 ↗</a><br>
-      &bull; <a href="https://www.knowesg.com/esg-ratings/cisco-systems-inc" target="_blank" rel="noopener">KnowESG &mdash; 思科 MSCI ESG AA 评级 ↗</a><br>
-      &bull; <a href="https://cdn.scsstandards.org/files/2026-04/CONCEPT%20NOTE%20-%20Corporate%20Guidance%20for%20Assessing%20Water%20Scopes%201-3%20in%20Value%20Chains%20-%2020260219%20(1)_0.pdf" target="_blank" rel="noopener">SCS Standards &mdash; 水资源Scope 1-3概念说明（2026年4月）↗</a><br>
-      &bull; <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi &mdash; 企业净零标准V2.0全文（PDF）↗</a>
-    </p>
-    <p style="margin-top:0.8rem;"><em>免责声明：本简报供思科供应链可持续发展团队内部使用。数据点全部来源于公开信息。链接验证日期为2026年6月22日。</em></p>
-  </div>
-</section>
+    <!-- ===== 关键数据点 ===== -->
+    <section class="section" id="key-data">
+      <div class="section-label">03 / 关键数据点</div>
+      <h2>支撑本周叙事的六项核心指标</h2>
+      <div class="data-grid">
 
-</div><!-- /main-content -->
+        <div class="data-card">
+          <div class="metric">70 GWh</div>
+          <div class="metric-label">SEVT（三星越南）— 首笔电网型DPPA，年度太阳能承诺</div>
+          <div class="metric-trend trend-up">▲ 里程碑式执行</div>
+          <div class="metric-source"><a href="https://www.reccessary.com/en/news/vietnam-grid-based-dppa-samsung-electronics" target="_blank" rel="noopener">Reccessary ↗</a></div>
+        </div>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
+        <div class="data-card">
+          <div class="metric">1 GW</div>
+          <div class="metric-label">富士康-布鲁克菲尔德越南可再生能源平台（风电/太阳能/储能）</div>
+          <div class="metric-trend trend-up">▲ 最大单一承诺</div>
+          <div class="metric-source"><a href="https://www.foxconn.com/en-us/press-center/events/csr-events/2058" target="_blank" rel="noopener">富士康IR ↗</a></div>
+        </div>
 
-  <!-- Quick Signals -->
-  <div class="sidebar-widget">
-    <div class="widget-header">智能信号</div>
-    <div class="widget-body">
-      <div class="signal-item">
-        <div class="signal-dot dot-red"></div>
-        <div><strong>越南TPT：</strong>距7月1日生效仅9天。Resolution 253自3月1日起生效。DPPA双重收费风险仍未解决。约7,000家工业用户受影响。</div>
-      </div>
-      <div class="signal-item">
-        <div class="signal-dot dot-red"></div>
-        <div><strong>CDP 2026发布：</strong>新增海洋披露+扩展的Scope 3供应链问卷。报告窗口未来几周内开放。KPMG：超越2025年"有限更新"。</div>
-      </div>
-      <div class="signal-item">
-        <div class="signal-dot dot-amber"></div>
-        <div><strong>东盟电网缺口：</strong>WEF+IEA汇聚：每年180亿美元投资缺口，到2045年总需求8000亿美元，APG跨境1000亿美元。马来西亚3.4 GW vs 越南0.5 GW数据中心容量。</div>
-      </div>
-      <div class="signal-item">
-        <div class="signal-dot dot-green"></div>
-        <div><strong>思科FY25：</strong>100%全球可再生电力（公司史上首次）。Scope 1+2减排约90%。供应链参与88%（超80%目标）。MSCI AA维持。</div>
-      </div>
-    </div>
-  </div>
+        <div class="data-card">
+          <div class="metric">1,500 MW</div>
+          <div class="metric-label">柔佛在建数据中心容量（Wood Mackenzie, 6月18日）</div>
+          <div class="metric-trend trend-warn">⚠ 电网受限</div>
+          <div class="metric-source"><a href="https://www.woodmac.com/press-releases/jb-data-center-expansion/" target="_blank" rel="noopener">Wood Mackenzie ↗</a></div>
+        </div>
 
-  <!-- Upcoming Events -->
-  <div class="sidebar-widget">
-    <div class="widget-header">前瞻事件日历</div>
-    <div class="widget-body">
-      <div class="radar-row">
-        <span class="radar-name">越南TPT生效</span>
-        <span class="radar-risk risk-high">2026年7月1日</span>
-      </div>
-      <div class="radar-row">
-        <span class="radar-name">CDP 2026报告窗口</span>
-        <span class="radar-risk risk-high">2026年7-9月</span>
-      </div>
-      <div class="radar-row">
-        <span class="radar-name">SBTi V2.0生效</span>
-        <span class="radar-risk risk-high">2027年2月1日</span>
-      </div>
-      <div class="radar-row">
-        <span class="radar-name">首次V2.0目标验证</span>
-        <span class="radar-risk risk-medium">2027年Q1</span>
-      </div>
-      <div class="radar-row">
-        <span class="radar-name">V1目标设定最后期限</span>
-        <span class="radar-risk risk-medium">2027年12月31日</span>
-      </div>
-      <div class="radar-row">
-        <span class="radar-name">Resolution 253到期</span>
-        <span class="radar-risk risk-medium">2030年12月31日</span>
-      </div>
-    </div>
-  </div>
+        <div class="data-card">
+          <div class="metric">2,100 MW</div>
+          <div class="metric-label">2026年底马来西亚数据中心总容量（年初1,025 MW）</div>
+          <div class="metric-trend trend-up">▲ 同比增长2倍</div>
+          <div class="metric-source"><a href="https://insightpulsehub.com/malaysia-data-center-capacity-doubles-2026-johor-vs-singapore-where-to-build-your-ai-infrastructure/" target="_blank" rel="noopener">Insight Pulse Hub ↗</a></div>
+        </div>
 
-  <!-- Topics Covered -->
-  <div class="sidebar-widget">
-    <div class="widget-header">本周覆盖议题</div>
-    <div class="widget-body">
-      <div class="radar-row"><span class="radar-name">越南两部制电价与DPPA</span><span class="radar-risk risk-high">关键</span></div>
-      <div class="radar-row"><span class="radar-name">Resolution 253/2025/QH15</span><span class="radar-risk risk-high">关键</span></div>
-      <div class="radar-row"><span class="radar-name">东盟电网与能源基础设施</span><span class="radar-risk risk-high">关键</span></div>
-      <div class="radar-row"><span class="radar-name">CDP 2026披露周期</span><span class="radar-risk risk-high">关键</span></div>
-      <div class="radar-row"><span class="radar-name">思科FY25目的报告</span><span class="radar-risk risk-high">关键</span></div>
-      <div class="radar-row"><span class="radar-name">SBTi V2.0实施路径</span><span class="radar-risk risk-medium">高</span></div>
-      <div class="radar-row"><span class="radar-name">水资源Scope 1-3框架</span><span class="radar-risk risk-medium">关注</span></div>
-      <div class="radar-row"><span class="radar-name">BESS削峰经济性</span><span class="radar-risk risk-medium">关注</span></div>
-    </div>
-  </div>
+        <div class="data-card">
+          <div class="metric">100%</div>
+          <div class="metric-label">思科硬件+物流供应商被要求每年向CDP披露排放</div>
+          <div class="metric-trend trend-up">▲ 全面执行</div>
+          <div class="metric-source"><a href="https://www.cisco.com/site/us/en/about/purpose/supply-chain-sustainability/index.html" target="_blank" rel="noopener">思科供应链可持续 ↗</a></div>
+        </div>
 
-  <!-- Core Sources -->
-  <div class="sidebar-widget">
-    <div class="widget-header">核心信息来源</div>
-    <div class="widget-body">
-      <div class="source-item">
-        <a href="https://english.luatvietnam.vn/resolution-no-253-2025-qh15-dated-december-11-2025-of-the-national-assembly-on-specific-mechanisms-and-policies-for-national-energy-development-for-422450-doc1.html" target="_blank" rel="noopener">LuatVietnam（Resolution 253）↗</a><br>
-        <small>Resolution 253/2025/QH15 英文版</small>
+        <div class="data-card">
+          <div class="metric">70 万亿$</div>
+          <div class="metric-label">2050年全球暴露于高水压力GDP（WRI-WWF联盟，4月30日）</div>
+          <div class="metric-trend trend-alert">▲ 占全球GDP 1/3</div>
+          <div class="metric-source"><a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI新闻稿 ↗</a></div>
+        </div>
+
       </div>
-      <div class="source-item">
-        <a href="https://arcusenergyasia.com/" target="_blank" rel="noopener">Arcus Energy Asia ↗</a><br>
-        <small>Decree 57、TPT与DPPA分析</small>
+    </section>
+
+    <!-- ===== 战略建议 ===== -->
+    <section class="section" id="strategy">
+      <div class="section-label">04 / 战略建议</div>
+      <h2>思科应采取的行动 — 当前与未来12个月</h2>
+      <div class="strategy-grid">
+
+        <div class="strategy-card">
+          <h4>短期 · 0–3个月</h4>
+          <ul>
+            <li><strong>复制SEVT模板：</strong>召集思科越南Top 5 Tier-1供应商评估会，评估在两部制电价（2026年7月1日）重塑工业电价经济性之前采用DPPA的可行性。以三星-富士康的定价区间作为参考。</li>
+            <li><strong>锁定富士康可再生电力归属：</strong>与富士康布鲁克菲尔德平台团队对接，确认哪些可归属思科的设施落在1 GW覆盖范围内，随后建模相应的Scope 3减排以纳入FY26 ESG报告。</li>
+            <li><strong>绘制柔佛超大规模客户敞口：</strong>拉取思科销售至柔佛区域超大规模客户的产品/服务清单，叠加Wood Mackenzie 6月18日报告的电网接入风险图层。向销售工程团队通报调整后的交付时间表。</li>
+            <li><strong>激活WRI水Scope 1-3框架：</strong>在思科越南/马来西亚Top 10 Tier-2供应商上试点WRI/WWF/SCS/UN联盟指南（4月30日发布）。输出：FY26报告周期的水资源风险披露基线。</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card">
+          <h4>中期 · 3–12个月</h4>
+          <ul>
+            <li><strong>在供应商合同中嵌入DPPA条款：</strong>与思科采购法务协作，在FY27供应商协议中插入可再生采购里程碑，参照SEVT模板，报告节奏与CDP对齐。</li>
+            <li><strong>建立柔佛电网-水风险指数：</strong>将Wood Mackenzie电网接入队列数据与WRI Aqueduct水压力数据结合，为柔佛-新加坡走廊的任何思科云/托管合作生成综合风险评分。</li>
+            <li><strong>对接SBTi V2.0碳移除合规：</strong>SBTi企业净零标准V2.0（2026年6月11日发布，2027年2月1日生效）收紧了Scope 1的碳移除要求。确认思科SBTi目标提交时间表已纳入新V2.0规则。</li>
+            <li><strong>多元化越南可再生采购：</strong>跟踪未来5–10个越南DPPA项目（太阳能、风电、储能），形成首选开发商短名单，为思科合约制造商提供策划后的项目管道。</li>
+            <li><strong>将思科定位为DPPA"推动者"：</strong>利用思科100%可再生电力里程碑+供应商CDP项目作为平台，召集思科供应商+越南工贸部+东盟电力公司，制定共享的可再生采购标准——低成本、高曝光度的ESG领导力举措。</li>
+          </ul>
+        </div>
+
       </div>
-      <div class="source-item">
-        <a href="https://www.weforum.org/stories/2026/06/electrification-asean-grid-energy-transition/" target="_blank" rel="noopener">世界经济论坛 ↗</a><br>
-        <small>东盟电气化与电网（2026年6月8日）</small>
+    </section>
+
+    <!-- ===== 方法论 ===== -->
+    <section class="section" id="methodology">
+      <div class="section-label">05 / 方法论</div>
+      <h2>本简报构建方法</h2>
+      <div class="methodology">
+        <h3>方法</h3>
+        <ol>
+          <li><strong>选题确定：</strong>对7天时间窗（2026年6月22日周一 – 6月29日周一）以英文进行五项主题搜索：越南DPPA、东南亚电网/储能、思科可持续/ESG、水资源治理（TNFD/WRI）、净零/碳市场。</li>
+          <li><strong>评分：</strong>每条候选情报按以下综合维度按0–10打分：(a) 思科运营敞口，(b) 监管/市场影响幅度，((c) 可行动的决策窗口，(d) 外部验证。得分≥8.5的条目进入Top 3。</li>
+          <li><strong>来源质量：</strong>所有链接均指向一手来源（公司新闻稿、政府门户、成熟行业出版物或分析机构）。已排除搜索聚合页。</li>
+          <li><strong>链接验证：</strong>所有超链接在发布时（2026年6月29日 GMT+8）均为可访问状态。</li>
+          <li><strong>中英文一致性：</strong>中文版与英文版基于同一份Top 3选题与数据点，采用翻译+本地化方式生成，不重新搜索；数据指标与来源URL两版完全一致。</li>
+        </ol>
+
+        <div class="full-sources">
+          <h3>完整来源列表</h3>
+          <ol>
+            <li><a href="https://www.reccessary.com/en/news/vietnam-grid-based-dppa-samsung-electronics" target="_blank" rel="noopener">Reccessary — 三星越南首笔电网DPPA (2026年6月2日)</a></li>
+            <li><a href="https://www.techtimes.com/articles/317607/20260602/samsung-executes-vietnams-first-grid-dppa-70-gwh-solar-deal-sets-supply-chain-template.htm" target="_blank" rel="noopener">TechTimes — 三星执行越南首笔电网DPPA (2026年6月2日)</a></li>
+            <li><a href="https://www.vietnam.vn/en/samsung-thai-nguyen-tro-thanh-doanh-nghiep-dau-tien-chinh-thuc-mua-dien-tai-tao-thong-qua-co-che-dppa-tai-viet-nam" target="_blank" rel="noopener">越南政府门户 — 三星太原成首位DPPA采购方</a></li>
+            <li><a href="https://www.foxconn.com/en-us/press-center/events/csr-events/2058" target="_blank" rel="noopener">富士康 — 与布鲁克菲尔德越南可再生能源合作 (2026年6月9日)</a></li>
+            <li><a href="https://english.vov.vn/en/economy/foxconn-brookfield-partner-on-1gw-renewable-energy-project-in-vietnam-post1305115.vov" target="_blank" rel="noopener">越南之声 — 富士康-布鲁克菲尔德1GW越南 (2026年6月10日)</a></li>
+            <li><a href="https://www.woodmac.com/press-releases/jb-data-center-expansion/" target="_blank" rel="noopener">Wood Mackenzie — 为柔佛数据中心热潮供电 (2026年6月18日)</a></li>
+            <li><a href="https://www.newsflashasia.com/johors-grid-faces-potential-bottlenecks-as-data-centres-expand-rapidly/" target="_blank" rel="noopener">News Flash Asia — 柔佛电网瓶颈</a></li>
+            <li><a href="https://sbr.com.sg/telecom-internet/in-focus/data-centres-hit-95-occupancy-power-grid-freezes-supply" target="_blank" rel="noopener">新加坡商业评论 — 数据中心95%入驻率</a></li>
+            <li><a href="https://insightpulsehub.com/malaysia-data-center-capacity-doubles-2026-johor-vs-singapore-where-to-build-your-ai-infrastructure/" target="_blank" rel="noopener">Insight Pulse Hub — 马来西亚数据中心容量2026翻倍</a></li>
+            <li><a href="https://www.cisco.com/site/us/en/about/purpose/supply-chain-sustainability/index.html" target="_blank" rel="noopener">思科 — 供应链可持续</a></li>
+            <li><a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI — 企业水风险指南联盟 (2026年4月30日)</a></li>
+            <li><a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi — 企业净零标准V2.0 (2026年6月11日)</a></li>
+            <li><a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">MT Stonegate — 越南DPPA 2026更新：执行</a></li>
+            <li><a href="https://arcusenergyasia.com/resources/tariffs/manufacturing" target="_blank" rel="noopener">Arcus Energy Asia — 越南制造业电价（含2026年7月1日两部制试点）</a></li>
+          </ol>
+        </div>
       </div>
-      <div class="source-item">
-        <a href="https://www.iea.org/reports/financing-the-asean-power-grid/executive-summary" target="_blank" rel="noopener">国际能源署 ↗</a><br>
-        <small>东盟电网融资</small>
-      </div>
-      <div class="source-item">
-        <a href="https://www.cdp.net/en/disclosure-2026" target="_blank" rel="noopener">CDP ↗</a><br>
-        <small>2026披露中心与问卷</small>
-      </div>
-      <div class="source-item">
-        <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub.html" target="_blank" rel="noopener">思科目的报告中心 ↗</a><br>
-        <small>FY25目的报告与可持续发展披露</small>
-      </div>
-      <div class="source-item">
-        <a href="https://sciencebasedtargets.org/corporate-net-zero-standard-v2" target="_blank" rel="noopener">SBTi ↗</a><br>
-        <small>企业净零标准V2.0（2026年6月11日）</small>
+    </section>
+
+  </article>
+
+  <!-- ===== 侧边栏 ===== -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <h3>智能信号</h3>
+      <div class="widget-body">
+        <div class="signal-item">
+          <span class="signal-title">三星签署越南首笔电网DPPA</span>
+          <span class="signal-meta">2026年6月1日 · <a href="https://www.reccessary.com/en/news/vietnam-grid-based-dppa-samsung-electronics" target="_blank" rel="noopener">Reccessary ↗</a></span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-title">富士康-布鲁克菲尔德1 GW越南可再生交易</span>
+          <span class="signal-meta">2026年6月9日 · <a href="https://www.foxconn.com/en-us/press-center/events/csr-events/2058" target="_blank" rel="noopener">富士康 ↗</a></span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-title">Wood Mackenzie：柔佛电网瓶颈</span>
+          <span class="signal-meta">2026年6月18日 · <a href="https://www.woodmac.com/press-releases/jb-data-center-expansion/" target="_blank" rel="noopener">Wood Mackenzie ↗</a></span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-title">EVM-Solarvest-PECC2 DPPA合作</span>
+          <span class="signal-meta">2026年6月16日 · <a href="https://businessdailymedia.com/business-news/news-from-asia/40625-evm-solarvest-and-pecc2-forge-strategic-partnership-to-accelerate-renewable-energy-adoption-in-vietnam-through-the-new-direct-power-purchase-agreement-mechanism-dppa-via-national-grid" target="_blank" rel="noopener">Business Daily ↗</a></span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-title">WRI-WWF水Scope 1-3框架启动</span>
+          <span class="signal-meta">2026年4月30日 · <a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI ↗</a></span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-title">SBTi净零标准V2.0发布</span>
+          <span class="signal-meta">2026年6月11日 · <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi PDF ↗</a></span>
+        </div>
       </div>
     </div>
-  </div>
 
-</aside>
-</div><!-- /layout -->
+    <div class="sidebar-widget">
+      <h3>前瞻事件日历</h3>
+      <div class="widget-body">
+        <div class="event-item">
+          <span class="event-date">2026年7月1日</span>
+          <span class="event-title">越南两部制电价工业用户试点启动（门槛：月用电≥200 MWh）</span>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2026年7月9日</span>
+          <span class="event-title">思科FY26 Q3财报 — 可持续指标披露</span>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2026年9月</span>
+          <span class="event-title">东盟能源商业论坛（预计APG部长级进展更新）</span>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2027年2月1日</span>
+          <span class="event-title">SBTi企业净零标准V2.0生效</span>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2027年Q4</span>
+          <span class="event-title">WRI水Scope 1-3指南首版完成</span>
+        </div>
+      </div>
+    </div>
 
-<footer>
-  <div class="footer-inner">
-    <span>Cisco可持续发展情报简报 &nbsp;|&nbsp; 第61期 &nbsp;|&nbsp; 2026年6月22日 &nbsp;|&nbsp; 内部使用</span>
-    <span><a href="cisco_sustainability_briefing.html">English</a> &nbsp;|&nbsp; <a href="https://tu2026.github.io/cisco-sustainability-briefing/">首页</a></span>
-  </div>
+    <div class="sidebar-widget">
+      <h3>本周覆盖议题</h3>
+      <div class="widget-body">
+        <span class="topic-tag">越南DPPA</span>
+        <span class="topic-tag">Decree 57</span>
+        <span class="topic-tag">Decree 146</span>
+        <span class="topic-tag">两部制电价</span>
+        <span class="topic-tag">富士康</span>
+        <span class="topic-tag">三星SEVT</span>
+        <span class="topic-tag">东盟电网</span>
+        <span class="topic-tag">柔佛数据中心</span>
+        <span class="topic-tag">WRI水Scope 1-3</span>
+        <span class="topic-tag">TNFD</span>
+        <span class="topic-tag">SBTi V2.0</span>
+        <span class="topic-tag">CDP供应链</span>
+        <span class="topic-tag">Scope 3脱碳</span>
+        <span class="topic-tag">布鲁克菲尔德</span>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <h3>核心信息来源</h3>
+      <div class="widget-body">
+        <a href="https://www.reccessary.com/en/news/vietnam-grid-based-dppa-samsung-electronics" target="_blank" rel="noopener" class="source-link">Reccessary — 三星越南首笔电网DPPA<span class="source-domain">reccessary.com</span></a>
+        <a href="https://www.foxconn.com/en-us/press-center/events/csr-events/2058" target="_blank" rel="noopener" class="source-link">富士康 — 布鲁克菲尔德1GW越南可再生<span class="source-domain">foxconn.com</span></a>
+        <a href="https://www.woodmac.com/press-releases/jb-data-center-expansion/" target="_blank" rel="noopener" class="source-link">Wood Mackenzie — 柔佛DC电网报告<span class="source-domain">woodmac.com</span></a>
+        <a href="https://www.cisco.com/site/us/en/about/purpose/supply-chain-sustainability/index.html" target="_blank" rel="noopener" class="source-link">思科 — 供应链可持续<span class="source-domain">cisco.com</span></a>
+        <a href="https://www.wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener" class="source-link">WRI — 水Scope 1-3联盟<span class="source-domain">wri.org</span></a>
+        <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener" class="source-link">SBTi — 企业净零V2.0 (PDF)<span class="source-domain">sciencebasedtargets.org</span></a>
+        <a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener" class="source-link">MT Stonegate — 越南DPPA 2026更新<span class="source-domain">mtstonegate.com</span></a>
+        <a href="https://arcusenergyasia.com/resources/tariffs/manufacturing" target="_blank" rel="noopener" class="source-link">Arcus Energy Asia — 越南制造业电价<span class="source-domain">arcusenergyasia.com</span></a>
+        <a href="https://www.tilleke.com/insights/clear-guidance-for-direct-power-purchase-agreements-in-vietnam/" target="_blank" rel="noopener" class="source-link">Tilleke — 越南DPPA指南<span class="source-domain">tilleke.com</span></a>
+      </div>
+    </div>
+
+  </aside>
+
+</main>
+
+<footer class="footer">
+  <p>
+    思科可持续情报简报 · 第62期 · 2026年6月29日<br>
+    为思科ESG、供应链与可持续战略团队准备的周度情报。<br>
+    所有链接在发布时已验证。 &nbsp;
+    <a href="index.html">历史期数</a> ·
+    <a href="cisco_sustainability_briefing.html">English</a>
+  </p>
 </footer>
 
 </body>
