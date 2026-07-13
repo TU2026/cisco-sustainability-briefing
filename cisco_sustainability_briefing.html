@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cisco Sustainability Intelligence Briefing — Week of July 6, 2026 (Issue #63)</title>
+<title>Cisco Sustainability Intelligence Briefing — Week of July 13, 2026 (Issue #64)</title>
 <style>
   :root {
     --cisco-blue: #049fd9;
@@ -263,6 +263,7 @@
   .tag-supply { background: rgba(245, 166, 35, 0.2); color: var(--accent-amber); border: 1px solid rgba(245, 166, 35, 0.4); }
   .tag-policy { background: rgba(139, 92, 246, 0.2); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.4); }
   .tag-grid   { background: rgba(231, 76, 60, 0.2); color: var(--accent-red); border: 1px solid rgba(231, 76, 60, 0.4); }
+  .tag-esg    { background: rgba(0, 188, 235, 0.2); color: var(--cisco-cyan); border: 1px solid rgba(0, 188, 235, 0.4); }
 
   .impact-row {
     display: flex;
@@ -527,8 +528,8 @@
       </div>
     </div>
     <div class="issue-meta">
-      <div class="issue-num">Issue #63 · Weekly Intelligence</div>
-      <div class="issue-date">July 6, 2026</div>
+      <div class="issue-num">Issue #64 · Weekly Intelligence</div>
+      <div class="issue-date">July 13, 2026</div>
       <div class="lang-switch">
         <a href="cisco_sustainability_briefing.html" class="active">EN</a>
         <a href="cisco_sustainability_briefing_zh.html">中文</a>
@@ -548,407 +549,318 @@
   </div>
 </nav>
 
-<main class="layout">
+<div class="layout">
+<main>
 
-  <article>
+<!-- EXECUTIVE SUMMARY -->
+<div class="section" id="executive-summary">
+  <div class="section-label">Executive Summary</div>
+  <div class="exec-summary">
+    <p>This week marks a watershed moment for Vietnam's renewable energy market: <span class="highlight-stat">Decree 243/2026</span>, effective immediately from June 26, dramatically expands DPPA eligibility, lowers the Physical DPPA threshold from 200,000 to <span class="highlight-stat">20,000 kWh/month</span> (starting July 20), recognizes data centers and EV charging as qualifying loads, and doubles the rooftop solar surplus cap from 20% to <span class="highlight-stat">50%</span>. Meanwhile, ASEAN Power Grid acceleration under Philippines chairmanship advances three dedicated task forces and a submarine cable framework, while Ember's governance report highlights institutional bottlenecks as the primary barrier — not technology.</p>
+    <p>Cisco's FY25 Purpose Report confirms all near-term sustainability milestones achieved: <span class="highlight-stat">90% Scope 1+2 reduction</span>, <span class="highlight-stat">35% Scope 3 reduction</span>, <span class="highlight-stat">100% renewable energy matching</span>, and <span class="highlight-stat">100% circular design coverage</span>. However, no updated interim targets between FY25 and FY40 have been announced — a gap that investors and ESG analysts are watching closely. The Water Scopes 1-3 initiative (WRI, WWF, SCS, CEO Water Mandate) officially launched on April 30, establishing the first standardized framework for value-chain water risk assessment, analogous to the GHG Protocol's Scope 1-3 model for carbon.</p>
+  </div>
+</div>
 
-    <!-- ===== EXECUTIVE SUMMARY ===== -->
-    <section class="section" id="executive-summary">
-      <div class="section-label">01 / Executive Summary</div>
-      <h2>Three Concurrent Inflection Points: Vietnam Tariff, New Cisco CSO, and SBTi V2.0</h2>
-      <div class="exec-summary">
-        <p>
-          Week 27 of 2026 brings three concurrent inflection points for Cisco's sustainability agenda.
-          First, Vietnam's two-part electricity tariff enters <span class="highlight-stat">real-money billing on July 1</span>,
-          converting the DPPA framework from a policy discussion into a balance-sheet issue for every industrial
-          consumer above 200,000 kWh/month — including Cisco's contract manufacturers in Thai Nguyen, Bac Ninh and
-          Yen Binh.
-        </p>
-        <p>
-          Second, Cisco appointed <span class="highlight-stat">Colin Seward as Chief Sustainability Officer</span> on
-          June 22, 2026, signaling an operational and data-driven phase for the company's net-zero and supplier-engagement
-          programs. Seward, a 25-year Cisco veteran with CIO and IT-transformation experience, explicitly framed sustainability
-          as connected to business strategy, operational execution and customer value.
-        </p>
-        <p>
-          Third, the <span class="highlight-stat">SBTi finalized its Corporate Net-Zero Standard V2.0</span> on June 11,
-          setting mandatory carbon-removal obligations for A-class companies from 2035 and introducing a three-tier
-          Ongoing Emissions Responsibility (OER) framework. For Cisco, the combined effect is clear: the near-term action
-          window for supply-chain decarbonization, SBTi target governance and customer-facing sustainability value has
-          just been reset.
-        </p>
-      </div>
-    </section>
+<!-- TOP 3 ACTIONABLE INTELLIGENCE -->
+<div class="section" id="top-3">
+  <div class="section-label">Top 3 Actionable Intelligence</div>
 
-    <!-- ===== TOP 3 ACTIONABLE INTELLIGENCE ===== -->
-    <section class="section" id="top-3">
-      <div class="section-label">02 / Top 3 Actionable Intelligence</div>
-      <h2>This Week's Three Items Demanding a Decision</h2>
-
-      <!-- ITEM 1: Vietnam Two-Part Tariff -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">1</div>
-          <div class="action-item-title">
-            Vietnam Two-Part Tariff Goes Live July 1 — DPPA Economics Enter Real-Money Phase
-            <span class="tag tag-energy">DPPA</span>
-            <span class="tag tag-policy">Policy</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:92%"></div></div>
-          <span class="impact-score">9.2 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>
-            After six months of parallel shadow billing, Vietnam's two-part electricity tariff (capacity + energy)
-            becomes a real charge for large industrial consumers on <strong>July 1, 2026</strong>. The framework was
-            established under Decree 57/2025/ND-CP and Resolution 253/2025/QH15, which also removed the ceiling-price
-            constraint for private-wire DPPA contracts.
-          </p>
-          <p>
-            For grid-connected DPPA (Model 2) users, the total cost formula now includes the VWEM energy price,
-            the CDPPA grid service fee (set annually by MOIT with no statutory cap), the settlement difference
-            between the DPPA strike price and the spot price, and any supplemental retail purchases. A model factory
-            consuming ~2.4 GWh/month still shows <strong>~11% savings</strong> under DPPA versus the EVN retail tariff,
-            but the unresolved "double charge" risk — capacity tariff overlapping with CDPPA — could erode that margin
-            once the pending amendment to Decree 57 is released.
-          </p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> Cisco's largest EMS partner (Foxconn) and key component suppliers operate
-          in precisely the industrial corridors now subject to the new tariff. Cisco's supply-chain team should
-          immediately ask Vietnam-based Tier-1 suppliers for their July 1 tariff-mitigation plan, confirm whether
-          their DPPA contracts include change-in-law protection for the double-charge issue, and update FY26 Scope 3
-          models to reflect any green-premium reset.
-        </div>
-        <div class="source-row">
-          Source:
-          <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy Asia — Decree 57 Explained ↗</a>
-          ·
-          <a href="https://arcusenergyasia.com/resources/tariffs/manufacturing" target="_blank" rel="noopener">Arcus Energy Asia — Vietnam Manufacturing Tariff ↗</a>
-          ·
-          <a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">MT Stonegate — Vietnam DPPA Implementation ↗</a>
-        </div>
-      </div>
-
-      <!-- ITEM 2: Cisco CSO -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">2</div>
-          <div class="action-item-title">
-            Cisco Names Colin Seward Chief Sustainability Officer
-            <span class="tag tag-supply">Cisco</span>
-            <span class="tag tag-policy">Leadership</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:95%"></div></div>
-          <span class="impact-score">9.5 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>
-            On June 22, 2026, Cisco announced <strong>Colin Seward</strong> as its new Chief Sustainability Officer,
-            succeeding Mary de Wysocki after three years. Seward is a 25-year Cisco veteran who joined in 2000 and has
-            served as CIO for EMEA, Global Lead for the "Cisco on Cisco" internal IT program, IT Transformation Lead
-            (where he built the IT Sustainability Framework aligned to Cisco's Net Zero Strategy), and most recently
-            Senior Director in the Chief Sustainability Office.
-          </p>
-          <p>
-            In his appointment post, Seward stated that sustainability is "increasingly connected to business strategy,
-            operational execution, and customer value," and that he will lead Cisco's global sustainability strategy
-            with a focus on translating goals into measurable action and business value for Cisco and its customers.
-          </p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> The appointment is an internal signal that sustainability is being treated
-          as a core operational discipline rather than a reporting function. For Cisco's supply-chain and ESG teams,
-          this creates a natural window to escalate supplier DPPA engagement, SBTi V2.0 readiness, water-risk disclosures
-          and customer-facing sustainability tooling to the C-suite.
-        </div>
-        <div class="source-row">
-          Source:
-          <a href="https://www.esgtoday.com/cisco-appoints-colin-seward-as-new-chief-sustainability-officer/" target="_blank" rel="noopener">ESG Today — Cisco Appoints Colin Seward CSO ↗</a>
-        </div>
-      </div>
-
-      <!-- ITEM 3: SBTi V2.0 -->
-      <div class="action-item">
-        <div class="action-item-header">
-          <div class="rank-badge">3</div>
-          <div class="action-item-title">
-            SBTi Finalizes Net-Zero Standard V2.0 — Mandatory Carbon Removals Begin 2035
-            <span class="tag tag-policy">Net-Zero</span>
-            <span class="tag tag-supply">Compliance</span>
-          </div>
-        </div>
-        <div class="impact-row">
-          <span class="impact-label">Impact Score</span>
-          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
-          <span class="impact-score">9.0 / 10</span>
-        </div>
-        <div class="item-body">
-          <p>
-            The Science Based Targets initiative released the final <strong>Corporate Net-Zero Standard Version 2.0</strong>
-            on June 11, 2026, effective February 1, 2027. The headline change: A-class companies (revenue ≥€450 million
-            or ≥1,000 employees) must support carbon removals starting in <strong>2035</strong>, beginning at
-            <strong>1% coverage</strong> of residual Scope 1/2/3 emissions with at least <strong>10% long-lived
-            durability</strong>, and scaling linearly to <strong>100%</strong> by the net-zero target year.
-          </p>
-          <p>
-            The standard also introduces a three-tier <strong>Ongoing Emissions Responsibility (OER)</strong> framework —
-            Engaged (≥1%), Advanced (100% Scope 1+2 + ≥10% total), and Leadership (100% coverage + $80/tonne budget) —
-            and formally recognizes market tools such as energy attribute certificates and book-and-claim systems for
-            target implementation. Carbon credits still cannot be used to offset Scope 1/2/3 reduction targets.
-          </p>
-        </div>
-        <div class="cisco-relevance">
-          <strong>Cisco Relevance:</strong> Cisco is firmly in the A-class category. The new rules mean Cisco must (a)
-          align any pending SBTi target submission with V2.0, (b) decide its OER participation stance before Q1 2027
-          validation, and (c) begin modeling a long-term carbon-removal procurement curve. Failure to do so could create
-          a disclosure gap relative to peers and expose Cisco to investor scrutiny on target integrity.
-        </div>
-        <div class="source-row">
-          Source:
-          <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi — Corporate Net-Zero Standard V2.0 (PDF) ↗</a>
-          ·
-          <a href="https://www.esgtoday.com/sbti-releases-finalized-new-corporate-net-zero-standard/" target="_blank" rel="noopener">ESG Today — SBTi V2.0 Release ↗</a>
-          ·
-          <a href="https://www.senken.io/blog/sbti-net-zero-standard-v2-what-changes-for-corporate-carbon-credit-strategy-2026" target="_blank" rel="noopener">Senken — SBTi V2.0 Carbon Credit Strategy ↗</a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== KEY DATA POINTS ===== -->
-    <section class="section" id="key-data">
-      <div class="section-label">03 / Key Data Points</div>
-      <h2>Six Metrics That Anchor This Week's Story</h2>
-      <div class="data-grid">
-
-        <div class="data-card">
-          <div class="metric">Jul 1, 2026</div>
-          <div class="metric-label">Vietnam two-part electricity tariff enters real-money billing for large industrial consumers</div>
-          <div class="metric-trend trend-warn">⚠ Cost structure shift</div>
-          <div class="metric-source"><a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy Asia ↗</a></div>
-        </div>
-
-        <div class="data-card">
-          <div class="metric">~11%</div>
-          <div class="metric-label">Model DPPA savings vs EVN retail tariff in a 2.4 GWh/month factory case</div>
-          <div class="metric-trend trend-up">▲ Savings at risk</div>
-          <div class="metric-source"><a href="https://arcusenergyasia.com/resources/tariffs/manufacturing" target="_blank" rel="noopener">Arcus Energy Asia ↗</a></div>
-        </div>
-
-        <div class="data-card">
-          <div class="metric">25+ yrs</div>
-          <div class="metric-label">Colin Seward's tenure at Cisco before becoming Chief Sustainability Officer</div>
-          <div class="metric-trend trend-up">▲ Internal operational depth</div>
-          <div class="metric-source"><a href="https://www.esgtoday.com/cisco-appoints-colin-seward-as-new-chief-sustainability-officer/" target="_blank" rel="noopener">ESG Today ↗</a></div>
-        </div>
-
-        <div class="data-card">
-          <div class="metric">1% → 100%</div>
-          <div class="metric-label">SBTi V2.0 carbon-removal coverage trajectory for A-class companies, 2035 to net-zero year</div>
-          <div class="metric-trend trend-warn">▲ Compliance horizon</div>
-          <div class="metric-source"><a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi ↗</a></div>
-        </div>
-
-        <div class="data-card">
-          <div class="metric">$800B</div>
-          <div class="metric-label">ASEAN power generation and transmission investment needed by 2045</div>
-          <div class="metric-trend trend-alert">▲ Massive capital requirement</div>
-          <div class="metric-source"><a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions/" target="_blank" rel="noopener">Southeast Asia Infra ↗</a></div>
-        </div>
-
-        <div class="data-card">
-          <div class="metric">$77B</div>
-          <div class="metric-label">Business value threatened by water-related supply chain risks, per CDP</div>
-          <div class="metric-trend trend-alert">▲ Supply chain exposure</div>
-          <div class="metric-source"><a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI ↗</a></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== STRATEGIC RECOMMENDATIONS ===== -->
-    <section class="section" id="strategy">
-      <div class="section-label">04 / Strategic Recommendations</div>
-      <h2>What Cisco Should Do — Now and Over the Next Year</h2>
-      <div class="strategy-grid">
-
-        <div class="strategy-card">
-          <h4>Short-Term · 0–3 Months</h4>
-          <ul>
-            <li><strong>Engage Vietnam Tier-1 suppliers on the July 1 tariff impact:</strong> Request each supplier's DPPA cost model under the two-part tariff, confirm change-in-law clauses for the CDPPA/capacity overlap, and update FY26 Scope 3 green-premium assumptions.</li>
-            <li><strong>Brief the new CSO on supply-chain DPPA exposure:</strong> Prepare a one-page dashboard linking Cisco's Vietnam manufacturing footprint to the July 1 tariff, Foxconn-Brookfield renewable platform, and Samsung SEVT benchmark.</li>
-            <li><strong>Confirm SBTi V2.0 target alignment:</strong> Verify that Cisco's pending SBTi target submission accounts for the February 1, 2027 effective date and the new carbon-removal / OER requirements.</li>
-            <li><strong>Pilot WRI Water Scopes 1-3 framework:</strong> Begin a pilot on Cisco's top 10 Vietnam/Malaysia Tier-2 suppliers to establish a baseline water-risk disclosure for FY26 reporting.</li>
-          </ul>
-        </div>
-
-        <div class="strategy-card">
-          <h4>Medium-Term · 3–12 Months</h4>
-          <ul>
-            <li><strong>Build a Vietnam DPPA tracker:</strong> Track contract status, capacity-charge assumptions, renewable attribution and double-charge mitigation for Cisco's top Vietnam suppliers, with quarterly CSO updates.</li>
-            <li><strong>Develop a carbon-removal procurement roadmap:</strong> Model Cisco's residual emissions curve under SBTi V2.0, identify long-lived removal supply, and decide OER participation stance before Q1 2027 validation.</li>
-            <li><strong>Integrate SBTi V2.0 into supplier CDP guidance:</strong> Update FY27 supplier disclosure instructions to capture Scope 3 target alignment, market-tool claims and carbon-removal plans.</li>
-            <li><strong>Position Silicon One G-series as a sustainability value proposition:</strong> Use the 30%+ per-terabit energy-efficiency gain from Cisco Live 2026 as a customer-facing sustainability metric for AI/data-center networking deals.</li>
-            <li><strong>Establish a SEA water-risk heat map:</strong> Combine WRI Aqueduct water-stress data with Cisco's supplier and cloud-region footprint across the Johor-Singapore and Vietnam corridors.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== METHODOLOGY ===== -->
-    <section class="section" id="methodology">
-      <div class="section-label">05 / Methodology Notes</div>
-      <h2>How This Briefing Was Built</h2>
-      <div class="methodology">
-        <h3>Method</h3>
-        <ol>
-          <li><strong>Topic selection:</strong> Five thematic searches were run in English for the 7-day window
-            (Mon 29 Jun – Sun 5 Jul 2026): Vietnam DPPA, Southeast Asia grid/storage, Cisco sustainability/ESG,
-            water stewardship (TNFD/WRI), and net-zero/carbon markets.</li>
-          <li><strong>Scoring:</strong> Each candidate intelligence item was rated 0–10 on a composite of
-            (a) Cisco operational exposure, (b) regulatory/market impact magnitude, (c) actionable decision window,
-            (d) external validation. Items scoring ≥ 8.5 are promoted to Top 3.</li>
-          <li><strong>Source quality:</strong> Every link below points to a primary source (corporate press
-            release, government portal, established trade publication, or analyst firm). Search-aggregator
-            pages are excluded.</li>
-          <li><strong>Link verification:</strong> All hyperlinks were live at the time of publication
-            (6 July 2026, GMT+8).</li>
-        </ol>
-
-        <div class="full-sources">
-          <h3>Full Source List</h3>
-          <ol>
-            <li><a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy Asia — Decree 57: Vietnam's DPPA Framework Explained</a></li>
-            <li><a href="https://arcusenergyasia.com/resources/tariffs/manufacturing" target="_blank" rel="noopener">Arcus Energy Asia — Vietnam Manufacturing Tariff (Two-Part Tariff)</a></li>
-            <li><a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">MT Stonegate — Vietnam DPPA Update 2026: Implementation, Not Just Regulation</a></li>
-            <li><a href="https://www.esgtoday.com/cisco-appoints-colin-seward-as-new-chief-sustainability-officer/" target="_blank" rel="noopener">ESG Today — Cisco Appoints Colin Seward as New Chief Sustainability Officer (Jun 22, 2026)</a></li>
-            <li><a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi — Corporate Net-Zero Standard Version 2.0 (Jun 11, 2026)</a></li>
-            <li><a href="https://www.esgtoday.com/sbti-releases-finalized-new-corporate-net-zero-standard/" target="_blank" rel="noopener">ESG Today — SBTi Releases Finalized New Corporate Net-Zero Standard (Jun 11, 2026)</a></li>
-            <li><a href="https://www.senken.io/blog/sbti-net-zero-standard-v2-what-changes-for-corporate-carbon-credit-strategy-2026" target="_blank" rel="noopener">Senken — SBTi Net-Zero Standard V2: What Changes for Corporate Carbon Credit Strategy</a></li>
-            <li><a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions/" target="_blank" rel="noopener">Southeast Asia Infra — Clean Energy Integration: SEA's Grid Ambitions</a></li>
-            <li><a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI — Water Scopes 1-3: A Framework for Value Chain Water Risk (Apr 30, 2026)</a></li>
-            <li><a href="https://www.energy-storage.news/asian-development-bank-supports-500mwh-grid-forming-battery-energy-storage-project-in-cambodia/" target="_blank" rel="noopener">Energy-Storage.News — ADB Supports 500MWh Grid-Forming BESS in Cambodia (Jun 26, 2026)</a></li>
-            <li><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub.html" target="_blank" rel="noopener">Cisco — Purpose Reporting Hub</a></li>
-            <li><a href="https://www.cisco.com/c/dam/m/en_us/about/purpose/reporting-hub/_pdf/purpose-report-2025.pdf" target="_blank" rel="noopener">Cisco — FY25 Purpose Report (PDF)</a></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar">
-
-    <div class="sidebar-widget">
-      <h3>Quick Signals</h3>
-      <div class="widget-body">
-        <div class="signal-item">
-          <span class="signal-title">Cisco appoints Colin Seward as CSO</span>
-          <span class="signal-meta">Jun 22, 2026 · <a href="https://www.esgtoday.com/cisco-appoints-colin-seward-as-new-chief-sustainability-officer/" target="_blank" rel="noopener">ESG Today ↗</a></span>
-        </div>
-        <div class="signal-item">
-          <span class="signal-title">SBTi Net-Zero Standard V2.0 finalized</span>
-          <span class="signal-meta">Jun 11, 2026 · <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener">SBTi PDF ↗</a></span>
-        </div>
-        <div class="signal-item">
-          <span class="signal-title">Vietnam two-part tariff enters real-money billing</span>
-          <span class="signal-meta">Jul 1, 2026 · <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener">Arcus Energy Asia ↗</a></span>
-        </div>
-        <div class="signal-item">
-          <span class="signal-title">ADB supports 250MW/500MWh BESS in Cambodia</span>
-          <span class="signal-meta">Jun 26, 2026 · <a href="https://www.energy-storage.news/asian-development-bank-supports-500mwh-grid-forming-battery-energy-storage-project-in-cambodia/" target="_blank" rel="noopener">Energy-Storage.News ↗</a></span>
-        </div>
-        <div class="signal-item">
-          <span class="signal-title">ASEAN grid needs ~$800B investment by 2045</span>
-          <span class="signal-meta">Jul 2026 · <a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions/" target="_blank" rel="noopener">Southeast Asia Infra ↗</a></span>
-        </div>
-        <div class="signal-item">
-          <span class="signal-title">WRI Water Scopes 1-3 framework advances</span>
-          <span class="signal-meta">Apr 30, 2026 · <a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI ↗</a></span>
-        </div>
+  <!-- Item 1 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">1</div>
+      <div class="action-item-title">
+        Vietnam Decree 243/2026: DPPA Threshold Slashed to 20,000 kWh, Data Centers Recognized, Solar Surplus Cap Doubled
+        <span class="tag tag-policy">POLICY</span>
+        <span class="tag tag-energy">ENERGY</span>
       </div>
     </div>
+    <div class="impact-row">
+      <div class="impact-label">Impact Score</div>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width: 90%;"></div></div>
+      <div class="impact-score">9/10</div>
+    </div>
+    <div class="item-body">
+      <p>On June 26, Vietnam's Government issued <strong>Decree 243/2026/NĐ-CP</strong>, simultaneously amending Decree 57/2025 (DPPA) and Decree 58/2025 (renewable/new energy), as implementation of Resolution 253/2025/QH15. The decree takes effect immediately with no vacatio legis.</p>
+      <p>Key reforms: (1) Physical DPPA monthly consumption threshold drops from 200,000 to <strong>20,000 kWh/month</strong> from July 20, 2026 — opening the market to mid-tier industrial consumers; (2) Data center operators and EV battery swapping stations expressly recognized as qualifying large-user loads; (3) Industrial park and cluster electricity retailers become eligible DPPA participants; (4) Rooftop solar surplus sellable to grid increases from 20% to 50%, with above-50% permitted by agreement through 2030 where the local grid can absorb it, and no cap for off-grid mountainous, border, and island areas; (5) Price cap removed for Physical DPPA private-line transactions (reflecting Resolution 253's market pricing mandate); (6) Virtual DPPA registration simplified into a single consolidated process.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> The lowered threshold and data center eligibility directly expand green energy procurement options for Cisco's Vietnam-based supply chain partners and potential future Cisco data center operations. Industrial park retailer participation enables zone-level renewable procurement — aligning with Cisco's 100% renewable energy and 88% supplier GHG target coverage commitments. The 50% surplus cap incentivizes rooftop solar investment at supplier facilities in Vietnam.
+    </div>
+    <div class="source-row">
+      Sources:
+      <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a> ·
+      <a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners ↗</a> ·
+      <a href="https://www.landinglawyer.com/research/2732.html" target="_blank" rel="noopener">兰迪律师事务所 ↗</a> ·
+      <a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">MT Stonegate ↗</a>
+    </div>
+  </div>
 
-    <div class="sidebar-widget">
-      <h3>Upcoming Events Calendar</h3>
-      <div class="widget-body">
-        <div class="event-item">
-          <span class="event-date">JUL 1, 2026</span>
-          <span class="event-title">Vietnam two-part electricity tariff pilot launches for industrial customers ≥200 MWh/month</span>
-        </div>
-        <div class="event-item">
-          <span class="event-date">JUL 9, 2026</span>
-          <span class="event-title">Cisco Q3 FY26 earnings — sustainability metrics disclosure</span>
-        </div>
-        <div class="event-item">
-          <span class="event-date">SEP 2026</span>
-          <span class="event-title">ASEAN Energy Business Forum (expected ministerial APG progress update)</span>
-        </div>
-        <div class="event-item">
-          <span class="event-date">FEB 1, 2027</span>
-          <span class="event-title">SBTi Corporate Net-Zero Standard V2.0 takes effect</span>
-        </div>
-        <div class="event-item">
-          <span class="event-date">Q4 2027</span>
-          <span class="event-title">WRI Water Scopes 1-3 guidance — first version completion</span>
-        </div>
+  <!-- Item 2 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">2</div>
+      <div class="action-item-title">
+        ASEAN Power Grid Acceleration: Philippines Chairmanship Advances Three Task Forces, Submarine Cable Framework, LTMS-PIP Phase 2 at 200 MW
+        <span class="tag tag-grid">GRID</span>
+        <span class="tag tag-energy">ENERGY</span>
       </div>
     </div>
+    <div class="impact-row">
+      <div class="impact-label">Impact Score</div>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width: 80%;"></div></div>
+      <div class="impact-score">8/10</div>
+    </div>
+    <div class="item-body">
+      <p>The 44th SOME meetings (June 15–18, 2026) under Philippines ASEAN Chairmanship reaffirmed the Enhanced ASEAN Power Grid (APG) MoU implementation through <strong>three dedicated Task Forces</strong>: Policy (Singapore-led), Legal & Regulatory (Malaysia-led), and Technical (Thailand-led). A parallel Submarine Power Cable Development Framework assigns Malaysia as technical coordinator, Singapore for legal/regulatory, Philippines for governance, and Brunei for financing.</p>
+      <p><strong>LTMS-PIP Phase 2</strong> was signed in January 2026 (EDL–EGAT–TNB Energy Wheeling Agreement), expanding cross-border renewable trade to 200 MW. Ember's June 19 report identifies governance — not technology — as the primary barrier to subsea interconnection, calling for stronger planning mechanisms, cost allocation frameworks, and marine spatial planning. The AIMS III Masterplan identifies 18 interconnectors needed to double current <strong>7.7 GW</strong> capacity by 2040. The Peninsula Malaysia–Sarawak link alone is estimated at $10 billion. Philippines is studying connection to the ASEAN grid via Indonesia–Mindanao subsea links.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> Grid modernization is one of Cisco's three forward sustainability priorities (FY25 Purpose Report). Cisco's networking infrastructure is positioned as critical for AI-driven grid optimization and clean energy integration — directly relevant to ASEAN's HVDC/VSC and smart grid deployment needs. The Philippines–Indonesia–Mindanao corridor and BIMP-PIP represent emerging market opportunities for Cisco's smart grid and IoT solutions.
+    </div>
+    <div class="source-row">
+      Sources:
+      <a href="https://iesr.or.id/en/connecting-asean-executing-the-regional-interconnection-and-grid-ambition" target="_blank" rel="noopener">IESR ↗</a> ·
+      <a href="https://asean2026.gov.ph/post/view?title=asean-energy-senior-officials-endorse-2026-priorities-philippines-to-drive-enhanced-asean-power-grid-implementation" target="_blank" rel="noopener">ASEAN 2026 Philippines ↗</a> ·
+      <a href="https://powerphilippines.com/asean-power-grid-push-hinges-on-subsea-cable-governance-says-ember" target="_blank" rel="noopener">Ember Report ↗</a> ·
+      <a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions" target="_blank" rel="noopener">SEA Infrastructure ↗</a>
+    </div>
+  </div>
 
-    <div class="sidebar-widget">
-      <h3>Topics Covered</h3>
-      <div class="widget-body">
-        <span class="topic-tag">Vietnam DPPA</span>
-        <span class="topic-tag">Decree 57</span>
-        <span class="topic-tag">Resolution 253</span>
-        <span class="topic-tag">Two-Part Tariff</span>
-        <span class="topic-tag">Colin Seward</span>
-        <span class="topic-tag">Cisco CSO</span>
-        <span class="topic-tag">SBTi V2.0</span>
-        <span class="topic-tag">OER</span>
-        <span class="topic-tag">Carbon Removals</span>
-        <span class="topic-tag">ASEAN Power Grid</span>
-        <span class="topic-tag">WRI Water Scopes 1-3</span>
-        <span class="topic-tag">TNFD</span>
-        <span class="topic-tag">CDP Supply Chain</span>
-        <span class="topic-tag">Scope 3 Decarbonization</span>
+  <!-- Item 3 -->
+  <div class="action-item">
+    <div class="action-item-header">
+      <div class="rank-badge">3</div>
+      <div class="action-item-title">
+        Cisco FY25 Purpose Report: All Milestones Met — But No New Interim Targets Until FY40 Net-Zero
+        <span class="tag tag-esg">ESG</span>
+        <span class="tag tag-supply">SUPPLY CHAIN</span>
       </div>
     </div>
-
-    <div class="sidebar-widget">
-      <h3>Core Sources</h3>
-      <div class="widget-body">
-        <a href="https://www.esgtoday.com/cisco-appoints-colin-seward-as-new-chief-sustainability-officer/" target="_blank" rel="noopener" class="source-link">ESG Today — Cisco CSO Appointment<span class="source-domain">esgtoday.com</span></a>
-        <a href="https://arcusenergyasia.com/resources/regulations/decree-57" target="_blank" rel="noopener" class="source-link">Arcus Energy Asia — Decree 57 Explained<span class="source-domain">arcusenergyasia.com</span></a>
-        <a href="https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf" target="_blank" rel="noopener" class="source-link">SBTi — Corporate Net-Zero V2.0 (PDF)<span class="source-domain">sciencebasedtargets.org</span></a>
-        <a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions/" target="_blank" rel="noopener" class="source-link">Southeast Asia Infra — SEA Grid Ambitions<span class="source-domain">southeastasiainfra.com</span></a>
-        <a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener" class="source-link">WRI — Water Scopes 1-3 Framework<span class="source-domain">wri.org</span></a>
-        <a href="https://www.energy-storage.news/asian-development-bank-supports-500mwh-grid-forming-battery-energy-storage-project-in-cambodia/" target="_blank" rel="noopener" class="source-link">Energy-Storage.News — Cambodia 500MWh BESS<span class="source-domain">energy-storage.news</span></a>
-        <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub.html" target="_blank" rel="noopener" class="source-link">Cisco — Purpose Reporting Hub<span class="source-domain">cisco.com</span></a>
-      </div>
+    <div class="impact-row">
+      <div class="impact-label">Impact Score</div>
+      <div class="impact-bar-track"><div class="impact-bar-fill" style="width: 70%;"></div></div>
+      <div class="impact-score">7/10</div>
     </div>
+    <div class="item-body">
+      <p>Cisco's FY25 Purpose Report confirms achievement of all near-term sustainability milestones: <strong>90% Scope 1+2 reduction</strong> (vs FY19 baseline), <strong>35% Scope 3 reduction</strong> (exceeding the 30% FY30 target), <strong>100% renewable energy matching</strong> across global operations (first time in company history), and <strong>100% circular design coverage</strong> for new products and packaging. Additional highlights: 78 energy efficiency projects avoiding 27,200 tonnes CO2e annually; EV fleet adoption in Europe from 11% to 66%; foam packaging reduction of 78% (exceeding 75% target); 88% of suppliers by spend with public GHG reduction targets.</p>
+      <p>However, the report reveals a strategic gap: <strong>no updated near-term interim targets between FY25 and the FY40 net-zero year</strong> have been formally announced. The forward roadmap centers on maintaining the 90% Scope 1+2 level, driving further Scope 3 reductions, and scaling product-level energy efficiency — particularly addressing AI-driven data center demand. Mary de Wysocki (CSO) leads sustainability strategy with three forward priorities: product energy efficiency generation-over-generation, grid modernization via Cisco technology, and expanding clean energy access globally.</p>
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> This is Cisco's own sustainability update. The absence of FY25–FY40 interim targets is a notable disclosure gap that ESG analysts and investors will scrutinize. The FY26 commitment to maintain 100% circular design and address AI energy intensity is positive but lacks quantified milestones. The Regenerative Future Fund's pivot toward biodiversity and climate adaptation (announced Feb 2025) signals strategic breadth beyond emissions alone.
+    </div>
+    <div class="source-row">
+      Sources:
+      <a href="https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report" target="_blank" rel="noopener">Cisco Blog ↗</a> ·
+      <a href="https://www.cisco.com/c/m/en_us/about/csr/esg-hub/governance/progress.html" target="_blank" rel="noopener">Cisco Goals & Progress ↗</a> ·
+      <a href="https://thesustainableinnovation.com/cisco-sustainability/" target="_blank" rel="noopener">Sustainable Innovation ↗</a> ·
+      <a href="https://www.energydigital.com/news/behind-ciscos-energy-efficiency-circularity-strategies" target="_blank" rel="noopener">Energy Digital ↗</a>
+    </div>
+  </div>
+</div>
 
-  </aside>
+<!-- KEY DATA POINTS -->
+<div class="section" id="key-data">
+  <div class="section-label">Key Data Points</div>
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="metric">20,000</div>
+      <div class="metric-label">kWh/month — New Physical DPPA threshold in Vietnam (down from 200,000), effective July 20, 2026</div>
+      <div class="metric-trend trend-up">▼ Threshold lowered 10×</div>
+      <div class="metric-source"><a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">50%</div>
+      <div class="metric-label">Rooftop solar surplus cap — sellable to grid, up from 20% under Decree 243/2026</div>
+      <div class="metric-trend trend-up">▲ Surplus cap doubled</div>
+      <div class="metric-source"><a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">7.7 GW → 2×</div>
+      <div class="metric-label">ASEAN current interconnection capacity, target to double by 2040 via 18 AIMS III projects</div>
+      <div class="metric-trend trend-warn">▲ Scaling needed</div>
+      <div class="metric-source"><a href="https://powerphilippines.com/asean-power-grid-push-hinges-on-subsea-cable-governance-says-ember" target="_blank" rel="noopener">Ember Report ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">90% + 35%</div>
+      <div class="metric-label">Cisco Scope 1+2 and Scope 3 emissions reduction achieved in FY25 (vs FY19 baseline)</div>
+      <div class="metric-trend trend-up">▲ Both targets met/exceeded</div>
+      <div class="metric-source"><a href="https://www.cisco.com/c/m/en_us/about/csr/esg-hub/governance/progress.html" target="_blank" rel="noopener">Cisco Goals & Progress ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">10,000</div>
+      <div class="metric-label">Companies with SBTi-validated targets reached in 2026 — Asia fueling net-zero momentum</div>
+      <div class="metric-trend trend-up">▲ Rapid growth</div>
+      <div class="metric-source"><a href="https://globalcarbonfund.com/carbon-news/sbti-hits-10000-companies-with-validated-targets-in-2026-asia-fuels-the-net-zero-momentum" target="_blank" rel="noopener">Global Carbon Fund ↗</a></div>
+    </div>
+    <div class="data-card">
+      <div class="metric">$70T</div>
+      <div class="metric-label">Global GDP exposed to high water stress by 2050 — Water Scopes 1-3 initiative launched</div>
+      <div class="metric-trend trend-alert">▲ Severe risk trajectory</div>
+      <div class="metric-source"><a href="http://wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI ↗</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGIC RECOMMENDATIONS -->
+<div class="section" id="strategy">
+  <div class="section-label">Strategic Recommendations</div>
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <h4>Short-Term (0–3 Months)</h4>
+      <ul>
+        <li><strong>Vietnam DPPA engagement:</strong> Immediately assess which Cisco Vietnam supply chain partners qualify under the new 20,000 kWh/month threshold and initiate DPPA feasibility studies for key manufacturing sites.</li>
+        <li><strong>Data center energy strategy:</strong> Leverage Decree 243's explicit data center eligibility to pre-plan renewable procurement pathways for any future Vietnam data center expansion.</li>
+        <li><strong>ASEAN grid positioning:</strong> Map Cisco smart grid/IoT solution alignment to the three APG Task Force domains (Policy, Legal-Regulatory, Technical) and identify Philippines-chaired procurement windows.</li>
+        <li><strong>Interim target gap:</strong> Prepare internal FY25–FY40 interim milestone framework for investor and ESG analyst inquiries — even if not formally announced, having a structured roadmap ready is prudent.</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <h4>Medium-Term (3–12 Months)</h4>
+      <ul>
+        <li><strong>Water Scopes 1-3 adoption:</strong> Begin pilot implementation of the WRI/WWF/SCS Water Scopes 1-3 framework across Tier 1 semiconductor and manufacturing suppliers in Vietnam and Malaysia — ahead of the 2027 Q4 guidance completion.</li>
+        <li><strong>APG commercial engagement:</strong> Develop Cisco networking solutions proposition for ASEAN HVDC/VSC grid modernization projects (Peninsula Malaysia–Sarawak, BIMP-PIP, VMS corridor).</li>
+        <li><strong>Supplier rooftop solar incentive:</strong> Design a program encouraging Cisco suppliers to invest in rooftop solar under Vietnam's 50% surplus cap, integrating surplus electricity metrics into supplier sustainability scorecards.</li>
+        <li><strong>SBTi V2.0 readiness:</strong> Assess impact of SBTi Corporate Net-Zero Standard V2.0 (expected final draft spring 2026) on Cisco's Scope 3 measurement methodology and residual emissions neutralization requirements.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- METHODOLOGY -->
+<div class="section" id="methodology">
+  <div class="section-label">Methodology Notes</div>
+  <div class="methodology">
+    <h3>Research Methodology</h3>
+    <p>This briefing synthesizes publicly available intelligence from the past 7 days across five domains: Vietnam DPPA/regulatory, Southeast Asia grid/energy, Cisco ESG, supply chain water risk, and carbon neutrality/net-zero. Sources are screened for recency, authority, and direct relevance to Cisco's sustainability strategy and supply chain exposure.</p>
+    <ol>
+      <li>Impact Scores (0–10) reflect potential effect on Cisco operations, supply chain, and ESG positioning.</li>
+      <li>All source links are verified as accessible at the time of publication.</li>
+      <li>Data points are drawn from primary sources where available; secondary sources are noted.</li>
+    </ol>
+    <div class="full-sources">
+      <h3>Full Source List</h3>
+      <ol>
+        <li><a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law — Vietnam DPPA and Power Self-Production & Consumption Amendments: Decree 243/2026</a></li>
+        <li><a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners — Vietnam Overhauls DPPA and Self-Generation Regimes: Decree 243/2026</a></li>
+        <li><a href="https://www.landinglawyer.com/research/2732.html" target="_blank" rel="noopener">兰迪律师事务所 — Vietnam DPPA New Regulation: Decree 243/2026 on Industrial Park Electricity Retail, Storage, and New Energy Projects</a></li>
+        <li><a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">MT Stonegate — Vietnam DPPA Update 2026: Implementation Is the Real Story</a></li>
+        <li><a href="https://iesr.or.id/en/connecting-asean-executing-the-regional-interconnection-and-grid-ambition" target="_blank" rel="noopener">IESR — Connecting ASEAN: Executing Regional Interconnection and Grid Ambition</a></li>
+        <li><a href="https://asean2026.gov.ph/post/view?title=asean-energy-senior-officials-endorse-2026-priorities-philippines-to-drive-enhanced-asean-power-grid-implementation" target="_blank" rel="noopener">ASEAN 2026 Philippines — ASEAN Energy Senior Officials Endorse 2026 Priorities</a></li>
+        <li><a href="https://powerphilippines.com/asean-power-grid-push-hinges-on-subsea-cable-governance-says-ember" target="_blank" rel="noopener">Ember — ASEAN Power Grid Push Hinges on Subsea Cable Governance</a></li>
+        <li><a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions" target="_blank" rel="noopener">SEA Infrastructure — Clean Energy Integration: SEA's Grid Ambitions</a></li>
+        <li><a href="https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report" target="_blank" rel="noopener">Cisco Blog — How We're Building a Cleaner, More Efficient Energy Supply (FY25 Purpose Report)</a></li>
+        <li><a href="https://www.cisco.com/c/m/en_us/about/csr/esg-hub/governance/progress.html" target="_blank" rel="noopener">Cisco — Goals and Progress</a></li>
+        <li><a href="https://thesustainableinnovation.com/cisco-sustainability/" target="_blank" rel="noopener">Sustainable Innovation — Cisco Systems Sustainability Analysis</a></li>
+        <li><a href="https://www.energydigital.com/news/behind-ciscos-energy-efficiency-circularity-strategies" target="_blank" rel="noopener">Energy Digital — Behind Cisco's Energy Efficiency & Circularity Strategies</a></li>
+        <li><a href="http://wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">WRI — Coalition to Develop First Standardized Guidance for Corporate Value Chain Water Risk</a></li>
+        <li><a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI — Water Scopes 1-3 Value Chain Framework</a></li>
+        <li><a href="https://globalcarbonfund.com/carbon-news/sbti-hits-10000-companies-with-validated-targets-in-2026-asia-fuels-the-net-zero-momentum" target="_blank" rel="noopener">Global Carbon Fund — SBTi Hits 10,000 Companies with Validated Targets</a></li>
+        <li><a href="https://www.climateimpact.com/de/news-insights/news/climate-commitments-triple-among-worlds-largest-companies-since-2019" target="_blank" rel="noopener">Climate Impact Partners — Climate Commitments Triple Among FG500</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
 
 </main>
 
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <!-- Quick Signals -->
+  <div class="sidebar-widget">
+    <h3>Quick Signals</h3>
+    <div class="widget-body">
+      <div class="signal-item">
+        <span class="signal-title">Vietnam Decree 243 takes effect immediately</span>
+        <span class="signal-meta">No vacatio legis — market impact begins now · <a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners ↗</a></span>
+      </div>
+      <div class="signal-item">
+        <span class="signal-title">Physical DPPA threshold drops July 20</span>
+        <span class="signal-meta">200k → 20k kWh/month opens market to mid-tier consumers · <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a></span>
+      </div>
+      <div class="signal-item">
+        <span class="signal-title">LTMS-PIP Phase 2 signed at 200 MW</span>
+        <span class="signal-meta">EDL–EGAT–TNB wheeling agreement expands Laos–Singapore trade · <a href="https://www.aseanbatteryexpo.com/article/show_article.php?id=694" target="_blank" rel="noopener">ASEE ↗</a></span>
+      </div>
+      <div class="signal-item">
+        <span class="signal-title">Cisco FY25: no FY25–FY40 interim targets announced</span>
+        <span class="signal-meta">Disclosure gap flagged by ESG analysts · <a href="https://thesustainableinnovation.com/cisco-sustainability/" target="_blank" rel="noopener">Sustainable Innovation ↗</a></span>
+      </div>
+      <div class="signal-item">
+        <span class="signal-title">SBTi reaches 10,000 validated companies milestone</span>
+        <span class="signal-meta">Asia-Pacific driving fastest growth · <a href="https://globalcarbonfund.com/carbon-news/sbti-hits-10000-companies-with-validated-targets-in-2026-asia-fuels-the-net-zero-momentum" target="_blank" rel="noopener">Global Carbon Fund ↗</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="sidebar-widget">
+    <h3>Upcoming Events</h3>
+    <div class="widget-body">
+      <div class="event-item">
+        <span class="event-date">Jul 20, 2026</span>
+        <span class="event-title">Vietnam Physical DPPA new threshold (20,000 kWh/month) becomes effective</span>
+      </div>
+      <div class="event-item">
+        <span class="event-date">Jul 2026 – Jul 2027</span>
+        <span class="event-title">Vietnam two-component tariff Phase 3: official trial with actual billing</span>
+      </div>
+      <div class="event-item">
+        <span class="event-date">Oct 2026</span>
+        <span class="event-title">44th ASEAN Ministers on Energy Meeting (AMEM) — Manila</span>
+      </div>
+      <div class="event-item">
+        <span class="event-date">Aug 2027</span>
+        <span class="event-title">Vietnam two-component tariff Phase 4: expanded application to all customer groups</span>
+      </div>
+      <div class="event-item">
+        <span class="event-date">2027 Q4 (est.)</span>
+        <span class="event-title">Water Scopes 1-3 Corporate Guidance completion</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics Covered -->
+  <div class="sidebar-widget">
+    <h3>Topics Covered</h3>
+    <div class="widget-body">
+      <span class="topic-tag">Vietnam DPPA</span>
+      <span class="topic-tag">Decree 243/2026</span>
+      <span class="topic-tag">Two-Component Tariff</span>
+      <span class="topic-tag">ASEAN Power Grid</span>
+      <span class="topic-tag">Subsea Cable Framework</span>
+      <span class="topic-tag">LTMS-PIP 2.0</span>
+      <span class="topic-tag">Cisco FY25 ESG</span>
+      <span class="topic-tag">Scope 3 Reduction</span>
+      <span class="topic-tag">Circular Design</span>
+      <span class="topic-tag">Water Scopes 1-3</span>
+      <span class="topic-tag">SBTi 10,000</span>
+      <span class="topic-tag">Net-Zero Progress</span>
+    </div>
+  </div>
+
+  <!-- Core Sources -->
+  <div class="sidebar-widget">
+    <h3>Core Sources</h3>
+    <div class="widget-body">
+      <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener" class="source-link">Conventus Law — Decree 243 DPPA Analysis<span class="source-domain">conventuslaw.com</span></a>
+      <a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener" class="source-link">VTN Partners — Decree 243 Overview<span class="source-domain">vtn-partners.com</span></a>
+      <a href="https://iesr.or.id/en/connecting-asean-executing-the-regional-interconnection-and-grid-ambition" target="_blank" rel="noopener" class="source-link">IESR — ASEAN Grid Execution Analysis<span class="source-domain">iesr.or.id</span></a>
+      <a href="https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report" target="_blank" rel="noopener" class="source-link">Cisco Blog — FY25 Purpose Report<span class="source-domain">blogs.cisco.com</span></a>
+      <a href="https://www.cisco.com/c/m/en_us/about/csr/esg-hub/governance/progress.html" target="_blank" rel="noopener" class="source-link">Cisco — Goals and Progress<span class="source-domain">cisco.com</span></a>
+      <a href="http://wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener" class="source-link">WRI — Water Scopes 1-3 Coalition Launch<span class="source-domain">wri.org</span></a>
+      <a href="https://globalcarbonfund.com/carbon-news/sbti-hits-10000-companies-with-validated-targets-in-2026-asia-fuels-the-net-zero-momentum" target="_blank" rel="noopener" class="source-link">Global Carbon Fund — SBTi 10,000 Milestone<span class="source-domain">globalcarbonfund.com</span></a>
+    </div>
+  </div>
+
+</aside>
+</div>
+
 <footer class="footer">
-  <p>
-    Cisco Sustainability Intelligence Briefing · Issue #63 · Week of July 6, 2026<br>
-    Weekly intelligence prepared for Cisco ESG, Supply Chain, and Sustainability strategy teams.<br>
-    All links verified at publication. &nbsp;
-    <a href="index.html">All Issues</a> ·
-    <a href="cisco_sustainability_briefing_zh.html">中文版</a>
-  </p>
+  <p>Cisco Sustainability Intelligence Briefing · Issue #64 · Week of July 13, 2026</p>
+  <p>Published every Monday · Internal use only · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+  <p style="margin-top:0.4rem;"><a href="index.html">All Issues</a> · <a href="cisco_sustainability_briefing_zh.html">中文版</a></p>
 </footer>
 
 </body>
