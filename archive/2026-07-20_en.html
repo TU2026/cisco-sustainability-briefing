@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Sustainability Intelligence Briefing — Week of July 20, 2026 (Issue #65)</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-dark: #0d274d;
+    --cisco-cyan: #00bceb;
+    --bg-primary: #0a1628;
+    --bg-secondary: #0f1f3d;
+    --bg-card: #132448;
+    --bg-card-hover: #163060;
+    --text-primary: #e8f4fd;
+    --text-secondary: #a8c8e8;
+    --text-muted: #6b8db0;
+    --border-color: #1e3a5f;
+    --accent-green: #00d4a0;
+    --accent-amber: #f5a623;
+    --accent-red: #e74c3c;
+    --accent-purple: #8b5cf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .masthead {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 50%, #051020 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 2rem 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(4,159,217,0.03) 80px, rgba(4,159,217,0.03) 81px);
+    pointer-events: none;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+  }
+  .brand { display: flex; align-items: center; gap: 1rem; }
+  .cisco-logo { width: 80px; height: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+  .title-group h1 { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 700; color: #fff; letter-spacing: 0.5px; line-height: 1.2; }
+  .title-group .subtitle { font-size: 0.8rem; color: var(--cisco-blue); text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Arial', sans-serif; margin-top: 0.2rem; }
+  .issue-meta { text-align: right; font-family: 'Arial', sans-serif; }
+  .issue-meta .issue-num { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+  .issue-meta .issue-date { font-size: 1rem; color: var(--cisco-cyan); font-weight: 600; }
+  .lang-switch { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+  .lang-switch a { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid var(--border-color); border-radius: 3px; color: var(--text-muted); text-decoration: none; font-family: Arial, sans-serif; transition: all 0.2s; }
+  .lang-switch a.active, .lang-switch a:hover { background: var(--cisco-blue); color: #fff; border-color: var(--cisco-blue); }
+
+  .nav-bar { background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.5rem 2rem; }
+  .nav-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; font-family: Arial, sans-serif; font-size: 0.75rem; flex-wrap: wrap; }
+  .nav-bar a { color: var(--text-muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.8px; transition: color 0.2s; padding: 0.3rem 0; }
+  .nav-bar a:hover { color: var(--cisco-blue); }
+
+  .layout { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; padding: 0 1rem; } }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-label { font-family: 'Arial', sans-serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--cisco-blue); border-left: 3px solid var(--cisco-blue); padding-left: 0.6rem; margin-bottom: 1rem; }
+  .section h2 { font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem; font-weight: 700; }
+
+  .exec-summary { background: var(--bg-card); border: 1px solid var(--border-color); border-top: 3px solid var(--cisco-blue); border-radius: 4px; padding: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+  .exec-summary p { margin-bottom: 0.8rem; }
+  .exec-summary p:last-child { margin-bottom: 0; }
+  .highlight-stat { display: inline-block; background: rgba(4,159,217,0.15); color: var(--cisco-cyan); padding: 0.1rem 0.4rem; border-radius: 3px; font-weight: 600; font-family: Arial, sans-serif; }
+
+  .action-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.5rem; margin-bottom: 1.2rem; position: relative; transition: border-color 0.2s, background 0.2s; }
+  .action-item:hover { border-color: var(--cisco-blue); background: var(--bg-card-hover); }
+  .action-item-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; }
+  .rank-badge { background: var(--cisco-dark); border: 2px solid var(--cisco-blue); color: var(--cisco-blue); width: 2.2rem; height: 2.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; font-family: Arial, sans-serif; flex-shrink: 0; }
+  .action-item-title { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.3; }
+  .action-item-title .tag { display: inline-block; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px; font-family: Arial, sans-serif; margin-left: 0.5rem; vertical-align: middle; font-weight: 400; }
+  .tag-esg    { background: rgba(0,188,235,0.2); color: var(--cisco-cyan); border: 1px solid rgba(0,188,235,0.4); }
+  .tag-grid   { background: rgba(231,76,60,0.2); color: var(--accent-red); border: 1px solid rgba(231,76,60,0.4); }
+  .tag-policy { background: rgba(139,92,246,0.2); color: var(--accent-purple); border: 1px solid rgba(139,92,246,0.4); }
+  .tag-energy { background: rgba(0,212,160,0.2); color: var(--accent-green); border: 1px solid rgba(0,212,160,0.4); }
+
+  .impact-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; font-family: Arial, sans-serif; }
+  .impact-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .impact-bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; max-width: 120px; }
+  .impact-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--cisco-blue), var(--cisco-cyan)); }
+  .impact-score { font-size: 0.8rem; font-weight: 700; color: var(--cisco-cyan); }
+
+  .item-body { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
+  .item-body p { margin-bottom: 0.5rem; }
+  .cisco-relevance { background: rgba(4,159,217,0.08); border-left: 3px solid var(--cisco-blue); padding: 0.8rem 1rem; border-radius: 0 4px 4px 0; font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; }
+  .cisco-relevance strong { color: var(--cisco-blue); }
+  .source-link { font-size: 0.75rem; color: var(--cisco-blue); text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin-top: 0.4rem; transition: color 0.2s; }
+  .source-link:hover { color: var(--cisco-cyan); text-decoration: underline; }
+
+  .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 700px) { .data-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .data-grid { grid-template-columns: 1fr; } }
+  .data-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem; transition: border-color 0.2s; }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-card .metric { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-family: Arial, sans-serif; margin-bottom: 0.3rem; }
+  .data-card .value { font-size: 1.6rem; font-weight: 700; color: #fff; font-family: Arial, sans-serif; line-height: 1.1; }
+  .data-card .trend { font-size: 0.75rem; margin-top: 0.3rem; font-family: Arial, sans-serif; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-red); }
+  .trend-neutral { color: var(--accent-amber); }
+  .data-card .data-source { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.6rem; font-family: Arial, sans-serif; border-top: 1px solid var(--border-color); padding-top: 0.5rem; }
+  .data-card .data-source a { color: var(--cisco-blue); text-decoration: none; }
+  .data-card .data-source a:hover { text-decoration: underline; }
+
+  .rec-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
+  .rec-block h3 { font-size: 0.9rem; font-family: Arial, sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
+  .rec-block ul { padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary); }
+  .rec-block li { margin-bottom: 0.4rem; }
+  .rec-short h3 { color: var(--accent-amber); }
+  .rec-mid h3 { color: var(--cisco-cyan); }
+
+  .methodology { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.5rem; font-size: 0.82rem; color: var(--text-secondary); }
+  .methodology h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.6rem; }
+  .methodology ul { padding-left: 1.2rem; margin-bottom: 0.8rem; }
+  .methodology li { margin-bottom: 0.3rem; }
+  .methodology a { color: var(--cisco-blue); text-decoration: none; }
+  .methodology a:hover { text-decoration: underline; }
+
+  .sidebar { position: sticky; top: 2rem; align-self: start; }
+  @media (max-width: 900px) { .sidebar { position: static; } }
+  .sidebar-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem; margin-bottom: 1.2rem; }
+  .sidebar-block h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--cisco-blue); font-family: Arial, sans-serif; margin-bottom: 0.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+  .sidebar-block ul { list-style: none; padding: 0; }
+  .sidebar-block li { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; padding-left: 0.8rem; position: relative; font-family: Arial, sans-serif; line-height: 1.4; }
+  .sidebar-block li::before { content: '▸'; position: absolute; left: 0; color: var(--cisco-blue); }
+  .sidebar-block li a { color: var(--cisco-blue); text-decoration: none; }
+  .sidebar-block li a:hover { text-decoration: underline; color: var(--cisco-cyan); }
+  .signal-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 0.3rem; vertical-align: middle; }
+  .signal-red { background: var(--accent-red); }
+  .signal-amber { background: var(--accent-amber); }
+  .signal-green { background: var(--accent-green); }
+
+  .footer { background: var(--cisco-dark); border-top: 2px solid var(--cisco-blue); padding: 1.5rem 2rem; margin-top: 3rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; font-size: 0.72rem; color: var(--text-muted); font-family: Arial, sans-serif; text-align: center; line-height: 1.6; }
+  .footer a { color: var(--cisco-blue); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <svg class="cisco-logo" viewBox="0 0 80 36" fill="currentColor"><rect x="2" y="20" width="4" height="10"/><rect x="10" y="14" width="4" height="16"/><rect x="18" y="8" width="4" height="22"/><rect x="26" y="14" width="4" height="16"/><rect x="34" y="20" width="4" height="10"/><rect x="42" y="14" width="4" height="16"/><rect x="50" y="8" width="4" height="22"/><rect x="58" y="14" width="4" height="16"/><rect x="66" y="20" width="4" height="10"/><rect x="74" y="14" width="4" height="16"/></svg>
+      <div class="title-group">
+        <h1>Sustainability Intelligence Briefing</h1>
+        <div class="subtitle">Cisco Strategic Intelligence Unit</div>
+      </div>
+    </div>
+    <div class="issue-meta">
+      <div class="issue-num">Issue #65</div>
+      <div class="issue-date">July 20, 2026</div>
+      <div class="lang-switch">
+        <a href="cisco_sustainability_briefing.html" class="active">EN</a>
+        <a href="cisco_sustainability_briefing_zh.html">中文</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <a href="#exec-summary">Executive Summary</a>
+    <a href="#top3">Top 3 Intelligence</a>
+    <a href="#data">Key Data</a>
+    <a href="#recommendations">Recommendations</a>
+    <a href="#methodology">Methodology</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="layout">
+  <main>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <section class="section" id="exec-summary">
+      <div class="section-label">Executive Summary</div>
+      <div class="exec-summary">
+        <p>This week marks a pivotal convergence of climate accountability and energy infrastructure in the Asia-Pacific. <strong>SBTi launched its Readiness Assessment Service</strong> on July 14, providing companies—including Cisco—a structured pathway to transition to the Corporate Net-Zero Standard V2.0 before it becomes mandatory in 2028. The simultaneous release of the <strong>Chinese-language V2.0 edition</strong> (July 9) underscores China's emergence as the fastest-growing SBTi market, with <span class="highlight-stat">700+ validated companies</span> and a <span class="highlight-stat">92% growth rate</span> in 2024–2025—a supply chain compliance signal Cisco cannot ignore.</p>
+        <p>On the energy infrastructure front, <strong>Thailand and Singapore agreed to accelerate the ASEAN Power Grid</strong> (July 13), just as ADB's <span class="highlight-stat">$50 billion PAGI initiative</span> gains momentum with 22,000 circuit-km of planned transmission. Meanwhile, <strong>Vietnam's Decree 243/2026</strong> takes effect this week with a transformative 10x reduction in the Physical DPPA threshold—from 200,000 to 20,000 kWh/month (July 20)—and a doubling of the rooftop solar surplus cap from 20% to 50%, unlocking an estimated <span class="highlight-stat">19,000 MW of untapped rooftop solar potential</span> in northern Vietnam alone.</p>
+      </div>
+    </section>
+
+    <!-- TOP 3 ACTIONABLE INTELLIGENCE -->
+    <section class="section" id="top3">
+      <div class="section-label">Top 3 Actionable Intelligence Items</div>
+
+      <!-- Item 1 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">1</div>
+          <div>
+            <div class="action-item-title">SBTi Launches Readiness Assessment Service + Chinese V2.0 Release Signals Supply Chain Compliance Pressure <span class="tag tag-esg">ESG</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">Impact Score</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
+          <span class="impact-score">9 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>On July 14, 2026, SBTi Services launched a <strong>Readiness Assessment Service</strong> to help companies with existing validated targets understand their readiness for Corporate Net-Zero Standard V2.0. The service uses data from a company's previous validation, identifies A/B category classification, maps existing targets onto scope-specific requirements, and outlines tailored timelines—all delivered within four weeks. The service is priced at $4,200 for SMEs and corporates alike.</p>
+          <p>Five days earlier (July 9), SBTi released the <strong>simplified Chinese version of the Net-Zero Standard V2.0</strong>, reflecting China's position as the fastest-growing SBTi market. Over 700 Chinese companies now hold validated targets (92% growth 2024–2025), with tech leaders including Tencent, JD Logistics, Lenovo, and Huawei adopting the framework. SBTi data shows that in Asia, 71% of certified companies report better meeting supply chain requirements, 70% report improved competitiveness, and 80% report enhanced regulatory resilience.</p>
+          <p>Meanwhile, SBTi also launched a <strong>second public consultation on the Power Sector Net-Zero Standard</strong> on July 15, directly relevant to Cisco's renewable energy procurement strategy.</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>Cisco Relevance:</strong> As a Category A company under V2.0 (revenue well above €450M), Cisco faces mandatory Scope 3 targets, third-party assurance of base year inventories, and Emissions-Intensive Activity identification. The Readiness Assessment Service offers Cisco a structured four-week pathway to evaluate its existing targets against V2.0 requirements. The Chinese V2.0 release amplifies supply chain compliance pressure: Cisco's 88% of suppliers by spend already have GHG reduction targets, but V2.0's mandatory Scope 3 requirements for Category A companies will demand deeper supplier engagement and traceability across Chinese manufacturing partners.
+        </div>
+        <a href="https://sciencebasedtargets.org/news/sbti-services-launches-new-service-to-help-companies-understand-their-readiness-for-the-corporate-net-zero-standard-version-2-0" target="_blank" rel="noopener" class="source-link">SBTi Readiness Assessment Service ↗</a><br>
+        <a href="https://biz.ifeng.com/c/8udlJBOYAVH" target="_blank" rel="noopener" class="source-link">SBTi Net-Zero Standard V2.0 Chinese Edition ↗</a><br>
+        <a href="https://sciencebasedtargets.org/news-events" target="_blank" rel="noopener" class="source-link">SBTi Power Sector Consultation (Jul 15) ↗</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">2</div>
+          <div>
+            <div class="action-item-title">Thailand–Singapore Advance ASEAN Power Grid as ADB PAGI $50B Accelerates <span class="tag tag-grid">GRID</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">Impact Score</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+          <span class="impact-score">8 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>On July 13, Thai PM Anutin Charnvirakul and Singapore FM Vivian Balakrishnan agreed to <strong>upgrade the ASEAN Power Grid project</strong>, connecting Laos, Thailand, Malaysia, and Singapore's electricity systems. The talks emphasized strengthening regional energy security against Middle East supply disruptions, attracting FDI to Thailand, and advancing the "Seamless Connectivity" strategy for ASEAN integration. A Thailand–Singapore Leaders' Retreat is planned for later this year to further advance cooperation.</p>
+          <p>This diplomatic push builds on ADB's landmark <strong>Pan-Asia Power Grid Initiative (PAGI)</strong>, launched at the ADB Annual Meeting in Samarkand (May 2026). PAGI aims to mobilize <span class="highlight-stat">$50 billion by 2035</span>—with ADB financing half—to connect 22,000 circuit-km of transmission lines, integrate 20 GW of renewable energy, reduce power-sector emissions by 15%, create 840,000 jobs, and improve energy access for 200 million people. ADB also established a <strong>Regional Connectivity Fund</strong> (April 2026) supported by Australia, Canada, Germany, the UK, and the EU to de-risk early-stage cross-border projects.</p>
+          <p>Operational progress is already visible: the LTMS-PIP Phase 2 Energy Wheeling Agreement (signed January 2026) expanded total traded capacity to 200 MW, with Malaysia now also an electricity supplier—not just a wheeler—marking a milestone for multilateral power trade.</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>Cisco Relevance:</strong> ASEAN Power Grid expansion directly supports Cisco's data center growth strategy in the region. Reliable, affordable cross-border renewable electricity is essential for powering AI infrastructure. The ADB's $50B PAGI commitment signals that the policy and financing architecture for regional clean energy is solidifying—reducing long-term energy cost risk for Cisco's Southeast Asian operations and those of its manufacturing partners in Vietnam, Malaysia, and Thailand.
+        </div>
+        <a href="https://www.thestar.com.my/aseanplus/aseanplus-news/2026/07/13/thai-pm-discusses-asean-power-grid-investment-with-singapore-foreign-minister" target="_blank" rel="noopener" class="source-link">The Star: Thailand–Singapore ASEAN Power Grid Talks ↗</a><br>
+        <a href="https://www.adb.org/news/adb-mobilize-50-billion-turn-regional-connectivity-action" target="_blank" rel="noopener" class="source-link">ADB: $50B PAGI Initiative ↗</a><br>
+        <a href="https://caseforsea.org/national-roles-in-a-regional-system-the-asean-power-grid-and-its-opportunity-to-enhance-energy-security" target="_blank" rel="noopener" class="source-link">CASE for SEA: ASEAN Power Grid Analysis ↗</a>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">3</div>
+          <div>
+            <div class="action-item-title">Vietnam Decree 243/2026: DPPA Threshold Drops 10x, Rooftop Solar Surplus Cap Doubles <span class="tag tag-policy">POLICY</span> <span class="tag tag-energy">ENERGY</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">Impact Score</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+          <span class="impact-score">8 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>Vietnam's Decree 243/2026/ND-CP, effective June 26, introduces the most significant amendments to the DPPA and rooftop solar frameworks since Decrees 57 and 58 were issued in March 2025. From <strong>July 20, 2026</strong>, the Physical DPPA eligibility threshold drops from <span class="highlight-stat">200,000 kWh/month to 20,000 kWh/month</span>—a 10x reduction that dramatically expands the pool of eligible corporate buyers.</p>
+          <p>Key amendments include: (1) <strong>Rooftop solar surplus cap raised from 20% to 50%</strong> of inverter output, with scope to exceed 50% through 2030 where grid capacity allows; (2) <strong>Data center operators and EV battery swapping stations</strong> explicitly recognized as qualifying large-user loads; (3) <strong>Industrial zone power retailers</strong> can now participate in DPPA as contracting parties; (4) <strong>No price cap</strong> for private-line DPPA, reflecting Resolution 253's price liberalization; (5) Registration procedures for rooftop solar development abolished.</p>
+          <p>The Vietnam News Service reports that industry enquiries have risen sharply since June, with manufacturers in electronics, textiles, logistics, and food processing reassessing rooftop solar projects. EVN's Northern Power Corporation estimates <span class="highlight-stat">19,000 MW</span> of rooftop solar potential across 17 northern provinces alone.</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>Cisco Relevance:</strong> The 10x threshold reduction directly benefits Cisco's Vietnam-based manufacturing partners, many of whom fall below the old 200,000 kWh/month threshold. The inclusion of data centers as eligible DPPA participants creates a new procurement pathway for Cisco's own facilities. The doubling of the rooftop solar surplus cap improves project economics for suppliers combining on-site generation with grid sales—accelerating the green electricity availability that Cisco needs for its 100% renewable energy matching target across its supply chain.
+        </div>
+        <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener" class="source-link">Conventus Law: Decree 243 Key Changes ↗</a><br>
+        <a href="https://vietnamnews.vn/economy/1785271/rooftop-solar-market-regains-momentum-as-surplus-power-sales-cap-doubles.html" target="_blank" rel="noopener" class="source-link">Vietnam News: Rooftop Solar Market Momentum ↗</a><br>
+        <a href="https://cnccounsel.com/energy/since-26-june-2026-09-key-changes-in-policy-on-dppa-and-rooftop-solar-power" target="_blank" rel="noopener" class="source-link">CNC Counsel: 9 Key Changes ↗</a>
+      </div>
+    </section>
+
+    <!-- KEY DATA POINTS -->
+    <section class="section" id="data">
+      <div class="section-label">Key Data Points</div>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="metric">Physical DPPA Threshold</div>
+          <div class="value">20,000 kWh/mo</div>
+          <div class="trend trend-down">↓ 10x from 200,000</div>
+          <div class="data-source">Source: <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">Rooftop Solar Surplus Cap</div>
+          <div class="value">50%</div>
+          <div class="trend trend-up">↑ 2.5x from 20%</div>
+          <div class="data-source">Source: <a href="https://vietnamnews.vn/economy/1785271/rooftop-solar-market-regains-momentum-as-surplus-power-sales-cap-doubles.html" target="_blank" rel="noopener">Vietnam News ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">ADB PAGI Investment</div>
+          <div class="value">$50B</div>
+          <div class="trend trend-up">By 2035</div>
+          <div class="data-source">Source: <a href="https://www.adb.org/news/adb-mobilize-50-billion-turn-regional-connectivity-action" target="_blank" rel="noopener">ADB ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">SBTi-Validated Chinese Cos.</div>
+          <div class="value">700+</div>
+          <div class="trend trend-up">↑ 92% growth</div>
+          <div class="data-source">Source: <a href="https://biz.ifeng.com/c/8udlJBOYAVH" target="_blank" rel="noopener">iFeng Business ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">Water-Related Supply Chain Risk</div>
+          <div class="value">$77B</div>
+          <div class="trend trend-neutral">CDP estimate</div>
+          <div class="data-source">Source: <a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">N. Vietnam Solar Potential</div>
+          <div class="value">19,000 MW</div>
+          <div class="trend trend-up">17 provinces</div>
+          <div class="data-source">Source: <a href="https://vietnamnews.vn/economy/1785271/rooftop-solar-market-regains-momentum-as-surplus-power-sales-cap-doubles.html" target="_blank" rel="noopener">Vietnam News ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGIC RECOMMENDATIONS -->
+    <section class="section" id="recommendations">
+      <div class="section-label">Strategic Recommendations</div>
+      <div class="rec-block rec-short">
+        <h3>Short-Term (0–3 Months)</h3>
+        <ul>
+          <li><strong>Book SBTi Readiness Assessment:</strong> Engage SBTi Services' four-week Readiness Assessment to map Cisco's existing validated targets against V2.0 requirements, identify Category A compliance gaps (mandatory Scope 3, third-party assurance, EIA identification), and build a board-ready transition timeline before the 2027 operational launch.</li>
+          <li><strong>Update Vietnam DPPA Playbook:</strong> Revise the Vietnam green energy procurement strategy to incorporate the new 20,000 kWh/month threshold. Engage manufacturing partners below the old 200,000 kWh ceiling to assess DPPA eligibility and structure pilot agreements before Q4 2026.</li>
+          <li><strong>Monitor ASEAN Power Grid Progress:</strong> Track the Thailand–Singapore Leaders' Retreat and ADB PAGI implementation milestones. Map Cisco's data center expansion plans against APG interconnection timelines to identify early-mover renewable procurement opportunities.</li>
+        </ul>
+      </div>
+      <div class="rec-block rec-mid">
+        <h3>Medium-Term (3–12 Months)</h3>
+        <ul>
+          <li><strong>Prepare V2.0 Scope 3 Compliance:</strong> Develop a supplier engagement program aligned with V2.0's mandatory Scope 3 requirements for Category A companies. Prioritize Chinese manufacturing partners (700+ SBTi-validated companies represent a growing compliance ecosystem) and integrate V2.0 readiness into supplier scorecards.</li>
+          <li><strong>Leverage Vietnam's Rooftop Solar Expansion:</strong> Partner with EVN and Vietnamese industrial zone operators to develop aggregated rooftop solar + BESS programs for Cisco supplier clusters. The 50% surplus cap and 19,000 MW untapped potential create a favorable environment for scale.</li>
+          <li><strong>Engage Water Scopes 1–3 Initiative:</strong> As a technology company with data center water dependencies, participate in the WRI–WWF–SCS Water Scopes 1–3 working group (public comment in mid-2027, final guidance Q4 2027) to shape the framework that will define corporate water accountability across value chains.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="section" id="methodology">
+      <div class="section-label">Methodology Notes</div>
+      <div class="methodology">
+        <h3>Sources & Verification</h3>
+        <p>This briefing synthesizes open-source intelligence from the past seven days (July 14–20, 2026). Each finding was cross-referenced against at least two independent sources. Impact scores are assessed on a 0–10 scale based on: (1) direct relevance to Cisco's operations, supply chain, and sustainability commitments; (2) strategic significance for the Southeast Asian markets where Cisco operates; (3) time-sensitivity of the regulatory or market window.</p>
+        <h3 style="margin-top:1rem;">Complete Source List</h3>
+        <ul>
+          <li>SBTi Readiness Assessment Service — <a href="https://sciencebasedtargets.org/news/sbti-services-launches-new-service-to-help-companies-understand-their-readiness-for-the-corporate-net-zero-standard-version-2-0" target="_blank" rel="noopener">sciencebasedtargets.org ↗</a></li>
+          <li>SBTi Net-Zero Standard V2.0 Chinese Edition — <a href="https://biz.ifeng.com/c/8udlJBOYAVH" target="_blank" rel="noopener">biz.ifeng.com ↗</a></li>
+          <li>SBTi News & Events — <a href="https://sciencebasedtargets.org/news-events" target="_blank" rel="noopener">sciencebasedtargets.org ↗</a></li>
+          <li>SBTi Services Readiness Assessment — <a href="https://sbtiservices.com/services/readiness-assessment-service" target="_blank" rel="noopener">sbtiservices.com ↗</a></li>
+          <li>Thailand–Singapore ASEAN Power Grid Talks — <a href="https://www.thestar.com.my/aseanplus/aseanplus-news/2026/07/13/thai-pm-discusses-asean-power-grid-investment-with-singapore-foreign-minister" target="_blank" rel="noopener">thestar.com.my ↗</a></li>
+          <li>ADB PAGI $50 Billion Launch — <a href="https://www.adb.org/news/adb-mobilize-50-billion-turn-regional-connectivity-action" target="_blank" rel="noopener">adb.org ↗</a></li>
+          <li>ADB President on Connected Power Systems — <a href="https://www.adb.org/news/adb-president-calls-connected-power-systems-energy-risks-mount" target="_blank" rel="noopener">adb.org ↗</a></li>
+          <li>CASE for SEA: ASEAN Power Grid Analysis — <a href="https://caseforsea.org/national-roles-in-a-regional-system-the-asean-power-grid-and-its-opportunity-to-enhance-energy-security" target="_blank" rel="noopener">caseforsea.org ↗</a></li>
+          <li>Southeast Asia Infrastructure: Grid Ambitions — <a href="https://southeastasiainfra.com/clean-energy-integration-seas-grid-ambitions" target="_blank" rel="noopener">southeastasiainfra.com ↗</a></li>
+          <li>Vietnam Decree 243 Key Changes — <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">conventuslaw.com ↗</a></li>
+          <li>Vietnam News: Rooftop Solar Momentum — <a href="https://vietnamnews.vn/economy/1785271/rooftop-solar-market-regains-momentum-as-surplus-power-sales-cap-doubles.html" target="_blank" rel="noopener">vietnamnews.vn ↗</a></li>
+          <li>CNC Counsel: 9 Key Changes — <a href="https://cnccounsel.com/energy/since-26-june-2026-09-key-changes-in-policy-on-dppa-and-rooftop-solar-power" target="_blank" rel="noopener">cnccounsel.com ↗</a></li>
+          <li>EVN Official: Decree 243 — <a href="https://en.evn.com.vn/d/en-US/news/Government-issues-Decree-No-2432026ND-CP-Amending-and-supplementing-several-provisions-of-Decrees-No-572025ND-CP-and-No-582025ND-CP-60-206-501528" target="_blank" rel="noopener">en.evn.com.vn ↗</a></li>
+          <li>VTN Partners: Decree 243 Analysis — <a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">vtn-partners.com ↗</a></li>
+          <li>WRI Water Scopes 1–3 — <a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">wri.org ↗</a></li>
+          <li>WRI Coalition Launch — <a href="http://wri.org/news/release-coalition-develop-first-standardized-guidance-corporate-water-risk" target="_blank" rel="noopener">wri.org ↗</a></li>
+          <li>Cisco FY25 Purpose Report — <a href="https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report" target="_blank" rel="noopener">blogs.cisco.com ↗</a></li>
+          <li>Cisco Goals & Progress — <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/governance/progress.html" target="_blank" rel="noopener">cisco.com ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <h3>⚡ Quick Signals</h3>
+      <ul>
+        <li><span class="signal-dot signal-red"></span> SBTi V2.0 mandatory for all companies from 2028</li>
+        <li><span class="signal-dot signal-amber"></span> Vietnam Physical DPPA threshold drops 10x on July 20</li>
+        <li><span class="signal-dot signal-green"></span> ASEAN Power Grid gains diplomatic momentum (Thai–SG talks)</li>
+        <li><span class="signal-dot signal-amber"></span> ADB PAGI Regional Connectivity Fund operational (April 2026)</li>
+        <li><span class="signal-dot signal-red"></span> $77B water-related supply chain risk (CDP)</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>📅 Upcoming Events</h3>
+      <ul>
+        <li>Thailand–Singapore Leaders' Retreat (H2 2026)</li>
+        <li>SBTi V2.0 target validation opens (Feb 2027)</li>
+        <li>SBTi Power Sector Standard consultation (open now)</li>
+        <li>Water Scopes 1–3 public comment period (mid-2027)</li>
+        <li>Vietnam rooftop solar surplus >50% window expires (Dec 2030)</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>📋 Topics Covered</h3>
+      <ul>
+        <li>SBTi Net-Zero Standard V2.0 readiness</li>
+        <li>China SBTi market acceleration</li>
+        <li>ASEAN Power Grid integration</li>
+        <li>ADB PAGI $50B initiative</li>
+        <li>Vietnam DPPA Decree 243/2026</li>
+        <li>Rooftop solar surplus cap reform</li>
+        <li>Water Scopes 1–3 value chain framework</li>
+        <li>Supply chain water risk ($77B)</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>🔗 Core Sources</h3>
+      <ul>
+        <li><a href="https://sciencebasedtargets.org" target="_blank" rel="noopener">SBTi ↗</a></li>
+        <li><a href="https://www.adb.org" target="_blank" rel="noopener">ADB ↗</a></li>
+        <li><a href="https://www.wri.org" target="_blank" rel="noopener">WRI ↗</a></li>
+        <li><a href="https://en.evn.com.vn" target="_blank" rel="noopener">EVN Vietnam ↗</a></li>
+        <li><a href="https://conventuslaw.com" target="_blank" rel="noopener">Conventus Law ↗</a></li>
+        <li><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/" target="_blank" rel="noopener">Cisco Purpose ↗</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    Cisco Sustainability Intelligence Briefing · Issue #65 · Week of July 20, 2026<br>
+    Produced by the Cisco Strategic Intelligence Unit · <a href="https://tu2026.github.io/cisco-sustainability-briefing/" target="_blank" rel="noopener">View Online ↗</a><br>
+    This briefing is for internal strategic planning purposes. Sources are linked for verification.
+  </div>
+</footer>
+
+</body>
+</html>
