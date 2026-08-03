@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思科可持续发展情报简报 — 2026年7月27日周（第66期）</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-dark: #0d274d;
+    --cisco-cyan: #00bceb;
+    --bg-primary: #0a1628;
+    --bg-secondary: #0f1f3d;
+    --bg-card: #132448;
+    --bg-card-hover: #163060;
+    --text-primary: #e8f4fd;
+    --text-secondary: #a8c8e8;
+    --text-muted: #6b8db0;
+    --border-color: #1e3a5f;
+    --accent-green: #00d4a0;
+    --accent-amber: #f5a623;
+    --accent-red: #e74c3c;
+    --accent-purple: #8b5cf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .masthead {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 50%, #051020 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 2rem 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(4,159,217,0.03) 80px, rgba(4,159,217,0.03) 81px);
+    pointer-events: none;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+  }
+  .brand { display: flex; align-items: center; gap: 1rem; }
+  .cisco-logo { width: 80px; height: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+  .title-group h1 { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 700; color: #fff; letter-spacing: 1px; line-height: 1.3; }
+  .title-group .subtitle { font-size: 0.8rem; color: var(--cisco-blue); letter-spacing: 2px; margin-top: 0.2rem; }
+  .issue-meta { text-align: right; }
+  .issue-meta .issue-num { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 1px; }
+  .issue-meta .issue-date { font-size: 1rem; color: var(--cisco-cyan); font-weight: 600; }
+  .lang-switch { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+  .lang-switch a { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid var(--border-color); border-radius: 3px; color: var(--text-muted); text-decoration: none; transition: all 0.2s; }
+  .lang-switch a.active, .lang-switch a:hover { background: var(--cisco-blue); color: #fff; border-color: var(--cisco-blue); }
+
+  .nav-bar { background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.5rem 2rem; }
+  .nav-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; font-size: 0.75rem; flex-wrap: wrap; }
+  .nav-bar a { color: var(--text-muted); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; padding: 0.3rem 0; }
+  .nav-bar a:hover { color: var(--cisco-blue); }
+
+  .layout { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; padding: 0 1rem; } }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-label { font-size: 0.65rem; letter-spacing: 2px; color: var(--cisco-blue); border-left: 3px solid var(--cisco-blue); padding-left: 0.6rem; margin-bottom: 1rem; }
+  .section h2 { font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem; font-weight: 700; }
+
+  .exec-summary { background: var(--bg-card); border: 1px solid var(--border-color); border-top: 3px solid var(--cisco-blue); border-radius: 4px; padding: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+  .exec-summary p { margin-bottom: 0.8rem; }
+  .exec-summary p:last-child { margin-bottom: 0; }
+  .highlight-stat { display: inline-block; background: rgba(4,159,217,0.15); color: var(--cisco-cyan); padding: 0.1rem 0.4rem; border-radius: 3px; font-weight: 600; }
+
+  .action-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.5rem; margin-bottom: 1.2rem; transition: border-color 0.2s, background 0.2s; }
+  .action-item:hover { border-color: var(--cisco-blue); background: var(--bg-card-hover); }
+  .action-item-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; }
+  .rank-badge { background: var(--cisco-dark); border: 2px solid var(--cisco-blue); color: var(--cisco-blue); width: 2.2rem; height: 2.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .action-item-title { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.4; }
+  .action-item-title .tag { display: inline-block; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 2px; letter-spacing: 0.5px; margin-left: 0.5rem; vertical-align: middle; font-weight: 400; }
+  .tag-esg    { background: rgba(0,188,235,0.2); color: var(--cisco-cyan); border: 1px solid rgba(0,188,235,0.4); }
+  .tag-grid   { background: rgba(231,76,60,0.2); color: var(--accent-red); border: 1px solid rgba(231,76,60,0.4); }
+  .tag-policy { background: rgba(139,92,246,0.2); color: var(--accent-purple); border: 1px solid rgba(139,92,246,0.4); }
+  .tag-energy { background: rgba(0,212,160,0.2); color: var(--accent-green); border: 1px solid rgba(0,212,160,0.4); }
+
+  .impact-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+  .impact-label { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.5px; }
+  .impact-bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; max-width: 120px; }
+  .impact-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--cisco-blue), var(--cisco-cyan)); }
+  .impact-score { font-size: 0.8rem; font-weight: 700; color: var(--cisco-cyan); }
+
+  .item-body { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
+  .item-body p { margin-bottom: 0.5rem; }
+  .cisco-relevance { background: rgba(4,159,217,0.08); border-left: 3px solid var(--cisco-blue); padding: 0.8rem 1rem; border-radius: 0 4px 4px 0; font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; }
+  .cisco-relevance strong { color: var(--cisco-blue); }
+  .source-link { font-size: 0.75rem; color: var(--cisco-blue); text-decoration: none; display: inline-block; margin-top: 0.4rem; transition: color 0.2s; }
+  .source-link:hover { color: var(--cisco-cyan); text-decoration: underline; }
+
+  .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 700px) { .data-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .data-grid { grid-template-columns: 1fr; } }
+  .data-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem; transition: border-color 0.2s; }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-card .metric { font-size: 0.65rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .data-card .value { font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1.1; }
+  .data-card .trend { font-size: 0.75rem; margin-top: 0.3rem; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-red); }
+  .trend-neutral { color: var(--accent-amber); }
+  .data-card .data-source { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.6rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem; }
+  .data-card .data-source a { color: var(--cisco-blue); text-decoration: none; }
+  .data-card .data-source a:hover { text-decoration: underline; }
+
+  .rec-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
+  .rec-block h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .rec-block ul { padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary); }
+  .rec-block li { margin-bottom: 0.4rem; }
+  .rec-short h3 { color: var(--accent-amber); }
+  .rec-mid h3 { color: var(--cisco-cyan); }
+
+  .methodology { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.5rem; font-size: 0.82rem; color: var(--text-secondary); }
+  .methodology h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.6rem; }
+  .methodology ul { padding-left: 1.2rem; margin-bottom: 0.8rem; }
+  .methodology li { margin-bottom: 0.3rem; }
+  .methodology a { color: var(--cisco-blue); text-decoration: none; }
+  .methodology a:hover { text-decoration: underline; }
+
+  .sidebar { position: sticky; top: 2rem; align-self: start; }
+  @media (max-width: 900px) { .sidebar { position: static; } }
+  .sidebar-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.2rem; margin-bottom: 1.2rem; }
+  .sidebar-block h3 { font-size: 0.75rem; letter-spacing: 1.2px; color: var(--cisco-blue); margin-bottom: 0.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+  .sidebar-block ul { list-style: none; padding: 0; }
+  .sidebar-block li { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; padding-left: 0.8rem; position: relative; line-height: 1.4; }
+  .sidebar-block li::before { content: '▸'; position: absolute; left: 0; color: var(--cisco-blue); }
+  .sidebar-block li a { color: var(--cisco-blue); text-decoration: none; }
+  .sidebar-block li a:hover { text-decoration: underline; color: var(--cisco-cyan); }
+  .signal-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 0.3rem; vertical-align: middle; }
+  .signal-red { background: var(--accent-red); }
+  .signal-amber { background: var(--accent-amber); }
+  .signal-green { background: var(--accent-green); }
+
+  .footer { background: var(--cisco-dark); border-top: 2px solid var(--cisco-blue); padding: 1.5rem 2rem; margin-top: 3rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; font-size: 0.72rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
+  .footer a { color: var(--cisco-blue); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- 刊头 -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <svg class="cisco-logo" viewBox="0 0 80 36" fill="currentColor"><rect x="2" y="20" width="4" height="10"/><rect x="10" y="14" width="4" height="16"/><rect x="18" y="8" width="4" height="22"/><rect x="26" y="14" width="4" height="16"/><rect x="34" y="20" width="4" height="10"/><rect x="42" y="14" width="4" height="16"/><rect x="50" y="8" width="4" height="22"/><rect x="58" y="14" width="4" height="16"/><rect x="66" y="20" width="4" height="10"/><rect x="74" y="14" width="4" height="16"/></svg>
+      <div class="title-group">
+        <h1>可持续发展情报简报</h1>
+        <div class="subtitle">思科战略情报团队</div>
+      </div>
+    </div>
+    <div class="issue-meta">
+      <div class="issue-num">第66期</div>
+      <div class="issue-date">2026年7月27日</div>
+      <div class="lang-switch">
+        <a href="cisco_sustainability_briefing.html">EN</a>
+        <a href="cisco_sustainability_briefing_zh.html" class="active">中文</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 导航 -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <a href="#exec-summary">执行摘要</a>
+    <a href="#top3">Top 3 发现</a>
+    <a href="#data">关键数据</a>
+    <a href="#recommendations">战略建议</a>
+    <a href="#methodology">方法说明</a>
+  </div>
+</nav>
+
+<!-- 主体 -->
+<div class="layout">
+  <main>
+
+    <!-- 执行摘要 -->
+    <section class="section" id="exec-summary">
+      <div class="section-label">执行摘要</div>
+      <div class="exec-summary">
+        <p>本周是越南企业可再生能源采购的关键监管窗口期。<strong>第243/2026号法令</strong>已于6月26日生效，并于7月20日起将物理型直接购电协议（DPPA）的月均用电量门槛从<span class="highlight-stat">200,000 kWh降至20,000 kWh</span>，同时把屋顶光伏余电上网上限提高到<span class="highlight-stat">50%</span>。该法令还首次将数据中心运营商和电动汽车换电站运营商纳入合格大用户范畴，并允许工业园区电力零售商直接作为合同主体参与——这些变化显著扩大了思科在其关键制造市场之一的绿色电力采购选项。</p>
+        <p>气候问责与区域电网基础设施方面的并行进展进一步强化了行动的紧迫性。SBTi于7月14日推出<strong>就绪评估服务</strong>，并于7月15日就<strong>电力行业净零标准</strong>启动第二轮公众咨询；与此同时，中国企业对SBTi目标的采纳已达到<span class="highlight-stat">约850家</span>验证企业，年增长率<span class="highlight-stat">92%</span>。在基础设施层面，东盟电网的制度化势头正在增强：增强版东盟电网谅解备忘录、三个专门工作组以及亚开行区域互联互通基金共同推动落实，但世界银行估算实现完整区域愿景需要约<span class="highlight-stat">8000亿美元</span>投资。思科自身FY25目标报告也提供了内部基准：范围1+2减排90%、全球用电首次实现100%可再生电力匹配、范围3排放较FY19基准下降35%。</p>
+      </div>
+    </section>
+
+    <!-- Top 3 本周最值得行动的发现 -->
+    <section class="section" id="top3">
+      <div class="section-label">Top 3 本周最值得行动的发现</div>
+
+      <!-- 发现1 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">1</div>
+          <div>
+            <div class="action-item-title">越南第243/2026号法令：物理型DPPA门槛降至20,000 kWh/月 <span class="tag tag-policy">政策</span> <span class="tag tag-energy">能源</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:90%"></div></div>
+          <span class="impact-score">9 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>2026年7月10日，越南政府发布<strong>第243/2026/ND-CP号法令</strong>，该法令于6月26日立即生效，并修订了第57/2025号和第58/2025号法令下的DPPA及自发自用框架。最具影响力的变化是物理型DPPA月均用电量门槛从<span class="highlight-stat">200,000 kWh降至20,000 kWh</span>，自2026年7月20日起生效——合格企业买家范围扩大了10倍。</p>
+          <p>其他重要修订包括：将屋顶光伏余电上网上限从<span class="highlight-stat">20%提高至50%</span>（在电网安全允许情况下，2030年前可超过50%）；将<strong>数据中心运营商</strong>和<strong>电动汽车换电站运营商</strong>纳入大用户类别；允许<strong>工业园区电力零售商</strong>作为合同主体参与物理型DPPA；取消专线物理型DPPA的价格上限（已由第253号决议实现价格自由化）；并将虚拟型DPPA与越南批发电力市场（VWEM）注册整合为单一档案流程。</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>门槛降低10倍后，思科在越南的众多制造合作伙伴首次具备DPPA参与资格，为供应链绿色化提供了直接杠杆。数据中心被明确纳入合格负荷，为思科在越南的自有设施及托管策略开辟了新的采购路径。更高的屋顶光伏余电上限也改善了供应商将现场发电与电网销售结合的项目经济性。思科应在2026年第四季度合同窗口关闭前更新越南绿色能源采购手册。
+        </div>
+        <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener" class="source-link">Conventus Law：第243号法令要点 ↗</a><br>
+        <a href="https://www.russinvecchi.com.vn/publication/a-new-way-for-renewable-energy-developers-to-sell-their-electricity-in-vietnam-3" target="_blank" rel="noopener" class="source-link">Russin & Vecchi：DPPA开发商路径 ↗</a><br>
+        <a href="https://www.marketresearchvietnam.com/insights/articles/vietnams-dppa-overhaul-a-clearer-bolder-path-for-corporate-renewable-buyers" target="_blank" rel="noopener" class="source-link">Market Research Vietnam：DPPA改革 ↗</a>
+      </div>
+
+      <!-- 发现2 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">2</div>
+          <div>
+            <div class="action-item-title">SBTi净零标准V2.0加速落地：就绪服务上线，中国市场激增 <span class="tag tag-esg">ESG</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:85%"></div></div>
+          <span class="impact-score">8.5 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>科学碳目标倡议（SBTi）于2026年6月11日发布最终版<strong>《企业净零标准V2.0》</strong>。该标准将于2027年2月1日起开放目标设定，2027年2月1日至2028年1月31日为过渡期，企业仍可沿用V1.3.1；自2028年2月1日起，所有新目标提交必须使用V2.0。为平稳过渡，SBTi Services于2026年7月14日推出<strong>就绪评估服务</strong>，为企业提供结构化、基于证据的评估，明确当前差距及V2.0验证所需步骤。</p>
+          <p>7月15日，SBTi还就<strong>电力行业净零标准</strong>更新草案启动第二轮公众咨询，直接影响可再生能源采购与电力企业合作策略。与此同时，中国已成为SBTi增长最快的市场：2025年通过SBTi验证的中国企业约达<span class="highlight-stat">850家</span>，同比增长<span class="highlight-stat">92%</span>，信息技术、水泥、消费品和可选消费是增长最快的行业。</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>作为大型跨国企业，思科将被划入SBTi V2.0 A类企业，面临强制范围三目标、基准年温室气体盘查第三方核证以及高排放活动识别等要求。就绪评估服务为思科提供了四周的评估路径，可对照V2.0要求审视现有验证目标。更重要的是，中国企业SBTi验证数量激增意味着思科的中国制造与零部件供应商将越来越多地被要求设定科学碳目标——思科可借此将其转化为供应商评分卡的议价杠杆。
+        </div>
+        <a href="https://sciencebasedtargets.org/news/sbti-services-launches-new-service-to-help-companies-understand-their-readiness-for-the-corporate-net-zero-standard-version-2-0" target="_blank" rel="noopener" class="source-link">SBTi：就绪评估服务 ↗</a><br>
+        <a href="https://sciencebasedtargets.org/news/the-sbti-launches-second-public-consultation-on-updated-draft-power-sector-net-zero-standard" target="_blank" rel="noopener" class="source-link">SBTi：电力行业标准咨询 ↗</a><br>
+        <a href="https://mobile.chinadaily.com.cn/html5/2026-07/20/content_014_6a5d75a6ed50be540e734783.htm" target="_blank" rel="noopener" class="source-link">中国日报：中国SBTi领导力 ↗</a>
+      </div>
+
+      <!-- 发现3 -->
+      <div class="action-item">
+        <div class="action-item-header">
+          <div class="rank-badge">3</div>
+          <div>
+            <div class="action-item-title">东盟电网融资与制度动能增强 <span class="tag tag-grid">电网</span></div>
+          </div>
+        </div>
+        <div class="impact-row">
+          <span class="impact-label">紧迫性/关联度</span>
+          <div class="impact-bar-track"><div class="impact-bar-fill" style="width:80%"></div></div>
+          <span class="impact-score">8 / 10</span>
+        </div>
+        <div class="item-body">
+          <p>东盟电网（APG）正从愿景走向制度化的实施阶段。2025年10月第43届东盟能源部长会议（AMEM）期间，成员国签署了<strong>增强版东盟电网谅解备忘录</strong>，超越2007年原始框架，聚焦规则标准统一、技术要求对齐和财务模型建立。2026年4月，亚洲开发银行在东盟基础设施基金下设立<strong>东南亚能源区域互联互通基金</strong>，澳大利亚、加拿大、德国、英国和欧盟提供初始资金，用于降低早期跨境项目的风险。</p>
+          <p>在运营层面，老挝—泰国—马来西亚—新加坡电力一体化项目（LTMS-PIP）仍是东盟唯一全面运营的多边电力贸易安排。2026年1月签署的二期能源传输协议将总交易容量扩大至<span class="highlight-stat">200 MW</span>，并正式确立马来西亚同时作为输电方和供电方的双重角色。世界银行估算，实现完整东盟电网愿景需要约<span class="highlight-stat">8000亿美元</span>的发电与输电投资；而跨境电力贸易可通过减少对高价液化天然气（LNG）的依赖，在能源危机期间为东盟节省高达<span class="highlight-stat">670亿美元</span>的发电成本。</p>
+        </div>
+        <div class="cisco-relevance">
+          <strong>对思科的重要性：</strong>区域电网一体化直接影响思科在东南亚数据中心的电力成本、可靠性和碳强度，也影响其云客户的数据中心布局。随着东盟电网融资与治理结构日趋成熟，思科应将区域数据中心扩张和可再生电力采购路线图与跨境互联时间线对齐——尤其是越南—马来西亚—新加坡互联及砂拉越—马来半岛—新加坡链路——以锁定长期清洁电力购电协议。
+        </div>
+        <a href="https://caseforsea.org/national-roles-in-a-regional-system-the-asean-power-grid-and-its-opportunity-to-enhance-energy-security/" target="_blank" rel="noopener" class="source-link">CASE for SEA：东盟电网分析 ↗</a><br>
+        <a href="https://factsasia.org/blog/asean-power-grid-for-regional-development-a-genuine-test-for-asean-centrality" target="_blank" rel="noopener" class="source-link">FactsAsia：东盟电网与区域互联互通基金 ↗</a><br>
+        <a href="https://en.aecvcci.vn/tin-tuc-n15516/global-energy-investment-hits-record-as-asean-power-grids-face-strain.htm" target="_blank" rel="noopener" class="source-link">AEC-VCCI：东盟电网压力与节省 ↗</a>
+      </div>
+    </section>
+
+    <!-- 关键数据点 -->
+    <section class="section" id="data">
+      <div class="section-label">关键数据点</div>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="metric">物理型DPPA门槛</div>
+          <div class="value">20,000 kWh/月</div>
+          <div class="trend trend-down">↓ 较20万降10倍</div>
+          <div class="data-source">来源：<a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">屋顶光伏余电上限</div>
+          <div class="value">50%</div>
+          <div class="trend trend-up">↑ 较20%提高2.5倍</div>
+          <div class="data-source">来源：<a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">东盟电网投资需求</div>
+          <div class="value">$8,000亿</div>
+          <div class="trend trend-neutral">世界银行估算</div>
+          <div class="data-source">来源：<a href="https://factsasia.org/blog/asean-power-grid-for-regional-development-a-genuine-test-for-asean-centrality" target="_blank" rel="noopener">FactsAsia / 世界银行 ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">东盟电网LNG节省</div>
+          <div class="value">$670亿</div>
+          <div class="trend trend-up">危机成本规避</div>
+          <div class="data-source">来源：<a href="https://en.aecvcci.vn/tin-tuc-n15516/global-energy-investment-hits-record-as-asean-power-grids-face-strain.htm" target="_blank" rel="noopener">AEC-VCCI / The Nation ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">思科范围三减排</div>
+          <div class="value">35%</div>
+          <div class="trend trend-up">较FY19基准</div>
+          <div class="data-source">来源：<a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/governance/progress.html" target="_blank" rel="noopener">Cisco Purpose Reporting ↗</a></div>
+        </div>
+        <div class="data-card">
+          <div class="metric">SBTi验证中国企业</div>
+          <div class="value">约850家</div>
+          <div class="trend trend-up">↑ 年增长92%</div>
+          <div class="data-source">来源：<a href="https://mobile.chinadaily.com.cn/html5/2026-07/20/content_014_6a5d75a6ed50be540e734783.htm" target="_blank" rel="noopener">中国日报 ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 战略建议 -->
+    <section class="section" id="recommendations">
+      <div class="section-label">战略建议</div>
+      <div class="rec-block rec-short">
+        <h3>短期（0–3个月）</h3>
+        <ul>
+          <li><strong>更新越南DPPA操作手册：</strong>根据新的20,000 kWh/月物理型DPPA门槛和50%屋顶光伏余电上限，刷新采购指引。识别现在符合资格的越南供应商和合同制造商，并在2026年第三季度举办资格评估工作坊。</li>
+          <li><strong>启动SBTi V2.0就绪评估：</strong>对接SBTi Services的四周就绪评估服务，将思科现有验证目标对照V2.0 A类企业要求（包括强制范围三覆盖和第三方核证）进行差距分析，为2027年2月正式启用做好准备。</li>
+          <li><strong>将东盟电网里程碑映射到数据中心规划：</strong>把越南—马来西亚—新加坡互联以及砂拉越—马来半岛—新加坡互联的时间线与思科区域数据中心及托管扩张计划叠加，标记早期清洁电力购电窗口。</li>
+        </ul>
+      </div>
+      <div class="rec-block rec-mid">
+        <h3>中期（3–12个月）</h3>
+        <ul>
+          <li><strong>扩大中国供应商SBTi engagement：</strong>在约850家中国企业已通过SBTi验证、年增长92%的背景下，将V2.0就绪度纳入供应商评分卡，并为关键中国制造合作伙伴提供能力建设支持，以匹配思科的范围三减排轨迹。</li>
+          <li><strong>在越南试点聚合式屋顶光伏+DPPA：</strong>与越南电力集团（EVN）、工业园区运营商及思科供应商集群合作，设计聚合式屋顶光伏项目，充分利用50%余电上限和新零售商参与规则。</li>
+          <li><strong>启动水风险披露规划：</strong>尽管水风险未进入本周Top 3，但TNFD半导体/数据中心水风险案例研究以及全球用水监管收紧表明供应链暴露正在上升。应开始对思科高耗水设施及亚洲关键半导体供应商进行流域级水风险mapping。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 方法说明 -->
+    <section class="section" id="methodology">
+      <div class="section-label">方法说明</div>
+      <div class="methodology">
+        <h3>来源与核实</h3>
+        <p>本简报综合了过去7天（2026年7月20日至7月26日）的公开情报。每条情报至少对照了一个主要或权威二手来源。紧迫性/关联度评分采用0–10分制，基于：（1）与思科运营、供应链及可持续发展承诺的直接相关性；（2）对思科所在东南亚市场的战略重要性；（3）监管或市场窗口的时间敏感性。</p>
+        <h3 style="margin-top:1rem;">完整来源列表</h3>
+        <ul>
+          <li>Conventus Law — 越南第243/2026号法令DPPA变化 — <a href="https://conventuslaw.com/report/vietnam-dppa-and-power-self-production-consumption-amendments-finally-here-whats-changed/" target="_blank" rel="noopener">conventuslaw.com ↗</a></li>
+          <li>Russin & Vecchi — 第57号与第243号法令下的DPPA机制 — <a href="https://www.russinvecchi.com.vn/publication/a-new-way-for-renewable-energy-developers-to-sell-their-electricity-in-vietnam-3" target="_blank" rel="noopener">russinvecchi.com.vn ↗</a></li>
+          <li>Market Research Vietnam — 企业买家视角的DPPA改革 — <a href="https://www.marketresearchvietnam.com/insights/articles/vietnams-dppa-overhaul-a-clearer-bolder-path-for-corporate-renewable-buyers" target="_blank" rel="noopener">marketresearchvietnam.com ↗</a></li>
+          <li>SBTi — 就绪评估服务上线（2026年7月14日） — <a href="https://sciencebasedtargets.org/news/sbti-services-launches-new-service-to-help-companies-understand-their-readiness-for-the-corporate-net-zero-standard-version-2-0" target="_blank" rel="noopener">sciencebasedtargets.org ↗</a></li>
+          <li>SBTi — 电力行业净零标准咨询（2026年7月15日） — <a href="https://sciencebasedtargets.org/news/the-sbti-launches-second-public-consultation-on-updated-draft-power-sector-net-zero-standard" target="_blank" rel="noopener">sciencebasedtargets.org ↗</a></li>
+          <li>SBTi — 企业净零标准V2.0发布 — <a href="https://sciencebasedtargets.org/news/the-sbti-releases-corporate-net-zero-standard-v2-0-to-accelerate-corporate-climate-action" target="_blank" rel="noopener">sciencebasedtargets.org ↗</a></li>
+          <li>中国日报 — 中国在全球企业脱碳中的角色 — <a href="https://mobile.chinadaily.com.cn/html5/2026-07/20/content_014_6a5d75a6ed50be540e734783.htm" target="_blank" rel="noopener">chinadaily.com.cn ↗</a></li>
+          <li>CASE for SEA — 东盟电网与能源安全 — <a href="https://caseforsea.org/national-roles-in-a-regional-system-the-asean-power-grid-and-its-opportunity-to-enhance-energy-security/" target="_blank" rel="noopener">caseforsea.org ↗</a></li>
+          <li>FactsAsia — 东盟电网与区域互联互通基金 — <a href="https://factsasia.org/blog/asean-power-grid-for-regional-development-a-genuine-test-for-asean-centrality" target="_blank" rel="noopener">factsasia.org ↗</a></li>
+          <li>AEC-VCCI / The Nation — 东盟电网压力与LNG节省 — <a href="https://en.aecvcci.vn/tin-tuc-n15516/global-energy-investment-hits-record-as-asean-power-grids-face-strain.htm" target="_blank" rel="noopener">en.aecvcci.vn ↗</a></li>
+          <li>IESR — 第44届高级官员能源会议与APG工作组 — <a href="https://iesr.or.id/en/connecting-asean-executing-the-regional-interconnection-and-grid-ambition" target="_blank" rel="noopener">iesr.or.id ↗</a></li>
+          <li>Cisco — 目标与进展 / FY25目标报告 — <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/governance/progress.html" target="_blank" rel="noopener">cisco.com ↗</a></li>
+          <li>Cisco博客 — FY25清洁能源供应 — <a href="https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report" target="_blank" rel="noopener">blogs.cisco.com ↗</a></li>
+          <li>Eco-Business — TNFD半导体与数据中心水风险 — <a href="https://eco-business.com/news/thirsty-tech-why-chips-and-data-centres-are-a-growing-water-risk-for-investors/" target="_blank" rel="noopener">eco-business.com ↗</a></li>
+          <li>TNFD — 科技行业水风险案例研究 — <a href="https://tnfd.global/knowledge-bank/nature-related-issues-in-the-technology-sector/" target="_blank" rel="noopener">tnfd.global ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <h3>⚡ 智能信号</h3>
+      <ul>
+        <li><span class="signal-dot signal-red"></span> 越南物理型DPPA门槛7月20日降低10倍</li>
+        <li><span class="signal-dot signal-amber"></span> SBTi V2.0就绪评估服务已开放</li>
+        <li><span class="signal-dot signal-amber"></span> SBTi电力行业标准咨询即将截止</li>
+        <li><span class="signal-dot signal-green"></span> 中国企业SBTi采纳同比增长92%（约850家）</li>
+        <li><span class="signal-dot signal-green"></span> LTMS-PIP多边交易容量达200 MW</li>
+        <li><span class="signal-dot signal-red"></span> 东盟电网完整愿景需约8000亿美元投资</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>📅 前瞻事件日历</h3>
+      <ul>
+        <li>越南物理型DPPA 20,000 kWh门槛生效（2026年7月20日）</li>
+        <li>SBTi V2.0目标验证开放（2027年2月）</li>
+        <li>SBTi V2.0对新提交目标强制生效（2028年2月）</li>
+        <li>东盟电网海底电缆框架指南（2026年下半年）</li>
+        <li>越南屋顶光伏&gt;50%余电优惠窗口到期（2030年12月）</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>📋 本周覆盖议题</h3>
+      <ul>
+        <li>越南DPPA第243/2026号法令</li>
+        <li>物理型DPPA门槛降低</li>
+        <li>屋顶光伏余电上限改革</li>
+        <li>SBTi企业净零标准V2.0</li>
+        <li>SBTi就绪评估服务</li>
+        <li>中国SBTi市场加速</li>
+        <li>东盟电网一体化</li>
+        <li>区域互联互通基金与APG工作组</li>
+        <li>思科FY25目标报告里程碑</li>
+        <li>半导体/数据中心水风险</li>
+      </ul>
+    </div>
+    <div class="sidebar-block">
+      <h3>🔗 核心信息来源</h3>
+      <ul>
+        <li><a href="https://conventuslaw.com" target="_blank" rel="noopener">Conventus Law ↗</a></li>
+        <li><a href="https://sciencebasedtargets.org" target="_blank" rel="noopener">SBTi ↗</a></li>
+        <li><a href="https://caseforsea.org" target="_blank" rel="noopener">CASE for SEA ↗</a></li>
+        <li><a href="https://www.adb.org" target="_blank" rel="noopener">亚洲开发银行 ↗</a></li>
+        <li><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/" target="_blank" rel="noopener">Cisco Purpose ↗</a></li>
+        <li><a href="https://tnfd.global" target="_blank" rel="noopener">TNFD ↗</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-inner">
+    思科可持续发展情报简报 · 第66期 · 2026年7月27日周<br>
+    由思科战略情报团队制作 · <a href="https://tu2026.github.io/cisco-sustainability-briefing/" target="_blank" rel="noopener">在线查看 ↗</a><br>
+    本简报仅供内部战略规划使用，所有来源均已附链接供核实。
+  </div>
+</footer>
+
+</body>
+</html>
