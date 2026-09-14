@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cisco 可持续发展情报简报 — 第71期 | 2026年9月7日</title>
+<title>Cisco 可持续发展情报简报 — 第72期 | 2026年9月14日</title>
 <style>
   :root {
     --cisco-blue: #049fd9;
@@ -48,7 +48,7 @@
     text-transform: uppercase;
     margin-bottom: 16px;
   }
-  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
   .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
   .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
   .lang-switch { float: right; margin-top: -40px; }
@@ -83,7 +83,7 @@
     padding: 24px;
     border-radius: 0 8px 8px 0;
     font-size: 15.5px;
-    line-height: 1.85;
+    line-height: 1.75;
   }
   .exec-summary p + p { margin-top: 14px; }
   .intel-item {
@@ -95,8 +95,8 @@
     transition: border-color 0.2s;
   }
   .intel-item:hover { border-color: var(--cisco-blue); }
-  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.55; flex: 1; }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
+  .intel-title { font-size: 16.5px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
   .impact-badge {
     background: linear-gradient(135deg, var(--accent-green), #00a854);
     color: #fff;
@@ -106,9 +106,10 @@
     font-weight: 700;
     white-space: nowrap;
     margin-left: 12px;
+    flex-shrink: 0;
   }
   .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
-  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; line-height: 1.85; }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
   .intel-meta { font-size: 13px; color: var(--text-muted); }
   .cisco-relevance {
     background: rgba(4, 159, 217, 0.08);
@@ -117,10 +118,9 @@
     border-radius: 0 6px 6px 0;
     margin-top: 14px;
     font-size: 13.5px;
-    line-height: 1.8;
   }
   .cisco-relevance strong { color: var(--cisco-light); }
-  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); line-height: 1.7; }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
   .sources a { color: var(--cisco-blue); }
   .data-grid {
     display: grid;
@@ -136,13 +136,13 @@
   }
   .data-card:hover { border-color: var(--cisco-blue); }
   .data-value {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: var(--cisco-light);
     line-height: 1.2;
     margin-bottom: 4px;
   }
-  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.6; }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
   .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
   .trend-up { color: var(--accent-green); }
   .trend-down { color: var(--accent-warm); }
@@ -157,7 +157,7 @@
   }
   .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
   .rec-block ul { padding-left: 22px; font-size: 14px; }
-  .rec-block li { margin-bottom: 8px; line-height: 1.75; }
+  .rec-block li { margin-bottom: 6px; }
   .sidebar-card {
     background: var(--card-bg);
     border: 1px solid var(--border-subtle);
@@ -178,13 +178,12 @@
     font-size: 13px;
     padding: 10px 0;
     border-bottom: 1px solid var(--border-subtle);
-    line-height: 1.7;
   }
   .signal:last-child { border-bottom: none; }
   .signal strong { color: #fff; display: block; margin-bottom: 3px; }
   .signal .source { font-size: 11.5px; color: var(--text-muted); }
   .signal .source a { color: var(--cisco-blue); }
-  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); line-height: 1.7; }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
   .event-row:last-child { border-bottom: none; }
   .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
   .topic-chip {
@@ -201,7 +200,6 @@
     font-size: 12.5px;
     padding: 8px 0;
     border-bottom: 1px solid var(--border-subtle);
-    line-height: 1.7;
   }
   .core-source:last-child { border-bottom: none; }
   .core-source a { color: var(--cisco-blue); }
@@ -212,7 +210,6 @@
     font-size: 13.5px;
     color: var(--text-muted);
     border: 1px solid var(--border-subtle);
-    line-height: 1.85;
   }
   .methodology-note h4 {
     color: var(--cisco-light);
@@ -220,7 +217,7 @@
     margin-bottom: 10px;
   }
   .methodology-note ul { padding-left: 20px; margin-top: 8px; }
-  .methodology-note li { margin-bottom: 6px; line-height: 1.75; }
+  .methodology-note li { margin-bottom: 5px; }
   .methodology-note a { color: var(--cisco-blue); }
   footer {
     border-top: 1px solid var(--border-subtle);
@@ -243,10 +240,10 @@
     <div class="lang-switch">
       <a href="cisco_sustainability_briefing.html">English</a>
     </div>
-    <span class="issue-badge">第71期 · 2026年9月7日</span>
+    <span class="issue-badge">第72期 · 2026年9月14日</span>
     <h1>Cisco 可持续发展情报简报</h1>
-    <p class="subtitle">每周聚焦：越南 DPPA/储能执行、东盟跨境光伏扩容、供应链水风险披露</p>
-    <p class="meta">覆盖窗口：2026年9月1日—9月7日 · 检索语言：英文（单次统一选题） · 主题数：5 · 收件人：dit2@cisco.com</p>
+    <p class="subtitle">越南 Decree 243 扩展 DPPA、ASEAN BESS 两部制电价与柬埔寨 Takeo 跨境储能、WRI Water Scopes 1–3 标准启动</p>
+    <p class="meta">覆盖窗口:2026年9月8日 – 9月14日 · 检索语言:英文 · 主题数:5 · 收件人:dit2@cisco.com</p>
   </div>
 </header>
 
@@ -259,69 +256,70 @@
 <div class="section">
   <div class="section-title">执行摘要</div>
   <div class="exec-summary">
-    <p>越南能源转型正进入一个新的阶段：政策意图已明确，电网瓶颈成为真正的约束。9月6日 Vietnam Investor 分析确认，由于输配电和储能建设未能跟上已超 24,000 MW 的可再生能源装机，中部和南部省份日常弃光弃风比例达 20–30%，部分时段或天气条件下飙升至 50–60%。与此同时，工贸部对 2026 年电力负荷增长的预测区间从基准 +5.5% 到应急情景 +14.1%，而 PDP8 中 10–16 GW 的储能目标正成为工厂级 PPA 可靠性的决定性因素。2026年6月26日政府修订 DPPA 与自发自用屋顶光伏规定的法令，加上 2025年12月11日国会通过的 Resolution 253/2025/QH15（覆盖 2026–2030 年），为购电机制提供了更完整的框架——但只有配套厂内储能并采用透明的两部制电价，机制才能真正落地。</p>
-    <p>区域电网互联的推进速度超出预期。9月3日，印尼与新加坡就廖内群岛（含巴淡岛）向新加坡 3.4 GW 跨境光伏出口达成高级阶段谈判，Vena Energy 计划在当地建设 2 GW 光伏 + 超过 8 GWh 储能，目标在 2030 年前每年向新加坡输送 2.5 TWh 电力。这标志着东盟电网（ASEAN Power Grid）的旗舰项目正从概念走向合同，为 Cisco 在印尼、马来西亚和越南的供应商开辟了新的可再生能源采购选项。与此同时，水风险正从单纯的运营问题演变为供应链治理问题：CDP 全球水报告显示，五分之一的受访大型企业已识别出足以造成数十亿美元价值影响的供应链水风险，但在切换采购地时，水却很少被纳入决策变量。对于 Cisco 正在推进的 CDP Water Security Module 5.11 SOP 和 FY27 供应商水风险筛查而言，现在是把流域级数据嵌入采购流程的关键时点。</p>
+    <p>上周越南可再生能源制度迈过了一个实质性门槛:2026年6月26日正式生效的 Decree 243/2026/NĐ-CP,同时修订了 2025 年关于直接购电协议(DPPA)机制的 Decree 57 与关于可再生能源/新能源发展的 Decree 58。改革要点包括:屋顶光伏余电上网比例上限从 20% 提升至 50%,数据中心与电动汽车充电站被明确认定为合规的大用电户负荷,工业园区电力零售商获得 DPPA 参与资格 — 对位于同奈、北宁、平阳的富士康、和硕与 NIDEC 等 EMS/ODM 厂商尤为关键。配套的实施细则 Decree 272/2026/NĐ-CP 于 2026 年 7 月 4 日发布。专属线路(专线)DPPA 电价现已可由双方自由协商,不再受既有发电分档价格上限限制。</p>
+    <p>储能正在从可选项变成 ASEAN 必选项。越南 Circular 62/2025/TT-BCT(2026 年 1 月生效)使其成为首个建立正式 BESS 两部制电价(容量费 + 电量费分开)的主要东盟经济体;FESSIA 2026 年 7 月发布的 DNV 报告则将储能定位为 ASEAN 能源转型的"缺失环节",指出当前已投运 BESS 仅约 1.4 GW,而全球储能成本自 2013 年以来已下降近 90%。同期,2026 年 6 月 24 日亚洲开发银行批准了 6,344 万美元融资包,用于柬埔寨首座大规模 BESS — 位于金边以南 69 公里 Takeo 230 kV 变电站的 250 MW / 500 MWh 项目,该项目明确接入 ASEAN 电网框架下的越柬跨境电力贸易。用水风险方面,2026 年 4 月 30 日启动的 WRI–WWF–SCS Global Services–CEO Water Mandate Water Scopes 1–3 倡议,提供了类似 GHG Protocol 的企业价值链水风险评估框架 — 这正是思科 CDP Water Security Module 5.11 SOP 所需的标准工具。</p>
   </div>
 </div>
 
-<!-- ============================ Top 3 本周最值得行动的发现 ============================ -->
+<!-- ============================ TOP 3 本周最值得行动的发现 ============================ -->
 <div class="section">
   <div class="section-title">Top 3 本周最值得行动的发现</div>
 
   <div class="intel-item">
     <div class="intel-header">
-      <div class="intel-title">1 · 越南 DPPA/储能法令及 Resolution 253 落地推进 —— 弃电率飙升至 50–60%，储能成为供应商 PPA 成败关键</div>
-      <span class="impact-badge high">影响 9.0</span>
+      <div class="intel-title">1 · 越南 Decree 243/2026 落地执行 Resolution 253 — 屋顶光伏余电上网比例 20%→50%、数据中心与充电桩列入合规大用电户负荷、园区零售商进入 DPPA 池</div>
+      <span class="impact-badge high">影响 9.2</span>
     </div>
     <div class="intel-summary">
-      2026年6月26日，越南政府颁布修订 DPPA 机制及自发自用屋顶光伏相关规定的法令，其法律基础是 2025年12月11日国会通过的 Resolution 253/2025/QH15（覆盖 2026–2030 年），旨在加快竞争性电力市场建设并汇聚投资。然而，电网现实正在追赶政策：庆和、林同等中南部省份被迫对可再生能源输出进行 20–30% 的常规削减，部分时段或天气事件下削减幅度可达 50–60%。PDP8 提出 10–16 GW 储能目标，优先在北部早期部署，胡志明市及南部省份已试点储能模式。越南清洁能源协会副主席阮春贵（Nguyen Xuan Quy）等专家强调，DPPA 与储能只有配套透明的电网使用费与系统服务费、标准化合同模板、更强的计量与支付体系，以及明确的两部制电价规则，才能释放全部潜力。
+      2026 年 6 月 26 日,越南政府发布 Decree 243/2026/NĐ-CP,同步修订 2025 年 Decree 57/2025/NĐ-CP(DPPA 机制)与 Decree 58/2025/NĐ-CP(可再生能源/新能源发展),即日生效。四项变化对 ICT/电子制造业最为关键:(i) 自用屋顶光伏余电可售予电网的比例上限由 20% 提至 50%,在 2030 年 12 月 31 日前经协议可超过 50%,离网山区/边境/岛屿地区无上限;(ii) 数据中心和电动汽车充电站被明确列为网侧 DPPA 合规的大用电户负荷;(iii) 工业园区、经济区、出口加工区、高新区电力零售商获得 DPPA 参与资格,为集群级转运(wheeling)打开通道;(iv) DPPA 电价可由双方自由协商,不再受发电分档上限限制。2026 年 7 月 4 日发布的 Decree 272/2026/NĐ-CP 提供 Resolution 253/2025/QH15(2026–2030 框架)的具体执行规则。余电价格仍以电力市场运营商公布的上年度批发市场均价为基准,且不得超过光伏标杆电价上限。
     </div>
     <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>Cisco 在越南同奈、平阳、北宁的 EMS/ODM 供应商需要的不仅是绿电，更是可靠的基荷。没有配套储能，PPA 购电将面临弃电和电价飙升风险。<strong>行动窗口：</strong>将储能协同配置与透明的两部制电价语言作为供应商 PPA 条款单的非谈判项；优先在 PDP8 明确早期储能部署的省份落地试点。
+      <strong>对思科的重要性:</strong> 富士康(北宁)、和硕(海防)、NIDEC(同奈)以及思科支持的任何数据中心建设,现已获得明确的法律路径,可与园区零售商签订专线 DPPA,并将屋顶余电最多 50% 货币化。<strong>行动窗口:</strong> 在越南工贸部(MoIT)发布标准化专线 DPPA 合同模板(预计 2026 年 Q4)之前,在所有新供应商 PPA 条款中加入"Decree 243 选择适用(opt-in)"条款,涵盖:数据中心/充电桩负荷认定、50% 以上余电协商权、专线自由定价权。
     </div>
     <div class="sources">
-      <strong>来源：</strong>
-      <a href="https://vietnaminvestor.org/vietnam-s-energy-overhaul-aims-for-high-growth-amid-grid-and-funding-hurdles-d49e48" target="_blank" rel="noopener">Vietnam Investor：越南能源改革与电网挑战 ↗</a> ·
-      <a href="https://efbmi.com/?live-blog-22252790-2026-08-18-direct-power-purchase-agreements-dppas-and-battery-energy-storage-systems-bess-a" target="_blank" rel="noopener">EFBMI：DPPA 与储能政策更新 ↗</a> ·
-      <a href="https://www.vietnam.vn/en/thu-tuong-chu-dong-sang-tao-linh-hoat-de-thuc-hien-cac-muc-tieu-de-ra" target="_blank" rel="noopener">Vietnam.vn：8月政府例会 ↗</a>
+      <strong>来源:</strong>
+      <a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners:Decree 243/2026 全面修订 ↗</a> ·
+      <a href="https://nrfstgcd.nrf-supp.projects.epam.com/zh-cn/knowledge/publications/69fad1a7/vietnam-expands-its-dppa-framework" target="_blank" rel="noopener">Norton Rose Fulbright:Decree 243 关键变化 ↗</a> ·
+      <a href="https://vietnam.vn/en/go-diem-nghen-de-nang-luong-di-truoc-mot-buoc" target="_blank" rel="noopener">Vietnam.vn:Resolution 253 / Decree 272 落地执行 ↗</a> ·
+      <a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">Mt. Stonegate:越南 DPPA 2026 执行阶段 ↗</a>
     </div>
   </div>
 
   <div class="intel-item">
     <div class="intel-header">
-      <div class="intel-title">2 · 新加坡–印尼 3.4 GW 跨境光伏框架推进；Vena Energy 2 GW + 8 GWh 廖内项目目标年出口 2.5 TWh</div>
-      <span class="impact-badge">影响 8.5</span>
+      <div class="intel-title">2 · 东盟 BESS 电价机制升级 — 越南 Circular 62 首创两部制电价、ADB 批准柬埔寨 Takeo 250 MW / 500 MWh BESS 跨境互联越南</div>
+      <span class="impact-badge high">影响 8.8</span>
     </div>
     <div class="intel-summary">
-      2026年9月3日，印尼能源矿产部（MEMR）与新加坡能源市场管理局（EMA）——连同主权投资管理机构 Danantara 以及包括吉宝、胜科、MedcoEnergi、TotalEnergies、壳牌/Vena Energy 在内的国际财团——就印尼廖内群岛（含巴淡岛）向新加坡 3.4 GW 跨境光伏出口的监管与商业框架达成高级阶段谈判。该项目将公用事业级光伏与储能及高压海底电缆结合，目标到 2035 年满足新加坡约 30% 的预计电力需求。与此同时，Vena Energy 计划在廖内群岛建设 2 GW 光伏与储能项目，电池储能容量预计超过 8 GWh，目标在 2030 年前每年向新加坡出口高达 2.5 TWh 电力。该倡议被视为东盟电网愿景的旗舰锚点项目，也是区域脱碳的可复制模板。
+      越南 Circular 62/2025/TT-BCT(2026 年 1 月生效)建立了东盟主要经济体的首个正式 BESS 两部制电价结构,将容量费(为可用性付费)与电量费(为实际放电付费)分离。这一改革将 BESS 从单一电量补偿推向多服务资产认可,据 FESSIA/DNV 估算,越南近期可释放约 7.5 亿美元投资,到 2030 年累计可达 57 亿美元。2026 年 6 月 24 日,亚洲开发银行批准了 6,344 万美元融资包 — 含 ADB 提供的 4,000 万美元优惠贷款和 500 万美元赠款,加上绿色气候基金与英国通过 ASEAN Catalytic Green Finance Facility 联合融资的 1,844 万美元 — 用于柬埔寨首座大规模 BESS:位于金边以南 69 公里 Takeo 230 kV 变电站的 250 MW / 500 MWh 设施,与既有变电站共址,并明确接入 ASEAN 电网框架下的越柬跨境电力贸易。柬埔寨已投运装机中可再生能源占比 63.23%(3,325 MW),仅光伏一项预计 2026 年底达 ~1.87 GW。
     </div>
     <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>跨境光储项目为 Cisco 新加坡运营创造新的采购选择，未来也可能让越南供应商接入区域可再生能源市场。<strong>行动窗口：</strong>跟踪新加坡 EMA 进口许可证审批结果，评估 Cisco 新加坡用电负荷能否对接 Vena Energy/壳牌进口管线，并研究该模式如何复制到越南供应商。
+      <strong>对思科的重要性:</strong> Takeo BESS 是首个直接连接越南电网稳定性与柬埔寨储能的 ASEAN 电网标杆资产 — 意味着越南南部供应商 PPA 获得了区域级的稳定层。<strong>行动窗口:</strong> 在越南新建供应商 PPA 中引用 Circular 62 的容量/电量分离机制,使富士康、和硕、NIDEC 等级 EMS/ODM 厂区能将储能作为多服务资产实现收入堆叠;向 MoIT/EVN 询问思科越南南部 EMS 供应商能否在弃风弃光事件期间使用 Takeo 稳定后的进口电。
     </div>
     <div class="sources">
-      <strong>来源：</strong>
-      <a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box：3.4 GW 跨境光伏 ↗</a> ·
-      <a href="https://www.energy-box.com/post/vena-energy-aims-for-singapore-power-imports-before-2030-sees-huge-potential-in-region" target="_blank" rel="noopener">Energy Box：Vena Energy 廖内项目 ↗</a> ·
-      <a href="https://energynews.pro/en/blueleaf-energy-and-universal-peak-finance-100-mw-malaysian-bess" target="_blank" rel="noopener">Energy News：马来西亚 100 MW 储能 ↗</a>
+      <strong>来源:</strong>
+      <a href="https://www.energy-storage.news/?p=103764/" target="_blank" rel="noopener">Energy-Storage.news:越南两部制电价与 FESSIA ↗</a> ·
+      <a href="https://www.cambodgemag.com/en/post/battery-storage-in-cambodia-the-adb-s-quiet-bet-on-a-grid-revolution" target="_blank" rel="noopener">Cambodia Magazine:ADB Takeo BESS ↗</a> ·
+      <a href="https://www.energywatch.com.my/blog/2026/02/19/carbon-digital-growth-and-power-trade-converge-five-energy-trends-reshaping-asean-in-2026" target="_blank" rel="noopener">Energy Watch:2026 年东盟五大能源趋势 ↗</a>
     </div>
   </div>
 
   <div class="intel-item">
     <div class="intel-header">
-      <div class="intel-title">3 · 供应链水风险升级为采购治理议题 —— CDP 显示五分之一大型企业识别出重大水风险，但切换产地时却很少考虑水</div>
-      <span class="impact-badge">影响 8.0</span>
+      <div class="intel-title">3 · WRI Water Scopes 1–3 倡议于 2026 年 4 月 30 日启动 — WRI、WWF、SCS Global Services 与 CEO Water Mandate 共建 GHG Protocol 式的企业价值链水风险框架</div>
+      <span class="impact-badge">影响 8.6</span>
     </div>
     <div class="intel-summary">
-      2026年9月4日 Observer 分析指出，尽管 CDP 全球水报告显示五分之一的大型企业已识别出足以造成数十亿美元价值影响的供应链水风险，但在采购方切换产地时，水仍被当作"背景信息"而非决策变量。文章认为，供应链可在数天内将生产从一个流域转移到另一个流域，从而转移水风险敞口而不被察觉。与此同时，水管理联盟（Alliance for Water Stewardship）3.0 版标准已于 2026年3月定稿，WRI–WWF–SCS–CEO Water Mandate 联合发起的 Water Scopes 1–3 指引项目也已启动，目标是建立类似 GHG Protocol 的企业价值链水风险核算模型。
+      2026 年 4 月 30 日,WRI、WWF、SCS Global Services 与 CEO Water Mandate(联合国全球契约组织 / 太平洋研究所合作)联合发起"企业价值链水风险评估指南 Water Scopes 1–3",提供覆盖完整价值链的水资源依赖度、影响、风险与机会(DIROs)标准框架,参照 GHG Protocol 模式开发。18 个月开发周期内将在第 12 个月(2027 年 Q2)开放公开征求意见,最终指南预计 2027 年 Q4 发布。根据 CDP 披露,水相关供应链风险威胁着至少 770 亿美元的企业价值;企业一年间已报告直接水相关财务损失 385 亿美元。该倡议将与现有披露框架(CDP、GRI、TNFD、CSRD ESRS E3)衔接而非取代。方法学将依赖 WRI Aqueduct 与 WWF Water Risk Filter 进行厂区级流域压力评分。目前仅约一半的大型企业报告对供应链水风险采取了行动,而在披露价值链水风险的企业中,73% 仅追溯到一级(Tier 1)供应商。
     </div>
     <div class="cisco-relevance">
-      <strong>对思科的重要性：</strong>这直接支持 Cisco 正在推进的 CDP Water Security Module 5.11 工作流以及采用 WRF v3.0 / Aqueduct 的 FY27 供应商水风险 SOP。<strong>行动窗口：</strong>将水依赖度和水可用性影响纳入 Tier-1 EMS/ODM 供应商评分卡，率先对 NIDEC（同奈河流域）和 AVC（马河流域）进行筛查；任何产地切换前必须先披露水压力信息。
+      <strong>对思科的重要性:</strong> Water Scopes 1–3 是思科 CDP Water Security Module 5.11 Value Chain Engagement SOP 一直等待的标准化词汇体系,与既有的 WRF v3.0 供应商评估方法学高度契合。<strong>行动窗口:</strong> 在 2027 年 Q2 公开征求意见期内提交内部意见;在 2027 年 Q4 最终指南发布前,完成 Tier-1 EMS/ODM 供应商筛查(NIDEC/同奈流域、AVC/马河流域)与新框架的范围对齐。
     </div>
     <div class="sources">
-      <strong>来源：</strong>
-      <a href="https://observer.com/2026/09/water-risk-supply-chain-resilience/" target="_blank" rel="noopener">Observer：供应链切换时的水风险 ↗</a> ·
-      <a href="https://buff.ly/7Cg6z5E" target="_blank" rel="noopener">Trellis：2026 关键气候与自然标准 ↗</a> ·
-      <a href="https://rallies.ai/news/dr-reddys-publishes-tnfd-aligned-nature-disclosure-2026-report-15e277a0166e7966" target="_blank" rel="noopener">Rallies：TNFD 对齐的水披露 ↗</a>
+      <strong>来源:</strong>
+      <a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI:Water Scopes 1–3 框架 ↗</a> ·
+      <a href="https://smartwatermagazine.com/news/smart-water-magazine/a-shared-language-corporate-water-risk-water-scopes-initiative" target="_blank" rel="noopener">Smart Water Magazine:Water Scopes 倡议 ↗</a> ·
+      <a href="https://carbonbetter.com/series/edition-6-your-sustainability-teams-weekly-briefing/" target="_blank" rel="noopener">CarbonBetter 第 6 期:水风险简报 ↗</a>
     </div>
   </div>
 
@@ -333,56 +331,56 @@
   <div class="data-grid">
 
     <div class="data-card">
-      <div class="data-value">20–30<span style="font-size:18px;color:var(--text-muted);">%</span></div>
-      <div class="data-label">越南中南部省份日常可再生能源弃电率；部分时段高达 50–60%</div>
-      <div class="data-trend trend-down">▲ 供应商 PPA 面临电网拥堵风险</div>
+      <div class="data-value">20%→50%</div>
+      <div class="data-label">越南 Decree 243/2026 将屋顶光伏余电上网比例上限由 20% 提至 50%;2030 年前可协议进一步上调</div>
+      <div class="data-trend trend-up">▲ 工业园区屋顶资产货币化空间显著扩大</div>
       <div class="data-source">
-        来源：<a href="https://vietnaminvestor.org/vietnam-s-energy-overhaul-aims-for-high-growth-amid-grid-and-funding-hurdles-d49e48" target="_blank" rel="noopener">Vietnam Investor，2026年9月6日 ↗</a>
+        来源:<a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners:Decree 243/2026 ↗</a>
       </div>
     </div>
 
     <div class="data-card">
-      <div class="data-value">+5.5<span style="font-size:18px;color:var(--text-muted);">% 至 +14.1%</span></div>
-      <div class="data-label">越南 2026 年电力负荷增长情景（基准 +5.5%、运行 +11.7%、应急 +14.1%）</div>
-      <div class="data-trend trend-up">▲ 需求增长快于电网投资</div>
+      <div class="data-value">57<span style="font-size:18px;color:var(--text-muted);"> 亿美元 (2030 年)</span></div>
+      <div class="data-label">FESSIA/DNV 预测越南 BESS 投资潜力(从近期的 7.5 亿美元起步)</div>
+      <div class="data-trend trend-up">▲ 储能商业模型已具备收入堆叠经济性</div>
       <div class="data-source">
-        来源：<a href="https://vietnaminvestor.org/vietnam-s-energy-overhaul-aims-for-high-growth-amid-grid-and-funding-hurdles-d49e48" target="_blank" rel="noopener">Vietnam Investor，2026年9月6日 ↗</a>
+        来源:<a href="https://www.energy-storage.news/?p=103764/" target="_blank" rel="noopener">Energy-Storage.news,2026 年 7 月 ↗</a>
       </div>
     </div>
 
     <div class="data-card">
-      <div class="data-value">3.4<span style="font-size:18px;color:var(--text-muted);"> GW</span></div>
-      <div class="data-label">新加坡–印尼跨境光伏出口容量；目标到 2035 年满足新加坡约 30% 预计需求</div>
-      <div class="data-trend trend-up">▲ 东盟电网旗舰锚点项目</div>
+      <div class="data-value">250<span style="font-size:18px;color:var(--text-muted);"> MW / 500 MWh</span></div>
+      <div class="data-label">柬埔寨 Takeo BESS,位于 230 kV 变电站;首个与越南跨境贸易联动的 ASEAN 电网标杆资产</div>
+      <div class="data-trend trend-up">▲ ADB 6,344 万美元融资包于 2026 年 6 月 24 日批准</div>
       <div class="data-source">
-        来源：<a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box，2026年9月3日 ↗</a>
+        来源:<a href="https://www.cambodgemag.com/en/post/battery-storage-in-cambodia-the-adb-s-quiet-bet-on-a-grid-revolution" target="_blank" rel="noopener">Cambodia Magazine,2026 年 6 月 ↗</a>
       </div>
     </div>
 
     <div class="data-card">
-      <div class="data-value">2.5<span style="font-size:18px;color:var(--text-muted);"> TWh/年</span></div>
-      <div class="data-label">Vena Energy 廖内群岛项目年出口新加坡目标；2 GW 光伏 + 超过 8 GWh 储能</div>
-      <div class="data-trend trend-up">▲ 东盟最大电池储能项目</div>
+      <div class="data-value">63.23<span style="font-size:18px;color:var(--text-muted);">%</span></div>
+      <div class="data-label">柬埔寨可再生能源在已投运装机中的占比(3,325 MW);仅光伏预计 2026 年底达 ~1.87 GW</div>
+      <div class="data-trend trend-up">▲ 储能已成为转型的关键约束</div>
       <div class="data-source">
-        来源：<a href="https://www.energy-box.com/post/vena-energy-aims-for-singapore-power-imports-before-2030-sees-huge-potential-in-region" target="_blank" rel="noopener">Energy Box，2026年9月3日 ↗</a>
+        来源:<a href="https://www.cambodgemag.com/en/post/battery-storage-in-cambodia-the-adb-s-quiet-bet-on-a-grid-revolution" target="_blank" rel="noopener">Cambodia Magazine,2026 年 6 月 ↗</a>
       </div>
     </div>
 
     <div class="data-card">
-      <div class="data-value">五分之一</div>
-      <div class="data-label">CDP 全球水报告：识别出重大供应链水风险的大型企业比例</div>
-      <div class="data-trend trend-down">▼ 切换产地时水却很少被纳入决策</div>
+      <div class="data-value">770<span style="font-size:18px;color:var(--text-muted);"> 亿美元</span></div>
+      <div class="data-label">CDP 数据显示水相关供应链风险威胁的企业价值;一年间企业已报告直接水损失 385 亿美元</div>
+      <div class="data-trend trend-down">▼ 水风险仍极少进入采购切换决策</div>
       <div class="data-source">
-        来源：<a href="https://observer.com/2026/09/water-risk-supply-chain-resilience/" target="_blank" rel="noopener">Observer，2026年9月4日 ↗</a>
+        来源:<a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI:Water Scopes 1–3 ↗</a>
       </div>
     </div>
 
     <div class="data-card">
-      <div class="data-value">100<span style="font-size:18px;color:var(--text-muted);"> MW / 400 MWh</span></div>
-      <div class="data-label">马来西亚 MyBeST 储能项目实现融资关闭（Blueleaf Energy–Universal Peak）</div>
-      <div class="data-trend trend-up">▲ 马来西亚半岛首个竞争性并网储能采购</div>
+      <div class="data-value">2027 Q4</div>
+      <div class="data-label">Water Scopes 1–3 最终指南预计发布;18 个月多方利益相关方开发流程</div>
+      <div class="data-trend trend-up">▲ 2027 年 Q2 开放公开征求意见</div>
       <div class="data-source">
-        来源：<a href="https://energynews.pro/en/blueleaf-energy-and-universal-peak-finance-100-mw-malaysian-bess" target="_blank" rel="noopener">Energy News，2026年9月2日 ↗</a>
+        来源:<a href="https://smartwatermagazine.com/news/smart-water-magazine/a-shared-language-corporate-water-risk-water-scopes-initiative" target="_blank" rel="noopener">Smart Water Magazine,2026 ↗</a>
       </div>
     </div>
 
@@ -394,20 +392,20 @@
   <div class="section-title">战略建议</div>
 
   <div class="rec-block">
-    <h4>短期（0–3个月）· 2026年9月–11月</h4>
+    <h4>短期(0–3 个月)· 2026 年 9 月 – 11 月</h4>
     <ul>
-      <li><strong>将储能协同配置设为越南供应商 PPA 的默认条款。</strong>要求 Foxconn 级 EMS/ODM 供应商的新签 DPPA 必须包含足够覆盖 2–4 小时尖峰负荷的电池储能，以应对中南部省份 20–30% 的常规弃电及 50–60% 的尖峰弃电风险。</li>
-      <li><strong>跟踪新加坡 EMA 对 3.4 GW 印尼–新加坡框架的许可证审批。</strong>评估 Cisco 新加坡用电负荷能否对接 Vena Energy/壳牌进口管线，并研究该模式如何复制到越南供应商的跨境采购。</li>
-      <li><strong>将水风险嵌入供应商切换评分卡。</strong>在任何产地切换之前，把 WRI Aqueduct 流域水压力等级和 WRF v3.0 水依赖度/水可用性影响标准纳入 FY27 EMS/ODM 评估 SOP。</li>
+      <li><strong>在所有新建越南供应商 PPA 中加入"Decree 243 选择适用"条款。</strong>条款应明确援引:数据中心/充电桩负荷合规资格、2030 年前 50% 以上屋顶余电协商窗口、专线自由定价权、园区零售商参与资格。</li>
+      <li><strong>在越南 PPA 中推动 BESS 收入堆叠条款。</strong>援引 Circular 62/2025/TT-BCT 的容量 + 电量分离机制,使富士康、和硕、NIDEC 等级 EMS/ODM 厂区能在 PDP8 10–16 GW BESS 目标下将储能作为多服务资产实现货币化。</li>
+      <li><strong>向 CDP Water 团队通报 Water Scopes 1–3 路线图。</strong>锁定 2027 年 Q2 公开征求意见参与机会;在 2027 年 Q4 最终指南发布前,将 Module 5.11 SOP 范围与草案框架对齐。</li>
     </ul>
   </div>
 
   <div class="rec-block">
-    <h4>中期（3–12个月）· 2026年11月–2027年8月</h4>
+    <h4>中期(3–12 个月)· 2026 年 11 月 – 2027 年 8 月</h4>
     <ul>
-      <li><strong>开展越南供应商 PPA + 储能联合试点。</strong>在弃电风险较高的省份选择一个高优先级工厂，依据 2026年6月26日法令落地一套光储一体化 DPPA；验证透明的两部制电价结构和计量协议。</li>
-      <li><strong>将 Water Scopes 1–3 草案词汇纳入 CDP Module 5.11 SOP。</strong>使供应商问卷与 WRI–WWF–SCS 框架对齐（2027 Q2 公开评议、2027 Q4 终稿），并为 FY27 Tier-1 供应商披露做好准备。</li>
-      <li><strong>制定区域东盟可再生能源采购手册。</strong>以新加坡–印尼和马来西亚储能里程碑为模板，为 Cisco 东南亚供应商基地绘制多国 PPA 战略，包括越南、印尼、马来西亚在东盟电网协议下的电力转运选项。</li>
+      <li><strong>启动 Takeo 稳定化的越南南部 PPA 试点。</strong>与 MoIT/EVN 协调,评估越南南部 EMS 供应商能否在 20–30% 弃风弃光时段使用 Takeo BESS 稳定后的进口电;借此验证园区零售商新资格下的集群级 wheeling 模式。</li>
+      <li><strong>在 FY27 Tier-1 供应商筛查中引入 Water Scopes 1–3。</strong>最终指南发布后,使用 WRI/WWF/SCS 标准化范围类别取代临时性流域压力评估;要求 Tier-1 EMS/ODM 供应商按新类别披露。</li>
+      <li><strong>将思科定位为 ASEAN 电网标杆企业承购方之一。</strong>结合上一期报道的新加坡–印尼 3.4 GW 跨境框架与本期柬埔寨 Takeo BESS 案例,从 FY27 起在区域跨境可再生能源采购议定书中为思科争取席位。</li>
     </ul>
   </div>
 </div>
@@ -417,29 +415,32 @@
   <div class="section-title">方法说明</div>
   <div class="methodology-note">
     <h4>检索与选题</h4>
-    <p>本期通过单次英文检索（覆盖 2026年9月1日—9月7日）覆盖了规定的 5 大主题：（1）越南 DPPA 政策（第 57 号法令、Resolution 253、两部制电价、储能）；（2）东南亚绿能、储能、电网互联；（3）思科 ESG 公告（FY25/26）；（4）供应链水风险（TNFD、WRI）；（5）碳中和/净零进展。其中主题 1、2、4 进入本期 Top 3，影响分分别为 9.0、8.5、8.0。评分权重：思科运营暴露度（40%）、监管/市场规模（30%）、行动窗口紧迫度（20%）、来源权威性（10%）。</p>
+    <p>本期基于一次英文检索流程,覆盖 2026 年 9 月 8 日 – 9 月 14 日,围绕五个必备主题:(1) 越南 DPPA 政策(Decree 57/58、Resolution 253、Decree 243、两部制电价、BESS);(2) 东南亚绿色能源、储能与电网互联(含柬埔寨、ASEAN 电网);(3) 思科可持续发展公告与 ESG 报告(FY25/26);(4) 供应链水风险与水资源管理(TNFD、WRI Water Scopes 1–3);(5) 碳中和/净零进展(SBTi V2.0)。主题 1、2、4 进入 Top 3,影响评分分别为 9.2、8.8、8.6。评分权重:思科运营敞口(40%)、监管/市场影响幅度(30%)、行动窗口紧迫性(20%)、来源权威性(10%)。</p>
     <ul>
-      <li><strong>检索窗口：</strong>2026年9月1日—9月7日</li>
-      <li><strong>检索语言：</strong>英文（与中文版共享同一选题）</li>
-      <li><strong>来源优先级：</strong>一手（政府门户、企业官网）&gt; 行业媒体（Vietnam Investor、Energy Box、Energy News、Observer）&gt; 综合媒体</li>
-      <li><strong>来源链接政策：</strong>所有引用均为真实可点击的原始链接，未使用杜撰链接</li>
-      <li><strong>双语统一原则：</strong>中文版（cisco_sustainability_briefing_zh.html）是对同一 Top 3 选题的翻译+本地化，<strong>未进行二次检索</strong></li>
+      <li><strong>检索窗口:</strong>2026 年 9 月 8 日 – 9 月 14 日</li>
+      <li><strong>检索语言:</strong>英文(单次检索,与中文版共享)</li>
+      <li><strong>来源优先级:</strong>一手来源(政府门户、企业新闻稿) &gt; 行业媒体(VTN Partners、Norton Rose Fulbright、Energy-Storage.news、Cambodia Magazine、WRI、Smart Water Magazine) &gt; 综合平台</li>
+      <li><strong>来源链接政策:</strong>所有来源均为真实可点击的原始发布链接,未使用虚构链接。</li>
+      <li><strong>双语规则:</strong>中文版(cisco_sustainability_briefing_zh.html)是对同一 Top 3 选题与数据点的翻译与本地化,而非重新检索。</li>
     </ul>
-    <h4 style="margin-top:14px;">本期完整来源列表</h4>
+    <h4 style="margin-top:14px;">完整来源列表(本期)</h4>
     <ul>
-      <li><a href="https://vietnaminvestor.org/vietnam-s-energy-overhaul-aims-for-high-growth-amid-grid-and-funding-hurdles-d49e48" target="_blank" rel="noopener">Vietnam Investor：越南能源改革 ↗</a></li>
-      <li><a href="https://efbmi.com/?live-blog-22252790-2026-08-18-direct-power-purchase-agreements-dppas-and-battery-energy-storage-systems-bess-a" target="_blank" rel="noopener">EFBMI：DPPA 与储能政策更新 ↗</a></li>
-      <li><a href="https://www.vietnam.vn/en/thu-tuong-chu-dong-sang-tao-linh-hoat-de-thuc-hien-cac-muc-tieu-de-ra" target="_blank" rel="noopener">Vietnam.vn：8月政府例会 ↗</a></li>
-      <li><a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box：3.4 GW 跨境光伏 ↗</a></li>
-      <li><a href="https://www.energy-box.com/post/vena-energy-aims-for-singapore-power-imports-before-2030-sees-huge-potential-in-region" target="_blank" rel="noopener">Energy Box：Vena Energy 廖内项目 ↗</a></li>
-      <li><a href="https://energynews.pro/en/blueleaf-energy-and-universal-peak-finance-100-mw-malaysian-bess" target="_blank" rel="noopener">Energy News：马来西亚 100 MW 储能 ↗</a></li>
-      <li><a href="https://dialogue.earth/en/energy/explainer-how-laos-role-as-southeast-asias-battery-is-changing" target="_blank" rel="noopener">Dialogue Earth：老挝作为东南亚蓄电池 ↗</a></li>
-      <li><a href="https://observer.com/2026/09/water-risk-supply-chain-resilience/" target="_blank" rel="noopener">Observer：供应链水风险 ↗</a></li>
-      <li><a href="https://buff.ly/7Cg6z5E" target="_blank" rel="noopener">Trellis：2026 关键气候与自然标准 ↗</a></li>
-      <li><a href="https://rallies.ai/news/dr-reddys-publishes-tnfd-aligned-nature-disclosure-2026-report-15e277a0166e7966" target="_blank" rel="noopener">Rallies：TNFD 对齐的水披露 ↗</a></li>
-      <li><a href="https://www.centralcharts.com/index.php/de/3063-inogen/news/5376276-water-stewardship-vs-water-efficiency-why-the-difference-matters" target="_blank" rel="noopener">Central Charts：水管理 vs 水效率 ↗</a></li>
-      <li><a href="https://www.wemeanbusinesscoalition.org/blog/signals-of-change-september-2026" target="_blank" rel="noopener">We Mean Business：2026年9月变革信号 ↗</a></li>
-      <li><a href="https://www.eco-business.com/press-releases/singapore-becomes-asias-sustainability-action-hub-as-700-leaders-convene-to-move-business-from-promise-to-performance" target="_blank" rel="noopener">Eco-Business：新加坡可持续发展行动枢纽 ↗</a></li>
+      <li><a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners:越南 Decree 243/2026 全面修订 ↗</a></li>
+      <li><a href="https://nrfstgcd.nrf-supp.projects.epam.com/zh-cn/knowledge/publications/69fad1a7/vietnam-expands-its-dppa-framework" target="_blank" rel="noopener">Norton Rose Fulbright:越南 DPPA 框架扩展 ↗</a></li>
+      <li><a href="https://www.allenandgledhill.com/sg/practices/5621/sg/perspectives/articles/33347/vnkh-vietnam-s-electricity-sector-key-regulatory-developments" target="_blank" rel="noopener">Allen &amp; Gledhill:越南电力行业监管动态 ↗</a></li>
+      <li><a href="https://vietnam.vn/en/go-diem-nghen-de-nang-luong-di-truoc-mot-buoc" target="_blank" rel="noopener">Vietnam.vn:Resolution 253 / Decree 272 落地执行 ↗</a></li>
+      <li><a href="https://www.mtstonegate.com/post/vietnam-dppa-update-2026-the-real-story-is-implementation-not-just-regulation" target="_blank" rel="noopener">Mt. Stonegate:越南 DPPA 2026 执行阶段 ↗</a></li>
+      <li><a href="https://www.energy-storage.news/?p=103764/" target="_blank" rel="noopener">Energy-Storage.news:越南两部制电价 &amp; FESSIA ↗</a></li>
+      <li><a href="https://www.cambodgemag.com/en/post/battery-storage-in-cambodia-the-adb-s-quiet-bet-on-a-grid-revolution" target="_blank" rel="noopener">Cambodia Magazine:ADB Takeo BESS ↗</a></li>
+      <li><a href="https://www.energywatch.com.my/blog/2026/02/19/carbon-digital-growth-and-power-trade-converge-five-energy-trends-reshaping-asean-in-2026" target="_blank" rel="noopener">Energy Watch:2026 年东盟五大能源趋势 ↗</a></li>
+      <li><a href="https://nextgpower.com/es?p=11672" target="_blank" rel="noopener">NextG Power:2026 年东南亚 BESS 浪潮 ↗</a></li>
+      <li><a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI:Water Scopes 1–3 框架 ↗</a></li>
+      <li><a href="https://smartwatermagazine.com/news/smart-water-magazine/a-shared-language-corporate-water-risk-water-scopes-initiative" target="_blank" rel="noopener">Smart Water Magazine:Water Scopes 倡议 ↗</a></li>
+      <li><a href="https://carbonbetter.com/series/edition-6-your-sustainability-teams-weekly-briefing/" target="_blank" rel="noopener">CarbonBetter 第 6 期:水风险简报 ↗</a></li>
+      <li><a href="https://sector-signals.net/en/themes/sustainability/articles/tnfd-nature-risk-disclosure" target="_blank" rel="noopener">Sector Signals:面向制造商的 TNFD 披露 ↗</a></li>
+      <li><a href="https://sciencebasedtargets.org/corporate-net-zero-v1?mdrv=sciencebasedtargets.org" target="_blank" rel="noopener">SBTi:Corporate Net-Zero Standard V1.3.1 ↗</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/about/csr/environmental-sustainability/net-zero.html" target="_blank" rel="noopener">思科:Net Zero Goal(净零目标) ↗</a></li>
+      <li><a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/governance/progress.html" target="_blank" rel="noopener">思科:目标与进展报告中心 ↗</a></li>
     </ul>
   </div>
 </div>
@@ -447,103 +448,117 @@
 </div>
 
 <!-- ============================================================== -->
-<!-- ============================ 侧边栏 ============================ -->
+<!-- =========================== 侧边栏 ============================ -->
 <!-- ============================================================== -->
 <div class="sidebar">
 
   <div class="sidebar-card">
     <h3>⚡ 智能信号</h3>
     <div class="signal">
-      <strong>越南 2026年6月26日 DPPA 法令</strong>
-      依据 Resolution 253/2025/QH15 修订 DPPA 机制与自发自用屋顶光伏规则。
-      <div class="source"><a href="https://efbmi.com/?live-blog-22252790-2026-08-18-direct-power-purchase-agreements-dppas-and-battery-energy-storage-systems-bess-a" target="_blank" rel="noopener">EFBMI ↗</a></div>
+      <strong>越南 Decree 243/2026 自 6 月 26 日起生效</strong>
+      屋顶余电 50% 上限、数据中心/充电桩负荷认定、专线 DPPA 自由定价。
+      <div class="source"><a href="https://vtn-partners.com/news/vietnam-overhauls-the-dppa-and-self-generation-self-consumption-regimes-decree-243-2026-nd-cp.html" target="_blank" rel="noopener">VTN Partners ↗</a></div>
     </div>
     <div class="signal">
-      <strong>新加坡–印尼 3.4 GW 框架进入高级阶段</strong>
-      谈判涵盖电价、本地含量规则与电网互联；参与方包括 Danantara、吉宝、胜科、壳牌/Vena Energy。
-      <div class="source"><a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box ↗</a></div>
+      <strong>越南 Circular 62 BESS 两部制电价</strong>
+      东盟主要经济体首个正式容量 + 电量分离机制;释放近期 7.5 亿美元,2030 年累计 57 亿美元投资。
+      <div class="source"><a href="https://www.energy-storage.news/?p=103764/" target="_blank" rel="noopener">Energy-Storage.news ↗</a></div>
     </div>
     <div class="signal">
-      <strong>马来西亚 MyBeST 储能实现融资关闭</strong>
-      Blueleaf/Universal Peak 100 MW/400 MWh 项目，马来西亚半岛首个竞争性并网储能采购。
-      <div class="source"><a href="https://energynews.pro/en/blueleaf-energy-and-universal-peak-finance-100-mw-malaysian-bess" target="_blank" rel="noopener">Energy News ↗</a></div>
+      <strong>柬埔寨 Takeo 250 MW / 500 MWh BESS 获融资</strong>
+      ADB 6,344 万美元融资包(2026 年 6 月 24 日),用于 ASEAN 电网越柬跨境标杆资产。
+      <div class="source"><a href="https://www.cambodgemag.com/en/post/battery-storage-in-cambodia-the-adb-s-quiet-bet-on-a-grid-revolution" target="_blank" rel="noopener">Cambodia Magazine ↗</a></div>
     </div>
     <div class="signal">
-      <strong>Water Scopes 1–3 指引项目启动</strong>
-      WRI–WWF–SCS–CEO Water Mandate 联合发起，目标是建立 GHG Protocol 式价值链水风险核算模型。
-      <div class="source"><a href="https://buff.ly/7Cg6z5E" target="_blank" rel="noopener">Trellis ↗</a></div>
+      <strong>Water Scopes 1–3 倡议于 2026 年 4 月 30 日启动</strong>
+      WRI–WWF–SCS–CEO Water Mandate 联合发起;2027 年 Q4 发布最终指南,2027 年 Q2 开放公开征求意见。
+      <div class="source"><a href="https://wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>SBTi Corporate Net-Zero Standard V2.0 于 2026 年 6 月 11 日定稿</strong>
+      自 2028 年 2 月 1 日起对所有新提交目标强制生效;强化 Scope 3 落地与"最大努力"评估模型。
+      <div class="source"><a href="https://sciencebasedtargets.org/corporate-net-zero-v1?mdrv=sciencebasedtargets.org" target="_blank" rel="noopener">SBTi ↗</a></div>
     </div>
   </div>
 
   <div class="sidebar-card">
     <h3>📅 前瞻事件日历</h3>
     <div class="event-row">
-      <div class="event-date">2026年9月</div>
-      越南工贸部预计向国会提交进一步《电力法》修正案
+      <div class="event-date">2026 Q4</div>
+      越南 MoIT 预计发布标准化专线 DPPA 合同模板
     </div>
     <div class="event-row">
-      <div class="event-date">2030年前</div>
-      Vena Energy 廖内项目目标首次向新加坡输电
+      <div class="event-date">2027 年 1 月</div>
+      柬埔寨 Takeo BESS 项目(250 MW / 500 MWh)预计投运
     </div>
     <div class="event-row">
-      <div class="event-date">2035年前</div>
-      3.4 GW 印尼–新加坡项目目标满足新加坡约 30% 预计电力需求
+      <div class="event-date">2027 年 2 月 1 日</div>
+      SBTi Corporate Net-Zero V2.0 接受新目标提交
     </div>
     <div class="event-row">
-      <div class="event-date">2027年 Q2</div>
-      WRI Water Scopes 1–3 公开评议（第 12 个月）
+      <div class="event-date">2027 Q2</div>
+      Water Scopes 1–3 公开征求意见(18 个月开发周期的第 12 个月)
     </div>
     <div class="event-row">
-      <div class="event-date">2027年 Q4</div>
-      WRI Water Scopes 1–3 正式指引发布
+      <div class="event-date">2030 年前</div>
+      ASEAN 电网标杆项目计划启动向新加坡的首次跨境供电
     </div>
     <div class="event-row">
-      <div class="event-date">FY27</div>
-      Cisco 供应商水风险 SOP 部署窗口
+      <div class="event-date">2027 Q4</div>
+      Water Scopes 1–3 最终指南发布;FY27 供应商 SOP 对齐窗口
+    </div>
+    <div class="event-row">
+      <div class="event-date">2028 年 2 月 1 日</div>
+      SBTi Corporate Net-Zero V2.0 对所有新目标提交强制生效
     </div>
   </div>
 
   <div class="sidebar-card">
     <h3>📚 本周覆盖议题</h3>
     <div>
-      <span class="topic-chip">越南 DPPA</span>
-      <span class="topic-chip">储能</span>
-      <span class="topic-chip">东盟电网</span>
-      <span class="topic-chip">跨境光伏</span>
-      <span class="topic-chip">新加坡 EMA</span>
-      <span class="topic-chip">印尼廖内</span>
-      <span class="topic-chip">供应链水</span>
-      <span class="topic-chip">TNFD</span>
+      <span class="topic-chip">越南 Decree 243</span>
+      <span class="topic-chip">Resolution 253</span>
+      <span class="topic-chip">Decree 272</span>
+      <span class="topic-chip">屋顶光伏 50%</span>
+      <span class="topic-chip">Circular 62 BESS</span>
+      <span class="topic-chip">Takeo BESS</span>
+      <span class="topic-chip">柬埔寨 ADB</span>
+      <span class="topic-chip">ASEAN 电网</span>
       <span class="topic-chip">Water Scopes 1-3</span>
-      <span class="topic-chip">净零</span>
+      <span class="topic-chip">TNFD / CDP Water</span>
+      <span class="topic-chip">SBTi V2.0</span>
+      <span class="topic-chip">工业园区</span>
     </div>
   </div>
 
   <div class="sidebar-card">
     <h3>🔗 核心信息来源</h3>
     <div class="core-source">
-      <a href="https://vietnaminvestor.org/vietnam-s-energy-overhaul-aims-for-high-growth-amid-grid-and-funding-hurdles-d49e48" target="_blank" rel="noopener">Vietnam Investor — 能源与政策 ↗</a>
+      <a href="https://vtn-partners.com/" target="_blank" rel="noopener">VTN Partners — 越南法律实务 ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://www.vietnam.vn/en/" target="_blank" rel="noopener">Vietnam.vn — 越南官方英文门户 ↗</a>
+      <a href="https://www.allenandgledhill.com/" target="_blank" rel="noopener">Allen &amp; Gledhill — 东盟能源业务部 ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://www.energy-box.com/" target="_blank" rel="noopener">Energy Box — 东南亚能源情报 ↗</a>
+      <a href="https://www.energy-storage.news/" target="_blank" rel="noopener">Energy-Storage.news — 全球储能资讯 ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://energynews.pro/" target="_blank" rel="noopener">Energy News — 全球电力与储能 ↗</a>
+      <a href="https://www.cambodgemag.com/" target="_blank" rel="noopener">Cambodia Magazine — 区域能源与政策 ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://observer.com/" target="_blank" rel="noopener">Observer — 商业与风险分析 ↗</a>
+      <a href="https://wri.org/" target="_blank" rel="noopener">世界资源研究所(WRI) ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://www.wri.org/" target="_blank" rel="noopener">世界资源研究所（WRI） ↗</a>
+      <a href="https://smartwatermagazine.com/" target="_blank" rel="noopener">Smart Water Magazine — 水行业资讯 ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://www.cisco.com/c/en/us/about/supplier-sustainability.html" target="_blank" rel="noopener">思科 — 供应链可持续发展 ↗</a>
+      <a href="https://sciencebasedtargets.org/" target="_blank" rel="noopener">科学碳目标倡议(SBTi) ↗</a>
     </div>
     <div class="core-source">
-      <a href="https://blogs.cisco.com/our-corporate-purpose/powering-resilient-ecosystems-fy25-purpose-report/" target="_blank" rel="noopener">思科 Blog — FY25 Purpose 报告 ↗</a>
+      <a href="https://www.cisco.com/c/en_us/about/csr/environmental-sustainability/net-zero.html" target="_blank" rel="noopener">思科 — 净零目标 ↗</a>
+    </div>
+    <div class="core-source">
+      <a href="https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/governance/progress.html" target="_blank" rel="noopener">思科 — 目标与进展报告中心 ↗</a>
     </div>
   </div>
 
@@ -551,7 +566,7 @@
 </div>
 
 <footer>
-  Cisco 可持续发展情报简报 · 第71期 · 2026年9月7日 · 仅供内部传阅 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a>
+  Cisco 可持续发展情报简报 · 第72期 · 2026 年 9 月 14 日 · 仅供内部传阅 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a>
 </footer>
 
 </div>
