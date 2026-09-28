@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Sustainability Intelligence Briefing — Issue #73 | September 21, 2026</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .main-col {}
+  .sidebar {}
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.4; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .intel-meta { font-size: 13px; color: var(--text-muted); }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing_zh.html">中文版</a>
+    </div>
+    <span class="issue-badge">Issue #73 · September 21, 2026</span>
+    <h1>Cisco Sustainability Intelligence Briefing</h1>
+    <p class="subtitle">Vietnam's first grid-scale BESS + VPP framework, Singapore–Thailand ASEAN Power Grid push, and Cisco FY25 water progress against Water Scopes 1–3</p>
+    <p class="meta">Coverage window: September 15 – September 21, 2026 · Search language: English · Theme count: 5 · For: dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ EXECUTIVE SUMMARY ============================ -->
+<div class="section">
+  <div class="section-title">Executive Summary</div>
+  <div class="exec-summary">
+    <p>Vietnam's power system moved from generation-only headlines to grid-integration execution this week. EVN Hanoi commissioned the country's first utility-scale battery energy storage system (BESS) — 50 MW / 100 MWh across five 110 kV substations — while the Ministry of Industry and Trade began drafting a policy framework for Virtual Power Plants (VPPs) that would aggregate rooftop solar, behind-the-meter BESS and electric vehicles as flexible grid resources. These developments arrive as the first private-wire Direct Power Purchase Agreement (DPPA) projects come online, including Samsung Electronics' 28 MWp rooftop solar installation in Ho Chi Minh City, which will supply more than 40 GWh annually and cut approximately 26,000 tonnes of CO₂ per year.</p>
+    <p>At the regional level, Singapore and Thailand announced a two-year ASEAN chairmanship push (2027–2028) to unblock regulatory barriers to the ASEAN Power Grid, with submarine-cable rules, wheeling charges and export-tax harmonisation as the immediate priorities. The announcement reinforces the 3.4 GW Indonesia–Singapore cross-border solar export framework now in advanced negotiations. On water and disclosure, Cisco's FY25 Purpose Report confirms an 11% reduction in direct-operational water withdrawals and deeper supply-chain participation in the Alliance for Water Stewardship Collective Action Accelerator, while the WRI-led Water Scopes 1–3 framework continues to mature as the value-chain water equivalent of the GHG Protocol.</p>
+  </div>
+</div>
+
+<!-- ============================ TOP 3 INTELLIGENCE ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 Actionable Intelligence</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · Vietnam commissions first utility-scale BESS and begins VPP rule-making, while the first private-wire DPPA rooftops enter commercial operation</div>
+      <span class="impact-badge high">Impact 9.0</span>
+    </div>
+    <div class="intel-summary">
+      On 16 September 2026 EVN Hanoi officially commissioned Vietnam's first large-scale grid-connected BESS: 50 MW / 100 MWh split across five 110 kV substations in Hanoi (Bắc Thang Long, Quang Minh, Sài Đồng 2, Phùng Xá and Thanh Oai). The pilot stores electricity during low-demand periods and discharges at peak, giving the grid the flexibility needed to absorb more variable renewable generation. In parallel, Vietnam's Ministry of Industry and Trade published an industry-agency discussion paper laying early groundwork for Virtual Power Plants, which would coordinate distributed rooftop solar, behind-the-meter BESS and electric vehicles as dispatchable resources. The policy discussion is driven by rising demand — national electricity consumption exceeded 203 billion kWh in the first seven months of 2026, up 9.3% year-on-year, with peak load hitting a record 58.4 GW — and by continuing curtailment in central and southern regions. Vietnam's revised Power Development Plan now requires many new utility-scale solar projects to pair with BESS equivalent to at least 10% of installed capacity and two hours of duration. The first DPPA projects are also now live: Samsung Electronics inaugurated a 28 MWp rooftop solar array at its Ho Chi Minh City manufacturing complex under a private-wire DPPA with TotalEnergies ENEOS, expected to generate more than 40 GWh/year and avoid ~26,000 tonnes of CO₂ annually.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> Cisco's EMS/ODM suppliers in Bắc Ninh, Hải Phòng, Đồng Nai and Bình Dương now have a live regulatory and technical path to combine rooftop solar, behind-the-meter BESS and DPPAs — the exact bundle needed to decarbonise electronics manufacturing. <strong>Action window:</strong> Ask key Vietnam suppliers to include VPP-ready controls and BESS co-location in any new rooftop-solar or DPPA term sheets, and reference Samsung's 28 MWp DPPA as a bankable precedent.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law: Vietnam's first grid BESS ↗</a> ·
+      <a href="https://www.energy-box.com/post/vietnam-lays-early-policy-groundwork-to-aggregate-rooftop-pv-storage-and-evs-into-vpps" target="_blank" rel="noopener">Energy Box: Vietnam VPP policy groundwork ↗</a> ·
+      <a href="https://www.energy-box.com/post/southeast-asia-s-energy-storage-market-gains-momentum" target="_blank" rel="noopener">Energy Box: Southeast Asia BESS momentum ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · Singapore and Thailand launch a two-year ASEAN Power Grid regulatory push; 3.4 GW Indonesia–Singapore cross-border solar framework advances</div>
+      <span class="impact-badge high">Impact 8.7</span>
+    </div>
+    <div class="intel-summary">
+      At the Unlocking Capital for Sustainability summit in Singapore on 17 September 2026, Second Minister for Finance Jeffrey Siow announced that Singapore (2027 ASEAN chair) and Thailand (2028 chair) will use their consecutive chairmanships to tackle the regulatory barriers delaying the ASEAN Power Grid. The immediate priorities are the ASEAN Submarine Power Cable Development Framework, harmonisation of wheeling charges and export taxes, and a regional blueprint for subsea cables. The IEA estimates that more than US$300 billion is needed to expand and modernise Southeast Asian grids between 2025 and 2040, with cross-border interconnectors alone requiring about US$27 billion by 2040 — yet only about US$2 billion has been invested in such links over five decades. ASEAN had 2.8 GW of operational grid-to-grid interconnection capacity in 2024, with 13.7 GW more planned by 2040. Six future submarine interconnections have been identified, four of which would exceed the length of the current world's longest operational subsea link (Viking Link). This regulatory momentum reinforces the 3.4 GW Indonesia–Singapore cross-border solar export framework announced on 3 September 2026, under which PV-plus-BESS projects in Indonesia's Riau Islands would supply roughly 30% of Singapore's projected electricity demand by 2035.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> A functioning ASEAN Power Grid would allow Cisco's supplier clusters in Vietnam and Thailand to source renewable electrons from regional low-cost generation hubs, creating new cross-border PPA and REC structures beyond national boundaries. <strong>Action window:</strong> Track the Singapore–Thailand working-group outputs through 2027 and ask regional energy advisors to model cross-border wheeling scenarios for Foxconn/NIDEC/AVC supplier parks in Vietnam.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://asiapacifictelegraph.com/asean-power-grid-singapore-and-thailand-launch-two-year-push-on-cross-border-rules" target="_blank" rel="noopener">Asia Pacific Telegraph: Singapore–Thailand grid push ↗</a> ·
+      <a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box: 3.4 GW Indonesia–Singapore solar trade ↗</a> ·
+      <a href="https://en.kampucheathmey.com/economy/1147747" target="_blank" rel="noopener">Kampucheathmey: Cambodia pushes ASEAN Power Grid ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · Cisco FY25 Purpose Report shows 11% direct water withdrawal reduction; Water Scopes 1–3 and TNFD-aligned nature disclosure mature as value-chain standards</div>
+      <span class="impact-badge">Impact 8.5</span>
+    </div>
+    <div class="intel-summary">
+      Cisco's FY25 Purpose Report, published 2 June 2026, states that the company reduced water withdrawals for direct operations by 11% in fiscal 2025 and advanced supply-chain participation in the Alliance for Water Stewardship (AWS) Collective Action Accelerator. Cisco has adopted the Responsible Business Alliance (RBA) Code of Conduct as its Supplier Code of Conduct, which includes explicit water-stewardship requirements, and aligns its water approach with UN SDG 6 and the AWS framework. These disclosures arrive as the WRI-led "Corporate Guidance for Assessing Water Scopes 1–3 in Value Chains" — co-developed with WWF, SCS Global Services and the CEO Water Mandate — progresses toward final guidance expected Q4 2027. The framework aims to create a GHG-Protocol-style common language for water dependencies, impacts, risks and opportunities (DIROs) across value chains, connecting to CDP, GRI, TNFD and CSRD disclosure requirements. Separately, TNFD-aligned nature reporting is being institutionalised through the ISSB, which is expected to release an exposure draft of nature-related disclosure requirements in October 2026.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> The 11% operational water reduction and AWS supply-chain accelerator provide concrete proof points for Cisco's CDP Water Security Module 5.11 Value Chain Engagement SOP, while Water Scopes 1–3 offers the standardised boundary logic needed for Tier-1 supplier screening (NIDEC/Đồng Nai basin, AVC/Mã basin). <strong>Action window:</strong> Map FY26 supplier water-disclosure coverage against the draft Water Scopes 1–3 boundary categories now, so the SOP can be finalised before the Q4 2027 guidance release.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://blogs.cisco.com/our-corporate-purpose/powering-resilient-ecosystems-fy25-purpose-report" target="_blank" rel="noopener">Cisco Blogs: FY25 Purpose Report ↗</a> ·
+      <a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI: Water Scopes 1–3 framework ↗</a> ·
+      <a href="https://www.siengage.com/news/making-nature-reporting-useful" target="_blank" rel="noopener">SI Engage: TNFD/ISSB nature reporting ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ KEY DATA POINTS ============================ -->
+<div class="section">
+  <div class="section-title">Key Data Points</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">50 MW / 100 MWh</div>
+      <div class="data-label">Vietnam's first utility-scale grid-connected BESS, commissioned across five 110 kV Hanoi substations</div>
+      <div class="data-trend trend-up">▲ Storage moves from pilot to system asset</div>
+      <div class="data-source">
+        Source: <a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law, Sep 16 2026 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">US$750M → US$5.7B</div>
+      <div class="data-label">Vietnam BESS investment potential: near-term unlock scaling to US$5.7 billion by 2030 under two-part tariff</div>
+      <div class="data-trend trend-up">▲ Bankable revenue stack emerging</div>
+      <div class="data-source">
+        Source: <a href="https://www.energy-box.com/post/southeast-asia-s-energy-storage-market-gains-momentum" target="_blank" rel="noopener">Energy Box, Sep 7 2026 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">3.4 GW</div>
+      <div class="data-label">Indonesia–Singapore cross-border solar export framework in advanced negotiations, targeting ~30% of Singapore demand by 2035</div>
+      <div class="data-trend trend-up">▲ Largest ASEAN cross-border renewable deal to date</div>
+      <div class="data-source">
+        Source: <a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box, Sep 3 2026 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">US$27B</div>
+      <div class="data-label">ASEAN cross-border interconnectors investment needed by 2040, versus ~US$2 billion invested over the past five decades</div>
+      <div class="data-trend trend-up">▲ Regulatory harmonisation is the binding constraint</div>
+      <div class="data-source">
+        Source: <a href="https://asiapacifictelegraph.com/asean-power-grid-singapore-and-thailand-launch-two-year-push-on-cross-border-rules" target="_blank" rel="noopener">Asia Pacific Telegraph, Sep 18 2026 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">11%</div>
+      <div class="data-label">Cisco reduction in direct-operational water withdrawals in fiscal 2025</div>
+      <div class="data-trend trend-up">▲ Operational water target on track</div>
+      <div class="data-source">
+        Source: <a href="https://blogs.cisco.com/our-corporate-purpose/powering-resilient-ecosystems-fy25-purpose-report" target="_blank" rel="noopener">Cisco FY25 Purpose Report, Jun 2 2026 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">US$77B</div>
+      <div class="data-label">Business value threatened by water-related supply-chain risks, per CDP data cited by WRI Water Scopes 1–3</div>
+      <div class="data-trend trend-up">▲ Value-chain water risk now a board-level issue</div>
+      <div class="data-source">
+        Source: <a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI, Apr 30 2026 ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ STRATEGIC RECOMMENDATIONS ============================ -->
+<div class="section">
+  <div class="section-title">Strategic Recommendations</div>
+
+  <div class="rec-block">
+    <h4>Short term (0–3 months)</h4>
+    <ul>
+      <li><strong>Vietnam supplier DPPA/BESS playbook:</strong> Share the Samsung 28 MWp private-wire DPPA and Circular 62 two-part tariff precedents with Foxconn, Pegatron, NIDEC and AVC procurement teams; request that all new rooftop-solar and storage RFPs include VPP-ready control interfaces and 10% / 2-hour BESS co-location where applicable.</li>
+      <li><strong>ASEAN Power Grid watchlist:</strong> Assign a regional energy advisor to track the Singapore–Thailand 2027–2028 regulatory workstreams, especially wheeling-charge and export-tax harmonisation, and model cross-border PPA scenarios for southern-Vietnam supplier parks.</li>
+      <li><strong>Water Scopes 1–3 boundary mapping:</strong> Pilot the draft Water Scopes 1–3 categories on the top 20 Tier-1 EMS/ODM suppliers, mapping NIDEC (Đồng Nai basin) and AVC (Mã basin) exposures to WRF v3.0 basin stress scores ahead of the Q2 2027 public-comment window.</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>Medium term (3–12 months)</h4>
+    <ul>
+      <li><strong>Regional low-carbon procurement cluster:</strong> Evaluate whether Cisco can join or sponsor a buyer cohort for Vietnam/Cambodia cross-border renewable imports, leveraging the Takeo BESS and future ASEAN Power Grid interconnectors to add firmness to supplier PPAs.</li>
+      <li><strong>CDP Water Security Module 5.11 SOP finalisation:</strong> Integrate the Water Scopes 1–3 boundary logic and the AWS Collective Action Accelerator learnings into the supplier assessment SOP, with explicit disclosure-coverage thresholds and basin-priority triggers for FY27 screening.</li>
+      <li><strong>Nature-disclosure alignment:</strong> Prepare a TNFD/ISSB-aligned nature and water risk disclosure roadmap so that Cisco's FY27 reporting can reference Water Scopes 1–3 pilot results and the ISSB nature exposure draft expected in October 2026.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ METHODOLOGY NOTES ============================ -->
+<div class="section">
+  <div class="section-title">Methodology Notes</div>
+  <div class="methodology-note">
+    <h4>Search and selection process</h4>
+    <p>Topics were identified through English-language web searches across five themes: Vietnam DPPA policy (Decree 57, Decree 243, Resolution 253, two-part tariff), Southeast Asia green energy/storage/grid interconnection, Cisco sustainability and ESG reports (FY25/FY26), supply-chain water risk and stewardship (TNFD, WRI), and carbon-neutrality/net-zero progress. The coverage window was the seven days ending Sunday, 20 September 2026. Top 3 items were scored on a 0–10 scale based on: (i) proximity to Cisco's Vietnam/ASEAN supplier footprint, (ii) near-term actionability, and (iii) relevance to FY27 sustainability targets.</p>
+    <h4 style="margin-top:14px;">Full source list</h4>
+    <ul>
+      <li><a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law — Vietnam's first grid BESS and DPPA momentum (16 Sep 2026) ↗</a></li>
+      <li><a href="https://www.energy-box.com/post/vietnam-lays-early-policy-groundwork-to-aggregate-rooftop-pv-storage-and-evs-into-vpps" target="_blank" rel="noopener">Energy Box — Vietnam VPP policy groundwork (21 Sep 2026) ↗</a></li>
+      <li><a href="https://www.energy-box.com/post/southeast-asia-s-energy-storage-market-gains-momentum" target="_blank" rel="noopener">Energy Box — Southeast Asia BESS market momentum (7 Sep 2026) ↗</a></li>
+      <li><a href="https://asiapacifictelegraph.com/asean-power-grid-singapore-and-thailand-launch-two-year-push-on-cross-border-rules" target="_blank" rel="noopener">Asia Pacific Telegraph — Singapore–Thailand ASEAN Power Grid push (18 Sep 2026) ↗</a></li>
+      <li><a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box — Indonesia–Singapore 3.4 GW cross-border solar (3 Sep 2026) ↗</a></li>
+      <li><a href="https://en.kampucheathmey.com/economy/1147747" target="_blank" rel="noopener">Kampucheathmey Daily — Cambodia energy minister on ASEAN Power Grid (15 Sep 2026) ↗</a></li>
+      <li><a href="https://blogs.cisco.com/our-corporate-purpose/powering-resilient-ecosystems-fy25-purpose-report" target="_blank" rel="noopener">Cisco Blogs — FY25 Purpose Report: water and ecosystems (2 Jun 2026) ↗</a></li>
+      <li><a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI — Water Scopes 1–3 value-chain framework (30 Apr 2026) ↗</a></li>
+      <li><a href="https://www.siengage.com/news/making-nature-reporting-useful" target="_blank" rel="noopener">SI Engage — TNFD/ISSB nature reporting landscape (Sep 2026) ↗</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================ SIDEBAR ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>Quick Signals</h3>
+    <div class="signal">
+      <strong>Vietnam demand surge</strong>
+      Electricity consumption >203 billion kWh in Jan–Jul 2026, up 9.3% YoY; peak load hit 58.4 GW.
+      <div class="source"><a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>Samsung DPPA live</strong>
+      28 MWp rooftop solar at HCMC complex under private-wire DPPA; >40 GWh/year, ~26,000 tCO₂ avoided annually.
+      <div class="source"><a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>ASEAN grid financing</strong>
+      ASEAN Power Grid Financing Initiative includes up to US$10 billion ADB support over ten years and a US$2.5 billion World Bank contribution.
+      <div class="source"><a href="https://asiapacifictelegraph.com/asean-power-grid-singapore-and-thailand-launch-two-year-push-on-cross-border-rules" target="_blank" rel="noopener">Asia Pacific Telegraph ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>Water disclosure momentum</strong>
+      ISSB nature-related disclosure exposure draft expected October 2026, building on TNFD recommendations.
+      <div class="source"><a href="https://www.siengage.com/news/making-nature-reporting-useful" target="_blank" rel="noopener">SI Engage ↗</a></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Upcoming Events</h3>
+    <div class="event-row">
+      <div class="event-date">Oct 2026</div>
+      <div>ISSB exposure draft on nature-related disclosures (TNFD-aligned)</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Q2 2027</div>
+      <div>Water Scopes 1–3 public-comment period</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Q4 2027</div>
+      <div>Final Water Scopes 1–3 guidance expected</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">2027–2028</div>
+      <div>Singapore–Thailand consecutive ASEAN chairmanships driving Power Grid rules</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Topics Covered</h3>
+    <span class="topic-chip">Vietnam DPPA</span>
+    <span class="topic-chip">BESS</span>
+    <span class="topic-chip">Virtual Power Plants</span>
+    <span class="topic-chip">ASEAN Power Grid</span>
+    <span class="topic-chip">Cross-border solar</span>
+    <span class="topic-chip">Cisco FY25</span>
+    <span class="topic-chip">Water stewardship</span>
+    <span class="topic-chip">Water Scopes 1–3</span>
+    <span class="topic-chip">TNFD / ISSB</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Core Sources</h3>
+    <div class="core-source"><a href="https://conventuslaw.com/report/vietnams-power-system-is-being-rebuilt-first-grid-battery-signals-a-historic-energy-shift" target="_blank" rel="noopener">Conventus Law ↗</a></div>
+    <div class="core-source"><a href="https://www.energy-box.com/post/vietnam-lays-early-policy-groundwork-to-aggregate-rooftop-pv-storage-and-evs-into-vpps" target="_blank" rel="noopener">Energy Box (VPP) ↗</a></div>
+    <div class="core-source"><a href="https://www.energy-box.com/post/southeast-asia-s-energy-storage-market-gains-momentum" target="_blank" rel="noopener">Energy Box (BESS) ↗</a></div>
+    <div class="core-source"><a href="https://asiapacifictelegraph.com/asean-power-grid-singapore-and-thailand-launch-two-year-push-on-cross-border-rules" target="_blank" rel="noopener">Asia Pacific Telegraph ↗</a></div>
+    <div class="core-source"><a href="https://www.energy-box.com/post/singapore-and-indonesia-advance-3-4-gw-cross-border-solar-power-trade" target="_blank" rel="noopener">Energy Box (Indonesia–Singapore) ↗</a></div>
+    <div class="core-source"><a href="https://blogs.cisco.com/our-corporate-purpose/powering-resilient-ecosystems-fy25-purpose-report" target="_blank" rel="noopener">Cisco FY25 Purpose Report ↗</a></div>
+    <div class="core-source"><a href="https://www.wri.org/technical-perspectives/water-scopes-1-3-value-chain-framework" target="_blank" rel="noopener">WRI Water Scopes 1–3 ↗</a></div>
+    <div class="core-source"><a href="https://www.siengage.com/news/making-nature-reporting-useful" target="_blank" rel="noopener">SI Engage (TNFD/ISSB) ↗</a></div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<footer>
+  <p>Cisco Sustainability Intelligence Briefing · Issue #73 · September 21, 2026</p>
+  <p style="margin-top:6px;">Published every Monday for GSC Sustainability · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>
