@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco 可持续发展情报简报 — 第74期 | 2026年9月28日</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .main-col {}
+  .sidebar {}
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .intel-meta { font-size: 13px; color: var(--text-muted); }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing.html">English</a>
+    </div>
+    <span class="issue-badge">第74期 · 2026年9月28日</span>
+    <h1>Cisco 可持续发展情报简报</h1>
+    <p class="subtitle">越南《电力法》修订、东盟电网加速推进、Cisco 动态产品碳足迹追踪脱碳电网</p>
+    <p class="meta">覆盖窗口：2026年9月22日 – 9月28日 · 搜索语言：英文 · 主题数：5 · 致：dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ 执行摘要 ============================ -->
+<div class="section">
+  <div class="section-title">执行摘要</div>
+  <div class="exec-summary">
+    <p>越南电力市场架构正被再次改写。2026年9月21日，越南国会常委会审议《电力法》部分条款修订补充草案，拟修改2024年《电力法》23项条款，引入竞争性投资人遴选和竞价电价机制，向私人资本/PPP开放输电投资，并将海上风电、电池储能及直购电（DPPA）纳入更明确的法律框架。同一周内，越南电力集团河内公司（EVN Hanoi）投运了全国首批电网级电池储能系统（BESS）——总容量50 MW / 100 MWh，分布在河内五座110 kV变电站——胡志明市人民议会也于9月22日讨论DPPA实施条例，呼吁由每笔交易自建专线转向租用或共享国家电网、采用多回路输电技术。</p>
+    <p>在区域层面，2026年9月22–24日雅加达 Enlit Asia 2026 期间，东盟电网从规划文件进入政策压力阶段。区域能源领袖推动总额达7,640亿美元的东盟电网建设，而吉宝同日披露计划开发印尼廖内群岛2 GW光伏+公用事业级储能项目，通过海底电缆接入新加坡裕廊岛的美林茂热电联产电厂。在 Cisco 方面，公司发布了动态产品碳足迹（PCF）方法，依据国际能源署（IEA）电网数据和预测调整硬件碳排放，并正在接受 Fraunhofer 的方法学审查。该进展恰逢 TNFD 发布2026年度现状报告：按 TNFD 建议披露自然相关信息的企业数量已翻倍至1,002家，并发布针对数据中心与半导体企业的行业指引，要求企业在选址阶段评估水和土地风险。</p>
+  </div>
+</div>
+
+<!-- ============================ Top 3 行动情报 ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 本周最值得行动的发现</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · 越南修订《电力法》：扩大DPPA、向私人资本开放输电、为储能与海上风电奠定法律基础</div>
+      <span class="impact-badge high">紧迫性/关联度 9.0</span>
+    </div>
+    <div class="intel-summary">
+      2026年9月21日，越南国会常委会审议《电力法》部分条款修订补充草案。草案修改23项条款、废止3项行政审批、新增1项，核心转向竞争性定价与风险分担：引入投资人遴选和竞价电价机制，允许输电项目采用PPP模式吸引社会资本，并明确涵盖海上风电、储能系统及直购电（DPPA）。越南现行《电力法》已引入容量电价与电量电价相结合的两部制电价；本次修订进一步细化交叉补贴退出路径、可再生能源/储能/社会资本投资输电设施的扶持性价格机制。9月22日，胡志明市人民议会讨论DPPA实施条例草案，代表们建议由“每笔交易自建专线”转向租用或共享国家电网、采用多回路输电技术，以降低土地征用与投资成本。与此同时，河内电力总公司9月已完成五座110 kV变电站共50 MW / 100 MWh电网级BESS的安装调试，越南工贸部正研究居民及工业分时电价以管理高峰负荷。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对 Cisco 的重要性：</strong>Cisco 在北宁、海防、同奈与平阳省的 EMS/ODM 供应商如今面对的法律环境明确将 DPPA、储能共址和私人输电投资纳入其中。<strong>行动窗口：</strong>要求越南采购团队在所有新建工厂及屋顶光伏招标文件中纳入 DPPA 资格、电网租赁选项和储能共址方案，并按竞价电价与两部制电价建模电力成本。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://en.wedoany.com/shortnews/482188.html" target="_blank" rel="noopener">Wedoany：越南《电力法》修订 ↗</a> ·
+      <a href="https://en.vietnamplus.vn/flexible-power-sources-key-to-vietnams-energy-transition-post352335.vnp" target="_blank" rel="noopener">VietnamPlus：灵活性电源 ↗</a> ·
+      <a href="https://www.vietnam.vn/en/tp-ho-chi-minh-ban-phuong-an-kha-thi-cho-mua-ban-dien-truc-tiep" target="_blank" rel="noopener">Vietnam.vn：胡志明市 DPPA 讨论 ↗</a> ·
+      <a href="https://www.vietnam.vn/en/ha-noi-can-nhac-gia-dien-theo-gio-tranh-tang-chi-phi-cho-ho-gia-dinh" target="_blank" rel="noopener">Vietnam.vn：河内 BESS 与分时电价 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · Enlit Asia 2026 加速东盟电网；吉宝规划2 GW印尼–新加坡光伏+储能海底电缆</div>
+      <span class="impact-badge high">紧迫性/关联度 8.8</span>
+    </div>
+    <div class="intel-summary">
+      2026年9月22–24日雅加达 Enlit Asia 2026 期间，区域能源领袖推动加速实施东盟电网（APG）。APG 构想始于1997年，目标2045年联通东盟各国电网，东盟估计发电与输电总投资需求达7,640亿美元，世界银行估算约8,000亿美元。东盟当前跨境互联容量约7.7 GW，计划到2040年翻倍。需求增长部分来自数据中心（部分设施需求超过1 GW）和电动汽车。泰国电力监管机构 Warit Rattanachuen 强调，各国在深化跨境交易前须先确保国内电力安全。同期，吉宝于9月19日披露计划开发印尼廖内群岛2 GW光伏项目，配套公用事业级储能及海底电缆，接入新加坡裕廊岛美林茂热电联产电厂（KMC）。吉宝已获得新加坡能源市场管理局（EMA）从印尼进口300 MW低碳电力的有条件许可。新加坡目标到2035年进口约6 GW低碳电力，目前已有六家公司获准从印尼合计进口3 GW，另有七家公司获得有条件批复，规划合计6.25 GW。印尼要求清洁能源出口商每五年更新出口许可，仍是开发商面临的关键监管不确定性。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对 Cisco 的重要性：</strong>若东盟电网及印尼–新加坡走廊落地，Cisco 在越南与泰国的供应商集群将有机会通过跨境可再生 PPA 与绿证采购电力，降低对国家电网脱碳进度的单一依赖。<strong>行动窗口：</strong>跟踪新加坡6 GW进口路线图及印尼出口法规进展，并请区域能源顾问为越南南部供应商园区建模跨境输电场景。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://energycentralph.info/asean-leader-press-action-regional-power-grid" target="_blank" rel="noopener">Energy Central PH：东盟电网推进 ↗</a> ·
+      <a href="https://theleap.id/detail/4730/keppel-to-link-2-gw-indonesia-solar-project-to-singapore-power-plant-via-subsea-cable" target="_blank" rel="noopener">Theleap：吉宝2 GW印尼–新加坡光伏链路 ↗</a> ·
+      <a href="https://ie.headtopics.com/news/asean-members-must-have-power-security-before-turning-to-88012541" target="_blank" rel="noopener">HeadTopics：泰国监管机构谈电网安全 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · Cisco 发布随电网脱碳动态调整的产品碳足迹方法</div>
+      <span class="impact-badge">紧迫性/关联度 8.5</span>
+    </div>
+    <div class="intel-summary">
+      Cisco 于2026年9月22日在博客中阐释从静态产品碳足迹（PCF）向动态 PCF 的演进。该方法首先识别碳排放热点（印刷电路板、集成电路、测试与组装能耗），然后将排放中可归因于供应商用电的部分隔离出来，再使用全球电网数据和国际能源署（IEA）预测动态调整，从而可以回溯（backcast）历史 PCF 并预测（forecast）未来随着生产电网脱碳而下降的排放。Fraunhofer 已批判性审阅 Cisco 静态 PCF 方法以确保与 ISO 14067 对齐，并计划审阅动态计算方法。合作伙伴可通过 Cisco 价格清单 API 获取 PCF 数据，客户可通过 Product Sustainability API 直接访问，以帮助追踪范围三排放、设定净零目标并支持采购决策。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对 Cisco 的重要性：</strong>动态 PCF 为 Cisco 提供了将供应商可再生能源与 DPPA 进展转化为可量化范围三减排的具体杠杆，直接支持 FY30 范围三减排30%及2040年净零目标。<strong>行动窗口：</strong>将 Product Sustainability API 整合进供应商沟通，让关键 EMS/ODM 合作伙伴看到越南、泰国和马来西亚电网脱碳如何降低 Cisco 硬件碳足迹。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://blogs.cisco.com/our-corporate-purpose/beyond-static-estimates-how-ciscos-product-carbon-footprint-feature-tracks-a-decarbonizing-grid" target="_blank" rel="noopener">Cisco Blogs：动态 PCF ↗</a> ·
+      <a href="https://www.cisco.com/c/dam/en_us/about/csr/environmental-sustainability/cisco-environmental-impact-faq.pdf" target="_blank" rel="noopener">Cisco：环境影响 FAQ（PCF 方法学） ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ 关键数据点 ============================ -->
+<div class="section">
+  <div class="section-title">关键数据点</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">50 MW / 100 MWh</div>
+      <div class="data-label">越南首批电网级并网电池储能系统，由 EVN Hanoi 在五座110 kV变电站投运</div>
+      <div class="data-trend trend-up">▲ 储能由试点正式成为系统级资产</div>
+      <div class="data-source">
+        来源：<a href="https://www.vietnam.vn/en/ha-noi-can-nhac-gia-dien-theo-gio-tranh-tang-chi-phi-cho-ho-gia-dinh" target="_blank" rel="noopener">Vietnam.vn，2026年9月24日 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">7,640亿美元</div>
+      <div class="data-label">东盟电网到2045年所需发电与输电投资；当前跨境互联容量约7.7 GW</div>
+      <div class="data-trend trend-up">▲ 区域电网已成为明确的政策优先事项</div>
+      <div class="data-source">
+        来源：<a href="https://energycentralph.info/asean-leader-press-action-regional-power-grid" target="_blank" rel="noopener">Energy Central PH，2026年9月25日 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2 GW + 公用事业级储能</div>
+      <div class="data-label">吉宝规划中的印尼廖内群岛光伏+储能项目，拟通过海底电缆接入新加坡裕廊岛</div>
+      <div class="data-trend trend-up">▲ 东盟迄今最大的跨境光伏+储能链路</div>
+      <div class="data-source">
+        来源：<a href="https://theleap.id/detail/4730/keppel-to-link-2-gw-indonesia-solar-project-to-singapore-power-plant-via-subsea-cable" target="_blank" rel="noopener">Theleap，2026年9月22日 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">1,002家机构</div>
+      <div class="data-label">按 TNFD 建议发布自然相关信息披露的机构数量，较2025年翻倍，覆盖56个国家/司法辖区</div>
+      <div class="data-trend trend-up">▲ 自然相关报告跨越千家企业门槛</div>
+      <div class="data-source">
+        来源：<a href="https://sustainabilityonline.net/news/tnfd-reporting-doubles-to-more-than-1000-organisations" target="_blank" rel="noopener">Sustainability Online，2026年9月 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">3,800万升/天</div>
+      <div class="data-label">大型芯片制造厂日用水量（主要用于超纯水生产），TNFD 科技行业指引引用数据</div>
+      <div class="data-trend trend-up">▲ 半导体企业选址水风险已成董事会层级议题</div>
+      <div class="data-source">
+        来源：<a href="https://onestopesg.com/esg-news/tnfd-data-centre-infrastructure-decisions" target="_blank" rel="noopener">OneStop ESG，2026年9月24日 ↗</a>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">≥50% / 46%</div>
+      <div class="data-label">新加坡要求新建合格晶圆厂水回收率不低于50%；截至2025年12月平均回收率达46%</div>
+      <div class="data-trend trend-up">▲ 水回收正成为制造业竞争力指标</div>
+      <div class="data-source">
+        来源：<a href="https://reveev.com/southeast-asias-growth-is-getting-thirstier-and-businesses-are-taking-notice" target="_blank" rel="noopener">Reveev，2026年9月 ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ 战略建议 ============================ -->
+<div class="section">
+  <div class="section-title">战略建议</div>
+
+  <div class="rec-block">
+    <h4>短期（0–3个月）</h4>
+    <ul>
+      <li><strong>越南供应商 DPPA/储能 操作手册：</strong>向富士康、Pegatron、NIDEC 与 AVC 采购团队 briefing《电力法》修订要点；要求所有新建工厂及屋顶光伏招标文件纳入 DPPA 资格、电网租赁选项和 VPP 友好控制接口，并按竞价电价和两部制电价建模电力成本。</li>
+      <li><strong>东盟电网跟踪清单：</strong>指定区域能源顾问跟踪 Enlit Asia 后续进展、印尼出口法规时间表及新加坡6 GW进口路线图，并为越南南部供应商园区输出首版跨境输电场景分析。</li>
+      <li><strong>动态 PCF 供应商试点：</strong>利用 Cisco Product Sustainability API，向5–10家核心 EMS/ODM 供应商展示电网脱碳假设如何影响产品碳足迹，并要求其对齐自身可再生能源采购。</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>中期（3–12个月）</h4>
+    <ul>
+      <li><strong>区域低碳采购联盟：</strong>评估 Cisco 是否可以加入或赞助面向越南/泰国的跨境可再生电力采购买方联盟，借助印尼–新加坡及老挝–泰国–马来西亚–新加坡走廊为供应商 PPA 增加稳定性。</li>
+      <li><strong>CDP Water Security Module 5.11 SOP 定稿：</strong>将 TNFD 科技行业场地级水/土地筛查、Water Scopes 1–3 边界逻辑及新加坡/泰国水回收基准整合进供应商评估 SOP，对水资源压力流域内晶圆厂设定明确的回收/再利用阈值。</li>
+      <li><strong>自然与碳披露路线图：</strong>制定 TNFD/ISSB 一致的自然与水风险披露路线图，引用千家企业 TNFD 披露趋势、动态 PCF 试点结果及预计2026年10月发布的 ISSB 自然披露征求意见稿。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ 方法说明 ============================ -->
+<div class="section">
+  <div class="section-title">方法说明</div>
+  <div class="methodology-note">
+    <h4>搜索与选题流程</h4>
+    <p>本期通过英文网络搜索覆盖五大主题：越南 DPPA 政策（第57号法令、第243号法令、第253号决议、两部制电价）、东南亚绿色能源/储能/电网互联、Cisco 可持续发展与 ESG 报告（FY25/FY26）、供应链水风险与水资源管理（TNFD、WRI）、碳中和/净零进展。覆盖窗口为截至2026年9月27日（周日）的过去7天。Top 3 选题按 0–10 分评分，评分维度包括：（i）与 Cisco 越南/东盟供应商布局的贴近度；（ii）近期可行动性；（iii）与 FY27 可持续发展目标的相关性。所有来源链接在纳入前均通过 WebFetch 验证可访问。中文版基于同一批选题进行翻译与本地化，未重新搜索。</p>
+    <h4 style="margin-top:14px;">完整来源列表</h4>
+    <ul>
+      <li><a href="https://en.wedoany.com/shortnews/482188.html" target="_blank" rel="noopener">Wedoany — 越南《电力法》修订：电网、海上风电、储能与 DPPA（2026年9月24日） ↗</a></li>
+      <li><a href="https://en.vietnamplus.vn/flexible-power-sources-key-to-vietnams-energy-transition-post352335.vnp" target="_blank" rel="noopener">VietnamPlus — 灵活性电源是越南能源转型关键（2026年9月22日） ↗</a></li>
+      <li><a href="https://www.vietnam.vn/en/tp-ho-chi-minh-ban-phuong-an-kha-thi-cho-mua-ban-dien-truc-tiep" target="_blank" rel="noopener">Vietnam.vn — 胡志明市讨论直接电力交易可行方案（2026年9月22日） ↗</a></li>
+      <li><a href="https://www.vietnam.vn/en/ha-noi-can-nhac-gia-dien-theo-gio-tranh-tang-chi-phi-cho-ho-gia-dinh" target="_blank" rel="noopener">Vietnam.vn — 河内 BESS 与分时电价（2026年9月24日） ↗</a></li>
+      <li><a href="https://energycentralph.info/asean-leader-press-action-regional-power-grid" target="_blank" rel="noopener">Energy Central PH — 东盟领导人推动区域电网更快行动（2026年9月25日） ↗</a></li>
+      <li><a href="https://theleap.id/detail/4730/keppel-to-link-2-gw-indonesia-solar-project-to-singapore-power-plant-via-subsea-cable" target="_blank" rel="noopener">Theleap — 吉宝2 GW印尼光伏项目将通过海底电缆接入新加坡（2026年9月22日） ↗</a></li>
+      <li><a href="https://ie.headtopics.com/news/asean-members-must-have-power-security-before-turning-to-88012541" target="_blank" rel="noopener">HeadTopics — 泰国监管机构：东盟国家需先保障电力安全再推进区域电网（2026年9月22日） ↗</a></li>
+      <li><a href="https://blogs.cisco.com/our-corporate-purpose/beyond-static-estimates-how-ciscos-product-carbon-footprint-feature-tracks-a-decarbonizing-grid" target="_blank" rel="noopener">Cisco Blogs — 超越静态估算：动态 PCF 追踪脱碳电网（2026年9月22日） ↗</a></li>
+      <li><a href="https://sustainabilityonline.net/news/tnfd-reporting-doubles-to-more-than-1000-organisations" target="_blank" rel="noopener">Sustainability Online — TNFD 披露数量翻倍至逾1,000家机构（2026年9月） ↗</a></li>
+      <li><a href="https://onestopesg.com/esg-news/tnfd-data-centre-infrastructure-decisions" target="_blank" rel="noopener">OneStop ESG — TNFD 如何影响科技基础设施决策（2026年9月24日） ↗</a></li>
+      <li><a href="https://reveev.com/southeast-asias-growth-is-getting-thirstier-and-businesses-are-taking-notice" target="_blank" rel="noopener">Reveev — 东南亚增长正变得更“渴”（2026年9月） ↗</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================ 侧边栏 ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>智能信号</h3>
+    <div class="signal">
+      <strong>越南《电力法》修订</strong>
+      草案修改23项条款、废止3项行政审批，引入竞价电价机制，允许输电项目采用PPP模式。
+      <div class="source"><a href="https://en.wedoany.com/shortnews/482188.html" target="_blank" rel="noopener">Wedoany ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>河内 BESS 投运</strong>
+      EVN Hanoi 在五座110 kV变电站完成50 MW / 100 MWh BESS安装调试，用于削峰填谷。
+      <div class="source"><a href="https://www.vietnam.vn/en/ha-noi-can-nhac-gia-dien-theo-gio-tranh-tang-chi-phi-cho-ho-gia-dinh" target="_blank" rel="noopener">Vietnam.vn ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>胡志明市 DPPA 电网租赁</strong>
+      人民议会代表建议由自建专线转向租用/共享国家电网、采用多回路技术。
+      <div class="source"><a href="https://www.vietnam.vn/en/tp-ho-chi-minh-ban-phuong-an-kha-thi-cho-mua-ban-dien-truc-tiep" target="_blank" rel="noopener">Vietnam.vn ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>东盟电网数据</strong>
+      当前跨境互联容量约7.7 GW，目标2040年翻倍，整体建设需7,640亿美元。
+      <div class="source"><a href="https://energycentralph.info/asean-leader-press-action-regional-power-grid" target="_blank" rel="noopener">Energy Central PH ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>吉宝2 GW海底电缆</strong>
+      廖内群岛光伏+储能项目拟接入新加坡裕廊岛；EMA 已授予300 MW有条件进口许可。
+      <div class="source"><a href="https://theleap.id/detail/4730/keppel-to-link-2-gw-indonesia-solar-project-to-singapore-power-plant-via-subsea-cable" target="_blank" rel="noopener">Theleap ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>Cisco 动态 PCF</strong>
+      产品碳足迹依据 IEA 电网数据动态调整，可回溯和预测；Fraunhofer 正在审阅方法学。
+      <div class="source"><a href="https://blogs.cisco.com/our-corporate-purpose/beyond-static-estimates-how-ciscos-product-carbon-footprint-feature-tracks-a-decarbonizing-grid" target="_blank" rel="noopener">Cisco Blogs ↗</a></div>
+    </div>
+    <div class="signal">
+      <strong>TNFD 披露翻倍</strong>
+      56个司法辖区共1,002家机构发布 TNFD 一致披露，较2025年约542家翻倍。
+      <div class="source"><a href="https://sustainabilityonline.net/news/tnfd-reporting-doubles-to-more-than-1000-organisations" target="_blank" rel="noopener">Sustainability Online ↗</a></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>前瞻事件日历</h3>
+    <div class="event-row">
+      <div class="event-date">2026年10月</div>
+      <div>ISSB 发布自然相关披露征求意见稿（TNFD 一致）</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">2027年第二季度</div>
+      <div>Water Scopes 1–3 公开意见征询期</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">2027年第四季度</div>
+      <div>Water Scopes 1–3 最终指南预计发布</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">2027–2028年</div>
+      <div>新加坡–泰国连续担任东盟轮值主席，主导电网规则制定</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">2029年</div>
+      <div>吉宝/凡达印尼–新加坡项目若出口法规如期出台，目标投运</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>本周覆盖议题</h3>
+    <span class="topic-chip">越南 DPPA</span>
+    <span class="topic-chip">《电力法》修订</span>
+    <span class="topic-chip">电池储能</span>
+    <span class="topic-chip">东盟电网</span>
+    <span class="topic-chip">跨境光伏</span>
+    <span class="topic-chip">印尼–新加坡</span>
+    <span class="topic-chip">Cisco PCF</span>
+    <span class="topic-chip">范围三</span>
+    <span class="topic-chip">TNFD</span>
+    <span class="topic-chip">水资源管理</span>
+    <span class="topic-chip">半导体水风险</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>核心信息来源</h3>
+    <div class="core-source"><a href="https://en.wedoany.com/shortnews/482188.html" target="_blank" rel="noopener">Wedoany（越南《电力法》） ↗</a></div>
+    <div class="core-source"><a href="https://en.vietnamplus.vn/flexible-power-sources-key-to-vietnams-energy-transition-post352335.vnp" target="_blank" rel="noopener">VietnamPlus（灵活性电源） ↗</a></div>
+    <div class="core-source"><a href="https://www.vietnam.vn/en/tp-ho-chi-minh-ban-phuong-an-kha-thi-cho-mua-ban-dien-truc-tiep" target="_blank" rel="noopener">Vietnam.vn（胡志明市 DPPA） ↗</a></div>
+    <div class="core-source"><a href="https://www.vietnam.vn/en/ha-noi-can-nhac-gia-dien-theo-gio-tranh-tang-chi-phi-cho-ho-gia-dinh" target="_blank" rel="noopener">Vietnam.vn（河内 BESS） ↗</a></div>
+    <div class="core-source"><a href="https://energycentralph.info/asean-leader-press-action-regional-power-grid" target="_blank" rel="noopener">Energy Central PH（东盟电网） ↗</a></div>
+    <div class="core-source"><a href="https://theleap.id/detail/4730/keppel-to-link-2-gw-indonesia-solar-project-to-singapore-power-plant-via-subsea-cable" target="_blank" rel="noopener">Theleap（吉宝2 GW） ↗</a></div>
+    <div class="core-source"><a href="https://blogs.cisco.com/our-corporate-purpose/beyond-static-estimates-how-ciscos-product-carbon-footprint-feature-tracks-a-decarbonizing-grid" target="_blank" rel="noopener">Cisco Blogs（动态 PCF） ↗</a></div>
+    <div class="core-source"><a href="https://sustainabilityonline.net/news/tnfd-reporting-doubles-to-more-than-1000-organisations" target="_blank" rel="noopener">Sustainability Online（TNFD 现状） ↗</a></div>
+    <div class="core-source"><a href="https://onestopesg.com/esg-news/tnfd-data-centre-infrastructure-decisions" target="_blank" rel="noopener">OneStop ESG（TNFD 科技指引） ↗</a></div>
+    <div class="core-source"><a href="https://reveev.com/southeast-asias-growth-is-getting-thirstier-and-businesses-are-taking-notice" target="_blank" rel="noopener">Reveev（东南亚水风险） ↗</a></div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<footer>
+  <p>Cisco 可持续发展情报简报 · 第74期 · 2026年9月28日</p>
+  <p style="margin-top:6px;">每周一为 GSC 可持续发展团队发布 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>
