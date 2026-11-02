@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Sustainability Intelligence Briefing — Issue #76 | October 12, 2026</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.4; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing_zh.html">中文版</a>
+    </div>
+    <span class="issue-badge">Issue #76 · October 12, 2026</span>
+    <h1>Cisco Sustainability Intelligence Briefing</h1>
+    <p class="subtitle">ASEAN energy ministers lock in grid frameworks at the 44th AMEM, CDP sizes corporate water exposure at US$397 billion, and Vietnam's BESS build-out gains a government-backed coordination platform</p>
+    <p class="meta">Coverage window: October 5 – October 11, 2026 · Search language: English · Theme count: 5 · For: dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ EXECUTIVE SUMMARY ============================ -->
+<div class="section">
+  <div class="section-title">Executive Summary</div>
+  <div class="exec-summary">
+    <p>The ASEAN energy policy machine hit its highest gear of the year this week. At the 44th ASEAN Ministers on Energy Meeting in Manila (October 8), ministers approved the strategic workplans to realise the ASEAN Power Grid Vision 2045 — including the Legal, Technical, Commercial and Governance guidelines for cross-border submarine power cables, with accelerated implementation under Singapore's 2027 chairmanship — and launched the 9th ASEAN Energy Outlook, which frames the scale of the task: regional energy demand is projected to quadruple by 2060, and the ACT scenario requires roughly US$400 billion of energy investment every year. Ministers reaffirmed the 2030 targets of 30% renewables in total primary energy supply and 45% in installed capacity, and completed regional frameworks for BESS, cross-border RECs and CCUS commercial models.</p>
+    <p>On the water agenda, CDP's new report "Water, Trade and Capital" (covered by Eco-Business, October 2) puts companies' anticipated financial impacts from water-related risks at about US$397 billion, with US$45 billion expected upstream in supply chains — a direct, data-backed argument for the supplier water-risk engagement Cisco is building for FY27. The report also exposes the visibility gap: 78% of water-disclosing companies now map their supply chains, but three-quarters of them map only as far as direct suppliers. In Vietnam, the Electricity Authority and GEAPP moved their energy-transition MoU into implementation on October 1 with six workstreams covering BESS coordination platforms, grid-forming technology and distribution-grid digital twins, against an EVN 2,000 MW BESS program and a revised PDP8 storage target of 10,000–16,300 MW by 2030. The through-line this week: the frameworks for clean power and water accountability are being standardised now — companies that bring supplier-level data to the table will set the terms.</p>
+  </div>
+</div>
+
+<!-- ============================ TOP 3 INTELLIGENCE ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 Actionable Intelligence</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · CDP: companies anticipate US$397 billion in water-related financial impacts — and 60% of supplier water risks sit in developing countries</div>
+      <span class="impact-badge high">Impact 9.5</span>
+    </div>
+    <div class="intel-summary">
+      CDP's report "Water, Trade and Capital: How Water is Reshaping Geopolitics, Supply Chains and Financial Risk", drawing on water disclosures from more than 6,500 companies, estimates that companies anticipate about US$397 billion in financial impacts from water-related risks, with roughly US$45 billion of that expected upstream in supply chains. Firms have already reported US$1.4 billion in current impacts. The structural findings matter most for procurement strategy: around 60% of the water-related risks facing suppliers of companies based in wealthier countries are located in developing countries; 39% of companies report withdrawing or divesting from areas of high water stress, up from 27% a year earlier; and while 78% of disclosing companies now map their supply chains (up from 70%), three-quarters map only as far as direct suppliers. CDP's headline message — "you can relocate production but you cannot relocate a river basin" — lands squarely on electronics manufacturing hubs in Southeast Asia.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> This is the sharpest external data point yet for Cisco's FY27 supplier water-risk SOP and CDP Water Security Module 5.11 narrative — the $45B upstream figure quantifies exactly the exposure the supplier evaluation criteria (water dependency, basin availability, geographic risk) are designed to manage. <strong>Action window:</strong> Cite the US$397B / US$45B upstream figures in the Module 5.11 submission; extend Blue Map and basin screening beyond Tier-1 EMS/ODM sites to key Tier-2 wet-process suppliers (PCB, electroplating, surface treatment) to close the "direct-suppliers-only" mapping gap before FY27 assessment cycles begin.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business: Water risks threaten trade as companies face US$397 billion exposure — CDP ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · 44th AMEM in Manila approves ASEAN Power Grid Vision 2045 workplans — submarine cable framework to accelerate under Singapore's 2027 chairmanship</div>
+      <span class="impact-badge high">Impact 9.0</span>
+    </div>
+    <div class="intel-summary">
+      At the 44th ASEAN Ministers on Energy Meeting (Manila, October 8), ministers approved key strategic workplans for the ASEAN Power Grid Vision 2045, recording substantial progress on the Legal, Technical, Commercial and Governance guidelines for cross-border submarine power cables, with accelerated implementation scheduled under Singapore's 2027 chairmanship. They commended expanded multi-directional trading under the Lao PDR–Thailand–Malaysia–Singapore Power Integration Project (LTMS-PIP) and progress on BIMP-PIP, Cambodia–Laos and prospective Philippines–Indonesia interconnectors, and formally launched the ASEAN School of Regulation to harmonise cross-border market rules. The new 9th ASEAN Energy Outlook sets the planning benchmarks: energy demand quadrupling by 2060 on industrialisation and data-centre growth, and an ASEAN Coordinated Transition scenario requiring an estimated US$400 billion in annual investment — alongside confirmed regional frameworks for BESS, cross-border renewable energy certificates and CCUS commercial models.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> The submarine-cable governance guidelines and cross-border REC framework are the institutional unlocks for regional renewable procurement — supplier parks in Vietnam, Thailand and Malaysia move closer to multi-market clean-power corridors. <strong>Action window:</strong> Track the submarine-cable guideline finalisation through Singapore contacts over the next two quarters; pre-assess which supplier sites' load profiles would benefit first from wheeling and cross-border REC tracking, and feed findings into the Taiwan/SCC Cohort PPA strategy as a comparable institutional template.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH: ASEAN Energy Ministers advance regional connectivity at 44th AMEM ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · Vietnam operationalises GEAPP grid-modernisation partnership — BESS coordination platform, grid-forming tech and digital twins as EVN scales storage to 2,000 MW</div>
+      <span class="impact-badge">Impact 8.2</span>
+    </div>
+    <div class="intel-summary">
+      On October 1 the joint working group between Vietnam's Electricity Authority (MOIT) and the Global Energy Alliance for People and Planet (GEAPP) agreed six workstreams to operationalise their energy-transition MoU: a multi-BESS coordination platform, expertise-sharing on grid-forming (GFM) inverter technology, distribution-grid digital twins, a national BESS Center of Excellence, market-design research on storage pricing and service definitions, and a deployment framework for distributed BESS near load centres and renewable zones. A separate GEAPP–EVN Ho Chi Minh City MoU (September 29) adds a six-month "Utility Charter" assessment of grid digitalisation and distributed-resource integration. The program runs against the backdrop of EVN's ~2,000 MW BESS deployment and the revised PDP8 target of 10,000–16,300 MW of storage by 2030 — the enabling infrastructure for absorbing the rooftop solar and DPPA volumes that supplier factories depend on.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Cisco Relevance:</strong> Storage and grid-forming capability determine how much rooftop solar and DPPA power supplier parks in Bắc Ninh, Đồng Nai and Bình Dương can actually use — and the BESS market-design work will shape tariffs for solar+storage co-location. <strong>Action window:</strong> Ask the Vietnam energy advisor to monitor the BESS pricing/service-definition workstream outputs; model supplier economics for solar+BESS co-location once service definitions are published, and factor curtailment-risk relief into FY27 supplier clean-power baselines.
+    </div>
+    <div class="sources">
+      <strong>Sources:</strong>
+      <a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space (Năng lượng Việt Nam): Electricity Authority and GEAPP agree on grid modernisation and BESS program ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ KEY DATA POINTS ============================ -->
+<div class="section">
+  <div class="section-title">Key Data Points</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">US$397B</div>
+      <div class="data-label">Anticipated financial impacts from water-related risks across 6,500+ CDP-disclosing companies — US$45B expected upstream in supply chains</div>
+      <div class="data-trend trend-up">▲ Growing — 39% of companies now divesting from high water-stress areas (up from 27%)</div>
+      <div class="data-source">Source: <a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business (CDP report), Oct 2, 2026 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">US$400B/yr</div>
+      <div class="data-label">Annual investment required under the ASEAN Coordinated Transition scenario (AEO9, launched at 44th AMEM)</div>
+      <div class="data-trend trend-up">▲ Rising — IEA estimates grid & storage investment must reach ~US$50B/yr by 2050</div>
+      <div class="data-source">Source: <a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH (44th AMEM), Oct 8, 2026 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">×4 by 2060</div>
+      <div class="data-label">Projected growth of Southeast Asia energy demand, driven by industrialisation and data-centre expansion (AEO9)</div>
+      <div class="data-trend trend-up">▲ Rising — regional targets: 30% renewables in TPES and 45% of installed capacity by 2030</div>
+      <div class="data-source">Source: <a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH (44th AMEM), Oct 8, 2026 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">78% → 25%</div>
+      <div class="data-label">Share of CDP water disclosers mapping supply chains (up from 70%) — but three-quarters map only to direct suppliers</div>
+      <div class="data-trend trend-down">▼ Visibility gap — Tier-2+ wet-process suppliers remain the blind spot</div>
+      <div class="data-source">Source: <a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business (CDP report), Oct 2, 2026 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">10,000–16,300 MW</div>
+      <div class="data-label">Vietnam revised PDP8 battery storage target by 2030; EVN currently deploying a ~2,000 MW BESS program</div>
+      <div class="data-trend trend-up">▲ Scaling — GEAPP partnership adds coordination platform, GFM tech and a BESS Center of Excellence</div>
+      <div class="data-source">Source: <a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space (Năng lượng Việt Nam), Oct 3, 2026 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2 GW + 4.4 GWh</div>
+      <div class="data-label">Pulau Sugi solar + BESS project (Gurīn Energy, Riau Islands) exporting to Singapore via subsea cable — up to US$4.5B FDI, ~60,000 jobs</div>
+      <div class="data-trend trend-up">▲ Rising — Indonesia–Singapore clean-energy corridor converting MOUs into hardware</div>
+      <div class="data-source">Source: <a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">Heping Ribao (via Indonesian media), Oct 6, 2026 ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ STRATEGIC RECOMMENDATIONS ============================ -->
+<div class="section">
+  <div class="section-title">Strategic Recommendations</div>
+
+  <div class="rec-block">
+    <h4>Short-Term Actions (0–3 months)</h4>
+    <ul>
+      <li><strong>CDP Module 5.11 sharpening:</strong> Incorporate the US$397B exposure / US$45B upstream / 60%-in-developing-countries figures into the CDP Water Security Module 5.11 submission and the supplier water SOP rationale — this is current, citable evidence that supplier-basin engagement is material, not discretionary.</li>
+      <li><strong>Tier-2 mapping gap fix:</strong> Launch a Tier-2 wet-process supplier mapping exercise (PCB, electroplating, surface treatment) in Vietnam and southern China using Blue Map + WRF v3.0 screening, directly addressing the "three-quarters map only to direct suppliers" gap the CDP report flags.</li>
+      <li><strong>APG workstream tracking:</strong> Request a readout from Singapore energy contacts on the submarine-cable governance guidelines and cross-border REC framework timeline under the 2027 chairmanship; log implications for supplier parks in Vietnam, Thailand and Malaysia.</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>Mid-Term Actions (3–12 months)</h4>
+    <ul>
+      <li><strong>Solar+BESS supplier economics model:</strong> Once GEAPP's BESS market-design workstream publishes service definitions and pricing mechanisms, model solar+storage co-location economics for the Đồng Nai and Bắc Ninh supplier parks; combine with the two-part tariff trial (through July 2027) into a ranked procurement option set.</li>
+      <li><strong>Cross-border procurement scenario:</strong> Identify 2–3 supplier sites that would benefit first from ASEAN wheeling corridors and cross-border REC attribute tracking; pre-negotiate REC provenance requirements with suppliers ahead of the submarine-cable framework finalisation.</li>
+      <li><strong>Water-resilience positioning:</strong> Use the 39%-divestment trend as the business case to position Cisco's supplier water programme as retention-focused (helping suppliers stay viable in stressed basins) rather than compliance-driven — aligning with the "water resilience as competitive differentiator" framing from CDP.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ METHODOLOGY ============================ -->
+<div class="section">
+  <div class="section-title">Methodology Notes</div>
+  <div class="methodology-note">
+    <h4>How this briefing was built</h4>
+    <ul>
+      <li><strong>Coverage window:</strong> October 5 – October 11, 2026 (issues publish every Monday 09:00 GMT+8).</li>
+      <li><strong>Search strategy:</strong> Five English-language query tracks — Vietnam DPPA/two-part tariff policy, Southeast Asia green energy & grid interconnection, Cisco sustainability & ESG, supply-chain water risk (TNFD/WRI), carbon neutrality & net zero. One unified topic selection feeds both the English and Chinese editions; the Chinese edition is a translation and localisation of the same items, never re-searched.</li>
+      <li><strong>Verification:</strong> Every linked source was fetched and confirmed accessible on October 12, 2026. Items that could not be verified are marked "source: [organisation], link to be confirmed" rather than linked.</li>
+      <li><strong>Impact Score (0–10):</strong> Composite of novelty (30%), scale/magnitude (30%), Cisco supply-chain exposure (25%) and actionability (15%). Scores are identical across both language editions.</li>
+      <li><strong>Known limits:</strong> The CDP report was published October 2, three days before the coverage window opens, but is included as it was not covered in Issue #75 and is the highest-leverage input this cycle for the FY27 supplier water SOP. The Vietnam GEAPP item is dated October 1–3, spanning the window boundary, for the same reason. Cisco-specific output this week was limited to a partner-facing blog on AI-driven ocean data (see Quick Signals).</li>
+      <li><strong>Full source list:</strong> Eco-Business / CDP (<a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">link ↗</a>) · Logistics News PH / 44th AMEM (<a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">link ↗</a>) · Năng lượng Việt Nam via Windpower.space (<a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">link ↗</a>) · Heping Ribao / Vanda project (<a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">link ↗</a>) · ACCESS Newswire / Cisco (<a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">link ↗</a>) · The Industry Outlook / India–Singapore grid (<a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">link ↗</a>).</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<!-- ============================ SIDEBAR ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>Quick Signals</h3>
+    <div class="signal">
+      <strong>Cisco blog: AI-driven observability cuts factory energy 10–15%</strong>
+      Cisco × Splunk × Computacenter case at Bosch Rexroth (Ulm): 20–30% lower energy costs, 10–15% lower energy use, 25–30% lower GHG emissions — plus WWF partnership on anti-poaching analytics in Southeast Asia.
+      <span class="source"><a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">Cisco via ACCESS Newswire, Oct 7 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>Vanda Solar & Battery: 2 GW + 4.4 GWh for Singapore export</strong>
+      Gurīn Energy's Riau Islands project (Oct 6 briefing) — up to US$4.5B FDI, ~60,000 jobs, US$1.76B projected tax revenue; Indonesia–Singapore clean-energy corridor moving into build phase.
+      <span class="source"><a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">Heping Ribao, Oct 6 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>India–Singapore 2,000 MW grid link under study</strong>
+      Proposed at the 20th East Asia Summit Energy Ministers' Meeting (Manila, Oct 8); one option is a 3,000 km land corridor through Myanmar, Thailand and Malaysia — a potential extension of ASEAN Power Grid trade beyond Southeast Asia.
+      <span class="source"><a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">The Industry Outlook, Oct 8 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>MOIT still reviewing Decree 57 vs two-part tariff overlap</strong>
+      Draft amendments under discussion would isolate grid-infrastructure costs from DPPA service charges or apply capacity netting — resolving the double-charging risk that dampens corporate renewable procurement economics.
+      <span class="source"><a href="https://asiapacificexpress.com/vietnams-dppa-and-two-part-electricity-tariff-navigating-cost-overlaps-to-unlock-private-renewable-procurement/" target="_blank" rel="noopener">Asia Pacific Express ↗</a></span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Upcoming Events</h3>
+    <div class="event-row">
+      <span class="event-date">2027</span> — Singapore's ASEAN chairmanship: accelerated implementation of submarine power cable framework
+    </div>
+    <div class="event-row">
+      <span class="event-date">Jan 2027</span> — EVNNPT first 100 MW transmission-level BESS completion target
+    </div>
+    <div class="event-row">
+      <span class="event-date">Jul 2027</span> — Vietnam two-part electricity tariff trial concludes; wider rollout from Aug 2027
+    </div>
+    <div class="event-row">
+      <span class="event-date">Q4 2027</span> — Water Scopes 1–3 final guidance (WRI)
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Topics Covered</h3>
+    <span class="topic-chip">ASEAN Power Grid & AMEM</span>
+    <span class="topic-chip">Corporate Water Risk (CDP)</span>
+    <span class="topic-chip">Vietnam BESS & Grid Modernisation</span>
+    <span class="topic-chip">Submarine Cable Framework</span>
+    <span class="topic-chip">Indonesia–Singapore Solar Corridor</span>
+    <span class="topic-chip">Cross-border RECs</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Core Sources</h3>
+    <div class="core-source"><a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business / CDP ↗</a> — water risk & trade report</div>
+    <div class="core-source"><a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH ↗</a> — 44th AMEM outcomes</div>
+    <div class="core-source"><a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space ↗</a> — GEAPP–Electricity Authority program</div>
+    <div class="core-source"><a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">Heping Ribao ↗</a> — Vanda Solar & Battery</div>
+    <div class="core-source"><a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">ACCESS Newswire / Cisco ↗</a> — AI & ocean data blog</div>
+    <div class="core-source"><a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">The Industry Outlook ↗</a> — India–Singapore grid proposal</div>
+    <div class="core-source"><a href="https://asiapacificexpress.com/vietnams-dppa-and-two-part-electricity-tariff-navigating-cost-overlaps-to-unlock-private-renewable-procurement/" target="_blank" rel="noopener">Asia Pacific Express ↗</a> — DPPA vs two-part tariff</div>
+  </div>
+
+</div><!-- /sidebar -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>Cisco Sustainability Intelligence Briefing · Issue #76 · Generated October 12, 2026 · All source links verified accessible on publish date</p>
+  <p style="margin-top:6px;">Internal use only · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>

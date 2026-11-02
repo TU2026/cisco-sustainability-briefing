@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco 可持续发展情报简报 — 第76期 | 2026年10月12日</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing.html">English</a>
+    </div>
+    <span class="issue-badge">第76期 · 2026年10月12日</span>
+    <h1>Cisco 可持续发展情报简报</h1>
+    <p class="subtitle">第44届东盟能源部长会议锁定区域电网框架、CDP 测算企业水风险敞口达 3970 亿美元、越南储能建设获政府支持协调平台</p>
+    <p class="meta">覆盖窗口：2026年10月5日 – 10月11日 · 检索语言：英文 · 议题数：5 · 收件人：dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ 执行摘要 ============================ -->
+<div class="section">
+  <div class="section-title">执行摘要</div>
+  <div class="exec-summary">
+    <p>本周，东盟能源政策机器开到了全年最高档位。在马尼拉举行的第44届东盟能源部长会议（10月8日）上，各国部长批准了实现东盟电网愿景2045的战略工作计划——包括跨境海底电力电缆的法律、技术、商业与治理指南，并将在新加坡2027年轮值主席国任期内加速落地——同时发布了第九版《东盟能源展望》（AEO9），勾勒出任务的规模：到2060年区域能源需求预计增长至四倍，协调转型情景（ACT）每年需要约4000亿美元能源投资。部长们重申了2030年目标——可再生能源占一次能源供应30%、占装机容量45%——并完成了储能（BESS）、跨境绿色电力证书（REC）和 CCUS 商业模式的区域框架。</p>
+    <p>在水议题上，CDP 新报告《水、贸易与资本》（Eco-Business 报道，10月2日）测算企业因水相关风险预期的财务影响约为3970亿美元，其中约450亿美元将发生在供应链上游——这为思科正在为 FY27 构建的供应商水风险参与机制提供了直接的数据支撑。报告还揭示了可见性缺口：78%的水信息披露企业已绘制供应链地图，但其中四分之三仅覆盖到直接供应商。在越南，电力管理局与 GEAPP 于10月1日将能源转型谅解备忘录推进至实施阶段，确定了涵盖多储能协调平台、构网型技术与配网数字孪生的六大工作流——背景是 EVN 约2000 MW 的储能计划和修订后 PDP8 的 10,000–16,300 MW 储能目标。本周的主线：清洁电力与水问责的框架正在被标准化——谁先把供应商层面的数据摆上桌面，谁就掌握话语权。</p>
+  </div>
+</div>
+
+<!-- ============================ Top 3 ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 本周最值得行动的发现</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · CDP：企业预期水相关财务影响达3970亿美元——且60%的供应商水风险位于发展中国家</div>
+      <span class="impact-badge high">紧迫性 9.5</span>
+    </div>
+    <div class="intel-summary">
+      CDP 报告《水、贸易与资本：水如何重塑地缘政治、供应链与金融风险》基于超过6,500家企业的水信息披露，测算企业预期因水相关风险产生的财务影响约3970亿美元，其中约450亿美元预计发生在供应链上游；企业已报告14亿美元的现实影响。对采购战略而言，结构性发现最为关键：富裕国家企业供应商所面临的水相关风险中约60%位于发展中国家；39%的企业报告正在撤出或退出高水压力地区（一年前为27%）；78%的披露企业已绘制供应链地图（由70%上升），但四分之三仅覆盖到直接供应商。CDP 的核心信息——"工厂可以搬迁，但流域无法搬迁"——正中东南亚电子制造枢纽。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>这是迄今为止支持思科 FY27 供应商水风险评估 SOP 与 CDP 水安全问卷 Module 5.11 叙述的最有力外部数据——上游450亿美元的数字恰好量化了供应商评估标准（水依赖度、流域可用水量、地理风险）所要管理的敞口。<strong>行动窗口：</strong>将3970亿/上游450亿美元数据引用进 Module 5.11 提交材料；在 FY27 评估周期启动前，将 Blue Map 与流域筛查从一级 EMS/ODM 工厂延伸至关键二级湿法工艺供应商（PCB、电镀、表面处理），填补"仅覆盖直接供应商"的缺口。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business：企业面临3970亿美元水风险敞口 — CDP ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · 第44届东盟能源部长会议批准东盟电网愿景2045工作计划——海底电缆框架将在新加坡2027年主席任期内加速落地</div>
+      <span class="impact-badge high">紧迫性 9.0</span>
+    </div>
+    <div class="intel-summary">
+      在马尼拉举行的第44届东盟能源部长会议（10月8日）上，各国部长批准了东盟电网愿景2045的关键战略工作计划，在跨境海底电力电缆的法律、技术、商业与治理指南方面取得实质进展，并计划在新加坡2027年轮值主席国任期内加速实施。会议肯定了老挝—泰国—马来西亚—新加坡电力一体化项目（LTMS-PIP）多向电力贸易的扩展，以及 BIMP-PIP、柬埔寨—老挝和拟议的菲律宾—印尼互联项目进展，并正式启动"东盟规制学院"以协调跨境市场规则。新版《东盟能源展望9》设定了规划基准：在工业化与数据中心增长驱动下，2060年能源需求增长至四倍；东盟协调转型情景每年需约4000亿美元投资——同时确认了储能（BESS）、跨境绿色电力证书和 CCUS 商业模式的区域框架。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>海底电缆治理指南与跨境 REC 框架是区域可再生能源采购的制度性解锁——越南、泰国和马来西亚的供应商园区将更接近多市场清洁电力走廊。<strong>行动窗口：</strong>未来两个季度通过新加坡渠道跟踪海底电缆指南定稿进展；预先评估哪些供应商站点的负荷曲线将最先受益于过网输电（wheeling）与跨境 REC 追踪，并将发现纳入台湾/SCC Cohort PPA 策略作为可比的制度模板。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH：东盟能源部长在第44届 AMEM 推进区域互联互通 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · 越南 GEAPP 电网现代化合作进入实施阶段——多储能协调平台、构网型技术与数字孪生，EVN 储能扩至2000 MW</div>
+      <span class="impact-badge">紧迫性 8.2</span>
+    </div>
+    <div class="intel-summary">
+      10月1日，越南工贸部电力管理局与全球能源人民与地球联盟（GEAPP）联合工作组商定六大工作流，将此前签署的能源转型谅解备忘录落地：多储能系统（BESS）协调管理平台、构网型（GFM）逆变器技术经验共享、配电网数字孪生、国家级储能卓越中心、储能定价与服务定义的市场设计研究，以及负荷中心与新能源富集区分布式储能的部署框架。另一份 GEAPP 与胡志明市电力公司（EVNHCMC）的谅解备忘录（9月29日）增加了为期六个月的"公用事业宪章"评估。该计划与 EVN 约2000 MW 的储能部署及修订后 PDP8 的 2030年 10,000–16,300 MW 储能目标同步推进——这是消纳供应商工厂屋顶光伏与 DPPA 电量的关键配套基础设施。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>储能与构网型能力决定了北宁、同奈、平阳供应商园区实际能用多少屋顶光伏和 DPPA 电力——储能市场设计工作将塑造"光伏+储能"的价目机制。<strong>行动窗口：</strong>请越南能源顾问跟踪储能定价/服务定义工作流的产出；待服务定义发布后，为供应商测算"光伏+储能"共址经济性，并将弃电风险缓解纳入 FY27 供应商清洁电力基线。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space（越南能源网）：电力管理局与 GEAPP 达成电网现代化与储能计划 ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ 关键数据点 ============================ -->
+<div class="section">
+  <div class="section-title">关键数据点</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">3970亿美元</div>
+      <div class="data-label">6,500+ 家 CDP 披露企业预期因水相关风险产生的财务影响——其中450亿美元预计发生在供应链上游</div>
+      <div class="data-trend trend-up">▲ 持续增长 — 39%的企业正从高水压力地区撤出（一年前为27%）</div>
+      <div class="data-source">来源：<a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business（CDP 报告），2026年10月2日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">4000亿美元/年</div>
+      <div class="data-label">东盟协调转型情景下所需的年度能源投资（AEO9，第44届 AMEM 发布）</div>
+      <div class="data-trend trend-up">▲ 上升 — IEA 估算电网与储能投资需在2050年前达约500亿美元/年</div>
+      <div class="data-source">来源：<a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH（第44届 AMEM），2026年10月8日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2060年前×4</div>
+      <div class="data-label">东南亚能源需求预期增长倍数，由工业化与数据中心扩张驱动（AEO9）</div>
+      <div class="data-trend trend-up">▲ 上升 — 区域目标：2030年可再生能源占一次能源供应30%、占装机容量45%</div>
+      <div class="data-source">来源：<a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH（第44届 AMEM），2026年10月8日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">78% → 25%</div>
+      <div class="data-label">CDP 水信息披露企业中绘制供应链地图的比例（由70%上升）——但四分之三仅覆盖到直接供应商</div>
+      <div class="data-trend trend-down">▼ 可见性缺口 — 二级及以上湿法工艺供应商仍是盲区</div>
+      <div class="data-source">来源：<a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business（CDP 报告），2026年10月2日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">10,000–16,300 MW</div>
+      <div class="data-label">越南修订后 PDP8 的2030年储能目标；EVN 目前正在部署约2000 MW 的 BESS 计划</div>
+      <div class="data-trend trend-up">▲ 扩张 — GEAPP 合作新增协调平台、构网型技术与储能卓越中心</div>
+      <div class="data-source">来源：<a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space（越南能源网），2026年10月3日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2 GW + 4.4 GWh</div>
+      <div class="data-label">苏吉岛光伏+储能项目（Gurīn Energy，廖内群岛），经海底电缆向新加坡输电——外商直接投资最高45亿美元，约6万个就业岗位</div>
+      <div class="data-trend trend-up">▲ 上升 — 印尼—新加坡清洁能源走廊从谅解备忘录转入建设阶段</div>
+      <div class="data-source">来源：<a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">和平日报（转引印尼商报），2026年10月6日 ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ 战略建议 ============================ -->
+<div class="section">
+  <div class="section-title">战略建议</div>
+
+  <div class="rec-block">
+    <h4>短期行动（0–3个月）</h4>
+    <ul>
+      <li><strong>CDP Module 5.11 强化：</strong>将3970亿美元敞口 / 上游450亿美元 / 60%位于发展中国家的数据纳入 CDP 水安全问卷 Module 5.11 提交材料与供应商水 SOP 论证——这是当前可引用的证据，证明供应商流域参与具有实质重要性而非可有可无。</li>
+      <li><strong>二级供应商映射补缺：</strong>启动越南与中国南方的二级湿法工艺供应商映射（PCB、电镀、表面处理），使用 Blue Map + WRF v3.0 筛查，直接回应 CDP 报告指出的"四分之三仅覆盖直接供应商"的缺口。</li>
+      <li><strong>东盟电网工作流跟踪：</strong>通过新加坡能源渠道获取海底电缆治理指南与跨境 REC 框架在2027年主席任期下的时间表简报；记录其对越南、泰国和马来西亚供应商园区的影响。</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>中期行动（3–12个月）</h4>
+    <ul>
+      <li><strong>"光伏+储能"供应商经济性模型：</strong>待 GEAPP 储能市场设计工作流发布服务定义与定价机制后，为同奈和北宁供应商园区测算光伏+储能共址经济性；结合两部制电价试点（至2027年7月）形成排序后的采购方案集。</li>
+      <li><strong>跨境采购情景：</strong>识别2–3个将最先受益于东盟过网输电走廊与跨境 REC 属性追踪的供应商站点；在海底电缆框架定稿前与供应商预先约定 REC 溯源要求。</li>
+      <li><strong>水韧性定位：</strong>以39%撤资趋势作为商业论证，将思科供应商水项目定位为"保留导向"（帮助供应商在水压力流域持续经营）而非"合规导向"——呼应 CDP"水韧性即竞争差异化"的表述。</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ 方法说明 ============================ -->
+<div class="section">
+  <div class="section-title">方法说明</div>
+  <div class="methodology-note">
+    <h4>本期简报制作方式</h4>
+    <ul>
+      <li><strong>覆盖窗口：</strong>2026年10月5日 – 10月11日（每周一 09:00 GMT+8 发布）。</li>
+      <li><strong>检索策略：</strong>五条英文检索线——越南 DPPA/两部制电价政策、东南亚绿色能源与电网互联、思科可持续发展与 ESG、供应链水风险（TNFD/WRI）、碳中和与净零进展。统一的选题结果同时作为中英文两版的基础；中文版为同一选题的翻译与本地化，不做重新检索。</li>
+      <li><strong>核验：</strong>所有来源链接均于2026年10月12日抓取并确认可访问。无法核验的条目标注"来源：[机构名]，链接待核实"而非直接附链。</li>
+      <li><strong>Impact Score（0–10）：</strong>由新颖性（30%）、规模量级（30%）、思科供应链敞口（25%）与可操作性（15%）加权构成。两版评分完全一致。</li>
+      <li><strong>已知局限：</strong>CDP 报告发布于10月2日（覆盖窗口开始前三天），但第75期未覆盖，且是本周期对 FY27 供应商水 SOP 影响最大的输入，故纳入。越南 GEAPP 条目日期为10月1–3日，横跨窗口边界，同理。本周思科自身动态仅限一篇面向合作伙伴的 AI 海洋数据博客（见智能信号）。</li>
+      <li><strong>完整来源列表：</strong>Eco-Business / CDP（<a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">链接 ↗</a>）· Logistics News PH / 第44届 AMEM（<a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">链接 ↗</a>）· 越南能源网 via Windpower.space（<a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">链接 ↗</a>）· 和平日报 / 凡达项目（<a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">链接 ↗</a>）· ACCESS Newswire / Cisco（<a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">链接 ↗</a>）· The Industry Outlook / 印度—新加坡电网（<a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">链接 ↗</a>）。</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<!-- ============================ 侧边栏 ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>智能信号</h3>
+    <div class="signal">
+      <strong>思科博客：AI 驱动的可观测性使工厂能耗降低10–15%</strong>
+      Cisco × Splunk × Computacenter 在博世力士乐（乌尔姆）的案例：能源成本降低20–30%、能耗降低10–15%、温室气体排放降低25–30%；另与 WWF 合作在东南亚开展反盗猎数据分析。
+      <span class="source"><a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">Cisco via ACCESS Newswire，10月7日 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>凡达光伏储能项目：2 GW + 4.4 GWh 向新加坡输电</strong>
+      古林能源（Gurīn Energy）廖内群岛项目（10月6日吹风）——外商直接投资最高45亿美元、约6万个就业岗位、预计新增税收17.6亿美元；印尼—新加坡清洁能源走廊进入建设阶段。
+      <span class="source"><a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">和平日报，10月6日 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>印度—新加坡2000 MW 电网互联研究中</strong>
+      在第20届东亚峰会能源部长会议上提出（马尼拉，10月8日）；其中一个方案是经缅甸、泰国、马来西亚的3000公里陆上走廊——可能将东盟电网贸易延伸至东南亚之外。
+      <span class="source"><a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">The Industry Outlook，10月8日 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>工贸部仍在审议57号法令与两部制电价重叠问题</strong>
+      讨论中的修正草案拟将电网基础设施成本从 DPPA 服务费中剥离或引入容量抵扣机制——化解抑制企业可再生电力采购经济性的"双重收费"风险。
+      <span class="source"><a href="https://asiapacificexpress.com/vietnams-dppa-and-two-part-electricity-tariff-navigating-cost-overlaps-to-unlock-private-renewable-procurement/" target="_blank" rel="noopener">Asia Pacific Express ↗</a></span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>前瞻事件日历</h3>
+    <div class="event-row">
+      <span class="event-date">2027年</span> — 新加坡东盟轮值主席任期：海底电力电缆框架加速实施
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年1月</span> — EVNNPT 首个100 MW 输电级储能电站完工目标
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年7月</span> — 越南两部制电价试点结束；2027年8月起更大范围推行
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年Q4</span> — Water Scopes 1–3 最终指南（WRI）
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>本周覆盖议题</h3>
+    <span class="topic-chip">东盟电网与 AMEM</span>
+    <span class="topic-chip">企业水风险（CDP）</span>
+    <span class="topic-chip">越南储能与电网现代化</span>
+    <span class="topic-chip">海底电缆框架</span>
+    <span class="topic-chip">印尼—新加坡光伏走廊</span>
+    <span class="topic-chip">跨境绿色电力证书</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>核心信息来源</h3>
+    <div class="core-source"><a href="https://www.eco-business.com/news/water-risks-threaten-trade-as-companies-face-us397-billion-exposure-cdp/" target="_blank" rel="noopener">Eco-Business / CDP ↗</a> — 水风险与贸易报告</div>
+    <div class="core-source"><a href="https://logisticsnews.ph/2026/10/08/asean-energy-ministers-advance-regional-connectivity-clean-transition-and-supply-security-at-44th-amem-in-manila" target="_blank" rel="noopener">Logistics News PH ↗</a> — 第44届 AMEM 成果</div>
+    <div class="core-source"><a href="https://windpower.space/en/tin-tuc/2026-10-03-moit-geapp-grid-modernisation-bess" target="_blank" rel="noopener">Windpower.space ↗</a> — GEAPP 与电力管理局合作计划</div>
+    <div class="core-source"><a href="https://www.hepingribao.id/home/2026/10/06/%e5%8d%b0%e5%b0%bc%e5%85%89%e4%bc%8f%e5%82%a8%e8%83%bd%e9%a1%b9%e7%9b%ae%e9%a2%84%e8%ae%a1%e5%88%9b%e9%80%a06%e4%b8%87%e4%b8%aa%e5%b0%b1%e4%b8%9a%e5%b2%97%e4%bd%8d-%e7%94%b5%e5%8a%9b%e5%b0%86%e8%be%93" target="_blank" rel="noopener">和平日报 ↗</a> — 凡达光伏储能项目</div>
+    <div class="core-source"><a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/turning-ocean-data-into-impact-how-ai-trusted-data-and-partnersh-1233972" target="_blank" rel="noopener">ACCESS Newswire / Cisco ↗</a> — AI 与海洋数据博客</div>
+    <div class="core-source"><a href="https://www.theindustryoutlook.com/machinery-and-equipment/news/indiasingapore-power-grid-plan-could-transform-regional-energy-trade-nwid-18322.html" target="_blank" rel="noopener">The Industry Outlook ↗</a> — 印度—新加坡电网提案</div>
+    <div class="core-source"><a href="https://asiapacificexpress.com/vietnams-dppa-and-two-part-electricity-tariff-navigating-cost-overlaps-to-unlock-private-renewable-procurement/" target="_blank" rel="noopener">Asia Pacific Express ↗</a> — DPPA 与两部制电价</div>
+  </div>
+
+</div><!-- /sidebar -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>Cisco 可持续发展情报简报 · 第76期 · 生成于2026年10月12日 · 所有来源链接均于发布当日核验可访问</p>
+  <p style="margin-top:6px;">内部使用 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco 可持续发展情报简报 — 第77期 | 2026年10月19日</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 15.5px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 16.5px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing.html">English</a>
+    </div>
+    <span class="issue-badge">第 77 期 · 2026年10月19日</span>
+    <h1>Cisco 可持续发展情报简报</h1>
+    <p class="subtitle">TNFD、SBTN 与 NPI 联合发布对齐的自然披露标准，越南数据中心电价纠纷暴露结构性用电成本冲击，中老500千伏联网工程累计送电量突破10亿千瓦时</p>
+    <p class="meta">覆盖周期：2026年10月12日 – 10月18日 · 统一选题（与英文版一致）· 主题数：5 · 收件人：dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ 执行摘要 ============================ -->
+<div class="section">
+  <div class="section-title">执行摘要</div>
+  <div class="exec-summary">
+    <p>本周出现了自 TNFD 框架发布以来最重大的自然相关披露进展：10月13日，TNFD（自然相关财务披露工作组）、SBTN（科学目标网络）与 NPI（自然向好倡议）联合发布对齐更新，统一了企业评估、设定目标与报告自然相关议题的方法。TNFD 的 LEAP v2.0 是自2023年9月以来的首次重大结构性升级；SBTN 2.0 新增了明确的供应商参与目标选项；NPI 的"自然状态指标"将600多项现有指标精简为4项通用核心指标，并直接整合进前两个框架。对于正处于 CDP 水安全问卷与 FY27 供应商水风险评估 SOP 制定关键期的思科而言，这是一次性完成内部方法论对齐的最佳时机——而非日后返工。</p>
+    <p>在越南，一场险些切断两家头部数据中心运营商（Viettel 与 CMC）供电的电价纠纷，暴露了在日益紧张的电网之上运营的真实成本结构：用电类别被重新划入商业零售电价、晚高峰时段调整、电价上调4.8%，三者叠加可使数据中心运营成本上升超过50%。其背后是工贸部评估的2027年即达4,256兆瓦的电力容量缺口（PDP8 实施进度仅约5%），而这一缺口正在催生 DPPA 机制下规模可观的配建储能套利市场。区域层面，中老500千伏联网工程累计送电量突破10亿千瓦时，证明跨境绿电市场化交易已在澜湄流域规模化运行。本周主线：电价波动与披露标准化正同时聚焦于同一片供应商足迹——两者都奖励尽早的、数据驱动的参与。</p>
+  </div>
+</div>
+
+<!-- ============================ Top 3 本周最值得行动的发现 ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 本周最值得行动的发现</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · TNFD、SBTN 与自然向好倡议联合发布对齐的企业自然指南——LEAP v2.0、SBTN 2.0 与通用"自然状态"指标同步落地</div>
+      <span class="impact-badge high">紧迫性/关联度 9.2</span>
+    </div>
+    <div class="intel-summary">
+      10月13日，TNFD、SBTN 与 NPI 在 CBD COP17（埃里温）召开前夕发布协同更新，统一了企业评估、设定目标与报告自然相关议题的方式。TNFD 发布 LEAP v2.0——自2023年9月以来的首次重大结构性升级，新增自然状态测量、自然相关机遇与转型规划指引。SBTN 发布"自然科学目标 2.0"，扩展了淡水和土地方法（涵盖地下水、农药对水质的影响），并针对供应链项目引入了供应商参与目标选项与分步验证机制。NPI 的《自然状态指标与度量》经27家成员机构批准，将600多项指标精简为四项核心指标（生态系统范围、生态系统状况、物种灭绝风险、物种种群），并已在23个国家的50个站点、29家企业完成实地验证。三者对齐后，企业可在 TNFD 报告与 SBTN 目标设定之间复用数据与分析，而无需维护两套并行体系。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>这正是 FY27 供应商水风险评估 SOP 与 CDP 水安全问卷 Module 5.11 的方法论基石——LEAP v2.0 将"定位—评估—评价—准备"的流域级供应商筛查流程正式化，SBTN 2.0 的供应商参与目标则为正在制定的供应商披露阈值提供了公认的结构框架。<strong>行动窗口：</strong>立即将 SOP 评估标准（水依赖度、水可用性影响、地理位置风险）与 LEAP v2.0 术语对标，使 FY27 评估与未来的自然目标承诺共享同一框架，避免日后维护两套体系。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://generationimpact.global/news/tnfd-sbtn-nature-positive-initiative-aligned-guidance-2026" target="_blank" rel="noopener">Generation Impact：TNFD、SBTN 与 NPI 发布对齐指南 ↗</a> ·
+      <a href="https://tnfd.global/tnfd-sbtn-and-nature-positive-initiative-release-aligned-guidance-to-strengthen-corporate-action-on-nature/" target="_blank" rel="noopener">TNFD 官方发布 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · 越南数据中心电价纠纷惊魂：96亿越南盾追缴、断电威胁与超50%的成本冲击，暴露电网紧张的真实代价</div>
+      <span class="impact-badge high">紧迫性/关联度 8.8</span>
+    </div>
+    <div class="intel-summary">
+      今年9月，胡志明市电力公司（EVN HCMC）一度准备对越南两家头部数据中心运营商 Viettel 与 CMC 断电，追缴合计96亿越南盾（约合人民币249万元）的电价差额——起因是第60/2025/TT-BCT号通知将"集中数据处理、存储与管理服务"用户从生产电价重新划入商业零售电价（2025年12月2日生效）。纠纷升级至工贸部、科技部等多部委，最终在全国统一口径指令下才避免断电。结构性驱动因素比个案更重大：工贸部1279/QD-BCT号决定将平均零售电价上调4.8%至2,204.07越南盾/千瓦时；963/QD-BCT号决定将高峰时段移至周一至周六17:30–22:30，压缩低价用电窗口；商业用电高峰电价（5,025–5,422越南盾/千瓦时）为低谷的2.8–3.1倍——叠加后部分数据中心运营成本上升超过50%。工贸部评估显示，最早2027年将出现4,256兆瓦容量缺口和29亿千瓦时电量缺口，2030年电量缺口扩大至约611.8亿千瓦时，而 PDP8 实施进度仅约5%。后果已经显现：新加坡 STTGDC 放弃了原定的60兆瓦越南项目；与此同时，商业用电峰谷价差最高约人民币0.97元/千瓦时，正在为7×24小时负荷打开可观的"DPPA+配建储能"套利市场。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>电价类别重划、晚高峰调整与2027年容量缺口直接作用于同奈、北宁、平阳等供应商园区——正是思科依赖 DPPA 绿电供应的工厂。如此规模的成本冲击会传导至供应商报价，电网紧张也抬高了可再生电力的限电风险。<strong>行动窗口：</strong>在 FY27 供应商能源风险筛查中加入电价类别调整敞口与高峰负荷曲线；向越南供应商伙伴明确提示：DPPA + 表后储能已成为市场自身正在定价的对冲手段。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网：越南数据中心电价纠纷深度分析 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · 中老500千伏联网工程累计送电量突破10亿千瓦时——澜湄区域跨境绿电市场化交易成为主流</div>
+      <span class="impact-badge">紧迫性/关联度 8.0</span>
+    </div>
+    <div class="intel-summary">
+      10月8日，中老500千伏联网工程（中国首个500千伏跨境交流联网工程，2026年4月20日投运）累计送电量突破10亿千瓦时。中老电力互济能力已由5万千瓦提升至150万千瓦，自8月6日起老挝水电经该通道送入南方电网区域市场（含粤港澳大湾区），预计至10月底输送约6亿千瓦时。依托南方区域电力市场跨境交易机制，2026年经该线路输送的光伏和水电市场化交易电量预计达15亿千瓦时。这一里程碑恰逢东南亚互联议程加速：IEA 测算东盟规划中跨境互联线路至2040年需约270亿美元投资，越南—泰国—马来西亚—新加坡多边电力贸易试点将于2026年开始搭建技术框架。与此同时，中国储能龙头正出口"整站能力"——宁德时代南非 Hydra 项目（216兆瓦光伏+约588兆瓦时储能，非洲最大混合可再生能源项目）展示了正在重塑全球储能采购格局的"系统级交付"模式；全球储能电池出货量2025年达550吉瓦时，2026年上半年即达461.3吉瓦时（同比增长71%）。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>中老线路证明跨境绿电采购可以通过有组织的市场完成交割，而非仅靠双边 PPA——这对寻求市场化绿电的大湾区及澜沧江—湄公河次区域供应商站点具有直接参考价值。公用事业级储能出口所印证的系统级成本下降，进一步强化了越南供应商园区"光伏+储能"的商业可行性。<strong>行动窗口：</strong>将南方电网跨境交易机制列为湄公河次区域供应商的采购路径选项；结合2026上半年储能价格信号，刷新供应商"光伏+储能"经济性模型。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://www.peopleweekly.cn/html/2026/caijing_1012/279016.html" target="_blank" rel="noopener">人民日报海外版（人民周刊网）：中老500千伏联网工程送电量突破10亿千瓦时 ↗</a> ·
+      <a href="https://m.gmw.cn/2026-10/14/content_1304575163.htm" target="_blank" rel="noopener">光明日报（光明网）：宁德时代带动储能"系统级出海" ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ 关键数据点 ============================ -->
+<div class="section">
+  <div class="section-title">关键数据点</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">96亿越南盾</div>
+      <div class="data-label">电价类别重划后向 Viettel（约79.17亿）与 CMC（约17.03亿）追缴的电费差额——部委介入前一度威胁断电</div>
+      <div class="data-trend trend-up">▲ 升级中——多部委博弈促成全国电价分类口径统一指令</div>
+      <div class="data-source">来源：<a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网，2026年10月19日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">&gt;50%</div>
+      <div class="data-label">被划入商业电价并遭遇晚高峰调整（1279与963/QD-BCT号文件）后，数据中心估算运营成本涨幅</div>
+      <div class="data-trend trend-up">▲ 上升——商业用电高峰电价（5,025–5,422盾/千瓦时）为低谷的2.8–3.1倍</div>
+      <div class="data-source">来源：<a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网，2026年10月19日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">4,256 MW</div>
+      <div class="data-label">工贸部评估：越南最早2027年出现的容量缺口（电量缺口29亿千瓦时），2030年扩大至约611.8亿千瓦时——PDP8 实施进度仅约5%</div>
+      <div class="data-trend trend-down">▼ 恶化中——近45%规划电源项目尚未取得投资批复</div>
+      <div class="data-source">来源：<a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网（工贸部评估），2026年10月19日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">10亿千瓦时</div>
+      <div class="data-label">中老500千伏联网工程自2026年4月投运以来的累计送电量；电力互济能力由5万千瓦提升至150万千瓦</div>
+      <div class="data-trend trend-up">▲ 规模化——2026年经该线路市场化交易绿电预计达15亿千瓦时</div>
+      <div class="data-source">来源：<a href="https://www.peopleweekly.cn/html/2026/caijing_1012/279016.html" target="_blank" rel="noopener">人民日报海外版，2026年10月12日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">461.3 GWh</div>
+      <div class="data-label">2026年上半年全球储能电池出货量，同比增长71%（2025全年：550吉瓦时）——宁德时代以30.4%份额连续五年全球第一</div>
+      <div class="data-trend trend-up">▲ 高速增长——IEA 预计未来数年储能装机有望实现数倍增长</div>
+      <div class="data-source">来源：<a href="https://m.gmw.cn/2026-10/14/content_1304575163.htm" target="_blank" rel="noopener">光明网（SNE Research 数据），2026年10月14日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">216 MW + 588 MWh</div>
+      <div class="data-label">南非 Hydra 光储项目（宁德时代系统级交付）——非洲最大混合可再生能源项目，按与 Eskom 20年购电协议年送电超4亿千瓦时</div>
+      <div class="data-trend trend-up">▲ 上升——"整站系统级交付"正成为公用事业级储能的竞争标杆</div>
+      <div class="data-source">来源：<a href="https://m.gmw.cn/2026-10/14/content_1304575163.htm" target="_blank" rel="noopener">光明网，2026年10月14日 ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ 战略建议 ============================ -->
+<div class="section">
+  <div class="section-title">战略建议</div>
+
+  <div class="rec-block">
+    <h4>短期行动（0–3个月）</h4>
+    <ul>
+      <li><strong>SOP 与 LEAP v2.0 对齐：</strong>将 FY27 供应商水风险评估 SOP 的评估标准（水依赖度、水可用性影响、地理位置风险）与披露阈值映射到 TNFD LEAP v2.0 与 SBTN 2.0 术语体系——使 CDP Module 5.11、未来自然目标与供应商参与共享一个框架，避免日后并行维护。</li>
+      <li><strong>筛查供应商电价冲击敞口：</strong>在越南供应商能源风险筛查中加入电价类别状态与晚高峰负荷曲线；识别哪些供应商站点面临商业电价重划或超50%的电价上涨，以及"DPPA+表后储能"在何处是可信的对冲。</li>
+      <li><strong>量化 DPPA+储能套利方案：</strong>利用商业峰谷价差（最高约人民币0.97元/千瓦时）与2026年储能出货/价格趋势，在下一轮电价调整前完成同奈、北宁供应商园区"光伏+储能"就地配置的商业论证。</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>中期行动（3–12个月）</h4>
+    <ul>
+      <li><strong>跨境市场化采购路径：</strong>跟踪南方电网跨境交易机制与越—泰—马—新多边电力贸易试点，作为湄公河次区域及东盟供应商站点的市场化绿电选项；评估哪些供应商可用市场交易绿电替代双边 PPA。</li>
+      <li><strong>电网紧张韧性规划：</strong>鉴于越南2027年预计4,256兆瓦容量缺口且 PDP8 实施仅约5%，要求关键越南供应商提交应急方案（自发电、储能、需求响应），并将结论纳入 FY27 绿电基线与限电风险假设。</li>
+      <li><strong>有外部锚点的供应商参与目标：</strong>借助 SBTN 2.0 的供应商参与目标选项，为水披露覆盖率阈值提供公认的外部锚点——使思科供应商计划对标新兴的通用"自然状态"指标，而非自定义 KPI。</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ 方法说明 ============================ -->
+<div class="section">
+  <div class="section-title">方法说明</div>
+  <div class="methodology-note">
+    <h4>本期简报制作方式</h4>
+    <ul>
+      <li><strong>覆盖周期：</strong>2026年10月12日 – 10月18日（每周一 09:00 GMT+8 发布）。</li>
+      <li><strong>搜索策略：</strong>五条英文检索线——越南 DPPA/两部制电价政策、东南亚绿能与电网互联、思科可持续发展与 ESG、供应链水风险（TNFD/WRI）、碳中和与净零进展。中英文版使用同一份统一选题；中文版为英文版的翻译与本地化，从不重新搜索。</li>
+      <li><strong>链接核验：</strong>所有来源链接均于2026年10月19日抓取并确认可访问；无法核验的条目标注"来源：[机构名]，链接待核实"，不作链接。</li>
+      <li><strong>Impact Score（0–10）：</strong>综合新颖性（30%）、规模量级（30%）、思科供应链敞口（25%）与可行动性（15%）。评分在两个语言版本中完全一致。</li>
+      <li><strong>已知局限：</strong>中老联网里程碑（10月8/12日）处于覆盖周期边界，但因此前各期未覆盖且支撑本期区域电网叙事而纳入；本周无思科专属 ESG 公告，TNFD/SBTN 对齐是本期对思科水项目杠杆最高的输入。部分中文媒体（北极星、人民日报海外版、光明网）提供了英文渠道缺乏的最详尽报道，关键数据均已对照引用核实。</li>
+      <li><strong>完整来源列表：</strong>Generation Impact / TNFD–SBTN–NPI 对齐指南（<a href="https://generationimpact.global/news/tnfd-sbtn-nature-positive-initiative-aligned-guidance-2026" target="_blank" rel="noopener">链接 ↗</a>）· TNFD 官方发布（<a href="https://tnfd.global/tnfd-sbtn-and-nature-positive-initiative-release-aligned-guidance-to-strengthen-corporate-action-on-nature/" target="_blank" rel="noopener">链接 ↗</a>）· 北极星电力网 / 越南数据中心电价纠纷（<a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">链接 ↗</a>）· 人民日报海外版 / 中老500千伏（<a href="https://www.peopleweekly.cn/html/2026/caijing_1012/279016.html" target="_blank" rel="noopener">链接 ↗</a>）· 光明网 / 宁德时代储能系统级出海（<a href="https://m.gmw.cn/2026-10/14/content_1304575163.htm" target="_blank" rel="noopener">链接 ↗</a>）· VietnamPlus / 第243号法令屋顶光伏余电50%（<a href="https://en.vietnamplus.vn/vietnam-raises-rooftop-solar-sales-cap-to-50-widens-direct-power-deals-post348342.vnp" target="_blank" rel="noopener">链接 ↗</a>）。</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<!-- ============================ 侧边栏 ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>智能信号</h3>
+    <div class="signal">
+      <strong>越南落地第243号法令屋顶光伏松绑</strong>
+      屋顶光伏余电售出上限由20%提高至50%（至2030年底，电网承载力允许时可协商更高比例）；离网 DPPA 准入门槛由每月20万降至2万千瓦时；EVNNPC 至6月底新增约718兆瓦自发自用屋顶光伏，并正建设305兆瓦/610兆瓦时变电站侧储能（47座）。
+      <span class="source"><a href="https://en.vietnamplus.vn/vietnam-raises-rooftop-solar-sales-cap-to-50-widens-direct-power-deals-post348342.vnp" target="_blank" rel="noopener">VietnamPlus ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>新加坡开发商退出越南数据中心项目</strong>
+      STTGDC 公开放弃原定60兆瓦越南项目，理由是商业电价不确定性与土地租期限制难以支撑数据中心20–30年折旧周期——电价纠纷的第一个可见投资"牺牲品"。
+      <span class="source"><a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网，10月19日 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>老挝水电送入粤港澳大湾区</strong>
+      汛期老挝富余水电经500千伏通道进入南方电网（至10月底约6亿千瓦时），并参与南方区域电力市场交易——跨境绿电市场化交易的现成模板。
+      <span class="source"><a href="https://www.peopleweekly.cn/html/2026/caijing_1012/279016.html" target="_blank" rel="noopener">人民日报海外版 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>宁德时代连续三期发布 GBA 电池护照</strong>
+      全球电池联盟2026年电池护照试点覆盖占全球产量近80%的电芯制造商；宁德时代是唯一在历次试点中均有护照发布的企业，实现全价值链 ESG 数据覆盖——对 PCF 与电池供应链透明度预期是一个明确信号。
+      <span class="source">来源：福建日报（via 今日头条），链接待核实</span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>前瞻事件日历</h3>
+    <div class="event-row">
+      <span class="event-date">2026年11月4–6日</span> — 越南能源周（EPV），胡志明市西贡国际会展中心
+    </div>
+    <div class="event-row">
+      <span class="event-date">2026年末</span> — CBD COP17（埃里温）：目标15企业自然披露落地推进
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年</span> — 越—泰—马—新多边电力贸易试点技术框架启动
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年Q4</span> — WRI Water Scopes 1–3 最终指南
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>本周覆盖议题</h3>
+    <span class="topic-chip">TNFD LEAP v2.0 与 SBTN 2.0</span>
+    <span class="topic-chip">越南数据中心电价纠纷</span>
+    <span class="topic-chip">DPPA+储能套利</span>
+    <span class="topic-chip">中老电网互联</span>
+    <span class="topic-chip">储能系统级出口</span>
+    <span class="topic-chip">第243号法令屋顶光伏</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>核心信息来源</h3>
+    <div class="core-source"><a href="https://generationimpact.global/news/tnfd-sbtn-nature-positive-initiative-aligned-guidance-2026" target="_blank" rel="noopener">Generation Impact ↗</a> — TNFD/SBTN/NPI 对齐指南</div>
+    <div class="core-source"><a href="https://tnfd.global/tnfd-sbtn-and-nature-positive-initiative-release-aligned-guidance-to-strengthen-corporate-action-on-nature/" target="_blank" rel="noopener">TNFD ↗</a> — 对齐发布官方公告</div>
+    <div class="core-source"><a href="https://m.bjx.com.cn/mnews/20261019/1516646.shtml" target="_blank" rel="noopener">北极星电力网 ↗</a> — 越南数据中心电价纠纷</div>
+    <div class="core-source"><a href="https://www.peopleweekly.cn/html/2026/caijing_1012/279016.html" target="_blank" rel="noopener">人民日报海外版 ↗</a> — 中老500千伏里程碑</div>
+    <div class="core-source"><a href="https://m.gmw.cn/2026-10/14/content_1304575163.htm" target="_blank" rel="noopener">光明网 ↗</a> — 宁德时代与全球储能市场</div>
+    <div class="core-source"><a href="https://en.vietnamplus.vn/vietnam-raises-rooftop-solar-sales-cap-to-50-widens-direct-power-deals-post348342.vnp" target="_blank" rel="noopener">VietnamPlus ↗</a> — 第243号法令与 DPPA</div>
+  </div>
+
+</div><!-- /sidebar -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>Cisco 可持续发展情报简报 · 第77期 · 生成于2026年10月19日 · 所有来源链接均于发布当日核验可访问</p>
+  <p style="margin-top:6px;">内部资料 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>
