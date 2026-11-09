@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco 可持续发展情报简报 — 第78期 | 2026年11月2日</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 15.5px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing.html">English</a>
+    </div>
+    <span class="issue-badge">第78期 · 2026年11月2日</span>
+    <h1>Cisco 可持续发展情报简报</h1>
+    <p class="subtitle">新加坡EMA有条件批准1.3GW越南—马来西亚—新加坡跨境绿电走廊；越南总理签发2027–2030"绝不停电"保供指令；施耐德电气《水紧缩报告》将水风险与网络攻击并列为工业头号业务风险</p>
+    <p class="meta">覆盖窗口：2026年10月26日–11月1日 · 搜索语言：英文 · 主题数：5 · 收件人：dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ 执行摘要 ============================ -->
+<div class="section">
+  <div class="section-title">执行摘要</div>
+  <div class="exec-summary">
+    <p>本周，东盟电网从愿景迈入项目管线。10月26日，在新加坡国际能源周（SIEW 2026）开幕式上，新加坡能源市场管理局（EMA）向胜科公用事业（Sembcorp Utilities）颁发有条件批准（Conditional Approval），确认其为越南—马来西亚—新加坡（VMS）可再生电力项目的指定进口方——该项目规划1.3GW输送走廊，整合越南海上风电与马来西亚光伏及电池储能，预计2035年开始送电，每年向新加坡输送超40亿千瓦时清洁电力，约覆盖新加坡全社会用电需求的12%。批准仪式由三国能源部长级官员共同见证，这是东南亚多国绿电贸易成为可投资、受监管路径迄今最明确的信号。</p>
+    <p>越南政策热度持续升温：总理指令（第10790/VPCP-CN号公文，10月22日）将2027–2030年不间断供电列为硬性问责要求——"无论任何情况"都不允许出现供电缺口——工贸部须在10月30日前提交屋顶光伏部署目标，能源与储能制度安排须在2026年12月前落地。同一周，VinEnergo首个DPPA项目投运：22 MWp屋顶光伏加45 MWh储能系统直接向云丰（Vũng Áng）经济区的VinFast与VinES工厂供电，为制造业绿电自供提供了可复制的样板。水议题方面，施耐德电气《水紧缩报告》（Water Crunch Report）显示，水压力已与网络攻击、供应链中断并列为欧洲工业的头号业务连续性风险——44%的工业企业报告水压力推高运营成本，过半数预计2031年前水将成为增长瓶颈。主线判断：能源可靠性、绿电获取与水风险正汇聚于同一张供应商版图——而管理这三者的工具如今都已商业化落地。</p>
+  </div>
+</div>
+
+<!-- ============================ Top 3 发现 ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 本周最值得行动的发现</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · 新加坡EMA有条件批准1.3GW越南—马来西亚—新加坡绿电走廊——东盟电网迎来旗舰项目</div>
+      <span class="impact-badge high">紧迫性/关联度评分 9.2</span>
+    </div>
+    <div class="intel-summary">
+      10月26日SIEW 2026开幕式当天，新加坡能源市场管理局向胜科公用事业有限公司（Sembcorp Utilities Pte Ltd）颁发有条件批准，确认其为VMS项目的指定电力进口方，仪式由新加坡能源部长、马来西亚能源转型副总理及越南财政部副部长共同见证。该项目将通过区域走廊向新加坡进口最高1.3GW可再生电力：越南海上风电与马来西亚光伏、电池储能配套；马来西亚既是受电国也是过境通道，预计2035年开始送电。投运后走廊预计每年输送超40亿千瓦时清洁电力——约相当于新加坡全社会用电需求的12%——项目融资规模估计超35亿美元。此次批准建立在2025年5月PTSC（越南国家油气集团）、胜科公用事业与TNB和PETRONAS组成的MY能源联合体签署的联合开发协议（JDA）基础上，直接推进东盟电网议程。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>越南是核心EMS/ODM制造基地，VMS走廊为越南海上风电确立了国家背书的出口市场——这意味着越南供应商站点产生的绿电属性获得了可信的区域消纳路径。这将强化供应商参与DPPA和区域可再生能源采购策略的商业逻辑，也预示跨境绿电属性追踪将成为东南亚市场规则的组成部分。<strong>行动窗口：</strong>将跨境走廊时间表（VMS及同类项目）纳入供应商清洁电力路线图，使2030年代的采购规划反映新增可再生电力的实际并网地点。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://www.petronas.com/media/media-releases/vietnam-malaysia-singapore-renewable-electricity-initiative-reaches-key" target="_blank" rel="noopener">PETRONAS 官方新闻稿：VMS项目获新加坡EMA有条件批准 ↗</a> ·
+      <a href="https://www.seetao.com/details/282348.html" target="_blank" rel="noopener">见道网：新加坡EMA批出1.3GW跨国绿电项目 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · 越南总理签发2027–2030年"绝不停电"军令状——屋顶光伏与储能获得硬性截止日期</div>
+      <span class="impact-badge high">紧迫性/关联度评分 8.8</span>
+    </div>
+    <div class="intel-summary">
+      第10790/VPCP-CN号公文由越南政府办公厅于10月22日签发，传达总理关于立即落实2027–2030年电力供应保障措施的指示——明确要求在任何情况下（包括台风、持续干旱或国际能源价格波动）都不发生电力短缺。指令的背景是预测中的供需缺口：工贸部自身评估预警最早2027年将出现约4,256兆瓦的装机容量缺口，且集中于工业密集的北部地区。关键节点：工贸部须在2026年10月30日前确定屋顶光伏部署目标；能源与储能制度安排及实施指南须在2026年12月前落地；储能装置定于2027年投运；两座点名的火电厂须在年底前转入商业运行。用电侧硬指标同样严格：全年节电量至少占全社会用电量的3%，4–7月高温季用电负荷压减10%，削峰不少于3,000兆瓦，电网线损率压至6%以下。落实结果与官员考核直接挂钩。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>国家级保供令与明确截止日期，直接影响越南供应商站点的供电可靠性、用电成本与绿电选项。屋顶光伏与储能的推进为供应商表后自发电和DPPA参与创造了政策顺风——这正是2027年容量缺口逼近时市场所需的对冲。<strong>行动窗口：</strong>向重点越南供应商了解其对10月30日屋顶光伏目标和12月储能框架的响应；将供电可靠性承诺与自供计划纳入FY27供应商能源风险筛查和清洁电力基线。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://zh.vietnamplus.vn/article-post270146.vnp" target="_blank" rel="noopener">越通社：越南政府总理要求立即落实2027—2030年电力供应保障措施 ↗</a> ·
+      <a href="https://www.toutiao.com/article/7702095087026569791/" target="_blank" rel="noopener">今日头条/全民新视野：第10790/VPCP-CN号公文硬指标与截止日期解析 ↗</a>
+    </div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · 施耐德电气《水紧缩报告》：水风险已与网络攻击并列为工业头号连续性风险——但认知远超部署</div>
+      <span class="impact-badge high">紧迫性/关联度评分 8.5</span>
+    </div>
+    <div class="intel-summary">
+      施耐德电气《水紧缩报告》（10月20日发布，覆盖七个欧洲市场、调查210位工业企业高管与130位水系统决策者）发现，水已成为工业业务连续性的最大风险之一，与网络攻击、供应链中断同级。过去两年，水压力已推高44%的欧洲工业企业运营成本，令38%的基础设施与维护预算吃紧，30%遭遇供应链中断。如果明天发生严重供水中断，44%的企业认为运营将在24小时内受损；52%预计到2031年水质或水量将成为增长的严重瓶颈，14%表示今天已然如此。报告同时量化了"认知—部署"落差：58%的工业高管了解数字孪生与网络建模工具但尚未安装；欧盟目前城市再生水回用率仅2.4。积极的一面：47%的领导者已加大水效率投资，43%已将水风险提升至董事会层面。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>这是对FY27供应商水风险SOP与CDP水安全问卷Module 5.11叙事的第三方背书：水风险正在被行业提升至董事会层面，而"认知vs部署"的落差恰恰映射了思科的供应商披露覆盖率难题——供应商知道水重要，但缺乏可测量的数据。"24小时内受损44%"的表述是扩展供应商水评估（超越直接运营）的有力、可引用的业务连续性论据。<strong>行动窗口：</strong>在CDP Module 5.11提交材料和FY27 SOP利益相关方材料中引用该报告基准数据；用"认知—部署"落差论证应采用流域级可测量供应商数据，而非自我声明。
+    </div>
+    <div class="sources">
+      <strong>来源：</strong>
+      <a href="https://www.se.com/uk/en/about-us/newsroom/news/press-releases/Water-resilience-is-a-serious-barrier-to-growth-for-one-in-five-Irish-businesses-new-Schneider-Electric-research-finds-6ad5e71059b6997f9b0ec845" target="_blank" rel="noopener">施耐德电气新闻稿：The Water Crunch Report ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================ 关键数据点 ============================ -->
+<div class="section">
+  <div class="section-title">关键数据点</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">1.3 GW</div>
+      <div class="data-label">VMS走廊将向新加坡进口的可再生电力规模——越南海上风电+马来西亚光伏与储能，2026年10月26日获有条件批准</div>
+      <div class="data-trend trend-up">▲ 扩大中——迄今通过新加坡监管审批的最大越南来源跨境绿电项目</div>
+      <div class="data-source">来源：<a href="https://www.petronas.com/media/media-releases/vietnam-malaysia-singapore-renewable-electricity-initiative-reaches-key" target="_blank" rel="noopener">PETRONAS 官方新闻稿，2026年10月26日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">约12%</div>
+      <div class="data-label">VMS自2035年起每年输送超40亿千瓦时清洁电力所覆盖的新加坡全社会用电需求比例，项目融资超35亿美元</div>
+      <div class="data-trend trend-up">▲ 上升中——随走廊供能规模扩大，对天然气发电进口依赖下降</div>
+      <div class="data-source">来源：<a href="https://www.seetao.com/details/282348.html" target="_blank" rel="noopener">见道网，2026年10月29日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">3,000 兆瓦</div>
+      <div class="data-label">总理指令10790/VPCP-CN要求的削峰目标，配套全年节电≥3%、4–7月高峰负荷压减10%、电网线损率低于6%</div>
+      <div class="data-trend trend-down">▼ 收紧中——用电侧硬指标已与2030年前的官方问责考核挂钩</div>
+      <div class="data-source">来源：<a href="https://www.toutiao.com/article/7702095087026569791/" target="_blank" rel="noopener">今日头条/全民新视野，2026年10月29日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">6,000 / 17,000 兆瓦</div>
+      <div class="data-label">越南修订版《第八号电力规划》海上风电目标——2030年达6,000兆瓦、2035年达17,000兆瓦，越挪合作推进技术与供应链</div>
+      <div class="data-trend trend-up">▲ 扩张中——海上风电将成为VMS等走廊项目的供给主力</div>
+      <div class="data-source">来源：<a href="https://zh.vietnamplus.vn/article-post270250.vnp" target="_blank" rel="noopener">越通社，2026年10月26日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">44% / 24小时</div>
+      <div class="data-label">欧洲工业企业中，认为严重供水中断将在24小时内冲击运营的比例；52%预计到2031年水将制约增长</div>
+      <div class="data-trend trend-down">▼ 恶化中——两年内已有44%的欧洲工业企业因水压力推高运营成本</div>
+      <div class="data-source">来源：<a href="https://www.se.com/uk/en/about-us/newsroom/news/press-releases/Water-resilience-is-a-serious-barrier-to-growth-for-one-in-five-Irish-businesses-new-Schneider-Electric-research-finds-6ad5e71059b6997f9b0ec845" target="_blank" rel="noopener">施耐德电气《水紧缩报告》，2026年10月20日 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">22 MWp + 45 MWh</div>
+      <div class="data-label">VinEnergo首个DPPA项目（屋顶光伏+储能）向云丰经济区VinFast与VinES工厂直供——首年约3,900万千瓦时，减碳超2.5万吨，年省约35亿越南盾</div>
+      <div class="data-trend trend-up">▲ 可复制——工业绿电自供的可运行样板，公司已公布10GW项目储备</div>
+      <div class="data-source">来源：<a href="https://aveluro.com/zh/news/VIC/contract-win-2026-10-28-cong-ty-nang-luong-cua-ty-phu-pham-nhat-vuong-bat-dau-cap-dien-truc-tiep-cho-cac" target="_blank" rel="noopener">Aveluro（援引CafeF），2026年10月28日 ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ 战略建议 ============================ -->
+<div class="section">
+  <div class="section-title">战略建议</div>
+
+  <div class="rec-block">
+    <h4>短期行动（0–3个月）</h4>
+    <ul>
+      <li><strong>帮助越南供应商抓住屋顶光伏与储能窗口：</strong>工贸部屋顶光伏目标10月30日到期、储能框架12月落地——现在就向重点越南供应商了解第10790/VPCP-CN号公文如何改变其表后自发电与DPPA计划，以及思科的清洁电力协同在哪里能加速可融资项目的落地。</li>
+      <li><strong>在CDP Module 5.11中引用《水紧缩报告》基准：</strong>在CDP水安全问卷提交材料和FY27供应商水SOP材料中引用"43%董事会层面采纳"与"24小时连续性"发现——用第三方证据论证水风险值得流域级可测量供应商数据，而非自我声明。</li>
+      <li><strong>跟踪跨境绿电属性规则：</strong>VMS有条件批准将要求三个市场间的可再生属性追踪。关注EMA及对等监管机构如何处理属性分配，确保供应商"走廊来源"绿电声明始终经得起审计。</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>中期行动（3–12个月）</h4>
+    <ul>
+      <li><strong>将走廊情报纳入2030年代采购规划：</strong>VMS（1.3GW、2035年启动）加上越南6,000兆瓦海上风电目标，意味着2030年代初将有新的可再生电力进入电网——更新供应商清洁电力基线和范围三轨迹假设以纳入这部分供给。</li>
+      <li><strong>以2027年供需缺口压力测试供应商韧性：</strong>约4,256兆瓦缺口预测已成国家问责议题——向重点供应商索取应急预案（自发电、储能、需求响应），并将可靠性风险纳入越南北部双源采购决策。</li>
+      <li><strong>规模化复制DPPA自供模板：</strong>VinEnergo云丰22 MWp + 45 MWh项目证明工厂级光伏+储能DPPA可行且碳减排与成本节约可测量——为其他供应商园区（同奈、北宁、平阳）打包经济性分析，作为FY27供应商协同的复制手册。</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ 方法说明 ============================ -->
+<div class="section">
+  <div class="section-title">方法说明</div>
+  <div class="methodology-note">
+    <h4>本期简报制作方式</h4>
+    <ul>
+      <li><strong>覆盖窗口：</strong>2026年10月26日–11月1日（每期于每周一 09:00 GMT+8 发布）。</li>
+      <li><strong>搜索策略：</strong>五条英文检索线——越南DPPA/两部制电价政策、东南亚绿能与电网互联、思科可持续发展与ESG、供应链水风险（TNFD/WRI）、碳中和与净零进展。统一的选题结果同时供给中英文两版；中文版是对同一选题的翻译与本地化，绝不重新搜索。</li>
+      <li><strong>核验：</strong>所有链接来源均于2026年11月2日抓取并确认可访问。无法核验的条目标注"来源：[机构名]，链接待核实"而不附链接。</li>
+      <li><strong>影响评分（0–10）：</strong>由新闻性（30%）、规模/量级（30%）、思科供应链暴露度（25%）与可行动性（15%）加权构成。评分在中英文两版中完全一致。</li>
+      <li><strong>已知局限：</strong>施耐德电气《水紧缩报告》发布于10月20日，早于覆盖窗口6天；纳入原因是窗口期内无同级水风险进展，且它是本周期内对思科FY27水议程杠杆最大的输入。VinEnergo DPPA条目来源为市场情报聚合平台（Aveluro），其原始来源为越南财经日报CafeF；关键数据来自公司公告。本周无思科新ESG报告发布；思科合作伙伴峰会信号仅作业务背景参考。</li>
+      <li><strong>完整来源列表：</strong>PETRONAS / VMS有条件批准（<a href="https://www.petronas.com/media/media-releases/vietnam-malaysia-singapore-renewable-electricity-initiative-reaches-key" target="_blank" rel="noopener">链接 ↗</a>）· 见道网 / VMS走廊分析（<a href="https://www.seetao.com/details/282348.html" target="_blank" rel="noopener">链接 ↗</a>）· 越通社 / 总理保供指令（<a href="https://zh.vietnamplus.vn/article-post270146.vnp" target="_blank" rel="noopener">链接 ↗</a>）· 今日头条 / 第10790号公文解析（<a href="https://www.toutiao.com/article/7702095087026569791/" target="_blank" rel="noopener">链接 ↗</a>）· 施耐德电气 / 水紧缩报告（<a href="https://www.se.com/uk/en/about-us/newsroom/news/press-releases/Water-resilience-is-a-serious-barrier-to-growth-for-one-in-five-Irish-businesses-new-Schneider-Electric-research-finds-6ad5e71059b6997f9b0ec845" target="_blank" rel="noopener">链接 ↗</a>）· 越通社 / 海上风电目标（<a href="https://zh.vietnamplus.vn/article-post270250.vnp" target="_blank" rel="noopener">链接 ↗</a>）· Aveluro / VinEnergo DPPA项目（<a href="https://aveluro.com/zh/news/VIC/contract-win-2026-10-28-cong-ty-nang-luong-cua-ty-phu-pham-nhat-vuong-bat-dau-cap-dien-truc-tiep-cho-cac" target="_blank" rel="noopener">链接 ↗</a>）· 至顶网 / 思科合作伙伴峰会（<a href="https://www.zhiding.cn/ai-infrastructure/2026/1029/3204033.shtml" target="_blank" rel="noopener">链接 ↗</a>）。</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<!-- ============================ 侧边栏 ============================ -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <h3>智能信号</h3>
+    <div class="signal">
+      <strong>VinEnergo首个工业DPPA项目投运</strong>
+      10月28日：云丰经济区22 MWp屋顶光伏+45 MWh储能系统开始按DPPA机制向VinFast整车与VinES电池工厂直供——首年约3,900万千瓦时，减碳超2.5万吨，年省约35亿越南盾，公司同步公布10GW可再生能源项目储备。
+      <span class="source"><a href="https://aveluro.com/zh/news/VIC/contract-win-2026-10-28-cong-ty-nang-luong-cua-ty-phu-pham-nhat-vuong-bat-dau-cap-dien-truc-tiep-cho-cac" target="_blank" rel="noopener">Aveluro（援引CafeF）↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>越南考虑11月1日起下调电价</strong>
+      10月27日由副总理主持的会议讨论下调零售电价、将汽油特别消费税降至0%等价格稳定措施——与本年度4.8%的平均电价上调形成对冲。
+      <span class="source"><a href="https://zh.vietnamplus.vn/article-post270343.vnp" target="_blank" rel="noopener">越通社 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>越南首次在欧洲推介绿色氢能</strong>
+      越南在布鲁塞尔欧洲氢能周（10月26–30日）首设展位，传递加入欧洲绿氢价值链的明确意向。
+      <span class="source"><a href="https://zh.vietnamplus.vn/article-post270350.vnp" target="_blank" rel="noopener">越通社 ↗</a></span>
+    </div>
+    <div class="signal">
+      <strong>思科合作伙伴峰会：数据先行的伙伴模式</strong>
+      温哥华峰会（10月27–29日）向合作伙伴开放Cisco IQ装机数据，发布Model Foundry与Live Protect，并向Cisco 360合作伙伴计划投入8,000万美元——延续近期思科CSO关于"可持续数据影响客户决策"的叙事。
+      <span class="source"><a href="https://www.zhiding.cn/ai-infrastructure/2026/1029/3204033.shtml" target="_blank" rel="noopener">至顶网 ↗</a></span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>前瞻事件日历</h3>
+    <div class="event-row">
+      <span class="event-date">2026年11月4–6日</span> — 越南能源周（EPV），西贡会展中心，胡志明市
+    </div>
+    <div class="event-row">
+      <span class="event-date">2026年11月9–20日</span> — COP31，土耳其安塔利亚
+    </div>
+    <div class="event-row">
+      <span class="event-date">2026年12月</span> — 越南能源与储能制度安排及实施指南截止（总理指令10790/VPCP-CN）
+    </div>
+    <div class="event-row">
+      <span class="event-date">2027年Q4</span> — WRI Water Scopes 1–3 最终指南发布
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>本周覆盖议题</h3>
+    <span class="topic-chip">VMS 1.3GW 跨境走廊</span>
+    <span class="topic-chip">东盟电网</span>
+    <span class="topic-chip">总理保供指令</span>
+    <span class="topic-chip">屋顶光伏+储能硬节点</span>
+    <span class="topic-chip">工业DPPA自供</span>
+    <span class="topic-chip">水紧缩报告</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>核心信息来源</h3>
+    <div class="core-source"><a href="https://www.petronas.com/media/media-releases/vietnam-malaysia-singapore-renewable-electricity-initiative-reaches-key" target="_blank" rel="noopener">PETRONAS ↗</a> — VMS有条件批准</div>
+    <div class="core-source"><a href="https://www.seetao.com/details/282348.html" target="_blank" rel="noopener">见道网 ↗</a> — VMS走廊分析</div>
+    <div class="core-source"><a href="https://zh.vietnamplus.vn/article-post270146.vnp" target="_blank" rel="noopener">越通社 ↗</a> — 总理保供指令</div>
+    <div class="core-source"><a href="https://www.toutiao.com/article/7702095087026569791/" target="_blank" rel="noopener">今日头条/全民新视野 ↗</a> — 第10790号公文硬指标</div>
+    <div class="core-source"><a href="https://www.se.com/uk/en/about-us/newsroom/news/press-releases/Water-resilience-is-a-serious-barrier-to-growth-for-one-in-five-Irish-businesses-new-Schneider-Electric-research-finds-6ad5e71059b6997f9b0ec845" target="_blank" rel="noopener">施耐德电气 ↗</a> — 水紧缩报告</div>
+    <div class="core-source"><a href="https://zh.vietnamplus.vn/article-post270250.vnp" target="_blank" rel="noopener">越通社 ↗</a> — 海上风电目标与越挪合作</div>
+    <div class="core-source"><a href="https://aveluro.com/zh/news/VIC/contract-win-2026-10-28-cong-ty-nang-luong-cua-ty-phu-pham-nhat-vuong-bat-dau-cap-dien-truc-tiep-cho-cac" target="_blank" rel="noopener">Aveluro ↗</a> — VinEnergo DPPA项目</div>
+  </div>
+
+</div><!-- /sidebar -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>Cisco 可持续发展情报简报 · 第78期 · 生成于2026年11月2日 · 所有来源链接均于发布日核验可访问</p>
+  <p style="margin-top:6px;">内部使用 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+
+</body>
+</html>
