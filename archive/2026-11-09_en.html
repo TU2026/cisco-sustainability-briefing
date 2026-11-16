@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Sustainability Intelligence Briefing — Issue #79 | November 9, 2026</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.4; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing_zh.html">中文版</a>
+    </div>
+    <span class="issue-badge">Issue #79 · November 9, 2026</span>
+    <h1>Cisco Sustainability Intelligence Briefing</h1>
+    <p class="subtitle">Vietnam launches a 2% electricity price cut with an evening-only peak window that reshapes factory BESS economics, Indonesia puts a price condition on its 3.4 GW export pipeline to Singapore, and a severe El Niño drought is physically cutting nickel output in the battery supply chain</p>
+    <p class="meta">Coverage window: November 2 – November 8, 2026 · Search language: English · Theme count: 5 · For: dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ EXECUTIVE SUMMARY ============================ -->
+<div class="section">
+  <div class="section-title">Executive Summary</div>
+  <div class="exec-summary">
+    <p>Vietnam's cost of energy changed on November 1. Under MOIT Decision 2892/QĐ-BCT, EVN cut the average retail tariff by 2% to ₫2,159.90/kWh (ex-VAT) — the first tariff reduction outside the COVID-era relief packages — while simultaneously implementing the Decision 963 time-of-use reshuffle: the peak window is now a single evening block, 17:30–22:30, and off-peak has moved to 0:00–6:00. For a manufacturing footprint this is more than a price adjustment: the evening peak no longer overlaps solar generation hours, so rooftop PV alone cannot dodge peak pricing, and the peak-to-off-peak spread (₫3,586 vs ₫1,274/kWh at low voltage — a 2.8× ratio) now defines the arbitrage case for factory-scale battery storage. Suppliers running BESS feasibility models on last year's tariff curves are optimizing against the wrong load shape.</p>
+    <p>Across the region, the cross-border green-power trade hit a sovereignty test. Indonesia's Energy Minister Bahlil Lahadalia said on November 2 that near-term electricity exports to Singapore are "unlikely" unless buyers accept Jakarta's price — placing a condition over the 3.4 GW low-carbon pipeline that represents about 57% of Singapore's 6 GW 2035 import target. The same week, a severe El Niño drought began physically constraining the battery supply chain: nickel HPAL refineries in Central Sulawesi are cutting output for lack of process water — Nickel Industries' flagship facility is running at 30% of capacity, down from 50% — and CRU expects mixed hydroxide precipitate output to fall to about 370,000 tonnes in H2, down from 400,000 tonnes. The through-line for Cisco: energy cost structures, cross-border power politics, and physical water risk are converging on the same supplier map in Southeast Asia — and each demands a different tool: tariff-aware BESS modelling, diversified green-power sourcing, and water-resilience screening of minerals-intensive tiers.</p>
+  </div>
+</div>
+
+<!-- ============================ TOP 3 INTELLIGENCE ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 Actionable Intelligence</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · Vietnam's November 1 tariff overhaul: a 2% price cut paired with an evening-only peak window — factory BESS economics just changed</div>
+      <span class="impact-badge high">Impact 8.8</span>
+    </div>
+    <div class="intel-summary">
+      Two MOIT decisions took effect on November 1, 2026 and were detailed in EVN's November 4 press briefing. Decision 2892/QĐ-BCT sets the new retail price schedule: the average tariff falls 2% from ₫2,204.07 to ₫2,159.90/kWh (ex-VAT) — the first reduction since the 2020–2021 COVID relief — while residential blocks were simplified from six to five tiers. Decision 963/QĐ-BCT restructures time-of-use for production and business customers: Monday–Saturday off-peak shifts to 0:00–6:00, normal hours run 6:00–17:30 and 22:30–24:00, and the peak window consolidates into a single evening block of 17:30–22:30 (previously split between 9:30–11:30 and 17:00–20:00); Sundays carry no peak rate. Industrial tariffs by voltage band illustrate the new spread: at 220 kV and above, ₫1,771 normal / ₫1,101 off-peak / ₫3,110 peak; below 1 kV, ₫1,966 / ₫1,274 / ₫3,586. The strategic consequence: peak demand now sits entirely after sunset, so rooftop solar cannot offset peak charges — only storage can. EVN itself flagged that factories must verify their meters have been reprogrammed to the new TOU schedule before recalculating bills or investment cases.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why it matters to Cisco:</strong> Most Vietnamese suppliers model BESS and solar-plus-storage investments against the old tariff geometry, where a morning peak overlapped PV output. Under the new schedule the peak/off-peak arbitrage margin widens in the evening and the business case shifts decisively toward solar + BESS charging from midday surplus or off-peak grid — directly relevant to FY27 supplier energy-efficiency engagements, Scope 2 reduction roadmaps, and the rooftop-solar-plus-storage templates being promoted under Directive 10/CT-TTg. A supplier tariff-literacy check belongs in the next supplier energy review.
+    </div>
+    <div class="sources">Sources: <a href="https://www.vietnam.vn/en/dieu-chinh-khung-gio-su-dung-dien-cao-diem-binh-thuong-thap-diem-trong-bieu-gia-ban-le" target="_blank" rel="noopener">Vietnam.vn (Báo Đà Nẵng / EVN briefing) ↗</a> · <a href="https://www.vietnam.vn/zh-cn/hom-nay-1-11-gia-dien-chinh-thuc-giam-2" target="_blank" rel="noopener">Vietnam.vn (Báo Đại Đoàn Kết) ↗</a> · <a href="https://365energy.vn/en/vietnam-industrial-electricity-tariffs-2026" target="_blank" rel="noopener">365 Energy analysis ↗</a></div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · Indonesia conditions its 3.4 GW electricity export pipeline to Singapore on price — and diverts gas to domestic generation</div>
+      <span class="impact-badge">Impact 8.5</span>
+    </div>
+    <div class="intel-summary">
+      Indonesia's Energy and Mineral Resources Minister Bahlil Lahadalia said on November 2 that electricity exports to Singapore are unlikely in the near term because Indonesia still needs the power domestically: "As long as the price is right and they agree to our price, then of course it's possible. But if the price is not right, we will prioritise domestic needs." The statement hangs a price condition over the 3.4 GW of conditional import licences Singapore's EMA has granted for Indonesian projects — about 57% of Singapore's 6 GW low-carbon import target for 2035. It follows Indonesia's October 24 decision to divert 31 million standard cubic feet per day of pipeline gas (15 from Natuna, 16 from Sumatra) to domestic power generation in Batam, Bintan and Sumatra; Singapore's EMA was notified of a reduction of 17 billion BTU/day over 18 days — under 2% of the city-state's daily gas demand — while Bahlil argued the 8% cut to affected exports remains within the ~10% contractual breach threshold. Singapore's energy ministry said the contractual assessment remains unresolved, even as both governments reaffirm the broader ASEAN Power Grid agenda and a joint haze task force agreed during Foreign Minister Vivian Balakrishnan's late-October Jakarta visit.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why it matters to Cisco:</strong> The stall demonstrates that resource sovereignty, not technology, is the binding constraint on ASEAN cross-border green power — the same lesson as last week's conditional (not final) approval of the VMS corridor. For sourcing strategy in Singapore and Indonesia, imported-green-power-based Scope 2 abatement timelines should carry a political-risk discount, and supplier roadmaps in both markets should prioritize on-site solar + BESS and domestic instruments (Indonesian RECs, RE100-eligible local supply) rather than assuming 2035 imports arrive on schedule.
+    </div>
+    <div class="sources">Sources: <a href="https://asiadaily.org/news/17360" target="_blank" rel="noopener">Asia Daily ↗</a> · <a href="https://e.vnexpress.vn/news/business/economy/southeast-asia-s-largest-economy-will-not-export-electricity-to-singapore-without-fair-price-5140557.html" target="_blank" rel="noopener">VnExpress International ↗</a> · <a href="https://www.briefasia.com/en/article/indonesia-holds-firm-power-export-terms-singapore-deal-stalls" target="_blank" rel="noopener">BriefAsia ↗</a></div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · Severe drought physically cuts nickel output in Indonesia — water stress is now a hard supply-chain constraint for battery materials</div>
+      <span class="impact-badge">Impact 8.3</span>
+    </div>
+    <div class="intel-summary">
+      A sharp El Niño-driven rainfall deficit is forcing Indonesia's nickel high-pressure acid-leach (HPAL) refineries to throttle output because the process requires huge volumes of water. Nickel Industries' flagship operation in Central Sulawesi is now running at 30% of capacity, down from 50%, and CRU Group expects similar cutbacks across the industry through November, forecasting mixed hydroxide precipitate (MHP) output of about 370,000 tonnes in H2 2026, down from the 400,000 tonnes previously expected. Indonesia produces well over half of the world's nickel, roughly three-quarters of its refining industry carries Chinese investment, and China accounts for about 80% of global EV battery cell production — so a rainfall anomaly in Sulawesi transmits directly into battery-material pricing and availability. The episode is a textbook demonstration of physical water risk: not regulatory or reputational, but a literal input shortage stopping production lines.
+    </div>
+    <div class="cisco-relevance">
+      <strong>Why it matters to Cisco:</strong> Nickel sits in Cisco's responsible-minerals scope (RMI), and battery/storage-linked suppliers anchor the decarbonization roadmap (BESS for factories, EV logistics). This case gives concrete evidence for the FY27 supplier water-risk SOP argument: water availability is a continuity risk that belongs in tier-2+ minerals screening alongside the WRI Aqueduct / Water Scopes 1–3 framework, and it strengthens the business case for asking battery-value-chain suppliers to disclose water-intensity and drought-contingency data — precisely the disclosure pathway CDP Module 5.11 value-chain engagement is designed to institutionalize.
+    </div>
+    <div class="sources">Sources: <a href="https://sc.mp/ig1uy" target="_blank" rel="noopener">South China Morning Post ↗</a></div>
+  </div>
+
+</div>
+
+<!-- ============================ KEY DATA POINTS ============================ -->
+<div class="section">
+  <div class="section-title">Key Data Points</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">₫2,159.90<span style="font-size:14px;">/kWh</span></div>
+      <div class="data-label">Vietnam average retail tariff from Nov 1, 2026 (ex-VAT)</div>
+      <div class="data-trend trend-down">▼ 2% vs ₫2,204.07 — first cut since COVID-era relief</div>
+      <div class="data-source">Source: <a href="https://www.vietnam.vn/zh-cn/hom-nay-1-11-gia-dien-chinh-thuc-giam-2" target="_blank" rel="noopener">Vietnam.vn ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2.8×</div>
+      <div class="data-label">Peak-to-off-peak tariff spread at low voltage (₫3,586 vs ₫1,274/kWh)</div>
+      <div class="data-trend trend-up">▲ Peak window now evening-only: 17:30–22:30</div>
+      <div class="data-source">Source: <a href="https://www.vietnam.vn/en/dieu-chinh-khung-gio-su-dung-dien-cao-diem-binh-thuong-thap-diem-trong-bieu-gia-ban-le" target="_blank" rel="noopener">Vietnam.vn / EVN ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">57%</div>
+      <div class="data-label">Indonesia's 3.4 GW share of Singapore's 6 GW 2035 import target</div>
+      <div class="data-trend trend-down">▼ Exports conditioned on price; near-term exports ruled out</div>
+      <div class="data-source">Source: <a href="https://asiadaily.org/news/17360" target="_blank" rel="noopener">Asia Daily ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">31 MMscfd</div>
+      <div class="data-label">Gas diverted from Singapore-bound exports to Indonesian domestic power (from Oct 24)</div>
+      <div class="data-trend trend-down">▼ &lt;2% of Singapore's daily gas demand (EMA notification)</div>
+      <div class="data-source">Source: <a href="https://asiadaily.org/news/17360" target="_blank" rel="noopener">Asia Daily / SKK Migas ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">30%</div>
+      <div class="data-label">Utilization of Nickel Industries' Central Sulawesi HPAL facility amid drought</div>
+      <div class="data-trend trend-down">▼ From 50%; MHP output cut to ~370kt H2 (from 400kt)</div>
+      <div class="data-source">Source: <a href="https://sc.mp/ig1uy" target="_blank" rel="noopener">SCMP / CRU Group ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">~2 GWh</div>
+      <div class="data-label">Goldwind–GG Power front-of-meter BESS cooperation in Vietnam (announced Nov 4)</div>
+      <div class="data-trend trend-up">▲ 3-year Vietnam demand forecast ~3.3 GWh; national target 10–16.3 GW by 2030 vs &lt;100 MW installed in early 2025</div>
+      <div class="data-source">Source: <a href="https://finance.sina.com.cn/roll/2026-11-04/doc-inixqnsx0062352.shtml" target="_blank" rel="noopener">Sina Finance ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ STRATEGIC RECOMMENDATIONS ============================ -->
+<div class="section">
+  <div class="section-title">Strategic Recommendations</div>
+
+  <div class="rec-block">
+    <h4>Short-Term (0–3 months)</h4>
+    <ul>
+      <li><strong>Tariff-literacy audit of Vietnam suppliers:</strong> issue a short advisory to key EMS/ODM plants to verify meter TOU reprogramming (Decision 963) and re-run BESS/solar investment models on the Nov 1 tariff curves — evening-only peak invalidates models built on the old morning+evening peak.</li>
+      <li><strong>Refresh the supplier BESS business-case template:</strong> the 2.8× peak/off-peak spread with off-peak at 0:00–6:00 strengthens the arbitrage case; align with Circular 62 two-part tariff signals for larger sites and Directive 10's 3,000 MW peak-shaving goal.</li>
+      <li><strong>Add a water-continuity question to battery-chain screening:</strong> use the Indonesia HPAL drought as the concrete case when briefing procurement on tier-2 minerals water risk (RMI nickel; WRI Aqueduct layers).</li>
+      <li><strong>Adjust Singapore/Indonesia green-power messaging:</strong> treat the 3.4 GW pipeline as politically contingent in any FY27 roadmap conversation; steer suppliers toward on-site generation plus domestic instruments.</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>Mid-Term (3–12 months)</h4>
+    <ul>
+      <li><strong>Integrate tariff-aware storage economics into the FY27 supplier water/energy risk assessment:</strong> one combined model covering TOU arbitrage, peak demand charges (two-part tariff logic), and water availability scoring per site.</li>
+      <li><strong>Build a cross-border-power dependency map:</strong> track which supplier decarbonization plans rely on Singapore/Indonesia/Vietnam import corridors (VMS 1.3 GW, 3.4 GW pipeline) and set a trigger to revisit if pricing impasses persist into 2027.</li>
+      <li><strong>Pilot the minerals-water module with two battery-linked suppliers:</strong> drought-contingency disclosure, HPAL/process-water intensity, and Aqueduct basin stress for upstream nickel tiers — feeding CDP Module 5.11 value-chain engagement evidence.</li>
+      <li><strong>Position for Vietnam's BESS scale-up:</strong> with 10–16.3 GW targeted by 2030 and local manufacturing landing (5 GWh/year Hung Yen plant), anticipate cost declines that make factory BESS a default item in supplier energy roadmaps by FY28.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ METHODOLOGY ============================ -->
+<div class="section">
+  <div class="section-title">Methodology Notes</div>
+  <div class="methodology-note">
+    <h4>How this briefing was built</h4>
+    <p>Single-pass English search across five themes (Vietnam DPPA/Decree 57–243 policy, SEA green energy &amp; storage &amp; interconnection, Cisco ESG, supply-chain water risk, carbon neutrality), restricted where possible to the November 2–8, 2026 window. The Top 3 items and all six data points were selected by Impact Score (policy directness × supplier footprint relevance × evidence quality). Chinese edition is a translation/localization of the same unified selection — no separate search. All cited URLs were individually fetched and verified accessible on November 9, 2026.</p>
+    <ul>
+      <li>Verified sources: <a href="https://www.vietnam.vn/en/dieu-chinh-khung-gio-su-dung-dien-cao-diem-binh-thuong-thap-diem-trong-bieu-gia-ban-le" target="_blank" rel="noopener">Vietnam.vn (EVN TOU briefing, Nov 5) ↗</a> · <a href="https://www.vietnam.vn/zh-cn/hom-nay-1-11-gia-dien-chinh-thuc-giam-2" target="_blank" rel="noopener">Vietnam.vn (2% price cut, Nov 1) ↗</a> · <a href="https://asiadaily.org/news/17360" target="_blank" rel="noopener">Asia Daily (Indonesia–Singapore, Nov 3) ↗</a> · <a href="https://sc.mp/ig1uy" target="_blank" rel="noopener">SCMP (nickel drought, Nov 3) ↗</a> · <a href="https://finance.sina.com.cn/roll/2026-11-04/doc-inixqnsx0062352.shtml" target="_blank" rel="noopener">Sina Finance (Goldwind–GG Power, Nov 4) ↗</a> · <a href="https://m.21jingji.com/article/20261103/0740ef64f3d14a4deadcd8ca78e3c930.html" target="_blank" rel="noopener">21st Century Business Herald (SEMA interview, Nov 3) ↗</a></li>
+      <li>Impact Score rubric: 9–10 = immediate action required / material financial exposure; 8–9 = material to FY27 planning; 6–8 = monitor and prepare; &lt;6 = context only.</li>
+      <li>Limitations: no Cisco-specific ESG announcements were published in this coverage window; Cisco-relevance assessments are analyst judgments, not company statements. VnExpress and BriefAsia used as corroborating sources for the Indonesia story without full-text verification of every figure.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<div class="sidebar-col">
+
+  <div class="sidebar-card">
+    <h3>Quick Signals</h3>
+    <div class="signal">
+      <strong>Goldwind–GG Power sign ~2 GWh Vietnam BESS deal</strong>
+      Strategic cooperation on front-of-meter storage plus a 3-year local demand forecast of ~3.3 GWh; built on their 5 GWh/year Hung Yen plant commissioned in April. Vietnam's BESS pipeline: &lt;100 MW (early 2025) → 10–16.3 GW target (2030).
+      <div class="source"><a href="https://finance.sina.com.cn/roll/2026-11-04/doc-inixqnsx0062352.shtml" target="_blank" rel="noopener">Sina Finance ↗</a> · Nov 4</div>
+    </div>
+    <div class="signal">
+      <strong>SEMA signals multi-use battery market reform</strong>
+      At SIEW, EMA Assistant Chief Executive (Energy Policy) Chua Shun Loong detailed a new large-scale BESS program, potential shorter-than-30-min settlement intervals, and rooftop solar's ceiling (~10% of demand max; current penetration 2–3%).
+      <div class="source"><a href="https://m.21jingji.com/article/20261103/0740ef64f3d14a4deadcd8ca78e3c930.html" target="_blank" rel="noopener">21st Century Business Herald ↗</a> · Nov 3</div>
+    </div>
+    <div class="signal">
+      <strong>Malaysia–Singapore corridor expands; Vietnam wants in</strong>
+      Approvals now span Sembcorp 300 MW, Ditrolic 600 MW and the recent 1.3 GW project; a MY–SG cross-border REC task force launched so buyers can verify green attributes, and Vietnamese counterparts are seeking a role in the VMS supply chain.
+      <div class="source"><a href="https://m.21jingji.com/article/20261103/0740ef64f3d14a4deadcd8ca78e3c930.html" target="_blank" rel="noopener">21st Century Business Herald ↗</a> · Nov 3</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Upcoming Events</h3>
+    <div class="event-row"><span class="event-date">Dec 2026</span> — Vietnam deadline (Directive 10790) for the energy-plus-storage institutional framework and rooftop-solar deployment targets.</div>
+    <div class="event-row"><span class="event-date">Nov 2026</span> — COP31; watch for ASEAN grid-finance announcements and Article 6 market signals.</div>
+    <div class="event-row"><span class="event-date">Q4 2027</span> — WRI Water Scopes 1–3 final corporate guidance — anchor for the FY27 supplier water SOP.</div>
+    <div class="event-row"><span class="event-date">Rolling</span> — MOIT annual BESS pricing reviews under Circular 62; watch for extension beyond ≥10 MW / ≥110 kV standalone systems.</div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Topics Covered This Week</h3>
+    <span class="topic-chip">Vietnam tariff reform</span>
+    <span class="topic-chip">Time-of-use reshuffle</span>
+    <span class="topic-chip">BESS economics</span>
+    <span class="topic-chip">Cross-border power trade</span>
+    <span class="topic-chip">ASEAN Power Grid</span>
+    <span class="topic-chip">Water risk</span>
+    <span class="topic-chip">Nickel / battery chain</span>
+    <span class="topic-chip">El Niño</span>
+    <span class="topic-chip">DPPA / Decree 57-243</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>Core Sources</h3>
+    <div class="core-source"><a href="https://www.vietnam.vn/en/dieu-chinh-khung-gio-su-dung-dien-cao-diem-binh-thuong-thap-diem-trong-bieu-gia-ban-le" target="_blank" rel="noopener">Vietnam.vn — EVN time-of-use briefing ↗</a></div>
+    <div class="core-source"><a href="https://www.vietnam.vn/zh-cn/hom-nay-1-11-gia-dien-chinh-thuc-giam-2" target="_blank" rel="noopener">Vietnam.vn — 2% tariff cut ↗</a></div>
+    <div class="core-source"><a href="https://asiadaily.org/news/17360" target="_blank" rel="noopener">Asia Daily — Indonesia/Singapore exports ↗</a></div>
+    <div class="core-source"><a href="https://sc.mp/ig1uy" target="_blank" rel="noopener">SCMP — Nickel drought ↗</a></div>
+    <div class="core-source"><a href="https://finance.sina.com.cn/roll/2026-11-04/doc-inixqnsx0062352.shtml" target="_blank" rel="noopener">Sina Finance — Goldwind BESS deal ↗</a></div>
+    <div class="core-source"><a href="https://m.21jingji.com/article/20261103/0740ef64f3d14a4deadcd8ca78e3c930.html" target="_blank" rel="noopener">21财经 — SEMA interview ↗</a></div>
+    <div class="core-source"><a href="https://365energy.vn/en/vietnam-industrial-electricity-tariffs-2026" target="_blank" rel="noopener">365 Energy — tariff analysis ↗</a></div>
+  </div>
+
+</div><!-- /sidebar-col -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>Cisco Sustainability Intelligence Briefing · Issue #79 · Published November 9, 2026</p>
+  <p style="margin-top:6px;">Internal use only · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+</body>
+</html>
