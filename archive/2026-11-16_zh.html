@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思科可持续发展情报简报 — 第80期 | 2026年11月16日</title>
+<style>
+  :root {
+    --cisco-blue: #049fd9;
+    --cisco-light: #00bceb;
+    --cisco-dark: #0d274d;
+    --bg-dark: #0a1628;
+    --card-bg: #111d32;
+    --text-main: #e0e6f0;
+    --text-muted: #8a9bb5;
+    --accent-green: #00d26a;
+    --accent-warm: #ff9f43;
+    --border-subtle: #1a2d4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  a { color: var(--cisco-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  header {
+    background: linear-gradient(135deg, var(--cisco-dark) 0%, #0a1628 100%);
+    border-bottom: 3px solid var(--cisco-blue);
+    padding: 40px 0;
+    margin-bottom: 32px;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .issue-badge {
+    display: inline-block;
+    background: var(--cisco-blue);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .subtitle { color: var(--cisco-light); font-size: 16px; font-weight: 400; }
+  .meta { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+  .lang-switch { float: right; margin-top: -40px; }
+  .lang-switch a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--cisco-blue);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--cisco-blue);
+    transition: all 0.2s;
+  }
+  .lang-switch a:hover { background: var(--cisco-blue); color: #fff; text-decoration: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cisco-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .exec-summary {
+    background: var(--card-bg);
+    border-left: 4px solid var(--cisco-blue);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .exec-summary p + p { margin-top: 14px; }
+  .intel-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.2s;
+  }
+  .intel-item:hover { border-color: var(--cisco-blue); }
+  .intel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .intel-title { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.5; flex: 1; }
+  .impact-badge {
+    background: linear-gradient(135deg, var(--accent-green), #00a854);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .impact-badge.high { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+  .intel-summary { color: var(--text-main); font-size: 14.5px; margin-bottom: 14px; }
+  .cisco-relevance {
+    background: rgba(4, 159, 217, 0.08);
+    border-left: 3px solid var(--cisco-blue);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+  .cisco-relevance strong { color: var(--cisco-light); }
+  .sources { margin-top: 12px; font-size: 12.5px; color: var(--text-muted); }
+  .sources a { color: var(--cisco-blue); }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .data-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .data-card:hover { border-color: var(--cisco-blue); }
+  .data-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cisco-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .data-label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .data-trend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trend-up { color: var(--accent-green); }
+  .trend-down { color: var(--accent-warm); }
+  .data-source { font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 8px; }
+  .data-source a { color: var(--cisco-blue); }
+  .rec-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-subtle);
+  }
+  .rec-block h4 { color: var(--cisco-light); font-size: 15px; margin-bottom: 10px; }
+  .rec-block ul { padding-left: 22px; font-size: 14px; }
+  .rec-block li { margin-bottom: 6px; }
+  .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-card h3 {
+    font-size: 14px;
+    color: var(--cisco-light);
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .signal:last-child { border-bottom: none; }
+  .signal strong { color: #fff; display: block; margin-bottom: 3px; }
+  .signal .source { font-size: 11.5px; color: var(--text-muted); }
+  .signal .source a { color: var(--cisco-blue); }
+  .event-row { font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+  .event-row:last-child { border-bottom: none; }
+  .event-date { color: var(--cisco-blue); font-weight: 600; font-size: 12px; }
+  .topic-chip {
+    display: inline-block;
+    background: rgba(4, 159, 217, 0.1);
+    border: 1px solid rgba(4, 159, 217, 0.3);
+    color: var(--cisco-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .core-source {
+    font-size: 12.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .core-source:last-child { border-bottom: none; }
+  .core-source a { color: var(--cisco-blue); }
+  .methodology-note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+  .methodology-note h4 {
+    color: var(--cisco-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .methodology-note ul { padding-left: 20px; margin-top: 8px; }
+  .methodology-note li { margin-bottom: 5px; }
+  .methodology-note a { color: var(--cisco-blue); }
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 24px 0;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--cisco-blue); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="lang-switch">
+      <a href="cisco_sustainability_briefing.html">English</a>
+    </div>
+    <span class="issue-badge">第80期 · 2026年11月16日</span>
+    <h1>思科可持续发展情报简报</h1>
+    <p class="subtitle">越南完成可再生电价架构——光伏分区电价上限叠加储能溢价，并首次为独立储能设立发电服务价格框架；361号决议锁定市场化改革时间表；COP31 将创纪录的电网投资推上全球议程</p>
+    <p class="meta">覆盖窗口：2026年11月9日 – 11月15日 · 与英文版同一选题 · 主题数：5 · 收件人：dit2@cisco.com</p>
+  </div>
+</header>
+
+<div class="container">
+<div class="two-col">
+
+<div class="main-col">
+
+<!-- ============================ 执行摘要 ============================ -->
+<div class="section">
+  <div class="section-title">执行摘要</div>
+  <div class="exec-summary">
+    <p>本周，越南补齐了可再生能源规模化最缺的一块拼图——价格架构。11月5日，工贸部第2946/QĐ-BCT号决定生效，为地面和漂浮光伏项目设定2026年分区发电价格上限：地面光伏从南部的₫1,104.32/千瓦时到北部的₫1,591.02/千瓦时；对按不低于电站容量10%、充放电时长2小时配套储能的项目适用更高上限（北部漂浮光伏+储能最高达₫2,120.31/千瓦时）。与2025年框架相比，各区上限上调9.1%–16.8%，监管层重启停滞管线的意图非常明确。11月11日，第2987/QĐ-BCT号决定更进一步：首次为不与电源直接联接的独立储能设立发电服务价格——对以110千伏及以上电压接入、容量10兆瓦及以上的项目，上限电价₫3,209.98/千瓦时（约0.12美元），按全生命周期成本核定，内部收益率上限12%。</p>
+    <p>11月10日签署的第361/NQ-CP号决议把这些定价改革落成了一张带日期的改革时间表：2026年12月完成竞争性电力批发市场设计，2027年6月完成零售市场设计，两部制零售电价研究于2026年内上报总理，2026–2027年建立可再生能源证书（REC）市场路线图和法律框架，并对储能与清洁能源投资企业开放优惠信贷。与此同时，在安塔利亚举行的COP31上，全球公用事业报告2025年新建电网21,000公里（较2024年增长50%），年度电网+可再生能源+储能投资计划提升至至少1,560亿美元，IRENA测算2035年前全球电网累计投资需求达10万亿美元。对思科的含义：越南储能已从试点走向可融资的资产类别，剩下的瓶颈是市场设计与电网容量——而这两项现在都有了倒计时。</p>
+  </div>
+</div>
+
+<!-- ============================ Top 3 ============================ -->
+<div class="section">
+  <div class="section-title">Top 3 本周最值得行动的发现</div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">1 · 越南完成可再生电价架构：光伏分区电价上限+储能溢价（11月5日生效），并首次设立独立储能定价框架（11月11日生效）</div>
+      <span class="impact-badge high">紧迫性/关联度 9.0</span>
+    </div>
+    <div class="intel-summary">
+      两项并行的工贸部决定现在共同定义了越南光伏与储能项目的定价方式。第2946/QĐ-BCT号决定（11月5日生效）按区域和类型设定2026年发电价格上限：地面光伏南部₫1,104.32/千瓦时至北部₫1,591.02/千瓦时，漂浮光伏₫1,340.21至₫1,939.74/千瓦时；配储项目适用更高上限——北部地面光伏+储能达₫1,813.48/千瓦时，漂浮光伏+储能达₫2,120.31/千瓦时。配套储能的资格门槛为：储能功率不低于电站装机的10%、充放电时长2小时。对比2025年框架，无储能地面光伏上限在北部、中部、南部分别上涨15.1%、16.8%、9.1%。第2987/QĐ-BCT号决定（11月11日生效）则创设了首个独立储能发电服务价格框架：对容量≥10兆瓦、接入电压≥110千伏的项目，上限电价₫3,209.98/千瓦时（约0.12美元，不含增值税），实际电价按第62/2025/TT-BCT号通知以全生命周期投资与运维成本核定，内部收益率上限12%。背景：截至2025年底越南光伏累计装机已超19吉瓦，但去年仅新增约586兆瓦；第八版电力规划（PDP8）要求2030年储能装机达10,000–16,300兆瓦——这些价格上限正是填补缺口所需的收益基础。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>这把越南储能从试点项目变成了可融资的资产类别。对供应商工作而言，新的上限价格为FY27供应商能源路线图中的"光伏+储能"商业案例提供了可辩护的定价依据；北/中/南部地面光伏约44%的价差也改变了哪些供应商厂址拥有最优光伏经济性——路线图中的厂址排序应按11月5日新上限重新调整。独立储能框架≥10兆瓦/≥110千伏的门槛意味着大多数单体工厂无法直接适用——现实路径是光伏+储能捆绑项目或工业园聚合储能，这正是与富士康研讨会及SCC工作组讨论中的模式。
+    </div>
+    <div class="sources">来源：<a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China ↗</a> · <a href="https://news.smm.cn/live/detail/KEKEC2JJUEI7LERS5T3B3ILODGBPOWNY7TBATBA" target="_blank" rel="noopener">上海有色网 SMM ↗</a></div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">2 · 第361/NQ-CP号决议锁定市场化改革时间表：2026年12月批发市场、2027年6月零售设计、2026–27年REC市场路线图，两部制零售电价研究今年上报总理</div>
+      <span class="impact-badge">紧迫性/关联度 8.5</span>
+    </div>
+    <div class="intel-summary">
+      第361/NQ-CP号决议于11月10日由常务副总理签署，修订了落实越共中央政治局第70-NQ/TW号决议的《国家能源安全行动方案》（原附于第328/NQ-CP号决议，期限至2030年、远景2045年）。修订加入了几条带时限的制度任务：工贸部须于2026年12月完成竞争性电力批发市场设计方案的审查完善，2027年6月完成竞争性零售市场设计方案；两部制零售电价研究须于2026年内上报总理；2026–2027年研究建立可再生能源证书（REC）市场的路线图和法律框架；越南电力集团（EVN）制定2026–2030年、远景2045年的智能电网发展方案。决议还要求：国家银行、开发银行等部门发布优惠投资信贷政策，覆盖绿色清洁能源、新技术、储能投资及国产能源装备制造企业；工贸部主持起草总理决定，支持家庭自产自用屋顶光伏+储能；农业与环境部在2025–2026年建立碳信用交换机制、发展国内碳市场并连接国际市场；对已登记能源项目却拖延实施、影响2026–2030年能源安全的投资者建立严格处理机制。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>其中三条线索直接命中供应商减碳。第一，REC市场路线图意味着越南供应商可能很快拥有可信的国内绿证工具，取代目前临时性的DPPA属性安排——应在FY27供应商范围二（Scope 2）手册中预置REC就绪方案。第二，两部制零售电价研究（年底上报）将决定DPPA用户的"双重计费"风险如何化解——是本季度每份供应商PPA模型中的关键结构性变量。第三，储能投资的优惠信贷降低供应商融资成本，进一步强化上一条中"光伏+储能"的商业案例。碳市场与国际接轨的时间窗（2025–2026）也直接影响PCF与范围三叙事中的供应商碳信用质量。
+    </div>
+    <div class="sources">来源：<a href="https://yuenan.com/zh-hant/news-313643" target="_blank" rel="noopener">越南中文社 ↗</a></div>
+  </div>
+
+  <div class="intel-item">
+    <div class="intel-header">
+      <div class="intel-title">3 · COP31能源日：公用事业2025年建成创纪录的21,000公里电网，年度投资计划提升至1,560亿美元——IRENA称2035年前全球电网累计投资须达10万亿美元</div>
+      <span class="impact-badge">紧迫性/关联度 8.2</span>
+    </div>
+    <div class="intel-summary">
+      11月10日在安塔利亚COP31能源日公布：由TAQA与SSE联合主持、拥有89家成员的"净零公用事业联盟"（UNEZA）报告2025年新建电网超过21,000公里，较2024年的14,000公里增长50%；横跨电网、可再生能源与储能的年度投资计划总额提升至至少1,560亿美元（较去年提高5%、较2024年提高35%），联盟有望在2030年前动员超过1万亿美元能源转型投资。UNEZA同时正式背书COP31主席国的"35-by-35"目标——2035年全球电气化率提升至35%；此前的联合声明还指出，到2030年全球需要近90,000公里输电电缆。IRENA总干事定调：电网投资必须翻倍以上，到2035年累计达10万亿美元。对东南亚而言，电网建设既是跨境电力贸易（东盟电网议程）的约束，也是境内可再生能源消纳的瓶颈。
+    </div>
+    <div class="cisco-relevance">
+      <strong>对思科的重要性：</strong>电网已成为能源转型的瓶颈资产，而区域公用事业正在加大投入。这支撑思科面向公用事业和工业客户的智能电网、能源管理与物联网定位；对内部而言，排队等待并网的供应商工厂恰好可以用厂内光伏+储能绕开排队——进一步强化前述储能模板的论据。10万亿美元电网投资与"35-by-35"电气化目标也是客户简报和FY27叙事（连接思科网络组合与电气化、电网现代化）的有力锚点数据。
+    </div>
+    <div class="sources">来源：<a href="https://www.irena.org/News/pressreleases/2026/Nov/Utilities-deliver-record-21-000-km-of-new-grid-as-transition-investment-tops-USD-156-billion-a-year" target="_blank" rel="noopener">IRENA（国际可再生能源署）↗</a></div>
+  </div>
+
+</div>
+
+<!-- ============================ 关键数据点 ============================ -->
+<div class="section">
+  <div class="section-title">关键数据点</div>
+  <div class="data-grid">
+
+    <div class="data-card">
+      <div class="data-value">₫3,209.98<span style="font-size:14px;">/千瓦时</span></div>
+      <div class="data-label">越南首个独立储能发电服务价格上限（约0.12美元，不含增值税），11月11日生效</div>
+      <div class="data-trend trend-up">▲ 首个同类框架；内部收益率上限12%；资格门槛≥10兆瓦/≥110千伏</div>
+      <div class="data-source">来源：<a href="https://news.smm.cn/live/detail/KEKEC2JJUEI7LERS5T3B3ILODGBPOWNY7TBATBA" target="_blank" rel="noopener">上海有色网 SMM ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">+9.1%–16.8%</div>
+      <div class="data-label">2026年光伏电价上限较2025年框架的涨幅（南部／北部与中部，地面与漂浮）</div>
+      <div class="data-trend trend-up">▲ 北部地面光伏上限₫1,591.02/千瓦时；南部₫1,104.32/千瓦时</div>
+      <div class="data-source">来源：<a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">10% / 2小时</div>
+      <div class="data-label">适用储能溢价更高上限的配套门槛（储能功率≥光伏装机10%、充放电时长2小时）</div>
+      <div class="data-trend trend-up">▲ 溢价上限最高达₫2,120.31/千瓦时（北部漂浮光伏+储能）</div>
+      <div class="data-source">来源：<a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">10–16.3 GW</div>
+      <div class="data-label">PDP8要求2030年达到的储能装机目标——新定价框架正是为填补这一缺口而生</div>
+      <div class="data-trend trend-up">▲ 独立定价提供可融资的收益基础；光伏累计装机超19吉瓦但2025年仅新增586兆瓦</div>
+      <div class="data-source">来源：<a href="https://news.smm.cn/live/detail/KEKEC2JJUEI7LERS5T3B3ILODGBPOWNY7TBATBA" target="_blank" rel="noopener">上海有色网 SMM ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">2026年12月</div>
+      <div class="data-label">越南竞争性电力批发市场设计完成期限（第361/NQ-CP号决议）</div>
+      <div class="data-trend trend-up">▲ 零售市场设计2027年6月到期；两部制零售电价研究2026年内上报总理；REC市场路线图2026–27年制定</div>
+      <div class="data-source">来源：<a href="https://yuenan.com/zh-hant/news-313643" target="_blank" rel="noopener">越南中文社 ↗</a></div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-value">21,000 公里</div>
+      <div class="data-label">UNEZA成员公用事业2025年新建电网里程——创纪录，较2024年的14,000公里增长50%</div>
+      <div class="data-trend trend-up">▲ 年度投资计划≥1,560亿美元；2030年前需近90,000公里输电电缆；IRENA测算2035年前累计电网投资需10万亿美元</div>
+      <div class="data-source">来源：<a href="https://www.irena.org/News/pressreleases/2026/Nov/Utilities-deliver-record-21-000-km-of-new-grid-as-transition-investment-tops-USD-156-billion-a-year" target="_blank" rel="noopener">IRENA ↗</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================ 战略建议 ============================ -->
+<div class="section">
+  <div class="section-title">战略建议</div>
+
+  <div class="rec-block">
+    <h4>短期（0–3个月）</h4>
+    <ul>
+      <li><strong>重排供应商"光伏+储能"厂址排序：</strong>新分区上限使地面光伏在北部（₫1,591.02）与南部（₫1,104.32）之间形成约44%的价差——按11月5日新上限更新FY27供应商能源路线图的厂址级经济测算，并纳入储能溢价资格测试（10% / 2小时）。</li>
+      <li><strong>以第2987号决定为框架组织下一次供应商储能对话：</strong>用₫3,209.98/千瓦时上限和12%的内部收益率上限作为工厂或工业园储能方案的参照基准；同时注意≥10兆瓦/≥110千伏门槛把多数工厂引向"光伏+储能"捆绑或园级聚合项目——富士康 NbS/PPA 研讨会是天然的推进场合。</li>
+      <li><strong>跟踪两部制零售电价研究（2026年内上报总理）：</strong>其结果决定DPPA"双重计费"风险的化解方式——在本季度构建的任何供应商PPA模型中将其标记为关键假设。</li>
+      <li><strong>启用电网投资叙事：</strong>在客户简报和内部材料中使用 IRENA/UNEZA 数据（21,000公里、1,560亿美元/年、10万亿美元、"35-by-35"），将思科网络组合与电网现代化、电气化议程连接起来。</li>
+    </ul>
+  </div>
+
+  <div class="rec-block">
+    <h4>中期（3–12个月）</h4>
+    <ul>
+      <li><strong>在FY27供应商Scope 2手册中预置REC就绪方案：</strong>随着第361号决议要求2026–27年形成REC市场路线图和法律框架，应提前准备供应商指引，指导其在国内绿证工具成熟后验证与申领越南REC。</li>
+      <li><strong>为批发市场改革（2026年12月）带来的市场化价格敞口做准备：</strong>随着竞争性市场设计落地，供应商PPA将日益需要电量曲线、容量与对冲条款——在2027年6月零售设计落地前，将其纳入供应商能源合同工具箱。</li>
+      <li><strong>把握碳市场接轨窗口（2025–2026）：</strong>在越南国内碳市场连接国际市场之前，对照其新兴的国内交易机制筛查供应商碳信用质量——直接关系PCF与范围三声明的完整性。</li>
+      <li><strong>把优惠信贷纳入供应商融资对话：</strong>第361号决议要求为储能与绿色能源投资者提供优惠信贷——这是改善供应商BESS投资回报率的资本成本杠杆；在"光伏+储能"模板中作为融资备注记录。</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ============================ 方法说明 ============================ -->
+<div class="section">
+  <div class="section-title">方法说明</div>
+  <div class="methodology-note">
+    <h4>本简报的制作方式</h4>
+    <p>围绕五大主题（越南 DPPA/第57号法令政策与两部制电价、东南亚绿能/储能/电网互联、思科可持续发展与ESG、供应链水风险与水管理、碳中和与净零进展）进行单轮统一英文检索，尽可能限定在2026年11月9日–15日的覆盖窗口内。Top 3 选题与全部六个数据点按 Impact Score（政策直接性 × 供应商足迹相关性 × 证据质量）选定。中文版是对同一统一选题的翻译与本地化——未做二次检索。所有引用链接均已于2026年11月16日逐一抓取并验证可访问。</p>
+    <ul>
+      <li>已验证来源：<a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China（越南2026光伏电价，11月12日）↗</a> · <a href="https://news.smm.cn/live/detail/KEKEC2JJUEI7LERS5T3B3ILODGBPOWNY7TBATBA" target="_blank" rel="noopener">上海有色网（独立储能定价框架，11月13日）↗</a> · <a href="https://yuenan.com/zh-hant/news-313643" target="_blank" rel="noopener">越南中文社（第361/NQ-CP号决议，11月11日）↗</a> · <a href="https://www.irena.org/News/pressreleases/2026/Nov/Utilities-deliver-record-21-000-km-of-new-grid-as-transition-investment-tops-USD-156-billion-a-year" target="_blank" rel="noopener">IRENA（UNEZA电网纪录，11月10日）↗</a></li>
+      <li>Impact Score 评分标准：9–10 = 需立即行动／存在实质性财务敞口；8–9 = 对FY27规划有实质影响；6–8 = 监测并准备；&lt;6 = 仅作背景。</li>
+      <li>局限性：本覆盖窗口内无思科公司层面的新ESG公告；"对思科的重要性"为分析判断，非公司声明。第361号决议来源为越南中文社区新闻汇编（援引政府决议）；决议原文（361/NQ-CP）在本次检索中无法直接获取，对外引用前应对照官方公报复核数据。</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main-col -->
+
+<div class="sidebar-col">
+
+  <div class="sidebar-card">
+    <h3>智能信号</h3>
+    <div class="signal">
+      <strong>越南光伏管线停滞：19吉瓦存量，年新增仅586兆瓦</strong>
+      截至2025年底累计光伏装机已超19吉瓦，但去年仅新增约586兆瓦——新分区上限（+9.1%–16.8%）正是为重启投资而设；注意上限是谈判天花板，并非保障性固定上网电价。
+      <div class="source"><a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China ↗</a> · 11月12日</div>
+    </div>
+    <div class="signal">
+      <strong>UNEZA：2030年前需近90,000公里输电电缆</strong>
+      公用事业关于电网供应链的联合声明呼吁需求可见性——电网设备与并网排队将是未来十年转型中最硬的约束。
+      <div class="source"><a href="https://www.irena.org/News/pressreleases/2026/Nov/Utilities-deliver-record-21-000-km-of-new-grid-as-transition-investment-tops-USD-156-billion-a-year" target="_blank" rel="noopener">IRENA ↗</a> · 11月10日</div>
+    </div>
+    <div class="signal">
+      <strong>越南碳市场接轨进入2025–2026倒计时</strong>
+      第361号决议要求农业与环境部建立碳信用交换机制、发展国内碳市场并连接国际市场——供应商碳信用质量筛查应立即启动。
+      <div class="source"><a href="https://yuenan.com/zh-hant/news-313643" target="_blank" rel="noopener">越南中文社 ↗</a> · 11月11日</div>
+    </div>
+    <div class="signal">
+      <strong>IPE 蔚蓝地图：思科持续推动工厂环境数据披露</strong>
+      公开记录显示思科直接或间接推动供应商工厂填报年度节能减排与碳排放数据（最新记录11月5日）——CDP Module 5.11 价值链参与路径正在日常运转。
+      <div class="source"><a href="http://out.ipe.org.cn/GreenSupplyChain/main.aspx" target="_blank" rel="noopener">IPE 绿色供应链 ↗</a> · 11月5日</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>前瞻事件日历</h3>
+    <div class="event-row"><span class="event-date">2026年12月</span> — 第361号决议期限：竞争性批发市场设计完成；两部制零售电价研究上报总理。</div>
+    <div class="event-row"><span class="event-date">2026年11月</span> — COP31（安塔利亚）继续进行；关注东盟电网融资公告与《巴黎协定》第六条市场信号。</div>
+    <div class="event-row"><span class="event-date">2026–27年</span> — 工贸部制定REC市场路线图与法律框架（第361号决议）。</div>
+    <div class="event-row"><span class="event-date">2027年6月</span> — 越南竞争性零售市场设计完成期限；EVN智能电网方案（2026–2030）推进中。</div>
+    <div class="event-row"><span class="event-date">2027年Q4</span> — WRI Water Scopes 1–3 企业版最终指南发布——FY27供应商水风险评估SOP的锚点。</div>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>本周覆盖议题</h3>
+    <span class="topic-chip">越南光伏电价上限</span>
+    <span class="topic-chip">独立储能定价</span>
+    <span class="topic-chip">市场化改革时间表</span>
+    <span class="topic-chip">REC绿证市场</span>
+    <span class="topic-chip">两部制电价</span>
+    <span class="topic-chip">碳市场</span>
+    <span class="topic-chip">COP31</span>
+    <span class="topic-chip">电网投资</span>
+    <span class="topic-chip">DPPA / 第57号法令</span>
+  </div>
+
+  <div class="sidebar-card">
+    <h3>核心信息来源</h3>
+    <div class="core-source"><a href="https://www.pv-magazine-china.com/2026/11/12/%e8%b6%8a%e5%8d%97%e4%b8%8a%e8%b0%832026%e5%b9%b4%e5%85%89%e4%bc%8f%e7%94%b5%e4%bb%b7%ef%bc%8c%e7%bb%b4%e6%8c%81%e5%82%a8%e8%83%bd%e6%ba%a2%e4%bb%b7" target="_blank" rel="noopener">pv magazine China — 越南2026光伏电价上限 ↗</a></div>
+    <div class="core-source"><a href="https://news.smm.cn/live/detail/KEKEC2JJUEI7LERS5T3B3ILODGBPOWNY7TBATBA" target="_blank" rel="noopener">上海有色网 — 首个独立储能价格框架 ↗</a></div>
+    <div class="core-source"><a href="https://yuenan.com/zh-hant/news-313643" target="_blank" rel="noopener">越南中文社 — 第361/NQ-CP号决议 ↗</a></div>
+    <div class="core-source"><a href="https://www.irena.org/News/pressreleases/2026/Nov/Utilities-deliver-record-21-000-km-of-new-grid-as-transition-investment-tops-USD-156-billion-a-year" target="_blank" rel="noopener">IRENA — UNEZA电网纪录 / COP31 ↗</a></div>
+    <div class="core-source"><a href="http://out.ipe.org.cn/GreenSupplyChain/main.aspx" target="_blank" rel="noopener">IPE — 绿色供应链记录 ↗</a></div>
+    <div class="core-source"><a href="https://dppa.vn/en/decree-57-2025-dppa/" target="_blank" rel="noopener">DPPA Vietnam — 第57号法令参考 ↗</a></div>
+  </div>
+
+</div><!-- /sidebar-col -->
+
+</div><!-- /two-col -->
+</div><!-- /container -->
+
+<footer>
+  <p>思科可持续发展情报简报 · 第80期 · 2026年11月16日发布</p>
+  <p style="margin-top:6px;">仅限内部使用 · <a href="mailto:dit2@cisco.com">dit2@cisco.com</a></p>
+</footer>
+</body>
+</html>
